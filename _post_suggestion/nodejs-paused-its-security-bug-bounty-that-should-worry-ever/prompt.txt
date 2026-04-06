@@ -1,0 +1,9 @@
+A realistic editorial illustration of a quiet after-hours engineering workspace with one large monitor showing a simplified terminal window, a subtle security shield icon fading beside a clean Node.js runtime diagram, and a closed notebook suggesting budget and ownership decisions on the desk. Medium-wide composition with one clear focal subject, generous negative space, clean desk, muted charcoal and deep navy palette with a single warm amber accent, soft cinematic desk lighting, thoughtful and slightly tense mood, premium commercial illustration style, polished but grounded, professional and credible, optimized for a LinkedIn thumbnail, no logos, no watermarks, no clutter, no distorted hands, no unreadable interface text.
+
+Text overlay:
+
+"Security Isn't Free"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

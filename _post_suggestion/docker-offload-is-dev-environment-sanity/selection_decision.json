@@ -1,0 +1,21 @@
+{
+  "selectedTopic": "Docker Offload now Generally Available",
+  "finalPostTitle": "Docker Offload Is Dev Environment Sanity",
+  "primaryKeyword": "Docker Offload",
+  "whySelected": "This topic has the strongest mix of current relevance, practical pain, search intent, and conversion value. It speaks directly to engineers and technical decision-makers who lose time to constrained local environments, and it fits the repository voice because the value is reduced friction rather than hype.",
+  "duplicationCheck": {
+    "result": "clear",
+    "candidateTitlesChecked": [
+      "Docker Offload Is What Dev Environment Sanity Looks Like",
+      "Docker Offload Is Dev Environment Sanity"
+    ],
+    "reasoning": "The log is saturated with AI coding agent and security angles, but it does not contain a Docker Offload or dev-environment-friction post with this framing. The selected title and angle are materially distinct from previous entries."
+  },
+  "whyOthersNotSelected": [
+    "GitHub Copilot CLI second-opinion launch is timely, but the repository already contains several AI coding agent posts and the topic would likely feel repetitive even with a sharper angle.",
+    "The macOS TCP bug has strong conversation value and great engineering texture, but it carries weaker buyer-intent and SEO conversion than a broad developer-experience workflow topic.",
+    "The Claude Code issue is relevant, but it would continue the repository’s recent AI tooling saturation and risk blending into prior anti-hype posts.",
+    "GitHub Actions security is high-value, but it sits closer to existing supply chain and security themes already present in the log."
+  ],
+  "topicAngle": "Boring dev environment friction is still expensive, especially in VDI and locked-down enterprise setups."
+}

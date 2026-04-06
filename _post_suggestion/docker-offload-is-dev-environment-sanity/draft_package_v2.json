@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "status": "revise",
+  "title": "Docker Offload Is Dev Environment Sanity",
+  "primaryKeyword": "Docker Offload",
+  "linkedinHook": "Docker Offload is dev environment sanity.",
+  "xHook": "Docker Offload is interesting for one boring reason:",
+  "reviewFocus": [
+    "Reduce length and sharpen contrast in the X post.",
+    "Preserve VDI and locked-down machine pain as the concrete detail."
+  ]
+}

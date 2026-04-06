@@ -1,0 +1,24 @@
+{
+  "finalPostTitle": "Docker Offload Is Dev Environment Sanity",
+  "selectedTopic": "Docker Offload now Generally Available",
+  "primaryKeyword": "Docker Offload",
+  "topicAngle": "boring dev environment friction is still expensive, especially in VDI and locked-down enterprise setups",
+  "reviewIterationsUsed": 3,
+  "sourceUrls": [
+    "https://www.docker.com/blog/docker-offload-now-generally-available-the-full-power-of-docker-for-every-developer-everywhere/",
+    "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/",
+    "https://photon.codes/blog/we-found-a-ticking-time-bomb-in-macos-tcp-networking",
+    "https://github.com/anthropics/claude-code/issues/42796",
+    "https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/"
+  ],
+  "finalOutputs": {
+    "linkedin": "_post_suggestion/docker-offload-is-dev-environment-sanity/linkedin_post.txt",
+    "x": "_post_suggestion/docker-offload-is-dev-environment-sanity/x_post.txt",
+    "prompt": "_post_suggestion/docker-offload-is-dev-environment-sanity/prompt.txt"
+  },
+  "notes": [
+    "Final title passed the repository duplicate checker.",
+    "The package was finalized with the repo finalizer so log.txt was updated after all three files were saved.",
+    "Unrelated legacy package issues remain elsewhere in the repository."
+  ]
+}

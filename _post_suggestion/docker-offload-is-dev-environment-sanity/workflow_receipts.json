@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Docker Offload Is Dev Environment Sanity",
+  "slug": "docker-offload-is-dev-environment-sanity",
+  "createdAt": "2026-04-06T21:10:49.072Z",
+  "updatedAt": "2026-04-06T21:10:49.084Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-06T21:10:49.072Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\docker-offload-is-dev-environment-sanity\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\docker-offload-is-dev-environment-sanity\\x_post.txt",
+      "linkedinSha256": "e9d3ae1bee5f5a885d7c4274f6496ff50334c74d63f835da5a8821a03d6976af",
+      "xSha256": "b7d931414495aca6516173264cb0dbffa13ec75e266a1d82375e639b20b03932"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-06T21:10:49.078Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\docker-offload-is-dev-environment-sanity\\prompt.txt",
+      "promptSha256": "b0e90879262cbc15205dd78f4492f2bdf88ac507b576ab907d86abcaa699d46a"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-06T21:10:49.084Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\docker-offload-is-dev-environment-sanity\\linkedin_post.txt",
+          "sha256": "e9d3ae1bee5f5a885d7c4274f6496ff50334c74d63f835da5a8821a03d6976af",
+          "mtimeIso": "2026-04-06T21:10:49.065Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\docker-offload-is-dev-environment-sanity\\x_post.txt",
+          "sha256": "b7d931414495aca6516173264cb0dbffa13ec75e266a1d82375e639b20b03932",
+          "mtimeIso": "2026-04-06T21:10:49.066Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\docker-offload-is-dev-environment-sanity\\prompt.txt",
+          "sha256": "b0e90879262cbc15205dd78f4492f2bdf88ac507b576ab907d86abcaa699d46a",
+          "mtimeIso": "2026-04-06T21:10:49.078Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 7,
+      "logCountAfter": 8,
+      "logEntry": "2026-04-06 | Docker Offload Is Dev Environment Sanity | Docker Offload | boring dev environment friction is still expensive, especially in VDI and locked-down enterprise setups",
+      "logUpdatedAt": "2026-04-06T21:10:49.084Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

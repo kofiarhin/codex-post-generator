@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Node.js paused its security bug bounty: that should worry every company shipping JavaScript",
+  "slug": "nodejs-paused-its-security-bug-bounty-that-should-worry-ever",
+  "createdAt": "2026-04-06T20:27:04.009Z",
+  "updatedAt": "2026-04-06T20:27:04.035Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-06T20:27:04.009Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\nodejs-paused-its-security-bug-bounty-that-should-worry-ever\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\nodejs-paused-its-security-bug-bounty-that-should-worry-ever\\x_post.txt",
+      "linkedinSha256": "1c47a4c8572c0ca339188fe2960f3b85bea33bfb31aedfb335602f1d60df1cd1",
+      "xSha256": "714e47d9a387127e56d6362d03d548656d95cee98c511d646e2a159482a8d1cd"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-06T20:27:04.027Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\nodejs-paused-its-security-bug-bounty-that-should-worry-ever\\prompt.txt",
+      "promptSha256": "aa045f2fa3cce5ac96801238a4cd2959dc501c34b1977cd86565a562a0af7189"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-06T20:27:04.035Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\nodejs-paused-its-security-bug-bounty-that-should-worry-ever\\linkedin_post.txt",
+          "sha256": "1c47a4c8572c0ca339188fe2960f3b85bea33bfb31aedfb335602f1d60df1cd1",
+          "mtimeIso": "2026-04-06T20:27:03.999Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\nodejs-paused-its-security-bug-bounty-that-should-worry-ever\\x_post.txt",
+          "sha256": "714e47d9a387127e56d6362d03d548656d95cee98c511d646e2a159482a8d1cd",
+          "mtimeIso": "2026-04-06T20:27:04.000Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\nodejs-paused-its-security-bug-bounty-that-should-worry-ever\\prompt.txt",
+          "sha256": "aa045f2fa3cce5ac96801238a4cd2959dc501c34b1977cd86565a562a0af7189",
+          "mtimeIso": "2026-04-06T20:27:04.027Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 6,
+      "logCountAfter": 7,
+      "logEntry": "2026-04-06 | Node.js paused its security bug bounty: that should worry every company shipping JavaScript | Node.js security bug bounty | open-source security funding is a production risk signal, not community side drama",
+      "logUpdatedAt": "2026-04-06T20:27:04.035Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}
