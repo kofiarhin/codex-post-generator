@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "status": "revise",
+  "title": "Docker Offload Is Dev Environment Sanity",
+  "primaryKeyword": "Docker Offload",
+  "linkedinHook": "Docker Offload is dev environment sanity.",
+  "xHook": "Docker Offload is interesting because it fixes a very unsexy problem.",
+  "reviewFocus": [
+    "Tighten the X post to feel more native to the platform.",
+    "Keep the LinkedIn post reflective and practical rather than promotional."
+  ]
+}

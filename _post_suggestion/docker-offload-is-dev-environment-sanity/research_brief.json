@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-04-06",
+  "candidates": [
+    {
+      "topicTitle": "GitHub Copilot CLI combines model families for a second opinion",
+      "source": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/",
+      "summary": "GitHub introduced a Copilot CLI capability that pulls in a different model family for a second opinion. The feature is notable because even the tooling is now acknowledging that one answer is often not enough for real engineering work.",
+      "whyTrendingNow": "Fresh GitHub Blog launch on 2026-04-06 with immediate developer interest around reliability and model disagreement.",
+      "audienceResonance": "Engineers using coding assistants, platform teams evaluating AI tooling, and technical leaders trying to separate useful workflow gains from demo theater.",
+      "linkedInConversationPotential": "high",
+      "primarySeoKeyword": "GitHub Copilot CLI",
+      "secondarySeoKeywords": [
+        "AI coding assistant",
+        "developer workflow",
+        "second opinion AI",
+        "coding agent reliability"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#GitHubCopilot",
+        "#DeveloperTools",
+        "#AICoding",
+        "#DevWorkflow",
+        "#SoftwareEngineering"
+      ],
+      "suggestedXHashtags": [
+        "#GitHubCopilot",
+        "#AICoding",
+        "#DevTools"
+      ]
+    },
+    {
+      "topicTitle": "Docker Offload now Generally Available",
+      "source": "https://www.docker.com/blog/docker-offload-now-generally-available-the-full-power-of-docker-for-every-developer-everywhere/",
+      "summary": "Docker announced general availability for Docker Offload, aimed at developers working in constrained environments where Docker Desktop is difficult or impossible to run locally. It is a practical response to the reality of VDI, managed desktops, and enterprise device limits.",
+      "whyTrendingNow": "Fresh Docker launch on 2026-04-02 with clear relevance to enterprise development workflows and remote execution.",
+      "audienceResonance": "Software engineers, platform teams, consultants, and CTOs dealing with onboarding drag, local environment friction, and corporate desktop constraints.",
+      "linkedInConversationPotential": "high",
+      "primarySeoKeyword": "Docker Offload",
+      "secondarySeoKeywords": [
+        "Docker Desktop",
+        "remote Docker development",
+        "VDI development",
+        "cloud development environment",
+        "developer experience"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#DockerOffload",
+        "#DockerDesktop",
+        "#DeveloperExperience",
+        "#PlatformEngineering",
+        "#CloudDevelopment",
+        "#DevEnvironments"
+      ],
+      "suggestedXHashtags": [
+        "#DockerOffload",
+        "#DockerDesktop",
+        "#DeveloperExperience"
+      ]
+    },
+    {
+      "topicTitle": "A macOS bug that causes TCP networking to stop working after 49.7 days",
+      "source": "https://photon.codes/blog/we-found-a-ticking-time-bomb-in-macos-tcp-networking",
+      "summary": "A detailed write-up describes a macOS TCP networking bug that detonates after a long uptime window. It is exactly the kind of absurd systems problem that reminds developers why operational humility still matters.",
+      "whyTrendingNow": "The post gained strong Hacker News attention because the bug is bizarre, specific, and painfully relatable to anyone who has debugged networking failures.",
+      "audienceResonance": "Backend engineers, SREs, systems programmers, and experienced developers who know the most annoying bugs are often the least glamorous ones.",
+      "linkedInConversationPotential": "medium",
+      "primarySeoKeyword": "macOS TCP bug",
+      "secondarySeoKeywords": [
+        "TCP networking bug",
+        "long uptime bug",
+        "network debugging",
+        "systems engineering"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#MacOS",
+        "#Networking",
+        "#Debugging",
+        "#SystemsEngineering",
+        "#SRE"
+      ],
+      "suggestedXHashtags": [
+        "#MacOS",
+        "#Debugging",
+        "#Networking"
+      ]
+    },
+    {
+      "topicTitle": "Claude Code is unusable for complex engineering tasks with the Feb updates",
+      "source": "https://github.com/anthropics/claude-code/issues/42796",
+      "summary": "A highly visible GitHub issue argues that recent Claude Code updates made the tool worse for complex engineering work. The discussion captures a broader frustration with AI tools that regress under real-world load.",
+      "whyTrendingNow": "The issue drew major Hacker News and GitHub attention because it speaks to reliability problems engineers hit after the honeymoon phase of AI tooling.",
+      "audienceResonance": "Teams actively using coding agents, engineering leads setting expectations, and skeptical developers tired of workflow regressions.",
+      "linkedInConversationPotential": "high",
+      "primarySeoKeyword": "Claude Code",
+      "secondarySeoKeywords": [
+        "AI coding workflow",
+        "coding agent reliability",
+        "developer productivity",
+        "context management"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#ClaudeCode",
+        "#AICoding",
+        "#DeveloperTools",
+        "#SoftwareEngineering",
+        "#Productivity"
+      ],
+      "suggestedXHashtags": [
+        "#ClaudeCode",
+        "#AICoding",
+        "#DevTools"
+      ]
+    },
+    {
+      "topicTitle": "What’s coming to our GitHub Actions 2026 security roadmap",
+      "source": "https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/",
+      "summary": "GitHub laid out a security roadmap for Actions focused on secure defaults, policy controls, and CI/CD observability. The post matters because software supply chain protection is increasingly becoming a platform-level expectation, not an optional extra.",
+      "whyTrendingNow": "Recent roadmap post with strong relevance after continued supply chain incidents and rising scrutiny on CI/CD trust boundaries.",
+      "audienceResonance": "Platform engineers, security teams, engineering managers, and founders who need to harden build pipelines without killing developer velocity.",
+      "linkedInConversationPotential": "high",
+      "primarySeoKeyword": "GitHub Actions security",
+      "secondarySeoKeywords": [
+        "CI/CD security",
+        "software supply chain security",
+        "secure defaults",
+        "pipeline observability"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#GitHubActions",
+        "#CICD",
+        "#SupplyChainSecurity",
+        "#DevSecOps",
+        "#PlatformEngineering"
+      ],
+      "suggestedXHashtags": [
+        "#GitHubActions",
+        "#DevSecOps",
+        "#CICD"
+      ]
+    }
+  ]
+}

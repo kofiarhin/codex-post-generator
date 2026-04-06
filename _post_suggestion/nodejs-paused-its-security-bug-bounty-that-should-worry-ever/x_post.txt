@@ -1,0 +1,7 @@
+Node.js security bug bounty got paused.
+
+If your product runs on Node.js and npm, that isn’t “community news.”
+It’s a budget memo wearing an open-source hoodie.
+
+A lot of software supply chain risk is just funding risk with better branding.
+#NodeJS #AppSec #OpenSource #DevSecOps

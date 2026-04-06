@@ -1,0 +1,15 @@
+The Node.js security bug bounty getting paused due to funding is the kind of news that should make every JavaScript team sit up a little straighter.
+
+We love to talk about software supply chain security like it’s mainly a tooling problem. Add another scanner. Add another policy. Hope CI can emotionally support the rest.
+
+But this is the less glamorous truth: a huge amount of production software still depends on open source security funding being held together with goodwill, maintainer stamina, and whatever budget survived Q1.
+
+If one of the most widely used runtimes on the planet has to pause a bug bounty program, that’s not just community news. That’s a risk signal.
+
+The practical takeaway for engineering leaders is boring and important. If your company depends on Node.js, npm, and the broader JavaScript ecosystem, bug bounty coverage, maintainer funding, and disclosure capacity belong in the software security budget too.
+
+We keep acting surprised when critical infrastructure turns out to need actual infrastructure.
+
+Curious how other teams think about this: should open source security funding be treated like core platform spend, or are most companies still pretending it’s somebody else’s problem?
+
+#NodeJS #OpenSourceSecurity #JavaScript #AppSec #SoftwareSupplyChain #DevSecOps #OSSFunding

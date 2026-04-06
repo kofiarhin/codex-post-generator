@@ -1,0 +1,9 @@
+A clean editorial-style scene of an experienced software engineer at a minimal desk using a locked-down corporate laptop while a crisp remote container workspace is visualized as a single luminous offloaded environment just beyond the screen, showing the contrast between local device limits and smooth cloud execution; one clear focal subject, medium shot, centered composition, generous negative space, designed for a 1200 x 628 LinkedIn thumbnail, muted charcoal and deep navy palette with one electric blue accent, soft studio lighting, premium commercial illustration blended with realistic product-ad photography, professional and grounded with a slight edge of dry wit, highly legible at thumbnail size, subtle visual metaphor for dev environment friction disappearing. No logos, no watermarks, no clutter, no meme styling, no distorted hands, no unreadable interface text, no floating code rain, no stock-photo stiffness.
+
+Text overlay:
+
+"Dev Environment Sanity"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible
