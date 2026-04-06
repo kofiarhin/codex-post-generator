@@ -1,0 +1,8 @@
+Software supply chain security gets very awkward when the compromised dependency is the thing you installed to catch compromised dependencies.
+
+That’s why the Trivy incident matters.
+Security tools aren’t outside the supply chain. They’re in it.
+
+Treat scanners like production dependencies: pin them, verify provenance, and limit blast radius.
+
+#Trivy #SupplyChainSecurity #DevSecOps #AppSec

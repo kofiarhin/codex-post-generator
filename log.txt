@@ -1,0 +1,6 @@
+2026-04-06 | Everyone Wants AI Coding Agents Until Security Joins the Standup | AI coding agents | security and governance friction in real-world AI workflows
+2026-04-06 | Everyone wants AI coding agents right up until Security joins the standup. | AI agents security | the gap between AI coding demos and production guardrails
+2026-04-06 | AI Coding Agents Need Guardrails, Not Pep Talks | AI coding agents | practical guardrails over autonomy hype
+2026-04-06 | Trivy proved security tools are part of the supply chain | software supply chain security | the Trivy incident shows security tools inside CI need the same trust model as any other dependency
+2026-04-06 | AI Coding Agents Are Finally Useful for One Boring Reason | AI coding agents | Practical anti-hype take on debugging drag
+2026-04-06 | AI Code Review Should Predict the SEV | AI code review | predictive risk scoring over autocomplete hype in code review

@@ -1,0 +1,8 @@
+AI code review should predict the SEV.
+
+Writing code faster is nice.
+Knowing which diff will page the team at 2am is better.
+
+Risk-aware software development is a more useful AI story than another autocomplete demo.
+
+#AICodeReview #CodeReview #DeveloperTools #DevInfra

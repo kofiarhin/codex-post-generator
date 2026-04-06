@@ -1,0 +1,21 @@
+Everyone wants AI coding agents right up until Security joins the standup.
+
+In the demo, the agent fixes bugs, writes tests, updates docs, and explains the diff like it has a CS degree and suspiciously good manners.
+
+In a real company, it lasts about seven minutes before it meets branch protection, secret rotation, approval chains, permission scopes, compliance rules, and one haunted YAML file nobody wants to touch.
+
+That’s the real story behind the AI tooling boom.
+
+The hard part is no longer “can the model write code?”
+
+It’s “can your workflow trust the model without creating a very efficient incident?”
+
+The teams getting actual value are treating agents less like magic and more like fast junior teammates: useful, impressive, and absolutely not ready for production access without guardrails.
+
+So the winning stack is becoming weirdly unglamorous: narrow permissions, reviewable actions, audit trails, sandboxed tools, and humans who still know what “rollback plan” means.
+
+AI agents are not replacing engineering discipline.
+
+They’re exposing whether you had any.
+
+What’s been tougher for your team so far: model quality, or everything around the model?

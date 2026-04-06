@@ -1,0 +1,16 @@
+{
+  "name": "post-generator",
+  "version": "1.0.0",
+  "description": "Codex-powered social content workflow — trending software topics to LinkedIn and X posts with Nano Banana-ready visual prompts.",
+  "private": true,
+  "scripts": {
+    "audit:workflow": "node .agents/skills/linkedin-post-orchestrator/scripts/audit_workflow.js",
+    "check:duplicates": "node .agents/skills/linkedin-post-orchestrator/scripts/check_duplicates.js",
+    "finalize:post": "node .agents/skills/linkedin-post-orchestrator/scripts/finalize_post_package.js",
+    "save:post": "node .agents/skills/linkedin-post-orchestrator/scripts/save_post.js",
+    "save:asset": "node .agents/skills/linkedin-post-assets/scripts/save_asset.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
