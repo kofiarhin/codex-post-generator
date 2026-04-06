@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { slugify } = require('../../linkedin-post-orchestrator/scripts/title_log_utils');
+const { sha256File, upsertStageReceipt } = require('../../linkedin-post-orchestrator/scripts/workflow_receipts');
 
 const OVERLAY_SECTION_PATTERN = /(?:^|\n)(?:optional\s+)?text\s+overlay\s*:\s*([\s\S]*)$/i;
 const OVERLAY_DIRECTIVE_PATTERN = /^(?:placement|position|style)\s*:/i;
@@ -169,11 +170,24 @@ function saveAssetPrompt({
 
   fs.writeFileSync(outputPath, normalizedPrompt, 'utf8');
 
+  const assetReceipt = upsertStageReceipt({
+    repoRoot,
+    title,
+    slug,
+    stage: 'asset',
+    source: 'save_asset.js',
+    payload: {
+      promptOutputPath: outputPath,
+      promptSha256: sha256File(outputPath)
+    }
+  });
+
   return {
     slug,
     outputDir,
     outputPath,
-    normalizedPrompt
+    normalizedPrompt,
+    receiptPath: assetReceipt.receiptPath
   };
 }
 
@@ -192,6 +206,7 @@ function main() {
     const result = saveAssetPrompt({ title, inputPath });
     console.log(`Prompt saved to: _post_suggestion/${result.slug}/prompt.txt`);
     console.log(`Full path: ${result.outputPath}`);
+    console.log(`Workflow receipt updated: ${result.receiptPath}`);
   } catch (error) {
     console.error(error.message);
     process.exit(1);

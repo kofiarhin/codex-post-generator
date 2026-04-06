@@ -7,6 +7,7 @@ const {
   readLogEntries,
   slugify
 } = require('./title_log_utils');
+const { sha256File, upsertStageReceipt } = require('./workflow_receipts');
 
 function formatDuplicateError(title, duplicateMatch) {
   const lines = [
@@ -78,11 +79,26 @@ function savePostFiles({
   fs.writeFileSync(linkedinOutputPath, linkedinContent, 'utf8');
   fs.writeFileSync(xOutputPath, xContent, 'utf8');
 
+  const orchestratorReceipt = upsertStageReceipt({
+    repoRoot,
+    title,
+    slug,
+    stage: 'orchestrator',
+    source: 'save_post.js',
+    payload: {
+      linkedinOutputPath,
+      xOutputPath,
+      linkedinSha256: sha256File(linkedinOutputPath),
+      xSha256: sha256File(xOutputPath)
+    }
+  });
+
   return {
     slug,
     outputDir,
     linkedinOutputPath,
-    xOutputPath
+    xOutputPath,
+    receiptPath: orchestratorReceipt.receiptPath
   };
 }
 
@@ -106,6 +122,7 @@ function main() {
     console.log(`X post saved to: _post_suggestion/${result.slug}/x_post.txt`);
     console.log(`Full LinkedIn path: ${result.linkedinOutputPath}`);
     console.log(`Full X path: ${result.xOutputPath}`);
+    console.log(`Workflow receipt updated: ${result.receiptPath}`);
     console.log('Log update deferred until the full package is finalized.');
   } catch (error) {
     console.error(error.message);

@@ -2,8 +2,11 @@
 
 const fs = require('fs');
 const path = require('path');
+const { readLogEntries } = require('./title_log_utils');
+const { readReceipt } = require('./workflow_receipts');
 
 const REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
+const REQUIRED_STAGES = ['orchestrator', 'asset', 'finalizer'];
 
 function listDirectories(baseDir) {
   if (!fs.existsSync(baseDir)) {
@@ -14,6 +17,40 @@ function listDirectories(baseDir) {
     .readdirSync(baseDir, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => path.join(baseDir, entry.name));
+}
+
+function auditPackage(repoRoot, dirPath) {
+  const issues = [];
+  const missingFiles = REQUIRED_OUTPUT_FILES.filter(
+    (fileName) => !fs.existsSync(path.join(dirPath, fileName))
+  );
+
+  if (missingFiles.length > 0) {
+    issues.push(
+      `Incomplete package: ${path.relative(repoRoot, dirPath)} is missing ${missingFiles.join(', ')}`
+    );
+    return issues;
+  }
+
+  const receiptPath = path.join(dirPath, 'workflow_receipts.json');
+  const receipt = readReceipt(receiptPath);
+
+  if (!receipt) {
+    issues.push(`Missing workflow receipt: ${path.relative(repoRoot, receiptPath)}`);
+    return issues;
+  }
+
+  for (const stage of REQUIRED_STAGES) {
+    if (receipt.stages?.[stage]?.status !== 'completed') {
+      issues.push(`Missing completed stage '${stage}' in ${path.relative(repoRoot, receiptPath)}`);
+    }
+  }
+
+  if (!receipt.stages?.finalizer?.logUpdatedAfterPackageSave) {
+    issues.push(`Workflow order violation in ${path.relative(repoRoot, receiptPath)}: log update was not proven after package save.`);
+  }
+
+  return issues;
 }
 
 function main() {
@@ -28,16 +65,10 @@ function main() {
     issues.push('Missing root log.txt file.');
   }
 
-  for (const dirPath of packageDirs) {
-    const missingFiles = REQUIRED_OUTPUT_FILES.filter(
-      (fileName) => !fs.existsSync(path.join(dirPath, fileName))
-    );
+  const logEntries = readLogEntries(logPath);
 
-    if (missingFiles.length > 0) {
-      issues.push(
-        `Incomplete package: ${path.relative(repoRoot, dirPath)} is missing ${missingFiles.join(', ')}`
-      );
-    }
+  for (const dirPath of packageDirs) {
+    issues.push(...auditPackage(repoRoot, dirPath));
   }
 
   if (fs.existsSync(legacyOutputRoot)) {
@@ -56,9 +87,10 @@ function main() {
 
   console.log(`Audited package directories: ${packageDirs.length}`);
   console.log(`Log file present: ${fs.existsSync(logPath) ? 'yes' : 'no'}`);
+  console.log(`Log entry count: ${logEntries.length}`);
 
   if (issues.length === 0) {
-    console.log('Workflow audit passed. All saved packages match the required structure.');
+    console.log('Workflow audit passed. All saved packages are machine-verifiable.');
     process.exit(0);
   }
 
