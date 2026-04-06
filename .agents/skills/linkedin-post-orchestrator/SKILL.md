@@ -38,6 +38,20 @@ Use `assets/output-template.md` as the working structure when compiling the draf
 
 Execute the following steps in strict order. Do not skip steps.
 
+The implementation also supports a machine-auditable multi-agent pipeline mode:
+
+```bash
+node .agents/skills/linkedin-post-orchestrator/scripts/generate_post.js --pipeline "<pipeline-input.json>"
+```
+
+In this mode, the system executes multi-agent research, selection, writing, review, and revision loops (max 3 iterations), then persists required trace artifacts:
+
+- `research_brief.json`
+- `selection_decision.json`
+- `draft_package_v1.json`, `draft_package_v2.json`, `draft_package_v3.json`
+- `review_decision_v1.json`, `review_decision_v2.json`, `review_decision_v3.json`
+- `workflow_summary.json`
+
 ---
 
 ### Step 1 — Spawn the Researcher Subagent

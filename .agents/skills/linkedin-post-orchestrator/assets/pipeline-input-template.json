@@ -1,0 +1,144 @@
+{
+  "candidateTopics": [
+    {
+      "title": "Platform Engineering Backstage Adoption in 2026",
+      "summary": "Teams are revisiting internal developer platforms to reduce cognitive load and deployment friction.",
+      "whyTrendingNow": "Multiple enterprises published platform ROI retrospectives this quarter.",
+      "audienceResonance": "Staff engineers, DevEx leads, and CTOs want measurable developer productivity gains.",
+      "linkedInConversationPotential": "high",
+      "primaryKeyword": "platform engineering",
+      "secondaryKeywords": [
+        "developer experience",
+        "internal developer platform",
+        "golden paths",
+        "service ownership"
+      ],
+      "linkedInHashtags": [
+        "#PlatformEngineering",
+        "#DeveloperExperience",
+        "#DevOps",
+        "#IDP",
+        "#SoftwareEngineering",
+        "#EngineeringLeadership"
+      ],
+      "xHashtags": [
+        "#PlatformEngineering",
+        "#DevEx",
+        "#DevOps"
+      ],
+      "signals": {
+        "relevance": 9,
+        "pain": 8,
+        "freshness": 8,
+        "seo": 8,
+        "conversation": 8
+      },
+      "topicAngle": "pragmatic rollout lessons vs platform theater"
+    },
+    {
+      "title": "AI Code Review Workflows for Pull Request Triage",
+      "summary": "Engineering teams are shifting AI from code generation toward risk-based PR triage and reviewer routing.",
+      "whyTrendingNow": "Recent tool updates improved severity prediction and merge confidence reporting.",
+      "audienceResonance": "Teams want shorter review cycles without sacrificing code quality.",
+      "linkedInConversationPotential": "high",
+      "primaryKeyword": "AI code review",
+      "secondaryKeywords": [
+        "pull request triage",
+        "developer productivity",
+        "merge confidence",
+        "code quality automation"
+      ],
+      "linkedInHashtags": [
+        "#AICodeReview",
+        "#CodeQuality",
+        "#DeveloperProductivity",
+        "#SoftwareEngineering",
+        "#DevTools",
+        "#EngineeringManagement"
+      ],
+      "xHashtags": [
+        "#AICodeReview",
+        "#DevTools",
+        "#SoftwareEngineering"
+      ],
+      "signals": {
+        "relevance": 10,
+        "pain": 9,
+        "freshness": 9,
+        "seo": 9,
+        "conversation": 9
+      },
+      "topicAngle": "risk prediction beats generic auto-approve bots"
+    },
+    {
+      "title": "Kubernetes Cost Optimization After Autoscaling Spikes",
+      "summary": "FinOps and platform teams are revisiting autoscaling policies after sustained cloud spend surprises.",
+      "whyTrendingNow": "Several postmortems highlighted runaway background workloads and overprovisioned clusters.",
+      "audienceResonance": "Engineering managers and SREs need cost control without destabilizing reliability.",
+      "linkedInConversationPotential": "medium",
+      "primaryKeyword": "Kubernetes cost optimization",
+      "secondaryKeywords": [
+        "cluster autoscaling",
+        "cloud cost management",
+        "workload right-sizing",
+        "SRE operations"
+      ],
+      "linkedInHashtags": [
+        "#Kubernetes",
+        "#FinOps",
+        "#CloudCost",
+        "#SRE",
+        "#DevOps",
+        "#CloudEngineering"
+      ],
+      "xHashtags": [
+        "#Kubernetes",
+        "#FinOps",
+        "#SRE"
+      ],
+      "signals": {
+        "relevance": 8,
+        "pain": 8,
+        "freshness": 7,
+        "seo": 7,
+        "conversation": 7
+      },
+      "topicAngle": "reliability and spend guardrails in the same runbook"
+    },
+    {
+      "title": "OpenTelemetry Governance for Microservice Sprawl",
+      "summary": "As tracing adoption matures, teams are prioritizing telemetry governance over raw data volume.",
+      "whyTrendingNow": "Observability vendors and OSS maintainers released governance-focused updates and guidance.",
+      "audienceResonance": "Staff engineers care about signal quality, storage cost, and debuggability.",
+      "linkedInConversationPotential": "medium",
+      "primaryKeyword": "OpenTelemetry governance",
+      "secondaryKeywords": [
+        "distributed tracing",
+        "observability strategy",
+        "telemetry standards",
+        "microservice debugging"
+      ],
+      "linkedInHashtags": [
+        "#OpenTelemetry",
+        "#Observability",
+        "#DistributedTracing",
+        "#Microservices",
+        "#SRE",
+        "#SoftwareArchitecture"
+      ],
+      "xHashtags": [
+        "#OpenTelemetry",
+        "#Observability",
+        "#Microservices"
+      ],
+      "signals": {
+        "relevance": 7,
+        "pain": 7,
+        "freshness": 7,
+        "seo": 7,
+        "conversation": 6
+      },
+      "topicAngle": "less telemetry noise, faster root-cause analysis"
+    }
+  ]
+}

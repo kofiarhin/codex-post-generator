@@ -6,6 +6,17 @@ const { readLogEntries } = require('./title_log_utils');
 const { readReceipt } = require('./workflow_receipts');
 
 const REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
+const REQUIRED_TRACE_FILES = [
+  'research_brief.json',
+  'selection_decision.json',
+  'draft_package_v1.json',
+  'draft_package_v2.json',
+  'draft_package_v3.json',
+  'review_decision_v1.json',
+  'review_decision_v2.json',
+  'review_decision_v3.json',
+  'workflow_summary.json'
+];
 const REQUIRED_STAGES = ['orchestrator', 'asset', 'finalizer'];
 
 function listDirectories(baseDir) {
@@ -48,6 +59,25 @@ function auditPackage(repoRoot, dirPath) {
 
   if (!receipt.stages?.finalizer?.logUpdatedAfterPackageSave) {
     issues.push(`Workflow order violation in ${path.relative(repoRoot, receiptPath)}: log update was not proven after package save.`);
+  }
+
+  const missingTraceFiles = REQUIRED_TRACE_FILES.filter(
+    (fileName) => !fs.existsSync(path.join(dirPath, fileName))
+  );
+  if (missingTraceFiles.length > 0) {
+    issues.push(
+      `Missing trace artifacts in ${path.relative(repoRoot, dirPath)}: ${missingTraceFiles.join(', ')}`
+    );
+  } else {
+    const workflowSummaryPath = path.join(dirPath, 'workflow_summary.json');
+    try {
+      const workflowSummary = JSON.parse(fs.readFileSync(workflowSummaryPath, 'utf8'));
+      if (Number(workflowSummary.reviewIterationsUsed || 0) > 3) {
+        issues.push(`Review loop exceeded max iterations in ${path.relative(repoRoot, workflowSummaryPath)}.`);
+      }
+    } catch (error) {
+      issues.push(`Invalid JSON in ${path.relative(repoRoot, workflowSummaryPath)}: ${error.message}`);
+    }
   }
 
   return issues;
