@@ -1,0 +1,16 @@
+Model Context Protocol is getting a lot of attention, but the real story isn’t the demo.
+
+It’s what happens the first time an AI coding agent can read your docs, open Jira, hit GitHub, poke a database, and “help” with the enthusiasm of a new teammate who doesn’t yet fear production.
+
+That’s why Model Context Protocol feels important to me. Not because it makes AI tooling look magical, but because it exposes the part we’ve been avoiding: tool permissions are now product design.
+
+For years, developer tooling could get away with a loose handshake between apps. MCP servers change the shape of that problem. Now we’re talking about agent orchestration, access boundaries, audit trails, and whether your shiny workflow still looks smart after one bad action at 4:57 PM on a Friday.
+
+The interesting shift is that developer experience and governance are no longer separate conversations. If AI coding agents become normal, MCP security, observability, and approval flows are what will decide whether teams trust them.
+
+The hype says “agents can use tools.”
+The grown-up question is “under whose rules?”
+
+Curious where you land: are you more excited by MCP servers themselves, or by the permission model they force us to finally take seriously?
+
+#ModelContextProtocol #MCP #AICodingAgents #DeveloperTooling #PlatformEngineering #DevEx #SoftwareArchitecture

@@ -1,0 +1,24 @@
+{
+  "objective": "Generate one complete social content package about a currently trending software topic.",
+  "approvedBeforeMaxIterations": true,
+  "reviewIterationsUsed": 1,
+  "maxReviewIterations": 3,
+  "selectedTopic": "AI Traffic Is Forcing Cache Design to Change",
+  "primaryKeyword": "AI caching",
+  "output": {
+    "linkedin": "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/linkedin_post.txt",
+    "x": "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/x_post.txt",
+    "prompt": "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/prompt.txt"
+  },
+  "traceArtifacts": [
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/research_brief.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/selection_decision.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/draft_package_v1.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/draft_package_v2.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/draft_package_v3.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/review_decision_v1.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/review_decision_v2.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/review_decision_v3.json",
+    "_post_suggestion/ai-traffic-is-forcing-cache-design-to-change/workflow_summary.json"
+  ]
+}

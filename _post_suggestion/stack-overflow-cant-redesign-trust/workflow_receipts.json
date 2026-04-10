@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Stack Overflow Can't Redesign Trust",
+  "slug": "stack-overflow-cant-redesign-trust",
+  "createdAt": "2026-04-07T21:08:01.851Z",
+  "updatedAt": "2026-04-07T21:08:01.864Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-07T21:08:01.851Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\stack-overflow-cant-redesign-trust\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\stack-overflow-cant-redesign-trust\\x_post.txt",
+      "linkedinSha256": "fa99bf52832989696301559a94c18e7f998b23d9a89143cbade1201c1931e027",
+      "xSha256": "f5dba1be621afa1e31c0bb5042b32a73bf1de55d05d93f7e342857d2988301d1"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-07T21:08:01.857Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\stack-overflow-cant-redesign-trust\\prompt.txt",
+      "promptSha256": "bdd7f7089335725aa2343b1248a8737728e0b5e9c95cc850a69deac9ce28e805"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-07T21:08:01.864Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\stack-overflow-cant-redesign-trust\\linkedin_post.txt",
+          "sha256": "fa99bf52832989696301559a94c18e7f998b23d9a89143cbade1201c1931e027",
+          "mtimeIso": "2026-04-07T21:08:01.843Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\stack-overflow-cant-redesign-trust\\x_post.txt",
+          "sha256": "f5dba1be621afa1e31c0bb5042b32a73bf1de55d05d93f7e342857d2988301d1",
+          "mtimeIso": "2026-04-07T21:08:01.843Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\stack-overflow-cant-redesign-trust\\prompt.txt",
+          "sha256": "bdd7f7089335725aa2343b1248a8737728e0b5e9c95cc850a69deac9ce28e805",
+          "mtimeIso": "2026-04-07T21:08:01.851Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 6,
+      "logCountAfter": 7,
+      "logEntry": "2026-04-07 | Stack Overflow Can't Redesign Trust | Stack Overflow redesign | the redesign rollback shows developer communities now compete on trust, not convenience, in the AI era",
+      "logUpdatedAt": "2026-04-07T21:08:01.864Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

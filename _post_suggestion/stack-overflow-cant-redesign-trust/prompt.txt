@@ -1,0 +1,9 @@
+A realistic editorial-style scene of an experienced software engineer at a clean desk in a softly lit evening workspace, paused between two monitors: one screen shows a familiar but aging technical Q&A forum with dense discussion threads, the other shows a sleek AI assistant interface delivering instant answers, and the engineer is leaning back with a skeptical expression as if deciding which source to trust. Medium shot, straight-on composition, strong central focal point, symmetrical framing, shallow depth of field, premium commercial illustration with realistic textures, subtle cinematic lighting, cool blue and graphite tones balanced with warm amber monitor glow, calm but thoughtful mood, polished modern office background with minimal clutter, crisp readable shapes but no legible UI text, visually communicate tension between speed and trust in software work. No logos, no watermarks, no brand marks, no cluttered desk, no distorted hands, no extra fingers, no unreadable interface text, no exaggerated cyberpunk effects, no cartoon styling.
+
+Text overlay:
+
+"Redesign Can't Fix Trust"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

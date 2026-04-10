@@ -1,0 +1,9 @@
+Model Context Protocol is having a demo moment.
+
+But the real product isn’t the connector.
+It’s permissions, auditability, and stopping one cheerful agent from “helping” its way into prod.
+
+MCP servers are interesting.
+MCP governance is the part teams will actually pay for.
+
+#ModelContextProtocol #MCP #AICodingAgents #DevEx

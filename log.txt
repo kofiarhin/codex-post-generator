@@ -4,3 +4,6 @@
 2026-04-06 | Trivy proved security tools are part of the supply chain | software supply chain security | the Trivy incident shows security tools inside CI need the same trust model as any other dependency
 2026-04-06 | AI Coding Agents Are Finally Useful for One Boring Reason | AI coding agents | Practical anti-hype take on debugging drag
 2026-04-06 | AI Code Review Should Predict the SEV | AI code review | predictive risk scoring over autocomplete hype in code review
+2026-04-07 | Stack Overflow Can't Redesign Trust | Stack Overflow redesign | the redesign rollback shows developer communities now compete on trust, not convenience, in the AI era
+2026-04-08 | Post-Quantum Security Just Became an Authentication Roadmap | post-quantum security | Cloudflare's 2029 roadmap reframes post-quantum cryptography as an authentication and migration planning problem for real systems
+2026-04-09 | Model Context Protocol Is Useful. The Permission Model Is the Real Product. | Model Context Protocol | Governance and permissions over demo magic

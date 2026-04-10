@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Post-Quantum Security Just Became an Authentication Roadmap",
+  "slug": "post-quantum-security-just-became-an-authentication-roadmap",
+  "createdAt": "2026-04-08T04:54:20.018Z",
+  "updatedAt": "2026-04-08T04:54:40.555Z",
+  "stages": {
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-08T04:54:40.541Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\post-quantum-security-just-became-an-authentication-roadmap\\prompt.txt",
+      "promptSha256": "3f26b577347e312779715b75801554c78dd5f72805df6cb928d496257816dae9"
+    },
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-08T04:54:40.532Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\post-quantum-security-just-became-an-authentication-roadmap\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\post-quantum-security-just-became-an-authentication-roadmap\\x_post.txt",
+      "linkedinSha256": "61c99e056b473ddfca858e92e1fdf0bbbb320cce238cb7b8217149ad6b9b5536",
+      "xSha256": "f9d2151ef2efe744dfeac6d82d553330a2836fe694b4ebf07bd65df63a49eb29"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-08T04:54:40.555Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\post-quantum-security-just-became-an-authentication-roadmap\\linkedin_post.txt",
+          "sha256": "61c99e056b473ddfca858e92e1fdf0bbbb320cce238cb7b8217149ad6b9b5536",
+          "mtimeIso": "2026-04-08T04:54:40.528Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\post-quantum-security-just-became-an-authentication-roadmap\\x_post.txt",
+          "sha256": "f9d2151ef2efe744dfeac6d82d553330a2836fe694b4ebf07bd65df63a49eb29",
+          "mtimeIso": "2026-04-08T04:54:40.529Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\post-quantum-security-just-became-an-authentication-roadmap\\prompt.txt",
+          "sha256": "3f26b577347e312779715b75801554c78dd5f72805df6cb928d496257816dae9",
+          "mtimeIso": "2026-04-08T04:54:40.541Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 7,
+      "logCountAfter": 8,
+      "logEntry": "2026-04-08 | Post-Quantum Security Just Became an Authentication Roadmap | post-quantum security | Cloudflare's 2029 roadmap reframes post-quantum cryptography as an authentication and migration planning problem for real systems",
+      "logUpdatedAt": "2026-04-08T04:54:40.554Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

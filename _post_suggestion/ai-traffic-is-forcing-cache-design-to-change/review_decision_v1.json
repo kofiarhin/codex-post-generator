@@ -1,0 +1,21 @@
+{
+  "iteration": 1,
+  "approved": true,
+  "averageScore": 0.96,
+  "reason": "The draft meets topic relevance, duplication, tone, structure, and packaging requirements.",
+  "reviewers": [
+    {
+      "reviewerId": "reviewer_voice",
+      "approved": true,
+      "score": 0.96,
+      "checks": {
+        "hookStrength": true,
+        "seoPlacement": true,
+        "platformFit": true,
+        "toneAlignment": true,
+        "hashtagQuality": true,
+        "assetAlignment": true
+      }
+    }
+  ]
+}

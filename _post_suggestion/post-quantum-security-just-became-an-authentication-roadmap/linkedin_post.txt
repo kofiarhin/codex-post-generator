@@ -1,0 +1,17 @@
+Post-quantum security used to sound like a problem for Future Us.
+
+Then Cloudflare moved its full target to 2029, and the interesting part wasn’t the date. It was the shift in emphasis: this is no longer just about harvest-now-decrypt-later. It’s about authentication systems, trusted keys, software updates, and every boring little place we quietly assume cryptography will keep behaving.
+
+That’s the part engineers know too well. The scary work is rarely the theory. It’s inventory, dependency mapping, key rotation, old hardware nobody wants to touch, and one vendor in the corner saying their post-quantum cryptography roadmap is “under review.”
+
+Post-quantum security becomes real the moment it turns into a cryptographic migration plan.
+
+For security teams, platform teams, and anyone running cloud infrastructure, quantum-safe infrastructure is no longer a research bookmark. It’s architecture debt with a deadline.
+
+I doubt the next few years will be defined by dramatic Q-Day panic. They’ll be defined by tedious, very human migration work across authentication systems, certificate chains, update paths, and trust boundaries that looked fine right up until they didn’t.
+
+That’s usually how big platform shifts arrive in software: not as sci-fi, but as backlog.
+
+Which part of your stack would be the most annoying to make post-quantum ready?
+
+#PostQuantumSecurity #PostQuantumCryptography #CloudSecurity #Authentication #Cryptography #PlatformEngineering #Cybersecurity

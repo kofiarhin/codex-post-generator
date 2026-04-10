@@ -1,0 +1,8 @@
+Post-quantum security stopped sounding academic the moment Cloudflare put a date on it.
+
+Once the conversation moves from encrypted traffic someday to authentication systems, trusted keys, and update paths, it’s not research anymore.
+It’s backlog.
+
+The hard part of quantum-safe infrastructure will look painfully familiar: inventory, vendors, and old assumptions.
+
+#PostQuantumSecurity #CloudSecurity #Cryptography #PlatformEngineering

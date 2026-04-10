@@ -1,0 +1,9 @@
+A senior infrastructure engineer reviews a large authentication architecture board in a clean modern operations room, with old certificate chains and metal key motifs subtly transitioning into quantum-safe symbols, one clear focal subject, centered composition, medium shot, calm but serious posture. Soft editorial lighting, premium commercial illustration blended with realistic digital art, muted charcoal, slate, and off-white palette with one amber accent, thoughtful mood, minimal background, crisp shapes that stay readable at thumbnail size, visually communicates cryptographic migration and trust boundaries without sci-fi clutter. High-quality LinkedIn social thumbnail, professional and credible with a subtle witty edge, no logos, no watermarks, no clutter, no distorted hands, no unreadable interface text, no floating code wallpaper, no generic futuristic holograms.
+
+Text overlay:
+
+"POST-QUANTUM SECURITY"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

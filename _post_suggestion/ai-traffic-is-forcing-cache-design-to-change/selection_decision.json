@@ -1,0 +1,33 @@
+{
+  "selectedTopic": {
+    "title": "AI Traffic Is Forcing Cache Design to Change",
+    "sourceTopic": "Why we're rethinking cache for the AI era",
+    "primaryKeyword": "AI caching",
+    "topicAngle": "AI bot traffic is turning CDN cache strategy into a product, platform, and cost architecture decision"
+  },
+  "whySelected": "This topic has the strongest mix of current relevance, broad technical audience appeal, and search intent. It connects AI, platform cost, web performance, documentation strategy, and infra design in a way that is useful to engineers, founders, and dev-tool buyers without sounding like another generic agent hype post.",
+  "duplicationCheck": {
+    "logReviewed": true,
+    "duplicateCheckerTitle": "AI Traffic Is Forcing Cache Design to Change",
+    "result": "clear",
+    "reason": "Distinct from existing log entries, which mostly center on AI coding agents, code review, security funding, Docker Offload, and the Trivy supply-chain incident rather than CDN cache behavior under AI traffic."
+  },
+  "notChosen": [
+    {
+      "title": "GitHub Copilot CLI combines model families for a second opinion",
+      "reason": "Strong topic, but it overlaps with the repository's existing AI coding agent cluster and risks sounding like a narrower variation on already-covered themes. SEO is good, but discovery is concentrated inside current Copilot discussions rather than broader platform engineering pain."
+    },
+    {
+      "title": "[MODEL] Claude Code is unusable for complex engineering tasks with the Feb updates",
+      "reason": "High discussion potential, but the angle would land close to earlier anti-hype AI coding posts in `log.txt`. It also leans more on complaint dynamics than durable search value."
+    },
+    {
+      "title": "Docker Sandboxes: Run Agents in YOLO Mode, Safely",
+      "reason": "Conversion potential is decent, but the safety-for-agents angle is already adjacent to prior security-and-agent coverage in the log. Less fresh as a positioning move for this repository's content history."
+    },
+    {
+      "title": "A one-line Kubernetes fix that saved 600 hours a year",
+      "reason": "A great engineering story, but the primary keyword is narrower and the discovery surface is smaller. It is more niche for search than the broader AI caching and AI infrastructure conversation."
+    }
+  ]
+}

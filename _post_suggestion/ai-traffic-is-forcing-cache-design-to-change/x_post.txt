@@ -1,0 +1,9 @@
+AI caching is becoming an architecture problem.
+
+Humans browse.
+AI bot traffic sweeps docs, images, and long-tail pages in parallel like it personally pays your CDN bill.
+
+When machines become your biggest readers, CDN cache, edge caching, and origin protection stop being background tuning.
+They become product decisions.
+
+#AICaching #CDN #AIInfra #WebPerformance

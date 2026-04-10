@@ -1,0 +1,4 @@
+A focused senior software engineer sits at a clean desk in a modern dimly lit office, reviewing an elegant visual map of connected AI tools where multiple MCP servers feed into a single permission gateway, with one alert highlight showing approval boundaries before production access. Medium shot, centered composition, crisp monitors, subtle terminal UI, realistic editorial tech illustration with premium commercial polish, cool graphite and deep blue palette with a restrained amber accent, soft cinematic key light, calm but high-stakes mood, shallow depth of field, minimal background clutter, visually readable connection lines and permission layers, emphasis on trust, governance, and controlled automation for developer tooling. No logos, no watermarks, no brand marks, no cluttered desks, no distorted hands, no extra fingers, no unreadable interface text, no meme styling, no cartoon exaggeration.
+
+Text overlay:
+Centered in middle: “MCP Needs Permissions, Not Magic”

@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-04-06T22:30:00Z",
+  "method": "manual web research using live RSS feeds, official blog posts, and a current GitHub issue",
+  "topics": [
+    {
+      "title": "Why we're rethinking cache for the AI era",
+      "source": "Cloudflare Blog",
+      "sourceUrl": "https://blog.cloudflare.com/rethinking-cache-ai-humans/",
+      "summary": "Cloudflare says AI-bot traffic now represents a meaningful share of web requests and behaves differently from human traffic. The post argues that CDN cache design has to adapt because AI agents scan broad, long-tail content in parallel and create a different mix of cache hits, misses, and origin pressure.",
+      "whyTrendingNow": "Published on 2026-04-02 with a concrete current trigger: over 10 billion AI-bot requests per week and a fresh architecture argument tied to ongoing AI web traffic growth.",
+      "audienceResonance": "Infra engineers, platform teams, developer docs owners, CTOs, and AI product teams all care because this is a cost, performance, and discoverability problem at once.",
+      "linkedInConversationPotential": "high",
+      "primaryKeyword": "AI caching",
+      "secondaryKeywords": [
+        "CDN cache",
+        "AI bot traffic",
+        "edge caching",
+        "cache hit ratio",
+        "origin protection"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#AICaching",
+        "#CDN",
+        "#AIInfra",
+        "#EdgeComputing",
+        "#WebPerformance",
+        "#DeveloperExperience"
+      ],
+      "suggestedXHashtags": [
+        "#AICaching",
+        "#CDN",
+        "#AIInfra",
+        "#WebPerformance"
+      ]
+    },
+    {
+      "title": "GitHub Copilot CLI combines model families for a second opinion",
+      "source": "GitHub Blog",
+      "sourceUrl": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/",
+      "summary": "GitHub introduced a Rubber Duck workflow in Copilot CLI that uses multiple model families for a second opinion. The idea leans into model disagreement as a useful signal instead of treating a single confident answer as enough.",
+      "whyTrendingNow": "Published on 2026-04-06 and directly tied to current developer interest in CLI-based AI workflows and multi-model coding assistants.",
+      "audienceResonance": "Engineers evaluating AI tooling care because it reframes trust, review, and debugging inside day-to-day code workflows.",
+      "linkedInConversationPotential": "high",
+      "primaryKeyword": "GitHub Copilot CLI",
+      "secondaryKeywords": [
+        "multi-model coding assistant",
+        "AI second opinion",
+        "developer workflow",
+        "CLI coding agents"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#GitHubCopilot",
+        "#DeveloperTools",
+        "#AICoding",
+        "#DevWorkflow",
+        "#CLI"
+      ],
+      "suggestedXHashtags": [
+        "#GitHubCopilot",
+        "#AICoding",
+        "#CLI"
+      ]
+    },
+    {
+      "title": "[MODEL] Claude Code is unusable for complex engineering tasks with the Feb updates",
+      "source": "GitHub Issue / Developer Community",
+      "sourceUrl": "https://github.com/anthropics/claude-code/issues/42796",
+      "summary": "A live GitHub issue argues Claude Code regressed on complex engineering work after February updates. The complaint is not abstract AI skepticism; it is about instruction-following, incorrect simplifications, and trust erosion inside real developer tasks.",
+      "whyTrendingNow": "The issue is on the current Hacker News front page and taps into a very active discussion about whether coding agents survive contact with messy production work.",
+      "audienceResonance": "Developers using coding agents care because this maps directly to friction they can feel: regressions, false confidence, and wasted review time.",
+      "linkedInConversationPotential": "high",
+      "primaryKeyword": "Claude Code",
+      "secondaryKeywords": [
+        "AI coding regression",
+        "complex engineering tasks",
+        "developer trust",
+        "instruction following"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#ClaudeCode",
+        "#AICoding",
+        "#DeveloperTools",
+        "#SoftwareEngineering",
+        "#DevEx"
+      ],
+      "suggestedXHashtags": [
+        "#ClaudeCode",
+        "#AICoding",
+        "#DevEx"
+      ]
+    },
+    {
+      "title": "Docker Sandboxes: Run Agents in YOLO Mode, Safely",
+      "source": "Docker Blog",
+      "sourceUrl": "https://www.docker.com/blog/docker-sandboxes-run-agents-in-yolo-mode-safely/",
+      "summary": "Docker is pitching isolated sandboxes as the missing safety layer for agentic coding workflows. The post frames autonomy as useful only when the execution environment can absorb mistakes without turning them into production-grade damage.",
+      "whyTrendingNow": "Published on 2026-03-31 and sits inside the current wave of agent tooling launches aimed at teams trying to operationalize coding agents responsibly.",
+      "audienceResonance": "Platform teams and dev-tool buyers care because sandboxing is the bridge between flashy demos and policy-compliant usage.",
+      "linkedInConversationPotential": "medium",
+      "primaryKeyword": "Docker Sandboxes",
+      "secondaryKeywords": [
+        "coding agent sandbox",
+        "AI sandboxing",
+        "secure developer environments",
+        "agent safety"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#Docker",
+        "#AIAgents",
+        "#DevSecOps",
+        "#PlatformEngineering",
+        "#DeveloperTools"
+      ],
+      "suggestedXHashtags": [
+        "#Docker",
+        "#AIAgents",
+        "#DevSecOps"
+      ]
+    },
+    {
+      "title": "A one-line Kubernetes fix that saved 600 hours a year",
+      "source": "Cloudflare Blog",
+      "sourceUrl": "https://blog.cloudflare.com/one-line-kubernetes-fix-saved-600-hours-a-year/",
+      "summary": "Cloudflare showed how changing `fsGroupChangePolicy` cut an Atlantis restart from 30 minutes to 30 seconds. It is a classic boring-infrastructure story: one low-drama configuration detail was quietly eating an absurd amount of engineering time.",
+      "whyTrendingNow": "Published on 2026-03-26 and still timely because it converts a niche Kubernetes setting into a highly shareable story about time waste and operational drag.",
+      "audienceResonance": "SREs, platform engineers, and engineering leaders respond because the pain is specific and the payoff is instantly understandable.",
+      "linkedInConversationPotential": "medium",
+      "primaryKeyword": "fsGroupChangePolicy",
+      "secondaryKeywords": [
+        "Kubernetes restart time",
+        "Atlantis performance",
+        "platform engineering",
+        "Kubernetes storage permissions"
+      ],
+      "suggestedLinkedInHashtags": [
+        "#Kubernetes",
+        "#PlatformEngineering",
+        "#SRE",
+        "#CloudInfrastructure",
+        "#DevOps"
+      ],
+      "suggestedXHashtags": [
+        "#Kubernetes",
+        "#SRE",
+        "#DevOps"
+      ]
+    }
+  ]
+}
