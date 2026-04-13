@@ -255,3 +255,23 @@ Print the saved paths when complete.
 - Ensure the LinkedIn post reflects an experienced developer voice rather than generic influencer copy.
 - Always perform the `log.txt` duplication check before final selection.
 - Avoid near-duplicate framing even when the exact title is different.
+# X Premium Output Override
+
+- Assume this workflow writes for a paid X account by default.
+- Generate `x_post.txt` with more text and more developed reasoning than a standard short X post.
+- Preferred X length: 400 to 900 characters.
+- Acceptable longer range when the topic benefits: up to 1,500 characters.
+- Keep the output as one platform-native post unless the user explicitly asks for a thread.
+- Use short readable line breaks, a strong opening claim, one coherent idea, specific engineering texture, and a practical closing takeaway.
+- Extra length must improve clarity, nuance, or resonance; never pad with filler.
+- Preserve the existing voice: sharp, grounded, witty, technically literate, and anti-hype.
+- Preserve the existing hashtag rule unless the user requests otherwise.
+# X Premium Override
+
+- Assume the X account supports premium long-form posts unless the user explicitly asks for short-form only.
+- Prefer a stronger single-post format for `x_post.txt` with more substance, not a forced under-280 style.
+- Default target length: roughly 400 to 900 characters.
+- Extended range is allowed up to 1,500 characters when the topic genuinely benefits.
+- Keep the post platform-native: strong first line, short readable line breaks, one coherent argument, concrete engineering pain, and 2 to 4 relevant hashtags.
+- Keep the tone blunt, credible, and anti-hype.
+- Follow `.agents/skills/linkedin-post-orchestrator/x-post-style-guide.md` for the preferred premium X structure and tone.

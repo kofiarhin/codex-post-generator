@@ -7,3 +7,5 @@
 2026-04-07 | Stack Overflow Can't Redesign Trust | Stack Overflow redesign | the redesign rollback shows developer communities now compete on trust, not convenience, in the AI era
 2026-04-08 | Post-Quantum Security Just Became an Authentication Roadmap | post-quantum security | Cloudflare's 2029 roadmap reframes post-quantum cryptography as an authentication and migration planning problem for real systems
 2026-04-09 | Model Context Protocol Is Useful. The Permission Model Is the Real Product. | Model Context Protocol | Governance and permissions over demo magic
+2026-04-13 | MCP Security Is Where AI Agent Demos Meet Production Reality | MCP security | Production reality behind agent tooling
+2026-04-13 | AI Coding Agents Should Reduce Suffering, Not Replace Judgment | AI coding agents | reduced debugging pain over replacement hype

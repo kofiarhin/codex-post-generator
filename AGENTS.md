@@ -1,4 +1,17 @@
-# AGENTS.md — LinkedIn Content Workflow Rules
+# X Premium Override
+
+- Default workflow assumption: the X account for this repository supports long-form premium posts unless a user explicitly asks for short-form only.
+- This overrides older X brevity guidance wherever they conflict.
+- For `x_post.txt`, prefer a more developed single-post format with more substance, not just a short punchline.
+- Default target length: roughly 400 to 900 characters.
+- Allowed extended range when the topic genuinely benefits: up to 1,500 characters.
+- Keep it platform-native: strong first line, clean short paragraphs or line breaks, one coherent argument, no filler, no thread numbering unless explicitly requested.
+- Longer length must earn its space with sharper insight, concrete engineering pain, useful nuance, or a stronger takeaway.
+- Keep the tone blunt, literate, and anti-hype; do not let extra length turn the post into corporate copy.
+- Preserve the existing hashtag rule of 2 to 4 highly relevant hashtags.
+- If a topic is clearly stronger as a shorter post, shorter is still allowed, but the default should no longer optimize for free-account character limits.
+
+ # AGENTS.md — LinkedIn Content Workflow Rules
 
 This file defines repo-wide rules for all Codex agents operating in this repository.
 All agents must read and follow these rules before taking any action.
@@ -298,3 +311,14 @@ Note: `save:post` and `save:asset` are low-level helpers. For the normal end-to-
 - Make `prompt.txt` directly usable in Nano Banana with minimal or no editing.
 - Do not modify files inside `.github/skills/` during a run.
 - Read the relevant SKILL.md and style guides before generating any content.
+# X Premium Override
+
+- Default workflow assumption: the X account for this repository supports long-form premium posts unless a user explicitly asks for short-form only.
+- This overrides older X brevity guidance wherever they conflict.
+- For `x_post.txt`, prefer a more developed single-post format with more substance, not just a short punchline.
+- Default target length: roughly 400 to 900 characters.
+- Allowed extended range when the topic genuinely benefits: up to 1,500 characters.
+- Keep it platform-native: strong first line, clean short paragraphs or line breaks, one coherent argument, no filler, no thread numbering unless explicitly requested.
+- Longer length must earn its space with sharper insight, concrete engineering pain, useful nuance, or a stronger takeaway.
+- Keep the tone blunt, literate, and anti-hype; do not let extra length turn the post into corporate copy.
+- Preserve the existing hashtag rule of 2 to 4 highly relevant hashtags.
