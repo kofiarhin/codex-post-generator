@@ -1,0 +1,9 @@
+A senior software engineer sits at a clean workstation reviewing a large invoice-shaped architecture diagram where token streams branch into model routing, caching, evals, and budget controls. The setting is a modern engineering office at dusk, with one focused subject in the foreground and a simplified whiteboard-style cost map behind them; the composition is centered, minimal, and readable at thumbnail size. Use warm desk lighting with cool ambient shadows, a muted charcoal and warm gray palette, and one precise electric blue accent on the token paths. The mood should feel thoughtful, dryly skeptical, and professionally credible, like a real engineering cost review after a major frontier model release. Render as premium editorial digital artwork with realistic proportions, clean surfaces, subtle depth, and crisp visual hierarchy. Avoid logos, brand marks, watermarks, clutter, meme styling, busy dashboards, floating unreadable code, distorted hands, and any unreadable interface text.
+
+Text overlay:
+
+"Pricing Is Architecture"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

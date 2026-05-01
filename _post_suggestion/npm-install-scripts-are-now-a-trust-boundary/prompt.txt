@@ -1,0 +1,9 @@
+A single developer laptop sits on a clean desk with an open terminal window showing a simplified package install progress bar, while a translucent red security boundary line encircles the laptop and a few small key-shaped credential tokens hover just outside the boundary. The setting is a modern engineering workspace at night, quiet and minimal, with the laptop as the only focal subject and no readable code or brand marks. Use a premium editorial digital illustration style with realistic lighting, charcoal and warm gray base colors, deep teal shadows, and one restrained amber warning accent. The mood should feel professional, tense, and slightly dry-witted, suggesting that a routine dependency install has become a security decision. Compose for a 1200x628 LinkedIn thumbnail with generous negative space, crisp edges, high contrast, and strong readability at small sizes. No logos, no watermarks, no clutter, no distorted hands, no busy dashboards, no unreadable interface text, no meme styling.
+
+Text overlay:
+
+"npm Install Is Execution"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

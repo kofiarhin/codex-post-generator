@@ -1,0 +1,25 @@
+GitHub App installation tokens are a useful reminder that "looks like 40 characters" is not an API contract.
+
+GitHub is rolling out a new GitHub token format for App installation tokens, and some tokens may now look more like variable-length `ghs_APPID_JWT` values than the old fixed-length strings people quietly designed around.
+
+Which means a few integrations are about to discover where optimism went to live:
+
+A database column sized for yesterday's secret.
+
+A regex that treated token length as security.
+
+A CI authentication helper that "validated" by counting characters.
+
+A secrets scanner, proxy, webhook processor, or GitHub App authentication flow that assumed tokens were boring forever.
+
+This is not a GitHub problem so much as a software engineering problem wearing a GitHub hoodie.
+
+Tokens are identifiers plus entropy plus policy plus implementation details. They are allowed to change shape. Your code should care whether the token is accepted by the system that issued it, not whether it matches the folklore you inherited from a Stack Overflow answer in 2018.
+
+The same lesson applies to GitHub Actions GITHUB_TOKEN, stateless token format changes, OAuth tokens, API keys, session IDs, and whatever new blob your identity provider invents next quarter.
+
+Store secrets generously. Validate by documented prefixes or contracts when needed. Avoid magic lengths. Log less than you think you need.
+
+What is the most ridiculous "string format assumption" you have seen break production?
+
+#GitHub #GitHubActions #DevOps #SoftwareEngineering #CICD #ApplicationSecurity #DeveloperTools

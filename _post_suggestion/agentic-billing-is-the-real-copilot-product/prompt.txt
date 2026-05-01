@@ -1,0 +1,9 @@
+A polished editorial-style illustration of a senior software engineer at a minimalist desk, looking at a large monitor where a generic AI coding assistant interface subtly transforms into a usage meter and quota dashboard, with progress bars nearing a limit and a faint token counter in the background, one clear focal subject, dark navy and charcoal palette with a single electric blue accent, cinematic side lighting, soft reflections, shallow depth of field, generous negative space, premium commercial illustration quality, clean modern composition optimized for a LinkedIn thumbnail, realistic but slightly stylized, no logos, no watermarks, no clutter, no distorted hands, no unreadable interface text, no binary rain, no generic dashboard collage.
+
+Text overlay:
+
+"Agentic Billing Is Here"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

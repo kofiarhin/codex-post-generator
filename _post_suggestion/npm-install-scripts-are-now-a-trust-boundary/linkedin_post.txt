@@ -1,0 +1,21 @@
+npm supply chain attack stories used to feel like a registry problem.
+
+Now they feel like a developer workstation problem wearing a package manager hat.
+
+The latest self-propagating npm malware reports are a useful reminder that `npm install` is not a harmless little ceremony before the real work begins. Install scripts can run inside machines and CI jobs that already hold API keys, publish tokens, cloud credentials, private registry access, and enough ambient trust to make a security team quietly stare at the ceiling.
+
+That is the uncomfortable part.
+
+The package is not always the final target. The environment around the package is.
+
+This is why software supply chain security keeps drifting closer to everyday engineering workflow. Lockfiles, token scopes, package provenance, CI secrets security, and install-time controls are no longer "security team extras." They are part of whether your build pipeline behaves like infrastructure or like a very expensive trust fall.
+
+And yes, this gets sharper when AI coding tools are allowed to install dependencies, run scripts, or "just fix the build" in a repo full of credentials.
+
+The boring controls are starting to look less boring: fewer long-lived tokens, tighter publish permissions, isolated build environments, dependency review before execution, and package managers treated like code execution surfaces.
+
+The question is not whether developers should trust open source.
+
+It is whether our tooling still assumes trust is the default setting.
+
+#SupplyChainSecurity #npm #JavaScript #DevSecOps #OpenSourceSecurity #Cybersecurity #SoftwareEngineering

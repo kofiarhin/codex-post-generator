@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "GPT-5.5 Turns Model Hype Into Workflow Pressure",
+  "slug": "gpt-55-turns-model-hype-into-workflow-pressure",
+  "createdAt": "2026-04-24T09:08:35.999Z",
+  "updatedAt": "2026-04-24T09:08:36.030Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-24T09:08:35.999Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\gpt-55-turns-model-hype-into-workflow-pressure\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\gpt-55-turns-model-hype-into-workflow-pressure\\x_post.txt",
+      "linkedinSha256": "47e579293c971149d2607e5a6cdde3fcc56e5d09c034cfdb2c0c00933f743651",
+      "xSha256": "60042a1bd3ae91da0c4ce47ef704c62785d1984b4c284a410a62b017580a9fc2"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-24T09:08:36.022Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\gpt-55-turns-model-hype-into-workflow-pressure\\prompt.txt",
+      "promptSha256": "15a9abd78e26a7da7b965c31bd39ed8010808bb4cad78fe22e6fca3c0916b2a1"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-24T09:08:36.030Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\gpt-55-turns-model-hype-into-workflow-pressure\\linkedin_post.txt",
+          "sha256": "47e579293c971149d2607e5a6cdde3fcc56e5d09c034cfdb2c0c00933f743651",
+          "mtimeIso": "2026-04-24T09:08:35.988Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\gpt-55-turns-model-hype-into-workflow-pressure\\x_post.txt",
+          "sha256": "60042a1bd3ae91da0c4ce47ef704c62785d1984b4c284a410a62b017580a9fc2",
+          "mtimeIso": "2026-04-24T09:08:35.989Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\gpt-55-turns-model-hype-into-workflow-pressure\\prompt.txt",
+          "sha256": "15a9abd78e26a7da7b965c31bd39ed8010808bb4cad78fe22e6fca3c0916b2a1",
+          "mtimeIso": "2026-04-24T09:08:36.022Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 30,
+      "logCountAfter": 31,
+      "logEntry": "2026-04-24 | GPT-5.5 Turns Model Hype Into Workflow Pressure | GPT-5.5 model | Model releases are becoming workflow decisions, not just benchmark events",
+      "logUpdatedAt": "2026-04-24T09:08:36.030Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

@@ -1,9 +1,0 @@
-Title: Everyone Wants AI Coding Agents Until Security Joins the Standup
-
-Main prompt:
-Create a premium LinkedIn-ready editorial illustration of a modern software team standup where an eager AI coding agent is displayed on large workstation monitors writing code and opening pull requests, while a calm security lead steps into the scene and shifts the mood toward governance and control. Show a sleek engineering workspace, multiple monitors with clean code UI, CI checks, branch protection indicators, permission dialogs, and a subtle access-denied warning. Keep the AI presence smart and tool-like, not humanoid or robotic. Composition should have one strong focal point, clean visual hierarchy, medium-wide framing, realistic proportions, and enough negative space for a headline if needed. Use cinematic but professional lighting, blue-gray and graphite tones with amber warning accents, polished enterprise-software aesthetic, realistic editorial illustration, sharp details, minimal clutter, credible humor, high trust, visually clean, social-thumbnail friendly. Avoid logos, watermarks, exaggerated expressions, dystopian robot imagery, distorted anatomy, messy dashboards, unreadable microtext, and chaotic backgrounds.
-
-Optional overlay text:
-- Everyone wants AI agents
-- Until Security joins the standup
-- Fast code, slower trust

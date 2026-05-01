@@ -1,0 +1,13 @@
+The Vercel breach is a useful reminder that platform environment variables are not just “config.”
+
+A lot of teams still talk about secrets management like the job ends at `.env` files, a vault product, or who can read production. The uglier part lives one layer higher: which OAuth apps and third-party integrations can touch the platform that holds those secrets in the first place.
+
+That is what makes an OAuth supply chain attack so nasty. You can be reasonably disciplined inside your codebase and still hand a trusted app a clean path into deployment metadata, platform environment variables, or automation surfaces you quietly stopped treating as production access.
+
+We keep splitting this into separate conversations: app security, CI/CD security, platform security, marketplace installs, third-party app permissions. Attackers do not care about our org chart.
+
+The practical lesson is boring, which usually means it is real: review OAuth scopes like access grants, not like convenience clicks. Treat developer tooling as part of your attack surface. Rotate secrets assuming integrations leak. And stop pretending “it’s only a platform setting” is a security boundary.
+
+Secret management was probably the easy part. Governing who gets to stand next to the secret store is the part teams keep postponing. How are you handling that tradeoff now?
+
+#Vercel #CloudSecurity #OAuthSecurity #SecretsManagement #PlatformEngineering #DevSecOps

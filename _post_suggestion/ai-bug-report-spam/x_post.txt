@@ -1,0 +1,16 @@
+AI-generated bug reports are becoming maintainer work.
+
+That’s one of the least exciting side effects of AI coding tools, and one of the most real.
+
+Some open source maintainers are now triaging issues that look polished, sound plausible, and still contain basically no trustworthy debugging.
+
+It’s not classic spam.
+It’s spam with stack traces.
+
+The awkward part is that “developer productivity” on one side can become maintainer burnout on the other. More output is not automatically more value.
+
+If AI-assisted contribution is going to work, the bar has to go up: reproducible reports, clearer issue templates, better contribution norms, less confident guesswork.
+
+Open source cannot run on infinite free triage.
+
+#OpenSource #AICodingTools #GitHub #DevTools

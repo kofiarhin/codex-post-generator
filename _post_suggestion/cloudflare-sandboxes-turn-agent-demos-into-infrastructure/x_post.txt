@@ -1,0 +1,15 @@
+Cloudflare Sandboxes are a good sign that AI agent infrastructure is growing up.
+
+Not because agents suddenly became trustworthy.
+
+Because the demos finally need walls.
+
+If an agent can run code, install packages, open terminals, build previews, and touch files, then the hard problem is no longer the prompt. It is isolation, persistence, rollback, and secure code execution.
+
+Cloudflare Containers and Sandboxes turning GA matters because "let the agent try it" needs production compute boundaries before anyone sane lets it near real workflows.
+
+Less magic. More blast radius management.
+
+That is progress.
+
+#Cloudflare #AIInfrastructure #Serverless #DevTools

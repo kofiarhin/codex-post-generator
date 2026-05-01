@@ -1,0 +1,9 @@
+A solitary senior software engineer sits at a clean workstation reviewing an AI coding assistant release dashboard that shows three subtle regression signals — latency spike, memory drift, and coding quality drop — while a rollback checklist glows on a second monitor; premium editorial illustration, realistic polished digital artwork, medium close-up, one clear focal subject, generous negative space, muted charcoal and deep navy palette with a single electric cyan accent, soft monitor lighting, crisp contrast, calm but skeptical mood, thumbnail-first composition, professional and credible, no logos, no watermarks, no clutter, no distorted hands, no unreadable interface text, no floating code wallpaper, no stock-photo aesthetic.
+
+Text overlay:
+
+"Release Engineering for AI Tools"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

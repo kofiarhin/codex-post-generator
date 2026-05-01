@@ -1,0 +1,20 @@
+System design is becoming the 2026 developer mindset.
+
+Code is getting cheaper.
+Not better. Cheaper.
+
+AI coding agents can spin up endpoints, tests, boilerplate, and one more elegant abstraction your future self will resent. What they do not do is decide where a boundary should live, which service should own the data, how retries should work, or what wakes the team up at 2:13 a.m.
+
+That is why software architecture matters even more now, not less.
+
+The expensive mistakes are no longer “someone typed the wrong thing.” They are systems mistakes: leaky ownership, invisible coupling, brittle workflows, weak observability, and platform engineering decisions nobody modeled until production modeled them for you.
+
+The useful 2026 shift is not developers becoming prompt typists. It is strong engineers spending less energy on syntax and more on interfaces, constraints, failure modes, and boring-but-critical developer productivity decisions.
+
+In other words, the job is moving up a layer.
+
+The best engineers I know are still writing code. They are just thinking like system designers first and code generators second.
+
+Are teams actually hiring for that yet, or are we still pretending syntax speed is the scarce skill?
+
+#SystemDesign #SoftwareArchitecture #AICodingAgents #PlatformEngineering #DeveloperProductivity #EngineeringLeadership

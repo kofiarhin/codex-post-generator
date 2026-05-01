@@ -1,0 +1,14 @@
+AI coding agents are not replacing engineers.
+They’re exposing repo debt.
+
+That’s the part I believe.
+
+When an agent gets lost, it usually isn’t some grand failure of the model. It’s the same old software mess in machine-readable form: vague naming, fragile tests, missing docs, mystery scripts, and business logic tucked inside places that only make sense if you were in the Slack thread six months ago.
+
+The interesting shift is that AI coding agents make bad codebase quality visible much faster.
+
+If a tool needs tribal knowledge to make a safe change, your developer workflow is already broken. The agent just removes the illusion that it was fine.
+
+“AI readiness” is looking a lot like boring engineering discipline with better marketing.
+
+#AICodingAgents #CodeQuality #TechnicalDebt #DevEx

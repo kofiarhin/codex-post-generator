@@ -1,0 +1,18 @@
+AI coding agents are not replacing engineers. They are exposing how messy our repos really are.
+
+That might be the most useful thing about them.
+
+When an agent struggles, it usually is not because the model is “bad.” It is because the codebase quality is bad in deeply familiar ways: vague naming, missing docs, flaky test coverage, half-finished refactors, and business logic hiding in places no reasonable person would look twice.
+
+That is why the current AI coding agents wave feels different from older automation hype.
+
+The upside is real, but only when the developer workflow is already legible enough for a machine to follow. If your repo needs tribal knowledge and three Slack pings just to change a config value, the agent is not the problem. It is just the first coworker honest enough to fail immediately.
+
+There is a practical takeaway here for engineering teams:
+the best way to get more value from AI coding agents is still boring software hygiene. Clear structure. Reliable tests. Useful docs. Smaller surfaces for technical debt to hide.
+
+Turns out “AI readiness” often means doing the engineering housekeeping we postponed for two years.
+
+Has your team seen agents speed things up, or just reveal chaos faster?
+
+#AICodingAgents #TechnicalDebt #DeveloperWorkflow #CodeQuality #TestAutomation #DevEx #SoftwareEngineering

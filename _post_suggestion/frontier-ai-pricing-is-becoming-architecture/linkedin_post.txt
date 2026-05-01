@@ -1,0 +1,19 @@
+AI model pricing is becoming architecture, not procurement trivia.
+
+OpenAI's GPT-5.5 pricing makes that hard to ignore. The headline API rate is higher than GPT-5.4: $5 per million input tokens and $30 per million output tokens, with GPT-5.5 Pro much higher again. OpenAI's counterpoint is token efficiency: better results with fewer tokens and fewer retries.
+
+Anthropic is telling a different version of the same story. Claude Opus 4.7 keeps the familiar $5/$25 per million token rate card, but the updated tokenizer can turn the same text into more tokens. Same price sheet, different bill shape.
+
+That is where the long-term effect gets interesting.
+
+The winning teams will not simply ask, "Which model is smartest?" They will ask which model earns its cost for this exact workflow.
+
+Coding agent planning might justify GPT-5.5. High-volume extraction probably will not. Claude pricing may look stable until context size, cache behavior, tokenizer changes, and output verbosity show up in the invoice like a small production incident with a billing address.
+
+This pushes AI cost optimization into normal engineering work: model routing, prompt caching, evals, retries, budget alerts, and boring usage dashboards that tell the truth.
+
+Frontier models are no longer just tools developers call. They are infrastructure dependencies with unit economics.
+
+And every infrastructure dependency eventually teaches the same lesson: the demo is free. The steady-state workload is where reality files the ticket.
+
+#AIModelPricing #OpenAIPricing #AnthropicPricing #GPT55 #ClaudeAI #AICodingAgents #AIInfrastructure

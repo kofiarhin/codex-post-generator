@@ -1,0 +1,13 @@
+GitHub Copilot usage limits are the most honest thing to happen to AI coding tools in a while.
+
+We all pretended these products were just better autocomplete.
+Then agentic workflows showed up, started running longer, branching wider, and burning tokens like a forgotten staging environment, and suddenly the real product appeared: quotas.
+
+Pausing sign-ups and tightening limits is not a weird detour. It is the business model catching up to the demo.
+
+Once an assistant can plan, retry, and parallelize, this stops being a UX story. It becomes compute scheduling, model availability, and cost control.
+
+AI coding tools are not just selling help anymore.
+They are selling how much autonomous work they can afford to let you do before reliability falls apart.
+
+#GitHubCopilot #AICoding #DeveloperTools

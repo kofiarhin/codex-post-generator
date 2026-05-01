@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Agentic Billing Is the Real Copilot Product",
+  "slug": "agentic-billing-is-the-real-copilot-product",
+  "createdAt": "2026-04-23T14:13:10.118Z",
+  "updatedAt": "2026-04-23T14:13:10.131Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-23T14:13:10.118Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\agentic-billing-is-the-real-copilot-product\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\agentic-billing-is-the-real-copilot-product\\x_post.txt",
+      "linkedinSha256": "42f48f800c0071d8f664fbd05d995710ec8f8c743428100d46dd14f603565fd2",
+      "xSha256": "eca2dca9ed2870908f452ff0fa94df60f0e7b0be3caf0b34b4fa00214bbc6102"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-23T14:13:10.125Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\agentic-billing-is-the-real-copilot-product\\prompt.txt",
+      "promptSha256": "c616e049c0407b0b49fae0ed40afd77cb2b40444f526fcf0189845525c7ac4a1"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-23T14:13:10.131Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\agentic-billing-is-the-real-copilot-product\\linkedin_post.txt",
+          "sha256": "42f48f800c0071d8f664fbd05d995710ec8f8c743428100d46dd14f603565fd2",
+          "mtimeIso": "2026-04-23T14:13:10.111Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\agentic-billing-is-the-real-copilot-product\\x_post.txt",
+          "sha256": "eca2dca9ed2870908f452ff0fa94df60f0e7b0be3caf0b34b4fa00214bbc6102",
+          "mtimeIso": "2026-04-23T14:13:10.111Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\agentic-billing-is-the-real-copilot-product\\prompt.txt",
+          "sha256": "c616e049c0407b0b49fae0ed40afd77cb2b40444f526fcf0189845525c7ac4a1",
+          "mtimeIso": "2026-04-23T14:13:10.119Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 29,
+      "logCountAfter": 30,
+      "logEntry": "2026-04-23 | Agentic Billing Is the Real Copilot Product | GitHub Copilot usage limits | agentic workflows expose AI coding tools as compute, quota, and billing systems rather than simple SaaS seats",
+      "logUpdatedAt": "2026-04-23T14:13:10.128Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

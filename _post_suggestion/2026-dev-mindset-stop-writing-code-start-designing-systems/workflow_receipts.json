@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "2026 Dev Mindset: Stop Writing Code, Start Designing Systems",
+  "slug": "2026-dev-mindset-stop-writing-code-start-designing-systems",
+  "createdAt": "2026-04-21T09:41:28.088Z",
+  "updatedAt": "2026-04-21T09:41:28.107Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-21T09:41:28.088Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\2026-dev-mindset-stop-writing-code-start-designing-systems\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\2026-dev-mindset-stop-writing-code-start-designing-systems\\x_post.txt",
+      "linkedinSha256": "cee57d210e8be756e49511c659dc9c9639f5e3fcd10047e16a386d2e90dc1b4c",
+      "xSha256": "b74aeab142954be800c976a005fc2c67517d43a46aeb17a39df2dd619a141455"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-21T09:41:28.097Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\2026-dev-mindset-stop-writing-code-start-designing-systems\\prompt.txt",
+      "promptSha256": "a5c54c324c087c816f0e9f03b559630b74757e3b52ce5b0feb7e0ab01a4a8df9"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-21T09:41:28.107Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\2026-dev-mindset-stop-writing-code-start-designing-systems\\linkedin_post.txt",
+          "sha256": "cee57d210e8be756e49511c659dc9c9639f5e3fcd10047e16a386d2e90dc1b4c",
+          "mtimeIso": "2026-04-21T09:41:28.088Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\2026-dev-mindset-stop-writing-code-start-designing-systems\\x_post.txt",
+          "sha256": "b74aeab142954be800c976a005fc2c67517d43a46aeb17a39df2dd619a141455",
+          "mtimeIso": "2026-04-21T09:41:28.088Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\2026-dev-mindset-stop-writing-code-start-designing-systems\\prompt.txt",
+          "sha256": "a5c54c324c087c816f0e9f03b559630b74757e3b52ce5b0feb7e0ab01a4a8df9",
+          "mtimeIso": "2026-04-21T09:41:28.103Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 27,
+      "logCountAfter": 28,
+      "logEntry": "2026-04-21 | 2026 Dev Mindset: Stop Writing Code, Start Designing Systems | system design | AI coding makes architecture, boundaries, and failure-mode thinking more valuable than raw syntax speed",
+      "logUpdatedAt": "2026-04-21T09:41:28.114Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

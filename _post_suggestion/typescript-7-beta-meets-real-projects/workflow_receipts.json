@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "TypeScript 7 Beta Meets Real Projects",
+  "slug": "typescript-7-beta-meets-real-projects",
+  "createdAt": "2026-04-26T02:25:15.135Z",
+  "updatedAt": "2026-04-26T02:25:15.146Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-26T02:25:15.135Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\typescript-7-beta-meets-real-projects\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\typescript-7-beta-meets-real-projects\\x_post.txt",
+      "linkedinSha256": "93b86f71559ae6c08a6cde38bb002f446e53cfadb0ae73af9ba00c4cf72139ea",
+      "xSha256": "1524045157e6d67ef686cae1d2f6ab8a64ef92ea44a9ebfc99385bde4f5a2b32"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-26T02:25:15.140Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\typescript-7-beta-meets-real-projects\\prompt.txt",
+      "promptSha256": "e50aa06d6375168eb7a266ccbc6d92943cd7a2b601470822874ddd9f97d40ac9"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-26T02:25:15.146Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\typescript-7-beta-meets-real-projects\\linkedin_post.txt",
+          "sha256": "93b86f71559ae6c08a6cde38bb002f446e53cfadb0ae73af9ba00c4cf72139ea",
+          "mtimeIso": "2026-04-26T02:25:15.133Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\typescript-7-beta-meets-real-projects\\x_post.txt",
+          "sha256": "1524045157e6d67ef686cae1d2f6ab8a64ef92ea44a9ebfc99385bde4f5a2b32",
+          "mtimeIso": "2026-04-26T02:25:15.134Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\typescript-7-beta-meets-real-projects\\prompt.txt",
+          "sha256": "e50aa06d6375168eb7a266ccbc6d92943cd7a2b601470822874ddd9f97d40ac9",
+          "mtimeIso": "2026-04-26T02:25:15.140Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 32,
+      "logCountAfter": 33,
+      "logEntry": "2026-04-26 | TypeScript 7 Beta Meets Real Projects | TypeScript 7 beta | Go-native compiler performance turns TypeScript feedback loops into a workflow decision, with migration risk around real JavaScript tooling",
+      "logUpdatedAt": "2026-04-26T02:25:15.145Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

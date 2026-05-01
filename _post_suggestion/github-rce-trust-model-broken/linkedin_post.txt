@@ -1,0 +1,17 @@
+GitHub's CVE-2026-3854 is alarming for a boring reason: it was not sophisticated. It was just unsanitized input.
+
+For years, a lot of CI/CD security outside dedicated tooling has felt like part convention, part hope, part inherited configuration. You copy a workflow from a repo you trust, pin to a tag that points to whatever the maintainer pushed last week, inherit secrets you never explicitly asked for, and trust the runner is not quietly calling home.
+
+That is why this vulnerability and the GitHub Actions 2026 roadmap matter more than another AI-in-your-pipeline announcement.
+
+The real issue is not "an attacker found a clever RCE." It is that the trust model Actions was built on was never really a trust model. Mutable tags. Implicit secret inheritance. Open network egress by default. The tj-actions attack compromised 23,000 repositories through mechanics that were just the documented behavior.
+
+The fixes — workflow lockfiles, scoped secrets, a native egress firewall — are not innovations. They are the same patterns Go, npm, and package ecosystems have enforced for years. They should have been there on day one.
+
+That matters for everyone shipping software with CI. A pipeline is only as trustworthy as the surface it runs on. When that surface has no lockfiles, no secret scoping, and no egress control, you are not running a pipeline. You are running a trust exercise.
+
+The best security hardening usually looks obvious in hindsight. It turns undocumented tribal caution into a constraint the platform actually enforces.
+
+What other shared developer infrastructure is still relying on convention where it should be enforcing policy?
+
+hashtag#GitHub hashtag#GitHubActions hashtag#CISecurity hashtag#SupplyChainSecurity hashtag#DevSecOps hashtag#SoftwareEngineering hashtag#SecurityEngineering

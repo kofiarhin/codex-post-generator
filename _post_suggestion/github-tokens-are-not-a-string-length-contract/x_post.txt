@@ -1,0 +1,16 @@
+GitHub App installation tokens are not a string length contract.
+
+If your integration assumes a token is exactly 40 characters, the new GitHub token format rollout may turn that assumption into a very boring incident.
+
+The bug will not look glamorous.
+
+It will be a database column that is too short.
+A regex with too much confidence.
+A CI authentication helper rejecting a valid secret.
+A GitHub App authentication flow treating yesterday's shape as tomorrow's rule.
+
+Tokens change. Contracts matter. Folklore does not.
+
+Store them like secrets, not like decorative IDs.
+
+#GitHub #GitHubActions #DevOps #AppSec

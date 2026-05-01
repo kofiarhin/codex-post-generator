@@ -1,0 +1,9 @@
+A tired but composed senior developer sits at a clean desk facing two side-by-side monitors: one monitor shows a heavy, slow build pipeline represented by a stack of muted grey terminal windows, while the other shows a sharp, minimal progress bar racing forward beside a small "tsgo" command prompt with no readable code. The setting is a modern engineering workspace at dusk, quiet and focused, with a single coffee cup, a notebook of migration notes, and subtle cable clutter kept under control. Composition is centered around the developer and the two monitors, with generous negative space for a bold text overlay in the middle of the thumbnail. Lighting is soft editorial desk lighting with a cool charcoal and warm grey palette, accented by a clean TypeScript-blue glow from the faster monitor. Mood is professional, dryly witty, and practical: less hype, more relief from waiting. Render as premium editorial digital illustration with realistic proportions, crisp edges, subtle texture, and high readability at LinkedIn thumbnail size. Avoid stock-photo aesthetics, meme style, neon overload, busy dashboards, brand logos, watermarks, distorted hands, unreadable interface text, and clutter.
+
+Text overlay:
+
+"Feedback Loops Got Faster"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

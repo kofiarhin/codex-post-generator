@@ -1,0 +1,19 @@
+AI coding tools are now release engineering problems.
+
+Anthropic’s Claude Code postmortem was more useful than most AI launch copy because it described something painfully familiar: ordinary regressions in a tool developers had already started trusting.
+
+One change lowered reasoning effort to reduce latency. Another memory bug made sessions feel forgetful and repetitive. Another prompt tweak tried to reduce verbosity and quietly hurt coding quality.
+
+That is not model mysticism. That is software.
+
+And it’s probably the healthiest sign yet that this category is maturing. Once AI coding tools sit inside real developer workflows, model evals, prompt regressions, rollback discipline, and release engineering matter more than benchmark screenshots.
+
+We’re moving from “wow, it can code” to “can I trust Tuesday’s update not to make my team slower?”
+
+That is a much better question.
+
+The next winners in developer tools probably won’t be the ones with the loudest demos. They’ll be the ones that treat quality like a production feature and respect how fragile engineering trust really is.
+
+What matters more to you now: raw capability, or confidence that the tool won’t get weird after the next release?
+
+#AICodingTools #ClaudeCode #ReleaseEngineering #DeveloperTools #SoftwareQuality #MLOps

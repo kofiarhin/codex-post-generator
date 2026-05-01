@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Node.js Finally Retired the Odd Release Weirdness",
+  "slug": "nodejs-finally-retired-the-odd-release-weirdness",
+  "createdAt": "2026-04-30T14:21:09.925Z",
+  "updatedAt": "2026-04-30T14:21:09.950Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-30T14:21:09.925Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-finally-retired-the-odd-release-weirdness\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-finally-retired-the-odd-release-weirdness\\x_post.txt",
+      "linkedinSha256": "b878b00c04a165c4e17e5206bff9af4ff8b96badaedab09b5efe025b4e7f4b27",
+      "xSha256": "4e390ade46337d41960c654a215e15b73df40bcc641199548c09f5da88fa0423"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-30T14:21:09.941Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-finally-retired-the-odd-release-weirdness\\prompt.txt",
+      "promptSha256": "77c22d1562e2fc65ae4aaff46e272b3ad5f7319e39a56927a5f52ffe134baf32"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-30T14:21:09.950Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-finally-retired-the-odd-release-weirdness\\linkedin_post.txt",
+          "sha256": "b878b00c04a165c4e17e5206bff9af4ff8b96badaedab09b5efe025b4e7f4b27",
+          "mtimeIso": "2026-04-30T14:21:09.920Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-finally-retired-the-odd-release-weirdness\\x_post.txt",
+          "sha256": "4e390ade46337d41960c654a215e15b73df40bcc641199548c09f5da88fa0423",
+          "mtimeIso": "2026-04-30T14:21:09.921Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-finally-retired-the-odd-release-weirdness\\prompt.txt",
+          "sha256": "77c22d1562e2fc65ae4aaff46e272b3ad5f7319e39a56927a5f52ffe134baf32",
+          "mtimeIso": "2026-04-30T14:21:09.941Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 37,
+      "logCountAfter": 38,
+      "logEntry": "2026-04-30 | Node.js Finally Retired the Odd Release Weirdness | Node.js release schedule | runtime release cadence as maintenance policy",
+      "logUpdatedAt": "2026-04-30T14:21:09.945Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

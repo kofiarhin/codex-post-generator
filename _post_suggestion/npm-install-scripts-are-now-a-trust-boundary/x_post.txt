@@ -1,0 +1,9 @@
+npm supply chain attack stories are no longer just about bad packages.
+
+They are about what happens when `npm install` runs inside a machine full of secrets and a CI job with publish permissions.
+
+The latest self-propagating npm malware reports make the awkward point clearly: the dependency is the doorway, but the real target is the trust around it. Tokens, env vars, browser credentials, package ownership, build automation. All the convenient stuff we pretend is separate from the install step.
+
+Useful takeaway: treat install scripts like code execution, not plumbing.
+
+#npm #SupplyChainSecurity #DevSecOps

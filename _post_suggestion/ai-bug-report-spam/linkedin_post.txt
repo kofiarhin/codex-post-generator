@@ -1,0 +1,19 @@
+AI-generated bug reports are becoming maintainer work.
+
+That is a very 2026 sentence, and an extremely believable one if you spend time around open source maintainers.
+
+The promise of AI coding tools was more leverage. In practice, some projects are also getting more low-signal GitHub issues, speculative bug reports, and confident pull request suggestions from people who did not really debug the problem. They prompted at it.
+
+That creates a weird tax on open source.
+
+Maintainers now have to triage not just genuine bugs and feature requests, but also AI-generated bug reports that sound plausible, reference the wrong root cause, and still require real human attention to rule out. It is spam with better grammar.
+
+This is where the AI productivity conversation gets more honest. Output is not the same thing as usefulness. Developer productivity for one person can quietly become maintainer burnout for another.
+
+The fix probably is not “use less AI.” It is better norms: reproducible issues, clearer contribution gates, stronger templates, and a little more respect for the time of people maintaining the tools we all depend on.
+
+Open source has always run on generosity. Flooding it with polished guesswork feels like a fast way to break that bargain.
+
+Are you seeing better contributions from AI-assisted workflows, or just more triage?
+
+#OpenSource #AICodingTools #GitHub #DeveloperProductivity #MaintainerBurnout #SoftwareEngineering #DevTools

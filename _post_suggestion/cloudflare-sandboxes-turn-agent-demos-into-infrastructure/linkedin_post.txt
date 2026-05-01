@@ -1,0 +1,23 @@
+Cloudflare Sandboxes are a useful reminder that AI agent infrastructure is mostly about boring boundaries.
+
+Not the cinematic version where an agent "builds the app for you."
+
+The real version where untrusted code needs a place to run without quietly turning your production environment into a crime scene.
+
+With Cloudflare Containers and Sandboxes now GA, the interesting part is not the demo magic. It is the operating model: persistent isolated Linux environments for code execution, CI/CD jobs, terminals, interpreters, previews, and snapshots.
+
+That matters because agent workflows are only impressive until they need permissions, filesystems, network access, package installs, and rollback.
+
+Then they stop being a prompt-engineering problem and become a platform-engineering problem.
+
+Secure code execution is the line between "look what this agent can do" and "we can actually let this near a customer workflow."
+
+Serverless containers and sandboxed development environments will not make agents wise, careful, or accountable.
+
+But they do give teams a saner place to put the risk.
+
+And honestly, that is the least glamorous part of the agent stack.
+
+Which is usually where the real infrastructure lives.
+
+#Cloudflare #CloudflareSandboxes #AIInfrastructure #Serverless #PlatformEngineering #DeveloperTools

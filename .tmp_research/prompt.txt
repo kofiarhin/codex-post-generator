@@ -1,9 +1,0 @@
-A senior platform engineer stands in a clean modern network operations room facing a large translucent traffic wall where sparse human browsing paths and dense AI bot request streams move through glowing edge cache nodes toward a single overworked origin server. Medium-wide composition, one clear focal subject, straight-on editorial framing, premium commercial illustration style with realistic detail, soft cinematic studio lighting, muted slate and graphite palette with electric teal and amber accents, calm but tense mood, polished surfaces, subtle data visualizations, visually simple and readable at thumbnail size, professional and credible with a dry witty edge. Emphasize the contrast between human traffic and automated AI crawling, show cache layers as elegant geometric blocks, keep the background minimal, no logos, no watermarks, no clutter, no distorted hands, no unreadable interface text, no meme styling, no floating code wallpaper, optimized for a high-quality LinkedIn social thumbnail.
-
-Text overlay:
-
-"AI Traffic Changed Cache Design"
-
-Placement: centered in the middle of the thumbnail
-
-Style: bold clean sans-serif, high contrast, one line if possible

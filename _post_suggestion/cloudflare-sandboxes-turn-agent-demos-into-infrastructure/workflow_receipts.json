@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Cloudflare Sandboxes Turn Agent Demos Into Infrastructure",
+  "slug": "cloudflare-sandboxes-turn-agent-demos-into-infrastructure",
+  "createdAt": "2026-04-29T08:50:18.644Z",
+  "updatedAt": "2026-04-29T08:50:18.666Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-29T08:50:18.644Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\cloudflare-sandboxes-turn-agent-demos-into-infrastructure\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\cloudflare-sandboxes-turn-agent-demos-into-infrastructure\\x_post.txt",
+      "linkedinSha256": "fca3632488be63bb1e1ad814fc36a0ce8e0580ea6456829e88d8e0463b3f079e",
+      "xSha256": "af1e0e6843f7a857693b1c9adb498faf32aaee7fe905d649d3ad4cadf0622139"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-29T08:50:18.659Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\cloudflare-sandboxes-turn-agent-demos-into-infrastructure\\prompt.txt",
+      "promptSha256": "e688a34a0d1fdcfcc50674c968c840e8e7a69384e4f22991cad3d3fa7fed2437"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-29T08:50:18.666Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\cloudflare-sandboxes-turn-agent-demos-into-infrastructure\\linkedin_post.txt",
+          "sha256": "fca3632488be63bb1e1ad814fc36a0ce8e0580ea6456829e88d8e0463b3f079e",
+          "mtimeIso": "2026-04-29T08:50:18.635Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\cloudflare-sandboxes-turn-agent-demos-into-infrastructure\\x_post.txt",
+          "sha256": "af1e0e6843f7a857693b1c9adb498faf32aaee7fe905d649d3ad4cadf0622139",
+          "mtimeIso": "2026-04-29T08:50:18.635Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\cloudflare-sandboxes-turn-agent-demos-into-infrastructure\\prompt.txt",
+          "sha256": "e688a34a0d1fdcfcc50674c968c840e8e7a69384e4f22991cad3d3fa7fed2437",
+          "mtimeIso": "2026-04-29T08:50:18.652Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 36,
+      "logCountAfter": 37,
+      "logEntry": "2026-04-29 | Cloudflare Sandboxes Turn Agent Demos Into Infrastructure | Cloudflare Sandboxes | Agent demos becoming production infrastructure through isolated compute boundaries",
+      "logUpdatedAt": "2026-04-29T08:50:18.661Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

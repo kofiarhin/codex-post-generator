@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "AI Coding Tools Are Now Release Engineering Problems",
+  "slug": "ai-coding-tools-are-now-release-engineering-problems",
+  "createdAt": "2026-04-24T10:27:11.128Z",
+  "updatedAt": "2026-04-24T10:27:11.158Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-24T10:27:11.128Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\ai-coding-tools-are-now-release-engineering-problems\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\ai-coding-tools-are-now-release-engineering-problems\\x_post.txt",
+      "linkedinSha256": "da36a574ec817fd6582a25ff12ad1967fed3e5700e5583d415196d0a68899c9c",
+      "xSha256": "15a5e7a42ff66862642a92c036f2d9e941a329ae6549d6c5c165def76f2d3193"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-24T10:27:11.149Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\ai-coding-tools-are-now-release-engineering-problems\\prompt.txt",
+      "promptSha256": "abf952a608134e5b73f00e50d2641b84d90679a77ba14b97e95754673f0b19db"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-24T10:27:11.158Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\ai-coding-tools-are-now-release-engineering-problems\\linkedin_post.txt",
+          "sha256": "da36a574ec817fd6582a25ff12ad1967fed3e5700e5583d415196d0a68899c9c",
+          "mtimeIso": "2026-04-24T10:27:11.128Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\ai-coding-tools-are-now-release-engineering-problems\\x_post.txt",
+          "sha256": "15a5e7a42ff66862642a92c036f2d9e941a329ae6549d6c5c165def76f2d3193",
+          "mtimeIso": "2026-04-24T10:27:11.128Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\ai-coding-tools-are-now-release-engineering-problems\\prompt.txt",
+          "sha256": "abf952a608134e5b73f00e50d2641b84d90679a77ba14b97e95754673f0b19db",
+          "mtimeIso": "2026-04-24T10:27:11.160Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 31,
+      "logCountAfter": 32,
+      "logEntry": "2026-04-24 | AI Coding Tools Are Now Release Engineering Problems | AI coding tools | Claude Code quality regressions show AI developer tools now live or die on release engineering, evals, and rollback discipline",
+      "logUpdatedAt": "2026-04-24T10:27:11.168Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

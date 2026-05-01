@@ -1,9 +1,0 @@
-A senior software engineer reviews a single code diff that glows with a subtle red risk halo on a large clean monitor in a modern operations workspace, medium shot, centered composition, one focal subject, the rest of the room softly out of focus, early-morning side lighting, calm but tense mood, muted charcoal and steel-blue palette with one amber accent, premium editorial illustration blended with realistic commercial digital art, polished and credible, visual metaphor for predicting production incidents before merge, high contrast, simple background, optimized for a LinkedIn thumbnail, no logos, no watermarks, no clutter, no distorted hands, no unreadable interface text, no meme style, no floating code wallpaper.
-
-Text overlay:
-
-"Predict the SEV"
-
-Placement: centered in the middle of the thumbnail
-
-Style: bold clean sans-serif, high contrast, one line if possible

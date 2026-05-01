@@ -99,7 +99,7 @@ function finalizePostPackage({
       topicAngle: sanitizeLogField(topicAngle)
     });
     const logCountAfter = readLogEntries(logPath).length;
-    const logUpdatedAt = new Date().toISOString();
+    const logUpdatedAt = fs.statSync(logPath).mtime.toISOString();
     const logUpdatedAfterPackageSave = new Date(logUpdatedAt).getTime() >= latestPackageFileTimestamp;
 
     const finalizerReceipt = upsertStageReceipt({

@@ -1,0 +1,9 @@
+A senior backend engineer stands in a quiet workspace facing a clean wall calendar where every month has been simplified into one clear Node.js release path, with old tangled odd/even version labels neatly crossed out and stacked in a small paper tray on the desk. The scene is composed as a premium editorial illustration for a professional software audience: one focused subject, calm posture, laptop open with abstract terminal shapes only, no readable code, and a large clean calendar as the visual anchor. Use warm charcoal, soft grey, deep navy, and one precise green accent to suggest stability and long-term support. Lighting should be soft directional desk light with subtle shadows, mood grounded and dryly witty, like a maintenance policy finally became understandable. Render in polished commercial digital illustration style with realistic proportions, crisp edges, generous whitespace, and high thumbnail readability. Avoid logos, trademarks, watermarks, clutter, distorted hands, unreadable interface text, tiny details, meme styling, stock-photo composition, neon effects, and busy code screens.
+
+Text overlay:
+
+"Release Weirdness Retired"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

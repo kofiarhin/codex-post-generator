@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "GitHub Tokens Are Not a String Length Contract",
+  "slug": "github-tokens-are-not-a-string-length-contract",
+  "createdAt": "2026-04-30T14:34:03.248Z",
+  "updatedAt": "2026-04-30T14:34:03.268Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-30T14:34:03.248Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-tokens-are-not-a-string-length-contract\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-tokens-are-not-a-string-length-contract\\x_post.txt",
+      "linkedinSha256": "e24e3dfa877b07a6392a72eeed9138aac36aaaefa222f39a19c6d4bcd75d05aa",
+      "xSha256": "ff89e051b4273c0b21b762a87332c72892218eb15003ec4ed184c90ecfaca12a"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-30T14:34:03.256Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-tokens-are-not-a-string-length-contract\\prompt.txt",
+      "promptSha256": "609960ad5364163158f9819753b5fb8cb5dee41636d7e70ab28d41275701f959"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-30T14:34:03.268Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-tokens-are-not-a-string-length-contract\\linkedin_post.txt",
+          "sha256": "e24e3dfa877b07a6392a72eeed9138aac36aaaefa222f39a19c6d4bcd75d05aa",
+          "mtimeIso": "2026-04-30T14:34:03.247Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-tokens-are-not-a-string-length-contract\\x_post.txt",
+          "sha256": "ff89e051b4273c0b21b762a87332c72892218eb15003ec4ed184c90ecfaca12a",
+          "mtimeIso": "2026-04-30T14:34:03.248Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-tokens-are-not-a-string-length-contract\\prompt.txt",
+          "sha256": "609960ad5364163158f9819753b5fb8cb5dee41636d7e70ab28d41275701f959",
+          "mtimeIso": "2026-04-30T14:34:03.248Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 38,
+      "logCountAfter": 39,
+      "logEntry": "2026-04-30 | GitHub Tokens Are Not a String Length Contract | GitHub App installation tokens | GitHub token format changes expose brittle authentication and CI assumptions",
+      "logUpdatedAt": "2026-04-30T14:34:03.270Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

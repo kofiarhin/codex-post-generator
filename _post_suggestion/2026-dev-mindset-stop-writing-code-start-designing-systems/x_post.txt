@@ -1,0 +1,14 @@
+System design is the 2026 dev mindset.
+
+AI coding agents can write the handler, scaffold the test, and autocomplete the boilerplate.
+They still can’t tell you where the boundary belongs, who owns the data, which retry is safe, or what fails noisily at 2 a.m.
+
+Code is getting cheaper.
+Architecture mistakes are getting more expensive.
+
+The real shift isn’t “stop coding.”
+It’s spending less time typing and more time designing systems: interfaces, failure modes, observability, and constraints.
+
+Fewer code heroes. More engineers who can make software architecture survivable.
+
+#SystemDesign #SoftwareArchitecture #AICodingAgents #PlatformEngineering

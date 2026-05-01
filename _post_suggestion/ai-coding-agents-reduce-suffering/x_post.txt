@@ -1,9 +1,0 @@
-AI coding agents are useful when they reduce suffering, not when they pretend to replace judgment.
-
-Most of the pain in software work is not typing code. It is tracing weird edge cases, reloading context after interruptions, cleaning up half-finished refactors, and spending an hour proving the bug is nowhere near the line the stack trace blamed.
-
-That is why the good AI developer tools story is still pretty boring in the best way: less repetition, shorter debugging loops, faster reviews, better momentum.
-
-Not “autonomous engineer” theater.
-
-If a tool gives me back focus without asking me to surrender responsibility, that is already a win. #AICodingAgents #DeveloperTools #SoftwareEngineering

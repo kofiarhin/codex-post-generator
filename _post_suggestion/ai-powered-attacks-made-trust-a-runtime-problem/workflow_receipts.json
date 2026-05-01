@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "AI-Powered Attacks Made Trust a Runtime Problem",
+  "slug": "ai-powered-attacks-made-trust-a-runtime-problem",
+  "createdAt": "2026-04-26T23:30:13.486Z",
+  "updatedAt": "2026-04-26T23:30:13.505Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-26T23:30:13.486Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-powered-attacks-made-trust-a-runtime-problem\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-powered-attacks-made-trust-a-runtime-problem\\x_post.txt",
+      "linkedinSha256": "605b1262c99ff68321602f3ff4f31852496233a297bd43ec392532f76f5463d9",
+      "xSha256": "e64f535fc234532fccb948c8195800aee3acb7d791b8e6caf7effc1396fbb075"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-26T23:30:13.495Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-powered-attacks-made-trust-a-runtime-problem\\prompt.txt",
+      "promptSha256": "397e11075220ab664138dc03266a1d0cdabdeb95f092df06d066557159add489"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-26T23:30:13.505Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-powered-attacks-made-trust-a-runtime-problem\\linkedin_post.txt",
+          "sha256": "605b1262c99ff68321602f3ff4f31852496233a297bd43ec392532f76f5463d9",
+          "mtimeIso": "2026-04-26T23:30:13.480Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-powered-attacks-made-trust-a-runtime-problem\\x_post.txt",
+          "sha256": "e64f535fc234532fccb948c8195800aee3acb7d791b8e6caf7effc1396fbb075",
+          "mtimeIso": "2026-04-26T23:30:13.481Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-powered-attacks-made-trust-a-runtime-problem\\prompt.txt",
+          "sha256": "397e11075220ab664138dc03266a1d0cdabdeb95f092df06d066557159add489",
+          "mtimeIso": "2026-04-26T23:30:13.494Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 34,
+      "logCountAfter": 35,
+      "logEntry": "2026-04-27 | AI-Powered Attacks Made Trust a Runtime Problem | AI-powered attacks | deepfakes and automated hacking make Zero Trust a continuous verification problem",
+      "logUpdatedAt": "2026-04-26T23:30:13.504Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

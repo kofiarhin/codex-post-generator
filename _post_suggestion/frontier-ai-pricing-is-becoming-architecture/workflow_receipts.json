@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Frontier AI Pricing Is Becoming Architecture",
+  "slug": "frontier-ai-pricing-is-becoming-architecture",
+  "createdAt": "2026-04-26T02:35:05.543Z",
+  "updatedAt": "2026-04-26T02:35:05.569Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-26T02:35:05.543Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\frontier-ai-pricing-is-becoming-architecture\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\frontier-ai-pricing-is-becoming-architecture\\x_post.txt",
+      "linkedinSha256": "d8fb15cf33a83be4ca5d1ccc09f70619a82255ebb5a7d8352450a450dcec8311",
+      "xSha256": "a244f11bee652143128c68acd40f948e3c53a3d37b7406329740a940f023574f"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-26T02:35:05.558Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\frontier-ai-pricing-is-becoming-architecture\\prompt.txt",
+      "promptSha256": "ae2d8bee5d5dc10c268392493a63f7bdd39e8867659be641275a4c306ea592f1"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-26T02:35:05.569Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\frontier-ai-pricing-is-becoming-architecture\\linkedin_post.txt",
+          "sha256": "d8fb15cf33a83be4ca5d1ccc09f70619a82255ebb5a7d8352450a450dcec8311",
+          "mtimeIso": "2026-04-26T02:35:05.535Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\frontier-ai-pricing-is-becoming-architecture\\x_post.txt",
+          "sha256": "a244f11bee652143128c68acd40f948e3c53a3d37b7406329740a940f023574f",
+          "mtimeIso": "2026-04-26T02:35:05.538Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\frontier-ai-pricing-is-becoming-architecture\\prompt.txt",
+          "sha256": "ae2d8bee5d5dc10c268392493a63f7bdd39e8867659be641275a4c306ea592f1",
+          "mtimeIso": "2026-04-26T02:35:05.557Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 33,
+      "logCountAfter": 34,
+      "logEntry": "2026-04-26 | Frontier AI Pricing Is Becoming Architecture | AI model pricing | GPT-5.5 and Anthropic pricing shift model choice into long-term cost architecture",
+      "logUpdatedAt": "2026-04-26T02:35:05.564Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

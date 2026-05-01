@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Environment Variables Are a Platform Risk — The Vercel Breach",
+  "slug": "environment-variables-are-a-platform-risk-the-vercel-breach",
+  "createdAt": "2026-04-22T10:31:52.083Z",
+  "updatedAt": "2026-04-22T10:31:52.113Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-22T10:31:52.083Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\environment-variables-are-a-platform-risk-the-vercel-breach\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\environment-variables-are-a-platform-risk-the-vercel-breach\\x_post.txt",
+      "linkedinSha256": "c91b0db3bd93ec27e3755f123f6ced261ab2e4c9492f13f3ad233736542af1a9",
+      "xSha256": "09f7783ea1af05a65570276e0233bee4ef93179a7fb408322d6d72d2ae90c5fb"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-22T10:31:52.103Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\environment-variables-are-a-platform-risk-the-vercel-breach\\prompt.txt",
+      "promptSha256": "1095c316d67c106b3dc711dac48ab2c8f5c3c46ead8c56ac27df54f7f44776ca"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-22T10:31:52.113Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\environment-variables-are-a-platform-risk-the-vercel-breach\\linkedin_post.txt",
+          "sha256": "c91b0db3bd93ec27e3755f123f6ced261ab2e4c9492f13f3ad233736542af1a9",
+          "mtimeIso": "2026-04-22T10:31:52.076Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\environment-variables-are-a-platform-risk-the-vercel-breach\\x_post.txt",
+          "sha256": "09f7783ea1af05a65570276e0233bee4ef93179a7fb408322d6d72d2ae90c5fb",
+          "mtimeIso": "2026-04-22T10:31:52.083Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\_post_suggestion\\environment-variables-are-a-platform-risk-the-vercel-breach\\prompt.txt",
+          "sha256": "1095c316d67c106b3dc711dac48ab2c8f5c3c46ead8c56ac27df54f7f44776ca",
+          "mtimeIso": "2026-04-22T10:31:52.109Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\OneDrive - Roundel Kitchens\\Desktop\\workspace\\dev\\post-generator\\log.txt",
+      "logCountBefore": 28,
+      "logCountAfter": 29,
+      "logEntry": "2026-04-22 | Environment Variables Are a Platform Risk — The Vercel Breach | Vercel breach | OAuth app trust and platform environment variables expand breach blast radius beyond local secret management",
+      "logUpdatedAt": "2026-04-22T10:31:52.117Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

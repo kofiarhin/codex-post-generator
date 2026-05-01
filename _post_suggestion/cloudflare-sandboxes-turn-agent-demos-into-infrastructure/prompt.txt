@@ -1,0 +1,9 @@
+A single isolated developer sandbox sits in the center of a clean engineering workspace, shown as a compact glass-walled Linux terminal environment inside a restrained serverless cloud frame, with loose code fragments and package boxes safely contained inside rather than spilling into the surrounding production systems. Compose it as a premium editorial digital illustration for a LinkedIn social thumbnail, one strong focal subject, wide 1200x628 composition, generous negative space, subtle depth, crisp edges, realistic workstation details without brand marks, and a mood of dry technical confidence. Use a muted charcoal, deep navy, and warm gray palette with one electric blue accent tracing the sandbox boundary, soft directional studio lighting, high contrast for thumbnail readability, polished commercial illustration style, not a stock photo. The image should communicate secure code execution, Cloudflare Sandboxes, Cloudflare Containers, AI agent infrastructure, and controlled blast radius without using logos or readable UI text. No logos, no watermarks, no clutter, no distorted hands, no random futuristic cliches, no busy dashboards, no unreadable interface text.
+
+Text overlay:
+
+"Agent Demos Need Walls"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

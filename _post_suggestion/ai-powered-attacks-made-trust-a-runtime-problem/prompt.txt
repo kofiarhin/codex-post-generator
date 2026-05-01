@@ -1,0 +1,9 @@
+A realistic editorial illustration of a security operations desk confronting a convincing synthetic identity, with one central glass verification checkpoint between a human analyst and a softly blurred video-call face that looks almost real but has subtle digital seams. The scene is set in a clean modern SOC environment with minimal screens, restrained interface shapes, and no readable UI text; composition is centered and uncluttered, with the verification checkpoint as the clear focal subject. Use cinematic but professional lighting, charcoal and warm grey tones, deep teal shadows, and one precise amber accent on the verification signal. The mood should feel calm, skeptical, and technically competent rather than alarmist. Render as premium commercial digital art with realistic materials, crisp edges, generous negative space, and a LinkedIn-ready 1200x628 thumbnail composition. Avoid stock photo aesthetics, meme styling, binary rain, circuit-board backgrounds, logos, watermarks, clutter, distorted hands, unreadable interface text, and exaggerated sci-fi effects.
+
+Text overlay:
+
+"Trust Checked In Motion"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

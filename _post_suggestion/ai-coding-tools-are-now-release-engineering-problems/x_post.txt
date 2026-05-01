@@ -1,0 +1,9 @@
+AI coding tools are now release engineering problems.
+
+Anthropic’s Claude Code postmortem mattered because the failure mode was painfully normal: a latency tradeoff reduced reasoning, a memory bug made sessions feel forgetful, and a prompt change meant to cut verbosity quietly hurt coding quality.
+
+That’s the useful reality check.
+
+Once AI coding tools are part of real developer workflows, model evals, prompt regressions, and rollback discipline matter more than demo magic. The market gets healthier when these tools are judged less by benchmark theater and more by whether an update makes engineers faster — or just subtly worse at their jobs.
+
+#AICodingTools #ClaudeCode #ReleaseEngineering

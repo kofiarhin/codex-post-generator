@@ -9,3 +9,31 @@
 2026-04-09 | Model Context Protocol Is Useful. The Permission Model Is the Real Product. | Model Context Protocol | Governance and permissions over demo magic
 2026-04-13 | MCP Security Is Where AI Agent Demos Meet Production Reality | MCP security | Production reality behind agent tooling
 2026-04-13 | AI Coding Agents Should Reduce Suffering, Not Replace Judgment | AI coding agents | reduced debugging pain over replacement hype
+2026-04-14 | AI Coding Agents Expose Bad Systems | AI coding agents | The real bottleneck is trust, review, and repo hygiene—not code generation.
+2026-04-14 | Stacked Pull Requests Admit Code Review Is the Bottleneck | stacked pull requests | code review bottlenecks and reviewer bandwidth
+2026-04-14 | Plugin Acquisitions Are a Supply Chain Security Event | plugin supply chain security | ownership transfer turns trusted plugins into security liabilities
+2026-04-16 | Cal.com Didn't Kill Open Source. It Priced the Threat Model. | open source security | Cal.com's shift reframes open source as a security-cost and exposure problem in the AI era, not just a licensing ideology debate.
+2026-04-17 | Android CLI Turns Mobile Development Into a Real Automation Surface | Android CLI | platform tooling becomes a dependable automation surface for agentic mobile workflows
+2026-04-18 | Node.js Just Reminded Everyone That Security Programs Need Budgets | Node.js security bug bounty | the funding pause reveals bug bounties as critical warning infrastructure, not a nice-to-have community perk
+2026-04-18 | Feature Flags Are Quietly Becoming Platform Decisions | feature flags | platform consolidation is turning rollout logic from a release convenience into architecture and governance
+2026-04-18 | CVE Enrichment Is Becoming a Product Decision | CVE enrichment | NIST narrowing NVD enrichment turns public vulnerability context into a budget and tooling decision for engineering teams
+2026-04-18 | Portable microVMs Are Becoming the Default Sandbox | MicroVM sandboxing | hardware-isolated portable virtual machines are shifting from infrastructure niche to the default trust boundary for agentic and developer workflows
+2026-04-18 | Terminal Output Should Not Be a Trust Boundary | terminal security | the iTerm2 bug shows terminal output, escape sequences, and SSH helper protocols can turn ordinary read workflows into execution surfaces
+2026-04-19 | Durable Execution Is the Infrastructure You Keep Rebuilding | durable execution | queues retries and workflow orchestration are moving from improvised glue code into the application layer
+2026-04-20 | MCP Is a Permission Design Problem | Model Context Protocol | Why MCP adoption rises or falls on permission design, not demo-friendly tool calling.
+2026-04-20 | MCP Servers Are Becoming the New Internal APIs | Model Context Protocol | Why standardizing AI tool access matters more than demo magic
+2026-04-21 | MCP Beats Glue Code | Model Context Protocol | MCP matters when it replaces brittle AI-tooling integration work
+2026-04-21 | AI Coding Agents Punish Messy Repos | AI coding agents | AI agents reveal codebase quality, testing gaps, and technical debt rather than replacing engineering judgment
+2026-04-21 | AI Bug Report Spam Is Becoming Maintainer Work | AI-generated bug reports | Open source maintainers face more triage work from plausible but low-signal AI-assisted issue reports
+2026-04-21 | 2026 Dev Mindset: Stop Writing Code, Start Designing Systems | system design | AI coding makes architecture, boundaries, and failure-mode thinking more valuable than raw syntax speed
+2026-04-22 | Environment Variables Are a Platform Risk — The Vercel Breach | Vercel breach | OAuth app trust and platform environment variables expand breach blast radius beyond local secret management
+2026-04-23 | Agentic Billing Is the Real Copilot Product | GitHub Copilot usage limits | agentic workflows expose AI coding tools as compute, quota, and billing systems rather than simple SaaS seats
+2026-04-24 | GPT-5.5 Turns Model Hype Into Workflow Pressure | GPT-5.5 model | Model releases are becoming workflow decisions, not just benchmark events
+2026-04-24 | AI Coding Tools Are Now Release Engineering Problems | AI coding tools | Claude Code quality regressions show AI developer tools now live or die on release engineering, evals, and rollback discipline
+2026-04-26 | TypeScript 7 Beta Meets Real Projects | TypeScript 7 beta | Go-native compiler performance turns TypeScript feedback loops into a workflow decision, with migration risk around real JavaScript tooling
+2026-04-26 | Frontier AI Pricing Is Becoming Architecture | AI model pricing | GPT-5.5 and Anthropic pricing shift model choice into long-term cost architecture
+2026-04-27 | AI-Powered Attacks Made Trust a Runtime Problem | AI-powered attacks | deepfakes and automated hacking make Zero Trust a continuous verification problem
+2026-04-28 | npm Install Scripts Are Now a Trust Boundary | npm supply chain attack | self-propagating npm malware turns installs into credential and publishing-risk surfaces
+2026-04-29 | Cloudflare Sandboxes Turn Agent Demos Into Infrastructure | Cloudflare Sandboxes | Agent demos becoming production infrastructure through isolated compute boundaries
+2026-04-30 | Node.js Finally Retired the Odd Release Weirdness | Node.js release schedule | runtime release cadence as maintenance policy
+2026-04-30 | GitHub Tokens Are Not a String Length Contract | GitHub App installation tokens | GitHub token format changes expose brittle authentication and CI assumptions

@@ -1,0 +1,9 @@
+A clean editorial-style illustration of a senior software engineer in a modern deployment control room, facing a glass vault of softly glowing environment variable cards while a single third-party access token opens a narrow side door beside the vault, one clear focal subject, medium shot, symmetrical composition, subtle tension rather than panic, cool slate and charcoal color palette with one electric amber accent, cinematic soft lighting, realistic premium commercial illustration style, polished interface surfaces with only minimal abstract readable labels, credible and professional mood with a slight witty edge, optimized for LinkedIn thumbnail readability, no logos, no watermarks, no clutter, no distorted hands, no unreadable interface text, no meme styling, no floating code wallpaper.
+
+Text overlay:
+
+"Environment Variables Are a Platform Risk"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

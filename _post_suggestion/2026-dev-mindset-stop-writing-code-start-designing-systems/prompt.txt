@@ -1,0 +1,9 @@
+A senior software engineer stands in front of a large glass board, wiping away a chaotic wall of tiny code fragments and replacing it with a clean system diagram of services, queues, databases, and failure paths in a modern studio office. Medium shot, centered composition, one focal subject, subtle depth of field, bright directional morning light, calm but decisive mood, muted slate, off-white, charcoal, and steel-blue palette with a single amber accent, premium editorial illustration blended with polished commercial digital art, realistic proportions, crisp linework, minimal background detail, strong negative space, credible to senior developers, visually communicating the shift from typing code to designing software architecture. Clean LinkedIn thumbnail aesthetic, simple composition, readable at small size, no logos, no watermarks, no clutter, no meme styling, no floating neon code, no distorted hands, no unreadable interface text.
+
+Text overlay:
+
+"Design Systems, Not Just Code"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

@@ -1,0 +1,20 @@
+GitHub Copilot usage limits are the least surprising plot twist in AI tooling.
+
+The interesting part is not that GitHub paused new Individual sign-ups and tightened limits. It’s that agentic workflows finally broke the polite fiction that AI coding tools are just another SaaS seat.
+
+Once an assistant turns into a long-running worker — planning, retrying, parallelizing, and chewing through token consumption while you are in another tab — the product stops being “autocomplete with vibes.” It becomes compute scheduling, model availability, and cost control disguised as developer experience.
+
+A lot of teams are about to learn this the hard way.
+
+You can still call it a productivity tool, but the real product is increasingly budget policy: which model gets used, how long it can run, who gets priority when the cluster is hot, and what happens when developer tools pricing collides with actual usage.
+
+That does not make Copilot worse. It makes the category more honest.
+
+We spent a year arguing about whether AI coding tools could write code. The more useful question is whether vendors can make agentic workflows reliable enough, predictable enough, and affordable enough for normal engineering work.
+
+The next fight in AI coding tools probably is not prompts.
+It is quota design.
+
+Are teams choosing these tools for code quality, or for the billing model they can actually live with?
+
+#GitHubCopilot #AICodingTools #DeveloperTools #SoftwareEngineering #DevEx #PlatformEngineering #AIAgents

@@ -1,0 +1,13 @@
+The Vercel breach is a useful correction to how teams think about secrets.
+
+We still talk about secrets management like the job ends with `.env`, Vault, and “who can read prod.”
+
+But an OAuth supply chain attack does not care where the secret came from. It cares which third-party app can stand next to the platform that stores it.
+
+Platform environment variables are not passive config. They are part of your production trust boundary.
+
+If an integration can touch deploy metadata, env vars, or automation hooks, that is not convenience. That is access.
+
+A lot of developer tooling now deserves the same review discipline as IAM.
+
+#CloudSecurity #OAuth #PlatformEngineering

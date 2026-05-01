@@ -1,0 +1,9 @@
+A single oversized authentication token snakes across a clean engineering workbench, visibly too long for a small labeled input slot marked only with abstract UI blocks, while a calm developer workstation sits in the background with a CI pipeline panel showing simple green and amber status shapes. Compose the scene as a premium editorial digital illustration for a LinkedIn technical audience: one clear focal subject, the long token as a physical ribbon of matte black material with subtle segmented markings, the undersized slot as the visual joke, and surrounding elements kept minimal. Use a muted charcoal, warm grey, and deep teal palette with one sharp amber accent on the warning indicator. Lighting should be soft studio light with crisp shadows, professional and slightly dry-witted rather than dramatic. Render in polished commercial illustration style with clean geometry, realistic materials, and generous whitespace for thumbnail readability. Avoid real logos, brand marks, watermarks, clutter, distorted hands, readable interface text, random code snippets, neon effects, and busy dashboards.
+
+Text overlay:
+
+"Tokens Change Shape"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "npm Install Scripts Are Now a Trust Boundary",
+  "slug": "npm-install-scripts-are-now-a-trust-boundary",
+  "createdAt": "2026-04-28T10:42:38.913Z",
+  "updatedAt": "2026-04-28T10:42:38.965Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-04-28T10:42:38.913Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\npm-install-scripts-are-now-a-trust-boundary\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\npm-install-scripts-are-now-a-trust-boundary\\x_post.txt",
+      "linkedinSha256": "8d51a3ecca0313d2dd572a0c1795e901ce77d63e6dece838b01976e69ae78cea",
+      "xSha256": "96623068f68017cb1fae8192a2bdf05c8a4d4962acd552e150562ab07bd59f25"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-04-28T10:42:38.926Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\npm-install-scripts-are-now-a-trust-boundary\\prompt.txt",
+      "promptSha256": "0dca9184184536ac132109abe58b3fa5608de03991149b4fe66d2ffe9fe6470c"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-04-28T10:42:38.965Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\npm-install-scripts-are-now-a-trust-boundary\\linkedin_post.txt",
+          "sha256": "8d51a3ecca0313d2dd572a0c1795e901ce77d63e6dece838b01976e69ae78cea",
+          "mtimeIso": "2026-04-28T10:42:38.907Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\npm-install-scripts-are-now-a-trust-boundary\\x_post.txt",
+          "sha256": "96623068f68017cb1fae8192a2bdf05c8a4d4962acd552e150562ab07bd59f25",
+          "mtimeIso": "2026-04-28T10:42:38.909Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\npm-install-scripts-are-now-a-trust-boundary\\prompt.txt",
+          "sha256": "0dca9184184536ac132109abe58b3fa5608de03991149b4fe66d2ffe9fe6470c",
+          "mtimeIso": "2026-04-28T10:42:38.925Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 35,
+      "logCountAfter": 36,
+      "logEntry": "2026-04-28 | npm Install Scripts Are Now a Trust Boundary | npm supply chain attack | self-propagating npm malware turns installs into credential and publishing-risk surfaces",
+      "logUpdatedAt": "2026-04-28T10:42:38.945Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

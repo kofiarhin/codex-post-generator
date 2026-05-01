@@ -1,0 +1,13 @@
+AI model pricing is becoming architecture.
+
+GPT-5.5 is priced above GPT-5.4 at the API level, but OpenAI is arguing token efficiency: fewer retries, fewer wasted tokens, better long-running work.
+
+Anthropic's Opus story is the mirror image: the rate card can stay familiar while tokenizer behavior changes the actual bill.
+
+The long-term effect is boring and important.
+
+Teams will need model routing, prompt caching, evals, quota alerts, and cost dashboards the same way they need logs.
+
+"Which model is best?" is turning into "which model earns its spend on this workflow?"
+
+#AIModelPricing #OpenAI #Anthropic #AICoding
