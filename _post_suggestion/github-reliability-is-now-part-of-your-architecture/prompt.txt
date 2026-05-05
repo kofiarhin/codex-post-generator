@@ -1,0 +1,9 @@
+A senior release engineer stands in a quiet operations room, studying a large architectural blueprint where a source-code repository, CI pipeline, merge queue, and deployment path are drawn as load-bearing beams in the same building. The focal point is a single red warning light glowing over the "release path" section while the engineer calmly marks fallback routes with a pencil. Use a premium editorial illustration style with realistic proportions, clean technical detail, and a restrained professional mood. Composition should be simple and thumbnail-readable: one human figure on the left third, one large blueprint table across the center, and the warning light as the only bright accent. Lighting is soft overhead office lighting with a subtle amber accent, color palette of charcoal, warm grey, deep navy, and one precise red-orange signal color. The image should feel credible, dryly witty, and operational rather than dramatic. No logos, no brand marks, no watermarks, no clutter, no distorted hands, no unreadable interface text, no busy dashboards, no floating code, no meme styling.
+
+Text overlay:
+
+"Reliability Is Architecture"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

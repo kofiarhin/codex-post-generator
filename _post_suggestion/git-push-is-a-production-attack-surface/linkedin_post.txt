@@ -1,0 +1,21 @@
+GitHub RCE vulnerability is the kind of phrase that makes every “it’s just a git push” assumption age badly.
+
+GitHub’s recent write-up on CVE-2026-3854 is interesting because the scary part is not exotic. It is boring in the way real platform security is boring: user-controlled input crossed an internal trust boundary, metadata got interpreted as something more privileged than it should have been, and suddenly a normal developer workflow had remote code execution potential.
+
+That is the lesson worth keeping.
+
+Modern software supply chain security is not only about packages, secrets, and CI/CD security scanners. It is also about the invisible plumbing we stopped thinking about because it worked for years.
+
+`git push` feels mundane. Push options feel like an implementation detail. Internal service metadata feels like someone else’s architecture diagram.
+
+Until those details become the attack path.
+
+To GitHub’s credit, the public account says github.com was patched quickly, forensic review found no exploitation, and GitHub Enterprise Server customers received patched releases. That is the grown-up version of security: fix fast, investigate hard, publish the uncomfortable mechanics.
+
+For engineering teams, the takeaway is less dramatic but more useful:
+
+Every automated path that accepts developer input deserves the same suspicion we give public API input.
+
+Especially the paths everyone calls “internal.”
+
+#GitHubSecurity #SoftwareSupplyChainSecurity #DevSecOps #CICDSecurity #ApplicationSecurity #PlatformEngineering

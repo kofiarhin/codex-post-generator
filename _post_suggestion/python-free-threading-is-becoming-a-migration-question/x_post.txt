@@ -1,0 +1,13 @@
+Python 3.14 free-threading is not "the GIL is gone."
+
+It is more like: "you may now discover which parts of your stack were quietly depending on it."
+
+Free-threaded Python can run threads in parallel across CPU cores, which is genuinely useful. But the migration story is where the engineering starts.
+
+Your workload may not benefit. Your Python C extensions may not be ready. A package can still re-enable the Python GIL. And thread-safety still means locks, synchronization, tests, and a healthy distrust of "it worked locally."
+
+The practical takeaway: don't rewrite architecture because of a headline.
+
+Audit dependencies. Benchmark real code. Treat free-threaded Python as a new performance option, not a free performance upgrade.
+
+#Python #Python314 #FreeThreading #PythonConcurrency

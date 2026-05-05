@@ -5,7 +5,8 @@ const path = require('path');
 const { readLogEntries } = require('./title_log_utils');
 const { readReceipt } = require('./workflow_receipts');
 
-const REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
+const LEGACY_REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
+const CURRENT_REQUIRED_OUTPUT_FILES = [...LEGACY_REQUIRED_OUTPUT_FILES, 'thumbnail.png'];
 const REQUIRED_STAGES = ['orchestrator', 'asset', 'finalizer'];
 
 function listDirectories(baseDir) {
@@ -21,7 +22,10 @@ function listDirectories(baseDir) {
 
 function auditPackage(repoRoot, dirPath) {
   const issues = [];
-  const missingFiles = REQUIRED_OUTPUT_FILES.filter(
+  const receiptPath = path.join(dirPath, 'workflow_receipts.json');
+  const receipt = readReceipt(receiptPath);
+  const requiredOutputFiles = receipt?.stages?.finalizer?.requiredFiles || LEGACY_REQUIRED_OUTPUT_FILES;
+  const missingFiles = requiredOutputFiles.filter(
     (fileName) => !fs.existsSync(path.join(dirPath, fileName))
   );
 
@@ -32,9 +36,6 @@ function auditPackage(repoRoot, dirPath) {
     return issues;
   }
 
-  const receiptPath = path.join(dirPath, 'workflow_receipts.json');
-  const receipt = readReceipt(receiptPath);
-
   if (!receipt) {
     issues.push(`Missing workflow receipt: ${path.relative(repoRoot, receiptPath)}`);
     return issues;
@@ -44,6 +45,10 @@ function auditPackage(repoRoot, dirPath) {
     if (receipt.stages?.[stage]?.status !== 'completed') {
       issues.push(`Missing completed stage '${stage}' in ${path.relative(repoRoot, receiptPath)}`);
     }
+  }
+
+  if (requiredOutputFiles.includes('thumbnail.png') && receipt.stages?.thumbnail?.status !== 'completed') {
+    issues.push(`Missing completed stage 'thumbnail' in ${path.relative(repoRoot, receiptPath)}`);
   }
 
   if (!receipt.stages?.finalizer?.logUpdatedAfterPackageSave) {
@@ -88,6 +93,7 @@ function main() {
   console.log(`Audited package directories: ${packageDirs.length}`);
   console.log(`Log file present: ${fs.existsSync(logPath) ? 'yes' : 'no'}`);
   console.log(`Log entry count: ${logEntries.length}`);
+  console.log(`Current required files: ${CURRENT_REQUIRED_OUTPUT_FILES.join(', ')}`);
 
   if (issues.length === 0) {
     console.log('Workflow audit passed. All saved packages are machine-verifiable.');

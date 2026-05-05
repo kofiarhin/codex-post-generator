@@ -9,6 +9,7 @@
     "finalize:post": "node .agents/skills/linkedin-post-orchestrator/scripts/finalize_post_package.js",
     "save:post": "node .agents/skills/linkedin-post-orchestrator/scripts/save_post.js",
     "save:asset": "node .agents/skills/linkedin-post-assets/scripts/save_asset.js",
+    "generate:thumbnail": "node .agents/skills/linkedin-post-assets/scripts/generate_thumbnail.js",
     "generate:post": "node .agents/skills/linkedin-post-orchestrator/scripts/generate_post.js",
     "generate-post": "npm run generate:post --",
     "post:generate": "npm run generate:post --"

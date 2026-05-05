@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "title": "Python Free-Threading Is Becoming a Migration Question",
+  "slug": "python-free-threading-is-becoming-a-migration-question",
+  "createdAt": "2026-05-05T06:01:58.108Z",
+  "updatedAt": "2026-05-05T06:01:58.196Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-05T06:01:58.108Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\x_post.txt",
+      "linkedinSha256": "adc7ca0a51ecb0b468a329cbe988b1ee2afce0b659c5c5e621802c74f88890c6",
+      "xSha256": "730962e4f2d3bd2d3044825944773ecec2a954c0ba8a7495524d410d51282a8e"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-05T06:01:58.131Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\prompt.txt",
+      "promptSha256": "9c1accec7d01da0f627483781b2d68831356824fffed846f6f852f26b64e1b26"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-fallback-thumbnail",
+      "completedAt": "2026-05-05T06:01:58.187Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\thumbnail.png",
+      "thumbnailSha256": "6680ca3400c6b720b29cd97b7bf3450aa74cb439ba1524367f6388df36b7664b",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\prompt.txt",
+      "promptSha256": "9c1accec7d01da0f627483781b2d68831356824fffed846f6f852f26b64e1b26",
+      "model": "local-deterministic-png-fallback",
+      "aspectRatio": "16:9",
+      "imageSize": "1200x675"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-05T06:01:58.196Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "thumbnail.png"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\linkedin_post.txt",
+          "sha256": "adc7ca0a51ecb0b468a329cbe988b1ee2afce0b659c5c5e621802c74f88890c6",
+          "mtimeIso": "2026-05-05T06:01:58.101Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\x_post.txt",
+          "sha256": "730962e4f2d3bd2d3044825944773ecec2a954c0ba8a7495524d410d51282a8e",
+          "mtimeIso": "2026-05-05T06:01:58.101Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\prompt.txt",
+          "sha256": "9c1accec7d01da0f627483781b2d68831356824fffed846f6f852f26b64e1b26",
+          "mtimeIso": "2026-05-05T06:01:58.132Z"
+        },
+        "thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\python-free-threading-is-becoming-a-migration-question\\thumbnail.png",
+          "sha256": "6680ca3400c6b720b29cd97b7bf3450aa74cb439ba1524367f6388df36b7664b",
+          "mtimeIso": "2026-05-05T06:01:58.189Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 42,
+      "logCountAfter": 43,
+      "logEntry": "2026-05-05 | Python Free-Threading Is Becoming a Migration Question | Python 3.14 free-threading | free-threaded Python as dependency-readiness and migration work rather than a magic GIL-removal headline",
+      "logUpdatedAt": "2026-05-05T06:01:58.198Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

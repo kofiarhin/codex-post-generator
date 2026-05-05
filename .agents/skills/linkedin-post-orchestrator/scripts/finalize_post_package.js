@@ -19,8 +19,9 @@ const {
 } = require('./workflow_receipts');
 const { formatDuplicateError, savePostFiles } = require('./save_post');
 const { saveAssetPrompt } = require('../../linkedin-post-assets/scripts/save_asset');
+const { generateThumbnail } = require('../../linkedin-post-assets/scripts/generate_thumbnail');
 
-const REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
+const REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt', 'thumbnail.png'];
 
 function validateOutputPackage(outputDir) {
   return REQUIRED_OUTPUT_FILES.filter((fileName) => !fs.existsSync(path.join(outputDir, fileName)));
@@ -38,14 +39,15 @@ function buildPackageFileHashes(outputDir) {
   }, {});
 }
 
-function finalizePostPackage({
+async function finalizePostPackage({
   title,
   linkedinInputPath,
   xInputPath,
   promptInputPath,
   primaryKeyword = '',
   topicAngle = '',
-  repoRoot = path.resolve(__dirname, '../../../..')
+  repoRoot = path.resolve(__dirname, '../../../..'),
+  thumbnailGenerator = generateThumbnail
 }) {
   const logPath = path.join(repoRoot, 'log.txt');
   const logEntries = readLogEntries(logPath);
@@ -77,9 +79,15 @@ function finalizePostPackage({
       repoRoot
     });
 
+    const thumbnailResult = await thumbnailGenerator({
+      title,
+      promptInputPath: assetResult.outputPath,
+      repoRoot
+    });
+
     const receiptPath = getReceiptPath({ repoRoot, slug });
     const receipt = readReceipt(receiptPath);
-    requireCompletedStages(receipt, ['orchestrator', 'asset']);
+    requireCompletedStages(receipt, ['orchestrator', 'asset', 'thumbnail']);
 
     const missingFiles = validateOutputPackage(outputDir);
     if (missingFiles.length > 0) {
@@ -131,6 +139,7 @@ function finalizePostPackage({
       linkedinOutputPath: postResult.linkedinOutputPath,
       xOutputPath: postResult.xOutputPath,
       promptOutputPath: assetResult.outputPath,
+      thumbnailOutputPath: thumbnailResult.outputPath,
       logPath,
       loggedLine,
       receiptPath: finalizerReceipt.receiptPath
@@ -144,7 +153,7 @@ function finalizePostPackage({
   }
 }
 
-function main() {
+async function main() {
   const args = process.argv.slice(2);
 
   if (args.length < 4) {
@@ -157,7 +166,7 @@ function main() {
   const [title, linkedinInputArg, xInputArg, promptInputArg, primaryKeyword = '', topicAngle = ''] = args;
 
   try {
-    const result = finalizePostPackage({
+    const result = await finalizePostPackage({
       title,
       linkedinInputPath: path.resolve(linkedinInputArg),
       xInputPath: path.resolve(xInputArg),
@@ -169,12 +178,14 @@ function main() {
     console.log(`LinkedIn post saved to: _post_suggestion/${result.slug}/linkedin_post.txt`);
     console.log(`X post saved to: _post_suggestion/${result.slug}/x_post.txt`);
     console.log(`Prompt saved to: _post_suggestion/${result.slug}/prompt.txt`);
+    console.log(`Thumbnail saved to: _post_suggestion/${result.slug}/thumbnail.png`);
     console.log('Title logged in: log.txt');
     console.log(`Log entry: ${result.loggedLine}`);
     console.log(`Workflow receipt: _post_suggestion/${result.slug}/workflow_receipts.json`);
     console.log(`Full LinkedIn path: ${result.linkedinOutputPath}`);
     console.log(`Full X path: ${result.xOutputPath}`);
     console.log(`Full prompt path: ${result.promptOutputPath}`);
+    console.log(`Full thumbnail path: ${result.thumbnailOutputPath}`);
   } catch (error) {
     console.error(error.message);
     process.exit(1);

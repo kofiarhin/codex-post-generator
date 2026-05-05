@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "GitHub Reliability Is Now Part of Your Architecture",
+  "slug": "github-reliability-is-now-part-of-your-architecture",
+  "createdAt": "2026-05-05T05:38:32.267Z",
+  "updatedAt": "2026-05-05T05:38:32.295Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-05T05:38:32.267Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-reliability-is-now-part-of-your-architecture\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-reliability-is-now-part-of-your-architecture\\x_post.txt",
+      "linkedinSha256": "ed954d34ed2330f79f840c9e4e27b5ff5fd83603bf0fb8592a4ae967327cad86",
+      "xSha256": "e50b0a378de8e1710e264cbe43687f17cbe47ff07f53abdbb03951f9433228e1"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-05T05:38:32.287Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-reliability-is-now-part-of-your-architecture\\prompt.txt",
+      "promptSha256": "e6735db7d830d87355c0dde2a582cda936f680e2751240d257e9c01d5ce5b655"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-05T05:38:32.295Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-reliability-is-now-part-of-your-architecture\\linkedin_post.txt",
+          "sha256": "ed954d34ed2330f79f840c9e4e27b5ff5fd83603bf0fb8592a4ae967327cad86",
+          "mtimeIso": "2026-05-05T05:38:32.259Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-reliability-is-now-part-of-your-architecture\\x_post.txt",
+          "sha256": "e50b0a378de8e1710e264cbe43687f17cbe47ff07f53abdbb03951f9433228e1",
+          "mtimeIso": "2026-05-05T05:38:32.259Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\github-reliability-is-now-part-of-your-architecture\\prompt.txt",
+          "sha256": "e6735db7d830d87355c0dde2a582cda936f680e2751240d257e9c01d5ce5b655",
+          "mtimeIso": "2026-05-05T05:38:32.284Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 41,
+      "logCountAfter": 42,
+      "logEntry": "2026-05-05 | GitHub Reliability Is Now Part of Your Architecture | GitHub reliability | GitHub platform reliability as release architecture and developer infrastructure risk",
+      "logUpdatedAt": "2026-05-05T05:38:32.292Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

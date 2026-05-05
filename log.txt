@@ -39,3 +39,6 @@
 2026-04-30 | GitHub Tokens Are Not a String Length Contract | GitHub App installation tokens | GitHub token format changes expose brittle authentication and CI assumptions
 2026-05-04 | Vite 8 Makes Build Speed a Migration Problem | Vite 8 Rolldown | frontend build performance and migration risk as Vite adopts a unified Rust-based Rolldown bundler
 2026-05-04 | AWS Lambda S3 Files Turns S3 Into a Filesystem | AWS Lambda S3 Files | serverless architecture tradeoffs when Lambda can mount S3 buckets as file systems for shared file-shaped workloads
+2026-05-05 | GitHub Reliability Is Now Part of Your Architecture | GitHub reliability | GitHub platform reliability as release architecture and developer infrastructure risk
+2026-05-05 | Python Free-Threading Is Becoming a Migration Question | Python 3.14 free-threading | free-threaded Python as dependency-readiness and migration work rather than a magic GIL-removal headline
+2026-05-05 | Git Push Is a Production Attack Surface | GitHub RCE vulnerability | git push pipeline as a privileged production attack surface

@@ -36,6 +36,17 @@ engineering blogs late at night and opens pull requests before coffee.
 - Hierarchy: visual subject first, text second
 - The viewer must understand the image in under 2 seconds
 - Optimize for a thumbnail-first read even when the asset is used in a larger format
+- Prefer a cinematic technology editorial frame: a believable developer, workstation, monitor, security console, architecture diagram, or other concrete engineering scene as the main subject
+- When UI is visible, make it look like a large polished product/security dashboard with broad readable panels and short labels, not a wall of tiny code
+- Use strong foreground, midground, and background separation so the image has depth instead of looking flat or posterized
+
+### Image Quality
+
+- Ask for a 16:9 LinkedIn thumbnail with premium editorial production value and 2K-ready detail
+- Specify sharp focus, crisp edges, realistic materials, physically plausible shadows, and cinematic but believable lighting
+- Use clean depth of field and controlled contrast; the output should feel like a high-end tech magazine cover, not a generic AI illustration
+- Avoid low-resolution artifacts, smeared faces, warped monitors, malformed UI, noisy pseudo-text, overprocessed glow, and plastic-looking skin
+- If the overlay crosses detailed content, request a subtle dark translucent center band to preserve text contrast without hiding the scene
 
 ### Mood
 
@@ -110,6 +121,7 @@ The first slide a viewer sees. Must earn the swipe.
 - Write one production-ready prompt, not multiple prompt options.
 - Start with the core scene in the first sentence.
 - Be explicit about subject, setting, composition, lighting, mood, color palette, and rendering style.
+- Include production-quality language: 16:9 LinkedIn thumbnail, 2K-ready detail, sharp focus, cinematic but believable lighting, clean depth of field, crisp edges, and no low-resolution artifacts.
 - Prefer realistic editorial, premium commercial illustration, or polished digital artwork.
 - Include clear constraints: no logos, no watermarks, no clutter, no distorted hands, no unreadable UI text.
 - Include a short text overlay section after the main prompt.

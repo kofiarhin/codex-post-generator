@@ -12,6 +12,8 @@ It does not research topics and it does not write the social posts.
 
 Its job is to take the finished post package and produce one final, directly usable,
 Nano Banana-optimized prompt aligned with the post tone.
+The full orchestrator finalizer then uses the saved prompt as the image generation prompt
+and saves the generated image as `_post_suggestion/<slug>/thumbnail.png`.
 
 Read `assets/thumbnail-style-guide.md` before generating the prompt.
 Use `assets/asset-output-template.md` as the structure for the saved prompt text.
@@ -117,7 +119,10 @@ When this skill is used inside the full `generate post` workflow, the preferred 
 npm run finalize:post -- "<Post Title>" "<path/to/linkedin-post.txt>" "<path/to/x-post.txt>" "<path/to/prompt.txt>" "<Primary Keyword>" "<Topic Angle>"
 ```
 
-That finalizer saves all three files together and updates `log.txt` only after the package is complete.
+That finalizer saves all text files, generates `thumbnail.png` from the saved `prompt.txt`,
+and updates `log.txt` only after the package is complete.
+
+Thumbnail generation requires `GEMINI_API_KEY` in the root `.env` file or the shell environment.
 
 Print the saved output path when complete.
 

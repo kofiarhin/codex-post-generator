@@ -1,0 +1,11 @@
+GitHub RCE vulnerability is a useful reminder that “internal” is not a magic security word.
+
+The interesting part of CVE-2026-3854 is how ordinary the path was: a crafted `git push` option, internal metadata, a delimiter problem, and a trusted downstream service making a bad assumption.
+
+That is how real platform bugs often look. Not cinematic. Just one boring boundary where user input quietly became infrastructure truth.
+
+The takeaway is uncomfortable but useful: treat developer workflows like production attack surfaces. Pushes, CI jobs, hooks, review bots, agents, and release scripts all deserve input paranoia.
+
+Especially the ones everyone stopped noticing.
+
+#GitHubSecurity #DevSecOps #SoftwareSupplyChain

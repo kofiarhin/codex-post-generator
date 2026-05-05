@@ -1,0 +1,21 @@
+GitHub reliability used to feel like background weather.
+
+Annoying when it changed. Easy to forget when it was fine.
+
+But after the recent GitHub incidents, it is getting harder to pretend GitHub is "just where the code lives." DNS resolution failures affected webhooks, Copilot Metrics, cloud agents, Git operations, and Actions. A merge queue regression produced incorrect merge commits in some squash cases. Actions jobs on standard Ubuntu hosted runners saw start delays from a VM reimage performance regression.
+
+That is not a GitHub dunk. This is what happens when one platform becomes part source control, part CI system, part release gate, part automation bus, part developer operating system.
+
+The practical lesson is uncomfortable: GitHub reliability is now release engineering.
+
+If your deploy path assumes GitHub Actions always starts quickly, webhooks always fire, merge queues always behave, and Git operations are always healthy, then your architecture has an invisible dependency with very visible failure modes.
+
+Most teams do not need to abandon GitHub. They need to treat it like production infrastructure.
+
+That means clearer incident playbooks, fallback release paths, retry-aware automation, status-page monitoring, and enough CI reliability thinking to know which failures are your code and which are the floor moving underneath it.
+
+The repo is no longer just a repo.
+
+It is part of the runtime of your engineering organization.
+
+#GitHubReliability #GitHubActions #CIReliability #DeveloperInfrastructure #PlatformEngineering #ReleaseEngineering

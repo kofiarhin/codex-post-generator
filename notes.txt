@@ -1,0 +1,43 @@
+1. Content package output
+
+Instead of one post, generate a full package:
+
+- linkedin_post.txt
+- x_post.txt
+- thumbnail.png
+- image_prompt.txt
+- hashtags.txt
+- hook_variations.txt
+- cta_variations.txt
+- short_video_script.txt
+- carousel_outline.txts
+
+
+Extend this codebase so generate post creates a full content package:
+
+Outputs required:
+- linkedin_post.txt
+- x_post.txt
+- prompt.txt
+- thumbnail.png
+- video.mp4
+- video_script.json
+
+Use the existing generated prompt/topic to create:
+1. LinkedIn post
+2. X post
+3. image prompt for thumbnail
+4. structured short-form video script JSON for Instagram
+
+Add Remotion support to render a 1080x1920 vertical MP4 video.
+
+Requirements:
+- Add a Remotion composition called InstagramPostVideo
+- Use inputProps from video_script.json
+- Render video.mp4 into the same output folder
+- Use @remotion/renderer renderMedia if rendering from Node
+- Use h264 codec
+- Keep API keys in .env
+- Do not hard-code localhost or production URLs
+- Add tests where possible
+- Keep the existing output flow intact

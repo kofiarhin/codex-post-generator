@@ -1,0 +1,9 @@
+A polished editorial illustration shows a Python-shaped engineering workbench with two parallel conveyor lanes running side by side, while one lane is partly blocked by a heavy padlock labeled "GIL" and a few dependency crates waiting for inspection. The setting is a clean modern software lab, not a literal office: matte charcoal surfaces, warm grey background, subtle blueprint lines, and one bright Python-blue accent on the active parallel lanes. Composition is landscape 16:9 with one clear central focal subject, generous negative space, and a calm but slightly dry-witted mood that suggests useful progress mixed with migration paperwork. Use premium commercial digital illustration style with realistic lighting, crisp edges, shallow depth, and professional LinkedIn thumbnail polish. The image should communicate that Python free-threading is a serious migration and dependency-readiness question, not a magic speed upgrade. Avoid logos, brand marks, watermarks, clutter, meme aesthetics, busy code screenshots, distorted hands, unreadable interface text, neon overload, and generic futuristic circuitry.
+
+Text overlay:
+
+"Free-Threading Has Homework"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

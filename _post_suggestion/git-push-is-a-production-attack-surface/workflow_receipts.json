@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "title": "Git Push Is a Production Attack Surface",
+  "slug": "git-push-is-a-production-attack-surface",
+  "createdAt": "2026-05-05T06:19:50.092Z",
+  "updatedAt": "2026-05-05T06:19:57.874Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-05T06:19:50.092Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\x_post.txt",
+      "linkedinSha256": "158b86a8e3f6f992d7d93b47233805bde07d794b84ff8a8720312803ea34daa3",
+      "xSha256": "20acf7eb5128e89d897fd149a69b029ebf4465fd87300e1a2e7213f86df3f8a8"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-05T06:19:50.104Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\prompt.txt",
+      "promptSha256": "16311661a100da72f5b3408c71082419821f19da6dd3f50a7c22c4e61a04305e"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-05T06:19:57.863Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\thumbnail.png",
+      "thumbnailSha256": "0a579f0da918e50a87a9720415856e59e9fe6307ce6bdb44e63cc63bbf25e2c2",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\prompt.txt",
+      "promptSha256": "16311661a100da72f5b3408c71082419821f19da6dd3f50a7c22c4e61a04305e",
+      "model": "local-fallback-thumbnail",
+      "aspectRatio": "16:9",
+      "imageSize": "1200x675"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-05T06:19:57.874Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "thumbnail.png"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\linkedin_post.txt",
+          "sha256": "158b86a8e3f6f992d7d93b47233805bde07d794b84ff8a8720312803ea34daa3",
+          "mtimeIso": "2026-05-05T06:19:50.092Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\x_post.txt",
+          "sha256": "20acf7eb5128e89d897fd149a69b029ebf4465fd87300e1a2e7213f86df3f8a8",
+          "mtimeIso": "2026-05-05T06:19:50.092Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\prompt.txt",
+          "sha256": "16311661a100da72f5b3408c71082419821f19da6dd3f50a7c22c4e61a04305e",
+          "mtimeIso": "2026-05-05T06:19:50.108Z"
+        },
+        "thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\git-push-is-a-production-attack-surface\\thumbnail.png",
+          "sha256": "0a579f0da918e50a87a9720415856e59e9fe6307ce6bdb44e63cc63bbf25e2c2",
+          "mtimeIso": "2026-05-05T06:19:57.824Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 43,
+      "logCountAfter": 44,
+      "logEntry": "2026-05-05 | Git Push Is a Production Attack Surface | GitHub RCE vulnerability | git push pipeline as a privileged production attack surface",
+      "logUpdatedAt": "2026-05-05T06:19:57.875Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

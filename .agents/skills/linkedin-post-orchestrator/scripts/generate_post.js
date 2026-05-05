@@ -10,7 +10,7 @@ function usageAndExit() {
   process.exit(1);
 }
 
-function main() {
+async function main() {
   const args = process.argv.slice(2);
 
   if (args.length < 4) {
@@ -20,7 +20,7 @@ function main() {
   const [title, linkedinInputArg, xInputArg, promptInputArg, primaryKeyword = '', topicAngle = ''] = args;
 
   try {
-    const result = finalizePostPackage({
+    const result = await finalizePostPackage({
       title,
       linkedinInputPath: path.resolve(linkedinInputArg),
       xInputPath: path.resolve(xInputArg),
@@ -34,6 +34,7 @@ function main() {
     console.log(`LINKEDIN_FILE: _post_suggestion/${result.slug}/linkedin_post.txt`);
     console.log(`X_FILE: _post_suggestion/${result.slug}/x_post.txt`);
     console.log(`PROMPT_FILE: _post_suggestion/${result.slug}/prompt.txt`);
+    console.log(`THUMBNAIL_FILE: _post_suggestion/${result.slug}/thumbnail.png`);
     console.log(`LOG_ENTRY: ${result.loggedLine}`);
   } catch (error) {
     console.error(`GENERATE_POST_FAILED: ${error.message}`);

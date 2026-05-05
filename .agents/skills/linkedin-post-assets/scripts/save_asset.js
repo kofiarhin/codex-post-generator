@@ -7,6 +7,9 @@ const { sha256File, upsertStageReceipt } = require('../../linkedin-post-orchestr
 
 const OVERLAY_SECTION_PATTERN = /(?:^|\n)(?:optional\s+)?text\s+overlay\s*:\s*([\s\S]*)$/i;
 const OVERLAY_DIRECTIVE_PATTERN = /^(?:placement|position|style)\s*:/i;
+const THUMBNAIL_QUALITY_DIRECTIVES = [
+  'Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.'
+].join('\n');
 const OVERLAY_STOP_WORDS = new Set([
   'a',
   'an',
@@ -136,7 +139,7 @@ function deriveOverlayText(title) {
 }
 
 function buildPromptWithOverlay(content, title) {
-  const mainPrompt = removeOverlaySection(content);
+  const mainPrompt = appendQualityDirectives(removeOverlaySection(content));
   const overlayText = extractExistingOverlay(content) || deriveOverlayText(title);
 
   return [
@@ -146,6 +149,14 @@ function buildPromptWithOverlay(content, title) {
     'Placement: centered in the middle of the thumbnail',
     'Style: bold clean sans-serif, high contrast, one line if possible'
   ].join('\n\n');
+}
+
+function appendQualityDirectives(mainPrompt) {
+  if (/quality requirements:/i.test(mainPrompt)) {
+    return mainPrompt;
+  }
+
+  return [mainPrompt, THUMBNAIL_QUALITY_DIRECTIVES].join('\n\n');
 }
 
 function saveAssetPrompt({
@@ -218,6 +229,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  appendQualityDirectives,
   buildPromptWithOverlay,
   deriveOverlayText,
   saveAssetPrompt
