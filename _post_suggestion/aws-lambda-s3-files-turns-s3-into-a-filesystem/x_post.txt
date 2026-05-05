@@ -1,0 +1,11 @@
+AWS Lambda S3 Files is a genuinely useful serverless update, with one small architectural trap attached.
+
+Being able to mount S3 into Lambda and use standard file operations can remove a lot of boring plumbing: temp storage juggling, download/upload steps, custom sync code, shared workspace hacks.
+
+That is real value.
+
+But object storage wearing a filesystem jacket is still object storage. The win is not "now everything is a file." The win is fewer miserable workarounds when the workload was already file-shaped.
+
+Use it deliberately.
+
+#AWSLambda #Serverless #CloudArchitecture #AWS

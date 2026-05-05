@@ -1,0 +1,9 @@
+A focused editorial illustration of a frontend developer's desk where a heavy, tangled JavaScript build pipeline is being replaced by one clean, fast rail labeled only through abstract shapes, not readable text. Show a modern laptop on a tidy desk with a simplified build diagram on screen: many thin messy lines on the left converging into one smooth copper-and-teal rail on the right, suggesting Vite 8 and Rolldown without using logos. The composition should have one clear focal point: the transition from tangled build complexity to a clean unified path. Use a muted charcoal, warm gray, and deep teal palette with one crisp amber accent, soft directional lighting, subtle depth of field, and a premium editorial digital illustration style. Mood: technically literate, dryly optimistic, professional, and calm. Optimize for a LinkedIn social thumbnail at 1200x628 with generous whitespace and strong readability at small size. No logos, no brand marks, no watermarks, no clutter, no distorted hands, no unreadable interface text, no meme style, no busy code walls.
+
+Text overlay:
+
+"Build Speed Is Trust"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

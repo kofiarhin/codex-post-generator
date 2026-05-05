@@ -1,0 +1,9 @@
+A clean editorial digital illustration of a serverless architecture diagram becoming a shared workspace: several small Lambda-like function blocks on the left are calmly passing files into one central mounted storage surface, while a subtle warning line separates "file-shaped workload" from "filesystem assumptions" using abstract visual forms only. Show a modern cloud engineering desk scene with a single focal object: a neat translucent workbench representing an S3-backed file mount, with a few simple document icons moving across it and small serverless function tiles around it. The composition should feel professional, restrained, and slightly witty, suggesting useful simplification without magic. Use a muted charcoal, warm gray, deep navy, and clean white palette with one amber accent for the caution boundary. Soft studio lighting, crisp vector-informed realism, premium commercial/editorial illustration style, generous whitespace, high readability at LinkedIn thumbnail size 1200x628. No AWS logos, no brand marks, no watermarks, no clutter, no distorted hands, no unreadable interface text, no busy cloud diagrams, no meme style.
+
+Text overlay:
+
+"File-Shaped, Not Magic"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

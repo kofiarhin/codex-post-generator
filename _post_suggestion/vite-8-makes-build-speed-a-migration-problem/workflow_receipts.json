@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "Vite 8 Makes Build Speed a Migration Problem",
+  "slug": "vite-8-makes-build-speed-a-migration-problem",
+  "createdAt": "2026-05-04T21:40:50.874Z",
+  "updatedAt": "2026-05-04T21:40:50.896Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-04T21:40:50.874Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\vite-8-makes-build-speed-a-migration-problem\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\vite-8-makes-build-speed-a-migration-problem\\x_post.txt",
+      "linkedinSha256": "9f6aa861e25cba186bf36277deaf39546a31454a8d812dc2e5a56a17e76977ff",
+      "xSha256": "9a3c83d8fda2f01104397def20bbf285086e94065b3655ddb9b9c53975f632e4"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-04T21:40:50.890Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\vite-8-makes-build-speed-a-migration-problem\\prompt.txt",
+      "promptSha256": "60470d5d7328ef8351ec72b44748b5ecb9eacdd346f436d71aa33f412ad86e5f"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-04T21:40:50.896Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\vite-8-makes-build-speed-a-migration-problem\\linkedin_post.txt",
+          "sha256": "9f6aa861e25cba186bf36277deaf39546a31454a8d812dc2e5a56a17e76977ff",
+          "mtimeIso": "2026-05-04T21:40:50.868Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\vite-8-makes-build-speed-a-migration-problem\\x_post.txt",
+          "sha256": "9a3c83d8fda2f01104397def20bbf285086e94065b3655ddb9b9c53975f632e4",
+          "mtimeIso": "2026-05-04T21:40:50.869Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\vite-8-makes-build-speed-a-migration-problem\\prompt.txt",
+          "sha256": "60470d5d7328ef8351ec72b44748b5ecb9eacdd346f436d71aa33f412ad86e5f",
+          "mtimeIso": "2026-05-04T21:40:50.890Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 39,
+      "logCountAfter": 40,
+      "logEntry": "2026-05-04 | Vite 8 Makes Build Speed a Migration Problem | Vite 8 Rolldown | frontend build performance and migration risk as Vite adopts a unified Rust-based Rolldown bundler",
+      "logUpdatedAt": "2026-05-04T21:40:50.896Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

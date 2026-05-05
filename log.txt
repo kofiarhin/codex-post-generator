@@ -37,3 +37,5 @@
 2026-04-29 | Cloudflare Sandboxes Turn Agent Demos Into Infrastructure | Cloudflare Sandboxes | Agent demos becoming production infrastructure through isolated compute boundaries
 2026-04-30 | Node.js Finally Retired the Odd Release Weirdness | Node.js release schedule | runtime release cadence as maintenance policy
 2026-04-30 | GitHub Tokens Are Not a String Length Contract | GitHub App installation tokens | GitHub token format changes expose brittle authentication and CI assumptions
+2026-05-04 | Vite 8 Makes Build Speed a Migration Problem | Vite 8 Rolldown | frontend build performance and migration risk as Vite adopts a unified Rust-based Rolldown bundler
+2026-05-04 | AWS Lambda S3 Files Turns S3 Into a Filesystem | AWS Lambda S3 Files | serverless architecture tradeoffs when Lambda can mount S3 buckets as file systems for shared file-shaped workloads

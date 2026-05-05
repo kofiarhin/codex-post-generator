@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "title": "AWS Lambda S3 Files Turns S3 Into a Filesystem",
+  "slug": "aws-lambda-s3-files-turns-s3-into-a-filesystem",
+  "createdAt": "2026-05-04T22:10:28.780Z",
+  "updatedAt": "2026-05-04T22:10:28.804Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-04T22:10:28.780Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\aws-lambda-s3-files-turns-s3-into-a-filesystem\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\aws-lambda-s3-files-turns-s3-into-a-filesystem\\x_post.txt",
+      "linkedinSha256": "224b6172c4dcac636a62b8a0e4de635483c6e99a754edee376923c1f80893f12",
+      "xSha256": "fbfdc58a81e19c423305b0e14ad2986b5cd223edd96e2dd4fef06a1d5dcf32ce"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-04T22:10:28.795Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\aws-lambda-s3-files-turns-s3-into-a-filesystem\\prompt.txt",
+      "promptSha256": "a76fd256a1eb3f835b17334cc93dd750dd147cf6caa38a2fd0ed2063df342182"
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-04T22:10:28.804Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt"
+      ],
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\aws-lambda-s3-files-turns-s3-into-a-filesystem\\linkedin_post.txt",
+          "sha256": "224b6172c4dcac636a62b8a0e4de635483c6e99a754edee376923c1f80893f12",
+          "mtimeIso": "2026-05-04T22:10:28.779Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\aws-lambda-s3-files-turns-s3-into-a-filesystem\\x_post.txt",
+          "sha256": "fbfdc58a81e19c423305b0e14ad2986b5cd223edd96e2dd4fef06a1d5dcf32ce",
+          "mtimeIso": "2026-05-04T22:10:28.780Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\aws-lambda-s3-files-turns-s3-into-a-filesystem\\prompt.txt",
+          "sha256": "a76fd256a1eb3f835b17334cc93dd750dd147cf6caa38a2fd0ed2063df342182",
+          "mtimeIso": "2026-05-04T22:10:28.789Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 40,
+      "logCountAfter": 41,
+      "logEntry": "2026-05-04 | AWS Lambda S3 Files Turns S3 Into a Filesystem | AWS Lambda S3 Files | serverless architecture tradeoffs when Lambda can mount S3 buckets as file systems for shared file-shaped workloads",
+      "logUpdatedAt": "2026-05-04T22:10:28.808Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}
