@@ -13,7 +13,7 @@ Each run must produce:
 - one LinkedIn post
 - one X post
 - one Nano Banana-ready prompt for the visual asset
-- one generated `thumbnail.png` image created from that prompt
+- one generated SEO-named PNG thumbnail image created from that prompt
 
 The workflow must reflect topics trending right now and should optimize for both audience conversion
 and organic discovery.
@@ -224,11 +224,11 @@ This command must:
 - create `_post_suggestion/<short-slug>/linkedin_post.txt`
 - create `_post_suggestion/<short-slug>/x_post.txt`
 - create `_post_suggestion/<short-slug>/prompt.txt`
-- create `_post_suggestion/<short-slug>/thumbnail.png` from the saved `prompt.txt`
+- create `_post_suggestion/<short-slug>/<seo-topic-keyword-software-development-linkedin-thumbnail>.png` from the saved `prompt.txt`
 - reject exact and near-duplicate titles against `log.txt`
 - append the finalized structured record to `log.txt` only after the package is complete
 
-Thumbnail generation requires `GEMINI_API_KEY` in the root `.env` file or the shell environment.
+Thumbnail generation is local and does not require a remote image API key.
 
 ---
 
@@ -241,7 +241,7 @@ Each completed run must produce exactly these files:
 | LinkedIn post | `_post_suggestion/<short-slug>/linkedin_post.txt` |
 | X post | `_post_suggestion/<short-slug>/x_post.txt` |
 | Nano Banana prompt | `_post_suggestion/<short-slug>/prompt.txt` |
-| Generated thumbnail | `_post_suggestion/<short-slug>/thumbnail.png` |
+| Generated thumbnail | `_post_suggestion/<short-slug>/<seo-topic-keyword-software-development-linkedin-thumbnail>.png` |
 
 Print the saved paths when complete.
 

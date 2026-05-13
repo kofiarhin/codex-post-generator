@@ -35,7 +35,7 @@ paired with Nano Banana-optimized visual prompts for thumbnails and social graph
 - The directory exists at the repository root.
 - Do not save outputs anywhere else.
 - Save each run inside its own short slug-named subdirectory.
-- Final structure must be `_post_suggestion/<short-slug>/linkedin_post.txt`, `_post_suggestion/<short-slug>/x_post.txt`, `_post_suggestion/<short-slug>/prompt.txt`, and `_post_suggestion/<short-slug>/thumbnail.png`.
+- Final structure must be `_post_suggestion/<short-slug>/linkedin_post.txt`, `_post_suggestion/<short-slug>/x_post.txt`, `_post_suggestion/<short-slug>/prompt.txt`, and one SEO-named PNG thumbnail.
 
 ---
 
@@ -52,7 +52,8 @@ paired with Nano Banana-optimized visual prompts for thumbnails and social graph
 - LinkedIn post file: `_post_suggestion/<short-slug>/linkedin_post.txt`
 - X post file: `_post_suggestion/<short-slug>/x_post.txt`
 - Prompt file: `_post_suggestion/<short-slug>/prompt.txt`
-- Thumbnail file: `_post_suggestion/<short-slug>/thumbnail.png`
+- Thumbnail file: `_post_suggestion/<short-slug>/<seo-topic-keyword-software-development-linkedin-thumbnail>.png`
+- The thumbnail filename must be SEO-friendly: lowercase, hyphen-separated, derived from the final post title plus the primary SEO keyword or topic angle, and include searchable market text such as `software-development-linkedin-thumbnail`.
 
 ---
 
@@ -222,12 +223,12 @@ Agents must execute in this order:
 3. Selector subagent — choose the highest-conversion topic
 4. Post-writer subagent — write both the LinkedIn post and the X post
 5. Asset skill invocation — use the `linkedin-post-assets` skill after the posts are written
-6. Generate thumbnail — use the saved prompt as the image generation prompt and save `_post_suggestion/<short-slug>/thumbnail.png`
+6. Generate thumbnail — use the saved prompt as the image generation prompt and save `_post_suggestion/<short-slug>/<seo-topic-keyword-software-development-linkedin-thumbnail>.png`
 7. Save outputs — save all files inside `_post_suggestion/<short-slug>/`
 8. Update title log — append the finalized post title to `log.txt`
 
 The asset skill must always be used after the post is written. It is not optional.
-All outputs must be saved as `linkedin_post.txt`, `x_post.txt`, `prompt.txt`, and `thumbnail.png` before the workflow is considered complete.
+All outputs must be saved as `linkedin_post.txt`, `x_post.txt`, `prompt.txt`, and one SEO-named `.png` thumbnail before the workflow is considered complete.
 The saved `prompt.txt` must be a Nano Banana-optimized generation prompt.
 The saved `prompt.txt` must include a topic-based text overlay centered in the middle of the thumbnail.
 The finalized post title must also be written to `log.txt`.
@@ -258,7 +259,7 @@ Use the Node.js save scripts only if they support the required final layout. The
 _post_suggestion/<short-slug>/linkedin_post.txt
 _post_suggestion/<short-slug>/x_post.txt
 _post_suggestion/<short-slug>/prompt.txt
-_post_suggestion/<short-slug>/thumbnail.png
+_post_suggestion/<short-slug>/<seo-topic-keyword-software-development-linkedin-thumbnail>.png
 ```
 
 If the scripts do not support that layout, update the workflow so the final persisted output still matches the required structure exactly.
@@ -311,7 +312,7 @@ Note: `save:post`, `save:asset`, and `generate:thumbnail` are low-level helpers.
 - Save final LinkedIn post only in `linkedin_post.txt`.
 - Save final X post only in `x_post.txt`.
 - Save final asset or visual prompt content only in `prompt.txt`.
-- Save final generated thumbnail only in `thumbnail.png`.
+- Save final generated thumbnail only as the SEO-named PNG created by the finalizer.
 - Make `prompt.txt` directly usable in Nano Banana with minimal or no editing.
 - Do not modify files inside `.github/skills/` during a run.
 - Read the relevant SKILL.md and style guides before generating any content.

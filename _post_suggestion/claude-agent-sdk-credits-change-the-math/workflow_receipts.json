@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "title": "Claude Agent SDK Credits Change the Math",
+  "slug": "claude-agent-sdk-credits-change-the-math",
+  "createdAt": "2026-05-13T01:41:03.136Z",
+  "updatedAt": "2026-05-13T01:41:03.549Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-13T01:41:03.136Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\x_post.txt",
+      "linkedinSha256": "b3a7547546a2558da528ed3700bc803e01e9f1a308f3aa93e150ad873b178e47",
+      "xSha256": "786f926eef16aacff263dda37d5f154f8fc750b7be6bf978e2acc78c5b3e11ab"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-13T01:41:03.167Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\prompt.txt",
+      "promptSha256": "e97ca7d8057342e7de2e3cb7ab44555cbec8d61f490ab7653d99af4c7431c9a6"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-13T01:41:03.537Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\claude-agent-sdk-credits-change-the-math-ai-billing-turns-automation-from-subscription-u-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "claude-agent-sdk-credits-change-the-math-ai-billing-turns-automation-from-subscription-u-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "16785a72d8fa29cffa1e7e8a63c94ef355503927ca68b22168a8ab49da281df3",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\prompt.txt",
+      "promptSha256": "e97ca7d8057342e7de2e3cb7ab44555cbec8d61f490ab7653d99af4c7431c9a6",
+      "model": "local-node-png-renderer",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-13T01:41:03.549Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "claude-agent-sdk-credits-change-the-math-ai-billing-turns-automation-from-subscription-u-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "claude-agent-sdk-credits-change-the-math-ai-billing-turns-automation-from-subscription-u-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\linkedin_post.txt",
+          "sha256": "b3a7547546a2558da528ed3700bc803e01e9f1a308f3aa93e150ad873b178e47",
+          "mtimeIso": "2026-05-13T01:41:03.118Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\x_post.txt",
+          "sha256": "786f926eef16aacff263dda37d5f154f8fc750b7be6bf978e2acc78c5b3e11ab",
+          "mtimeIso": "2026-05-13T01:41:03.119Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\prompt.txt",
+          "sha256": "e97ca7d8057342e7de2e3cb7ab44555cbec8d61f490ab7653d99af4c7431c9a6",
+          "mtimeIso": "2026-05-13T01:41:03.166Z"
+        },
+        "claude-agent-sdk-credits-change-the-math-ai-billing-turns-automation-from-subscription-u-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\claude-agent-sdk-credits-change-the-math\\claude-agent-sdk-credits-change-the-math-ai-billing-turns-automation-from-subscription-u-software-development-linkedin-thumbnail.png",
+          "sha256": "16785a72d8fa29cffa1e7e8a63c94ef355503927ca68b22168a8ab49da281df3",
+          "mtimeIso": "2026-05-13T01:41:03.535Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 56,
+      "logCountAfter": 57,
+      "logEntry": "2026-05-13 | Claude Agent SDK Credits Change the Math | Claude Agent SDK credits | AI agent billing turns Claude automation from subscription usage into metered infrastructure",
+      "logUpdatedAt": "2026-05-13T01:41:03.547Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

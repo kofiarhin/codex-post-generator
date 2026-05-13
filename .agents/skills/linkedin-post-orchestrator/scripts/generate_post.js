@@ -34,7 +34,7 @@ async function main() {
     console.log(`LINKEDIN_FILE: _post_suggestion/${result.slug}/linkedin_post.txt`);
     console.log(`X_FILE: _post_suggestion/${result.slug}/x_post.txt`);
     console.log(`PROMPT_FILE: _post_suggestion/${result.slug}/prompt.txt`);
-    console.log(`THUMBNAIL_FILE: _post_suggestion/${result.slug}/thumbnail.png`);
+    console.log(`THUMBNAIL_FILE: _post_suggestion/${result.slug}/${result.thumbnailFileName}`);
     console.log(`LOG_ENTRY: ${result.loggedLine}`);
   } catch (error) {
     console.error(`GENERATE_POST_FAILED: ${error.message}`);

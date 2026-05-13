@@ -21,14 +21,18 @@ const { formatDuplicateError, savePostFiles } = require('./save_post');
 const { saveAssetPrompt } = require('../../linkedin-post-assets/scripts/save_asset');
 const { generateThumbnail } = require('../../linkedin-post-assets/scripts/generate_thumbnail');
 
-const REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt', 'thumbnail.png'];
+const REQUIRED_TEXT_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
 
-function validateOutputPackage(outputDir) {
-  return REQUIRED_OUTPUT_FILES.filter((fileName) => !fs.existsSync(path.join(outputDir, fileName)));
+function buildRequiredOutputFiles(thumbnailFileName) {
+  return [...REQUIRED_TEXT_OUTPUT_FILES, thumbnailFileName];
 }
 
-function buildPackageFileHashes(outputDir) {
-  return REQUIRED_OUTPUT_FILES.reduce((accumulator, fileName) => {
+function validateOutputPackage(outputDir, requiredFiles) {
+  return requiredFiles.filter((fileName) => !fs.existsSync(path.join(outputDir, fileName)));
+}
+
+function buildPackageFileHashes(outputDir, requiredFiles) {
+  return requiredFiles.reduce((accumulator, fileName) => {
     const filePath = path.join(outputDir, fileName);
     accumulator[fileName] = {
       path: filePath,
@@ -82,19 +86,22 @@ async function finalizePostPackage({
     const thumbnailResult = await thumbnailGenerator({
       title,
       promptInputPath: assetResult.outputPath,
+      primaryKeyword,
+      topicAngle,
       repoRoot
     });
+    const requiredOutputFiles = buildRequiredOutputFiles(thumbnailResult.fileName || path.basename(thumbnailResult.outputPath));
 
     const receiptPath = getReceiptPath({ repoRoot, slug });
     const receipt = readReceipt(receiptPath);
     requireCompletedStages(receipt, ['orchestrator', 'asset', 'thumbnail']);
 
-    const missingFiles = validateOutputPackage(outputDir);
+    const missingFiles = validateOutputPackage(outputDir, requiredOutputFiles);
     if (missingFiles.length > 0) {
       throw new Error(`Final package is incomplete. Missing files: ${missingFiles.join(', ')}`);
     }
 
-    const packageFileHashes = buildPackageFileHashes(outputDir);
+    const packageFileHashes = buildPackageFileHashes(outputDir, requiredOutputFiles);
     const latestPackageFileTimestamp = Math.max(
       ...Object.values(packageFileHashes).map((entry) => new Date(entry.mtimeIso).getTime())
     );
@@ -118,7 +125,8 @@ async function finalizePostPackage({
       source: 'finalize_post_package.js',
       payload: {
         packageComplete: true,
-        requiredFiles: REQUIRED_OUTPUT_FILES,
+        requiredFiles: requiredOutputFiles,
+        thumbnailFileName: thumbnailResult.fileName || path.basename(thumbnailResult.outputPath),
         packageFileHashes,
         logPath,
         logCountBefore,
@@ -140,6 +148,7 @@ async function finalizePostPackage({
       xOutputPath: postResult.xOutputPath,
       promptOutputPath: assetResult.outputPath,
       thumbnailOutputPath: thumbnailResult.outputPath,
+      thumbnailFileName: thumbnailResult.fileName || path.basename(thumbnailResult.outputPath),
       logPath,
       loggedLine,
       receiptPath: finalizerReceipt.receiptPath
@@ -178,7 +187,7 @@ async function main() {
     console.log(`LinkedIn post saved to: _post_suggestion/${result.slug}/linkedin_post.txt`);
     console.log(`X post saved to: _post_suggestion/${result.slug}/x_post.txt`);
     console.log(`Prompt saved to: _post_suggestion/${result.slug}/prompt.txt`);
-    console.log(`Thumbnail saved to: _post_suggestion/${result.slug}/thumbnail.png`);
+    console.log(`Thumbnail saved to: _post_suggestion/${result.slug}/${result.thumbnailFileName}`);
     console.log('Title logged in: log.txt');
     console.log(`Log entry: ${result.loggedLine}`);
     console.log(`Workflow receipt: _post_suggestion/${result.slug}/workflow_receipts.json`);
@@ -197,5 +206,6 @@ if (require.main === module) {
 }
 
 module.exports = {
+  buildRequiredOutputFiles,
   finalizePostPackage
 };

@@ -42,3 +42,17 @@
 2026-05-05 | GitHub Reliability Is Now Part of Your Architecture | GitHub reliability | GitHub platform reliability as release architecture and developer infrastructure risk
 2026-05-05 | Python Free-Threading Is Becoming a Migration Question | Python 3.14 free-threading | free-threaded Python as dependency-readiness and migration work rather than a magic GIL-removal headline
 2026-05-05 | Git Push Is a Production Attack Surface | GitHub RCE vulnerability | git push pipeline as a privileged production attack surface
+2026-05-05 | Coding Agents Need a Work Queue, Not Another Terminal | coding agent orchestration | issue tracker as control plane for AI coding agent workflow
+2026-05-05 | PostgreSQL 19 Beta Reopens the Postgres Default | PostgreSQL 19 beta | Postgres as default architecture decision and when simplification becomes deferred architecture debt
+2026-05-06 | Kyverno Moves Policy Into the Operating Layer | Kubernetes policy as code | Kyverno 1.18 moves policy beyond admission control into tested, owned, observable Kubernetes governance
+2026-05-06 | Multimodal RAG Is a Retrieval Discipline Problem | multimodal RAG | Gemini API File Search reframes production AI apps around searchable multimodal memory, metadata filters, and citations instead of bigger context windows
+2026-05-06 | AI Agent Fleets Need Triage, Not More Autonomy | AI agent fleets | agentic CI/CD needs roles, triage, and review loops rather than unmanaged autonomy
+2026-05-07 | Preview Databases Finally Grow Up | Netlify Database | preview database branching for full-stack deploy previews
+2026-05-07 | The Anthropic xAI Partnership Is a Compute Story | Anthropic xAI partnership | compute capacity turns Claude rate limits into developer experience
+2026-05-07 | Kubernetes OCI Artifacts Grow Up | Kubernetes 1.36 OCI artifacts | registry workflow for workload assets
+2026-05-08 | AI Code Attribution Is a Trust Boundary | AI code attribution | Git metadata and AI co-author attribution as a developer workflow trust boundary
+2026-05-08 | Chrome DevTools Gets Agent-Ready | Chrome DevTools AI agents | Browser debugging becomes agent-accessible through DevTools MCP, WebMCP, Lighthouse, and extension workflows
+2026-05-09 | Coding Agent Governance Gets Real | AI coding agent governance | operational governance controls for production AI coding agents
+2026-05-10 | Copilot Training Data Is a Settings Page Now | GitHub Copilot data policy | developer privacy and model training defaults for AI coding tools
+2026-05-13 | Claude Agent SDK Credits Change the Math | Claude Agent SDK credits | AI agent billing turns Claude automation from subscription usage into metered infrastructure
+2026-05-13 | The TanStack Hack Was a CI Trust Boundary Failure | TanStack npm compromise | CI cache poisoning and trusted publishing trust boundaries

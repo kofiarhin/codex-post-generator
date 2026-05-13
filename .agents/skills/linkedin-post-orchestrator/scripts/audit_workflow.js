@@ -6,7 +6,7 @@ const { readLogEntries } = require('./title_log_utils');
 const { readReceipt } = require('./workflow_receipts');
 
 const LEGACY_REQUIRED_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
-const CURRENT_REQUIRED_OUTPUT_FILES = [...LEGACY_REQUIRED_OUTPUT_FILES, 'thumbnail.png'];
+const CURRENT_REQUIRED_OUTPUT_FILES_DESCRIPTION = 'linkedin_post.txt, x_post.txt, prompt.txt, <seo-thumbnail-file>.png';
 const REQUIRED_STAGES = ['orchestrator', 'asset', 'finalizer'];
 
 function listDirectories(baseDir) {
@@ -47,7 +47,9 @@ function auditPackage(repoRoot, dirPath) {
     }
   }
 
-  if (requiredOutputFiles.includes('thumbnail.png') && receipt.stages?.thumbnail?.status !== 'completed') {
+  const expectsThumbnail = requiredOutputFiles.some((fileName) => fileName.toLowerCase().endsWith('.png'));
+
+  if (expectsThumbnail && receipt.stages?.thumbnail?.status !== 'completed') {
     issues.push(`Missing completed stage 'thumbnail' in ${path.relative(repoRoot, receiptPath)}`);
   }
 
@@ -93,7 +95,7 @@ function main() {
   console.log(`Audited package directories: ${packageDirs.length}`);
   console.log(`Log file present: ${fs.existsSync(logPath) ? 'yes' : 'no'}`);
   console.log(`Log entry count: ${logEntries.length}`);
-  console.log(`Current required files: ${CURRENT_REQUIRED_OUTPUT_FILES.join(', ')}`);
+  console.log(`Current required files: ${CURRENT_REQUIRED_OUTPUT_FILES_DESCRIPTION}`);
 
   if (issues.length === 0) {
     console.log('Workflow audit passed. All saved packages are machine-verifiable.');

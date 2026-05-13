@@ -1,0 +1,15 @@
+Claude Agent SDK credits make one thing pretty clear: AI agents are being priced less like chat apps and more like infrastructure.
+
+A developer prompting Claude Code manually is one thing.
+
+A GitHub Action quietly calling an agent on every PR, retry, failed check, and "quick cleanup" task is another.
+
+Flat-rate AI subscriptions were never built for automated loops with a credit card attached.
+
+The useful part of agentic AI is still real.
+
+But now the engineering question includes the least glamorous line in software:
+
+What happens when this runs all night?
+
+#ClaudeCode #Anthropic #AgenticAI #DevTools
