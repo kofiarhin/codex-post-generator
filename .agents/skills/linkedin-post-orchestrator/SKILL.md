@@ -1,6 +1,6 @@
 ---
 name: linkedin-post-orchestrator
-description: Researches 4–5 currently trending software topics from the web, selects the topic with the strongest conversion and SEO potential, writes both a LinkedIn post and an X post in an experienced developer voice, then invokes the linkedin-post-assets skill to generate a Nano Banana-ready prompt and finalizes the saved package in `_post_suggestion/<slug>/`.
+description: Runs the RALPH article/post loop for trending software content: research requirements, draft, review/refine, polish, health-check, asset prompt generation, thumbnail generation, and final package persistence in `_post_suggestion/<slug>/`.
 ---
 
 # Skill: linkedin-post-orchestrator
@@ -32,6 +32,8 @@ to sanity-check likely final titles before the selection is locked.
 
 Read `assets/post-style-guide.md` before writing any post content.
 Use `assets/output-template.md` as the working structure when compiling the draft package.
+If the user requests the pipeline, article generation, or a resumable handoff package, also read
+`assets/ralph-article-loop.md` and apply the RALPH article/post loop.
 
 ---
 
@@ -188,6 +190,66 @@ X Post:
 
 ---
 
+### Optional Pipeline Step - RALPH Article/Post Loop
+
+Run this step when the user explicitly asks for article generation, a full pipeline package, or a
+resumable handoff package. Do not run it for the normal `generate post` social package workflow
+unless the user asks for the RALPH/pipeline path.
+
+Read `assets/ralph-article-loop.md` before writing article content.
+
+Preserve the existing setup, research, duplicate-check, selection, and SEO planning behavior.
+Then apply the RALPH sequence to the article/post package:
+
+1. R - Research/Requirements
+2. A - Article/Post Draft
+3. L - Loop Review/Refine
+4. P - Polish
+5. H - Health Check
+
+The RALPH loop must produce and save:
+
+```text
+_post_suggestion/<short-slug>/article_requirements.md
+_post_suggestion/<short-slug>/article_draft.md
+_post_suggestion/<short-slug>/article_review_notes.md
+_post_suggestion/<short-slug>/polish_decision.json
+_post_suggestion/<short-slug>/article_polished.md
+_post_suggestion/<short-slug>/polished_package.json
+_post_suggestion/<short-slug>/article_health_check.md
+_post_suggestion/<short-slug>/workflow_state.json
+_post_suggestion/<short-slug>/workflow_summary.json
+```
+
+The polish stage is explicit and happens after review approval. It must write both
+`polish_decision.json` and `polished_package.json` before the health check runs.
+
+After each RALPH stage, record resume/handoff state with:
+
+```bash
+node .agents/skills/linkedin-post-orchestrator/scripts/record_ralph_stage.js "<Article Title>" "<stage>" "<artifact-input-path>"
+```
+
+The canonical resume state is `workflow_state.json`. It must include `currentStage`,
+`completedStages`, `nextStage`, `lastUpdatedAt`, `reviewIterationsUsed`, and artifact paths.
+The workflow summary is `workflow_summary.json`. It must include `ralphStagesCompleted`,
+`reviewIterationsUsed`, `polishCompleted`, `healthCheckPassed`, and `finalOutputPaths`.
+
+The loop may use at most 3 review/refine iterations. If more are needed, stop and report the blocker
+instead of silently continuing.
+
+Before article output is considered complete, run:
+
+```bash
+npm run validate:ralph -- "<Article Title>"
+```
+
+If article generation is part of a larger package request, continue with the existing finalization/output
+steps after the RALPH health check passes. Do not change the required LinkedIn, X, prompt, thumbnail,
+or `log.txt` behavior for the social package.
+
+---
+
 ### Step 4 — Use the linkedin-post-assets Skill
 
 After both posts are written, use the `linkedin-post-assets` skill.
@@ -261,6 +323,9 @@ Print the saved paths when complete.
 - Ensure the LinkedIn post reflects an experienced developer voice rather than generic influencer copy.
 - Always perform the `log.txt` duplication check before final selection.
 - Avoid near-duplicate framing even when the exact title is different.
+- Legacy packages are not required to contain RALPH trace files. Only packages that declare RALPH or
+  pipeline mode through `workflow_state.json`, `workflow_summary.json`, or receipts must satisfy the
+  full RALPH artifact contract.
 # X Premium Output Override
 
 - Assume this workflow writes for a paid X account by default.

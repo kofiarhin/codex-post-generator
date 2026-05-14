@@ -56,3 +56,4 @@
 2026-05-10 | Copilot Training Data Is a Settings Page Now | GitHub Copilot data policy | developer privacy and model training defaults for AI coding tools
 2026-05-13 | Claude Agent SDK Credits Change the Math | Claude Agent SDK credits | AI agent billing turns Claude automation from subscription usage into metered infrastructure
 2026-05-13 | The TanStack Hack Was a CI Trust Boundary Failure | TanStack npm compromise | CI cache poisoning and trusted publishing trust boundaries
+2026-05-13 | The GitHub Copilot App Makes Coding Agents a Workflow Problem | GitHub Copilot app | GitHub-native agent workflow from issue context to pull request validation and merge

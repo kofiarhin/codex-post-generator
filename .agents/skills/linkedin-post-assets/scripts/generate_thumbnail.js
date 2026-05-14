@@ -389,7 +389,10 @@ function buildSeoThumbnailBaseName({
 }) {
   const seenTokens = new Set();
   const orderedTokens = [];
-  const sourceValues = [title, primaryKeyword, topicAngle, DEFAULT_SEO_FILENAME_SUFFIX];
+  const suffixTokens = tokenizeSeoText(DEFAULT_SEO_FILENAME_SUFFIX);
+  const suffixText = suffixTokens.join('-');
+  const maxPrefixLength = Math.max(0, maxLength - suffixText.length - 1);
+  const sourceValues = [title, primaryKeyword, topicAngle];
 
   for (const sourceValue of sourceValues) {
     for (const token of tokenizeSeoText(sourceValue)) {
@@ -398,8 +401,8 @@ function buildSeoThumbnailBaseName({
       }
 
       const nextName = [...orderedTokens, token].join('-');
-      if (nextName.length > maxLength) {
-        return orderedTokens.join('-') || DEFAULT_SEO_FILENAME_SUFFIX;
+      if (nextName.length > maxPrefixLength) {
+        return [...orderedTokens, ...suffixTokens].join('-') || suffixText;
       }
 
       seenTokens.add(token);
@@ -407,7 +410,7 @@ function buildSeoThumbnailBaseName({
     }
   }
 
-  return orderedTokens.join('-') || DEFAULT_SEO_FILENAME_SUFFIX;
+  return [...orderedTokens, ...suffixTokens].join('-') || suffixText;
 }
 
 function buildSeoThumbnailFileName(options) {

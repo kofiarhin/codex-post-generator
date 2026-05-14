@@ -234,6 +234,66 @@ The saved `prompt.txt` must include a topic-based text overlay centered in the m
 The finalized post title must also be written to `log.txt`.
 The preferred final persistence step is `node .agents/skills/linkedin-post-orchestrator/scripts/finalize_post_package.js ...` or `npm run finalize:post -- ...` so that all four files are saved first and `log.txt` is updated only after the package is complete.
 
+### RALPH Article/Post Loop
+
+This is an additive article/post workflow. It must not replace or weaken the original `generate post`
+workflow above.
+
+Use the RALPH loop only when the user explicitly asks for article generation, a full article package,
+or a resumable pipeline/handoff package.
+The normal social package still follows the existing research, duplicate-check, post-writing, asset,
+thumbnail, save, and `log.txt` finalization sequence.
+
+For RALPH generation, preserve the existing setup/input, topic research, duplicate checks, selection,
+and SEO planning where they apply, then run the article/post package through:
+
+1. R - Research/Requirements: confirm article goal, audience, source inputs, angle, constraints, SEO/title requirements.
+2. A - Article/Post Draft: generate the first complete article or post package draft.
+3. L - Loop Review/Refine: review against requirements, structure, clarity, originality, tone, and usefulness.
+4. P - Polish: after review approval, improve the package and write polish artifacts.
+5. H - Health Check: verify the final article before output.
+
+The RALPH loop must produce these artifacts inside `_post_suggestion/<short-slug>/`:
+
+```text
+article_requirements.md
+article_draft.md
+article_review_notes.md
+polish_decision.json
+article_polished.md
+polished_package.json
+article_health_check.md
+workflow_state.json
+workflow_summary.json
+```
+
+The required user-facing article artifacts are the draft article, review/refinement notes, polished
+article, and final health-check summary. `article_requirements.md`, the polish JSON files,
+`workflow_state.json`, and `workflow_summary.json` exist so agents can resume and hand off safely.
+
+`workflow_state.json` must include `currentStage`, `completedStages`, `nextStage`, `lastUpdatedAt`,
+review iteration count, and artifact paths. `workflow_summary.json` must include
+`ralphStagesCompleted`, `reviewIterationsUsed`, `polishCompleted`, `healthCheckPassed`, and
+`finalOutputPaths`.
+
+The review/refine loop is capped at 3 iterations.
+
+After each stage, record state with:
+
+```bash
+npm run ralph:record-stage -- "<Article Title>" "<stage>" "<artifact-input-path>"
+```
+
+Before final article output, run:
+
+```bash
+npm run validate:ralph -- "<Article Title>"
+```
+
+If a RALPH run is interrupted, read `_post_suggestion/<short-slug>/workflow_state.json` and
+continue from `nextStage`. Do not regenerate completed stages unless the user asks for revisions or
+the validator reports a failed/missing stage.
+
 ### Trigger Phrase
 
 - If the user says `generate post`, treat it as a request to execute the full end-to-end workflow above.
@@ -248,6 +308,7 @@ The preferred final persistence step is `node .agents/skills/linkedin-post-orche
 |-------------------------------|---------------------------------------------------|
 | `linkedin-post-orchestrator`  | Research, select, write LinkedIn posts            |
 | `linkedin-post-assets`        | Generate visual asset prompts for the post        |
+| `RALPH article/post loop`     | Optional article/post draft, review/refine, polish, and health-check sequence |
 
 ---
 
