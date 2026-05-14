@@ -1,0 +1,21 @@
+AI agent observability is where the agent hype starts paying rent.
+
+Not in the demo. Not in the keynote. In production, at 4:17 p.m., when an agent "successfully" completes a task and somehow creates three new questions, two bad tool calls, and a support ticket with the emotional texture of wet cardboard.
+
+This is why LLM observability is getting serious.
+
+A production AI agent does not just call a model. It reasons badly, retries quietly, chooses tools with suspicious confidence, hands work to another agent, burns tokens, waits on APIs, and occasionally returns an answer that looks plausible enough to ruin your afternoon.
+
+Normal logs are not enough for that.
+
+You need traces that show model latency, slow tool calls, retry loops, token exchanges, handoffs, downstream system impact, and where the agent's "helpful" decision stopped being helpful.
+
+That is the interesting part of OpenTelemetry GenAI, LangSmith, and the newer agent debugging tools: they move the conversation from "look what the agent can do" to "show me what it actually did."
+
+Production AI agents need the same boring engineering discipline as everything else we ship.
+
+Visibility first. Trust later.
+
+What is the first agent failure mode you would want traced?
+
+#AIAgents #Observability #OpenTelemetry #LLMOps #PlatformEngineering #SoftwareEngineering

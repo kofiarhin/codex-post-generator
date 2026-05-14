@@ -1,0 +1,13 @@
+DuckDB Quack is not "DuckDB becomes Postgres."
+
+That is why it is interesting.
+
+The beta DuckDB client-server protocol gives you remote access, multi-client read/write, and the full DuckDB feature set over the wire without treating embedded analytics as a mistake to outgrow.
+
+Anyone who has passed Parquet files around, wrapped DuckDB in a tiny service, or coordinated "local" data workflows through vibes and Slack messages knows the pain.
+
+Local-first data tools are great until collaboration shows up.
+
+Quack feels like DuckDB admitting the obvious: sometimes the database should stay close to the process, and sometimes the process needs to reach the database.
+
+#DuckDB #DataEngineering #DeveloperTools #Databases

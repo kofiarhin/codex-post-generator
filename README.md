@@ -28,6 +28,20 @@ Audit saved social packages with:
 npm run audit:workflow
 ```
 
+## Thumbnail Generation
+
+The finalizer sends the full saved `prompt.txt` to Hugging Face text-to-image when configured:
+
+```bash
+IMAGE_GENERATION_PROVIDER=huggingface
+HF_TOKEN=hf_your_token_here
+HF_IMAGE_MODEL=black-forest-labs/FLUX.1-schnell
+```
+
+Set `IMAGE_GENERATION_PROVIDER=local` to force the built-in PNG renderer. If Hugging Face fails,
+the workflow falls back to local rendering and records the provider, model, fallback reason, prompt
+hash, thumbnail hash, width, and height in `workflow_receipts.json`.
+
 ## Optional RALPH Article/Post Loop
 
 When the requested output includes a full article, pipeline package, or resumable handoff package,

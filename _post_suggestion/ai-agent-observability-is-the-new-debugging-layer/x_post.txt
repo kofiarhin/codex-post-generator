@@ -1,0 +1,11 @@
+AI agent observability is the part of the AI stack that sounds boring until an agent "successfully" finishes a task and leaves you debugging five tool calls, two retries, a slow model response, and one mysteriously confident bad decision.
+
+That is the real production problem.
+
+Not whether agents can demo well.
+
+Whether you can trace what they did, why they did it, what it cost, where latency came from, and which downstream system got dragged into the mess.
+
+Hype ships demos. Observability ships trust.
+
+#AIAgents #Observability #LLMOps

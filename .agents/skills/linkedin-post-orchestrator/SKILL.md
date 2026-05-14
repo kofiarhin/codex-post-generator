@@ -1,6 +1,6 @@
 ---
 name: linkedin-post-orchestrator
-description: Runs the RALPH article/post loop for trending software content: research requirements, draft, review/refine, polish, health-check, asset prompt generation, thumbnail generation, and final package persistence in `_post_suggestion/<slug>/`.
+description: "Runs the RALPH article/post loop for trending software content: research requirements, draft, review/refine, polish, health-check, asset prompt generation, thumbnail generation, and final package persistence in `_post_suggestion/<slug>/`."
 ---
 
 # Skill: linkedin-post-orchestrator

@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "title": "React Server Components Made Frontend Security a Runtime Problem",
+  "slug": "react-server-components-made-frontend-security-a-runtime-pro",
+  "createdAt": "2026-05-14T14:44:03.941Z",
+  "updatedAt": "2026-05-14T14:44:04.144Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T14:44:03.941Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\x_post.txt",
+      "linkedinSha256": "fb0a2291605c7330bc64de44177d8c6028473f5db650caa3c40b5429000204f2",
+      "xSha256": "69bf332872ddf6103b1b317630cc965bfb1fc67c8aa47bc4c11ed8ed1c6fc55b"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T14:44:03.958Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\prompt.txt",
+      "promptSha256": "efb2f610049d2bb9100110228081f2ab36eaeb192a2a7c445461c5c8d475d776"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T14:44:04.136Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\react-server-components-made-frontend-security-a-runtime-pro-after-and-nextjs-may-2026-vu-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "react-server-components-made-frontend-security-a-runtime-pro-after-and-nextjs-may-2026-vu-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "bf8f1be16a0c1f356baba172b7f0c75b6e6806fb478be24c3a18449eacaa1c0b",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\prompt.txt",
+      "promptSha256": "efb2f610049d2bb9100110228081f2ab36eaeb192a2a7c445461c5c8d475d776",
+      "model": "local-node-png-renderer",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T14:44:04.144Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "react-server-components-made-frontend-security-a-runtime-pro-after-and-nextjs-may-2026-vu-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "react-server-components-made-frontend-security-a-runtime-pro-after-and-nextjs-may-2026-vu-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\linkedin_post.txt",
+          "sha256": "fb0a2291605c7330bc64de44177d8c6028473f5db650caa3c40b5429000204f2",
+          "mtimeIso": "2026-05-14T14:44:03.935Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\x_post.txt",
+          "sha256": "69bf332872ddf6103b1b317630cc965bfb1fc67c8aa47bc4c11ed8ed1c6fc55b",
+          "mtimeIso": "2026-05-14T14:44:03.936Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\prompt.txt",
+          "sha256": "efb2f610049d2bb9100110228081f2ab36eaeb192a2a7c445461c5c8d475d776",
+          "mtimeIso": "2026-05-14T14:44:03.958Z"
+        },
+        "react-server-components-made-frontend-security-a-runtime-pro-after-and-nextjs-may-2026-vu-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\react-server-components-made-frontend-security-a-runtime-pro\\react-server-components-made-frontend-security-a-runtime-pro-after-and-nextjs-may-2026-vu-software-development-linkedin-thumbnail.png",
+          "sha256": "bf8f1be16a0c1f356baba172b7f0c75b6e6806fb478be24c3a18449eacaa1c0b",
+          "mtimeIso": "2026-05-14T14:44:04.126Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 59,
+      "logCountAfter": 60,
+      "logEntry": "2026-05-14 | React Server Components Made Frontend Security a Runtime Problem | React Server Components security | frontend runtime security after React and Next.js May 2026 vulnerabilities",
+      "logUpdatedAt": "2026-05-14T14:44:04.144Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

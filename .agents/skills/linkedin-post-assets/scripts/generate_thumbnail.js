@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
+const crypto = require('crypto');
 const { slugify } = require('../../linkedin-post-orchestrator/scripts/title_log_utils');
 const { sha256File, upsertStageReceipt } = require('../../linkedin-post-orchestrator/scripts/workflow_receipts');
 
@@ -10,6 +11,10 @@ const DEFAULT_WIDTH = 1200;
 const DEFAULT_HEIGHT = 628;
 const DEFAULT_SEO_FILENAME_SUFFIX = 'software-development-linkedin-thumbnail';
 const DEFAULT_SEO_FILENAME_MAX_LENGTH = 140;
+const DEFAULT_HF_IMAGE_MODEL = 'black-forest-labs/FLUX.1-schnell';
+const DEFAULT_IMAGE_GENERATION_MODEL = DEFAULT_HF_IMAGE_MODEL;
+const LOCAL_IMAGE_GENERATION_MODEL = 'local-node-png-renderer';
+const HUGGING_FACE_API_BASE_URL = 'https://api-inference.huggingface.co/models';
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
 const FONT = {
@@ -374,6 +379,166 @@ function isPngBuffer(buffer) {
   return buffer.length >= PNG_SIGNATURE.length && PNG_SIGNATURE.every((byte, index) => buffer[index] === byte);
 }
 
+function sha256Buffer(buffer) {
+  return crypto.createHash('sha256').update(buffer).digest('hex');
+}
+
+function redactErrorMessage(error) {
+  return String(error?.message || error || 'Unknown image generation error')
+    .replace(/hf_[0-9A-Za-z_-]{10,}/g, '[redacted-hf-token]')
+    .slice(0, 500);
+}
+
+function normalizeProvider(value) {
+  const provider = String(value || '').trim().toLowerCase();
+
+  if (provider === 'huggingface' || provider === 'local') {
+    return provider;
+  }
+
+  return '';
+}
+
+function resolveImageGenerationConfig(env = process.env) {
+  const configuredProvider = normalizeProvider(env.IMAGE_GENERATION_PROVIDER);
+  const rawProvider = String(env.IMAGE_GENERATION_PROVIDER || '').trim();
+  const hfToken = String(env.HF_TOKEN || '').trim();
+  const model = String(env.HF_IMAGE_MODEL || '').trim() || DEFAULT_HF_IMAGE_MODEL;
+
+  if (configuredProvider === 'local') {
+    return {
+      configuredProvider: 'local',
+      provider: 'local',
+      model: LOCAL_IMAGE_GENERATION_MODEL,
+      requestedModel: model,
+      hfToken,
+      fallbackUsed: true,
+      fallbackReason: 'IMAGE_GENERATION_PROVIDER=local'
+    };
+  }
+
+  if (configuredProvider === 'huggingface' || (!rawProvider && hfToken)) {
+    if (!hfToken) {
+      return {
+        configuredProvider: 'huggingface',
+        provider: 'local',
+        model: LOCAL_IMAGE_GENERATION_MODEL,
+        requestedModel: model,
+        hfToken,
+        fallbackUsed: true,
+        fallbackReason: 'IMAGE_GENERATION_PROVIDER=huggingface but HF_TOKEN is missing'
+      };
+    }
+
+    return {
+      configuredProvider: configuredProvider || 'auto',
+      provider: 'huggingface',
+      model,
+      hfToken,
+      fallbackUsed: false,
+      fallbackReason: ''
+    };
+  }
+
+  return {
+    configuredProvider: rawProvider || '',
+    provider: 'local',
+    model: LOCAL_IMAGE_GENERATION_MODEL,
+    requestedModel: model,
+    hfToken,
+    fallbackUsed: true,
+    fallbackReason: rawProvider
+      ? `Unsupported IMAGE_GENERATION_PROVIDER=${rawProvider}`
+      : 'HF_TOKEN is missing'
+  };
+}
+
+function encodeModelForUrl(model) {
+  return String(model || DEFAULT_HF_IMAGE_MODEL)
+    .split('/')
+    .map((part) => encodeURIComponent(part))
+    .join('/');
+}
+
+async function responseBuffer(response) {
+  if (typeof response.arrayBuffer === 'function') {
+    return Buffer.from(await response.arrayBuffer());
+  }
+
+  if (typeof response.buffer === 'function') {
+    return response.buffer();
+  }
+
+  if (typeof response.text === 'function') {
+    return Buffer.from(await response.text());
+  }
+
+  throw new Error('Hugging Face response did not expose a readable body.');
+}
+
+function decodeResponseError(buffer) {
+  const text = buffer.toString('utf8').trim();
+
+  if (!text) {
+    return '';
+  }
+
+  try {
+    const parsed = JSON.parse(text);
+    return parsed.error || parsed.message || text;
+  } catch (error) {
+    return text;
+  }
+}
+
+async function generateHuggingFaceImage({
+  prompt,
+  model = DEFAULT_HF_IMAGE_MODEL,
+  hfToken,
+  fetchImpl = globalThis.fetch,
+  apiBaseUrl = HUGGING_FACE_API_BASE_URL,
+  width = DEFAULT_WIDTH,
+  height = DEFAULT_HEIGHT
+}) {
+  if (!hfToken) {
+    throw new Error('HF_TOKEN is required for Hugging Face thumbnail generation.');
+  }
+
+  if (typeof fetchImpl !== 'function') {
+    throw new Error('Global fetch is unavailable. Use Node 18+ or pass a fetch implementation.');
+  }
+
+  const response = await fetchImpl(`${apiBaseUrl}/${encodeModelForUrl(model)}`, {
+    method: 'POST',
+    headers: {
+      Accept: 'image/png',
+      Authorization: `Bearer ${hfToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      inputs: prompt,
+      parameters: {
+        width,
+        height
+      }
+    })
+  });
+
+  const buffer = await responseBuffer(response);
+
+  if (!response.ok) {
+    const message = decodeResponseError(buffer) || response.statusText || 'Hugging Face image generation failed';
+    throw new Error(`Hugging Face image generation failed (${response.status}): ${message}`);
+  }
+
+  if (!isPngBuffer(buffer)) {
+    const contentType = typeof response.headers?.get === 'function' ? response.headers.get('content-type') : '';
+    throw new Error(`Hugging Face returned ${contentType || 'non-PNG data'} instead of PNG data.`);
+  }
+
+  return buffer;
+}
+
 function tokenizeSeoText(value) {
   return slugify(String(value || ''))
     .split('-')
@@ -425,7 +590,12 @@ async function generateThumbnail({
   thumbnailFileName,
   repoRoot = path.resolve(__dirname, '../../../..'),
   width = DEFAULT_WIDTH,
-  height = DEFAULT_HEIGHT
+  height = DEFAULT_HEIGHT,
+  env = process.env,
+  fetchImpl = globalThis.fetch,
+  huggingFaceImageGenerator = generateHuggingFaceImage,
+  localThumbnailRenderer = createLocalThumbnail,
+  logger = console
 }) {
   if (!fs.existsSync(promptInputPath)) {
     throw new Error(`Prompt input file not found: ${promptInputPath}`);
@@ -450,10 +620,43 @@ async function generateThumbnail({
   }
 
   const outputPath = path.join(outputDir, outputFileName);
-  const pngBuffer = createLocalThumbnail({ title, prompt, primaryKeyword, topicAngle, width, height });
+  const config = resolveImageGenerationConfig(env);
+  let pngBuffer = null;
+  let provider = config.provider;
+  let model = config.model;
+  let fallbackUsed = config.fallbackUsed;
+  let fallbackReason = config.fallbackReason;
+  let providerError = '';
+
+  if (config.provider === 'huggingface') {
+    try {
+      pngBuffer = await huggingFaceImageGenerator({
+        prompt,
+        model: config.model,
+        hfToken: config.hfToken,
+        fetchImpl,
+        width,
+        height
+      });
+    } catch (error) {
+      providerError = redactErrorMessage(error);
+      pngBuffer = null;
+      provider = 'local';
+      model = LOCAL_IMAGE_GENERATION_MODEL;
+      fallbackUsed = true;
+      fallbackReason = `Hugging Face provider failed: ${providerError}`;
+    }
+  }
+
+  if (!pngBuffer) {
+    if (fallbackUsed && typeof logger?.warn === 'function') {
+      logger.warn(`Thumbnail fallback: using local renderer. Reason: ${fallbackReason || 'provider did not return an image'}`);
+    }
+    pngBuffer = localThumbnailRenderer({ title, prompt, primaryKeyword, topicAngle, width, height });
+  }
 
   if (!isPngBuffer(pngBuffer)) {
-    throw new Error('Local thumbnail renderer did not produce PNG data.');
+    throw new Error(`${provider === 'huggingface' ? 'Hugging Face provider' : 'Local thumbnail renderer'} did not produce PNG data.`);
   }
 
   fs.writeFileSync(outputPath, pngBuffer);
@@ -463,14 +666,21 @@ async function generateThumbnail({
     title,
     slug,
     stage: 'thumbnail',
-    source: 'local-thumbnail-generator',
+    source: provider === 'huggingface' ? 'huggingface-thumbnail-generator' : 'local-thumbnail-generator',
     payload: {
       thumbnailOutputPath: outputPath,
       thumbnailFileName: outputFileName,
       thumbnailSha256: sha256File(outputPath),
+      thumbnailBufferSha256: sha256Buffer(pngBuffer),
       promptInputPath,
       promptSha256: sha256File(promptInputPath),
-      model: 'local-node-png-renderer',
+      provider,
+      configuredProvider: config.configuredProvider,
+      model,
+      requestedModel: config.requestedModel || config.model,
+      fallbackUsed,
+      fallbackReason,
+      providerError,
       width,
       height
     }
@@ -481,7 +691,10 @@ async function generateThumbnail({
     outputDir,
     outputPath,
     fileName: outputFileName,
-    receiptPath: thumbnailReceipt.receiptPath
+    receiptPath: thumbnailReceipt.receiptPath,
+    provider,
+    model,
+    fallbackUsed
   };
 }
 
@@ -521,9 +734,13 @@ if (require.main === module) {
 }
 
 module.exports = {
+  DEFAULT_IMAGE_GENERATION_MODEL,
+  DEFAULT_HF_IMAGE_MODEL,
   buildSeoThumbnailBaseName,
   buildSeoThumbnailFileName,
   createLocalThumbnail,
+  generateHuggingFaceImage,
   generateThumbnail,
-  isPngBuffer
+  isPngBuffer,
+  resolveImageGenerationConfig
 };

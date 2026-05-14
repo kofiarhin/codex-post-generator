@@ -1,0 +1,13 @@
+React Server Components security is now a runtime problem, not just a frontend architecture opinion.
+
+That is the quiet lesson from the recent React and Next.js security vulnerabilities.
+
+Middleware bypass, XSS, SSRF, cache poisoning, DoS: these are not "button color" problems. They live in the places where frameworks now route requests, stream data, cache responses, and blur client/server boundaries.
+
+The useful takeaway is boring and important:
+
+Patch fast. Understand your hosting adapter. Know where trust is actually enforced.
+
+The framework is part of your security model now.
+
+#ReactJS #NextJS #WebSecurity #FrontendSecurity

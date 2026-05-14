@@ -1,0 +1,11 @@
+A clean editorial technology scene showing a small glowing database core on a developer workstation connected by a few precise network lines to two laptops and a compact analytics dashboard in the background. The subject is an embedded analytics database becoming reachable by teammates without turning into a messy enterprise stack. Use a 16:9 LinkedIn thumbnail composition with one dominant focal point: the database core in the lower center, warm desk lighting, muted charcoal and deep teal palette, one amber accent line, crisp realistic materials, shallow depth of field, and premium commercial illustration quality. The setting should feel like a calm data engineering workspace, not a sci-fi command center. Show broad readable UI panels with simple shapes only, no tiny code, no real logos, no brand marks, no watermarks, no clutter, no distorted hands, no unreadable interface text, and no meme styling.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"DuckDB Quack"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

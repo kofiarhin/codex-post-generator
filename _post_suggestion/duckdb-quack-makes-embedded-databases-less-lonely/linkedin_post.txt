@@ -1,0 +1,23 @@
+DuckDB Quack is interesting because it does not try to make DuckDB less DuckDB.
+
+That is the useful part.
+
+DuckDB has earned a lot of trust as an embedded analytics database because it stays close to the work: local files, notebooks, scripts, data apps, quick investigations, weird one-off pipelines that somehow become business-critical by Friday.
+
+But eventually, every local-first data tool meets the same awkward moment:
+
+"Can someone else connect to this without me becoming the database server?"
+
+Quack is DuckDB's beta answer to that. It adds a DuckDB client-server protocol for remote access, multi-client read/write workflows, and running compute closer to where the data already lives.
+
+That sounds small until you have lived through the alternative: copying files around, building a service wrapper, pretending object storage is a coordination layer, or explaining why the "simple local analytics setup" now has five deployment notes and a shared spreadsheet of warnings.
+
+The clever thing is that Quack does not erase the in-process model. It gives DuckDB database workflows another shape when collaboration, concurrency, or remote compute become real requirements.
+
+That is usually how good developer tools grow up: not by abandoning the thing people liked, but by removing the next layer of friction.
+
+Embedded when you want it. Remote when you need it.
+
+That is a pretty practical quack.
+
+#DuckDB #DataEngineering #DatabaseEngineering #DeveloperTools #AnalyticsEngineering #SoftwareDevelopment

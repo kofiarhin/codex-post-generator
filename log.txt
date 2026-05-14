@@ -57,3 +57,7 @@
 2026-05-13 | Claude Agent SDK Credits Change the Math | Claude Agent SDK credits | AI agent billing turns Claude automation from subscription usage into metered infrastructure
 2026-05-13 | The TanStack Hack Was a CI Trust Boundary Failure | TanStack npm compromise | CI cache poisoning and trusted publishing trust boundaries
 2026-05-13 | The GitHub Copilot App Makes Coding Agents a Workflow Problem | GitHub Copilot app | GitHub-native agent workflow from issue context to pull request validation and merge
+2026-05-14 | React Server Components Made Frontend Security a Runtime Problem | React Server Components security | frontend runtime security after React and Next.js May 2026 vulnerabilities
+2026-05-14 | Codex Mobile and the Approval Problem | OpenAI Codex mobile | mobile approval workflow for long-running AI coding agents
+2026-05-14 | DuckDB Quack Makes Embedded Databases Less Lonely | DuckDB Quack | embedded analytics database evolves into collaborative client-server workflows
+2026-05-14 | AI Agent Observability Is the New Debugging Layer | AI agent observability | production AI agent debugging and operational visibility

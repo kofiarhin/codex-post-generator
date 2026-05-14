@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "DuckDB Quack Makes Embedded Databases Less Lonely",
+  "slug": "duckdb-quack-makes-embedded-databases-less-lonely",
+  "createdAt": "2026-05-14T17:07:49.350Z",
+  "updatedAt": "2026-05-14T17:07:49.607Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T17:07:49.350Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\x_post.txt",
+      "linkedinSha256": "718034ff8d7ae6e70521ca8a0171926c6431745fcde0d7933d6a71f9525453d4",
+      "xSha256": "61f5216a581ade4052186f8d6f733c6c33ef202db1aa6c064e13fa7e8c230f05"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T17:07:49.369Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\prompt.txt",
+      "promptSha256": "5e9683dd63cd7fb9bf59b5db67cdc32ee303d6921ba7940d5a914a93c927f147"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T17:07:49.594Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\duckdb-quack-makes-embedded-databases-less-lonely-analytics-database-evolves-into-collaborative-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "duckdb-quack-makes-embedded-databases-less-lonely-analytics-database-evolves-into-collaborative-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "f44dfc640be8023817c9fa3b69a388640cbf4260095e18624fb5796aabecb4a7",
+      "thumbnailBufferSha256": "f44dfc640be8023817c9fa3b69a388640cbf4260095e18624fb5796aabecb4a7",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\prompt.txt",
+      "promptSha256": "5e9683dd63cd7fb9bf59b5db67cdc32ee303d6921ba7940d5a914a93c927f147",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T17:07:49.607Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "duckdb-quack-makes-embedded-databases-less-lonely-analytics-database-evolves-into-collaborative-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "duckdb-quack-makes-embedded-databases-less-lonely-analytics-database-evolves-into-collaborative-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\linkedin_post.txt",
+          "sha256": "718034ff8d7ae6e70521ca8a0171926c6431745fcde0d7933d6a71f9525453d4",
+          "mtimeIso": "2026-05-14T17:07:49.344Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\x_post.txt",
+          "sha256": "61f5216a581ade4052186f8d6f733c6c33ef202db1aa6c064e13fa7e8c230f05",
+          "mtimeIso": "2026-05-14T17:07:49.345Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\prompt.txt",
+          "sha256": "5e9683dd63cd7fb9bf59b5db67cdc32ee303d6921ba7940d5a914a93c927f147",
+          "mtimeIso": "2026-05-14T17:07:49.369Z"
+        },
+        "duckdb-quack-makes-embedded-databases-less-lonely-analytics-database-evolves-into-collaborative-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\duckdb-quack-makes-embedded-databases-less-lonely\\duckdb-quack-makes-embedded-databases-less-lonely-analytics-database-evolves-into-collaborative-software-development-linkedin-thumbnail.png",
+          "sha256": "f44dfc640be8023817c9fa3b69a388640cbf4260095e18624fb5796aabecb4a7",
+          "mtimeIso": "2026-05-14T17:07:49.592Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 61,
+      "logCountAfter": 62,
+      "logEntry": "2026-05-14 | DuckDB Quack Makes Embedded Databases Less Lonely | DuckDB Quack | embedded analytics database evolves into collaborative client-server workflows",
+      "logUpdatedAt": "2026-05-14T17:07:49.596Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

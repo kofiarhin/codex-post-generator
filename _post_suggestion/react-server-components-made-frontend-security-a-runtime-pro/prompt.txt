@@ -1,0 +1,11 @@
+A senior frontend engineer studies a clean React application request path visualized as a security checkpoint inside a modern web operations room. The scene shows one focused developer at a workstation, with a large polished monitor displaying a simplified flow from component tree to middleware, cache, server runtime, and hosting adapter, each represented as broad readable panels rather than tiny code. The composition is a 16:9 LinkedIn thumbnail with the engineer in the left foreground, the request-path diagram sweeping across the midground, and a subtle warning accent at the runtime boundary. Use cinematic but believable lighting, charcoal and warm grey materials, deep teal interface panels, and one amber security accent. The mood should feel professional, alert, and dryly practical, like a high-end technology magazine cover about framework risk. Render as realistic editorial digital art with premium commercial polish, sharp focus, crisp edges, clean depth of field, physically plausible shadows, and 2K-ready detail. Keep the image uncluttered with one clear focal scene, no logos, no watermarks, no distorted hands, no malformed screens, no random glyphs, and no unreadable interface text.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"Frontend Security Is Runtime"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

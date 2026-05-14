@@ -1,0 +1,11 @@
+A senior platform engineer studies a clean observability timeline for an AI agent workflow on a large workstation display, with one highlighted trace branching through model calls, tool invocations, retries, handoffs, token cost, and downstream service impact. The setting is a modern engineering war room at dusk, composed as a 16:9 LinkedIn thumbnail with the engineer in the left foreground, the trace timeline as the clear focal subject across the center, and a quiet team dashboard in the soft background. Use cinematic but believable lighting, warm monitor glow, charcoal and deep navy surfaces, muted slate UI panels, and a single amber accent on the failing span. Render as premium editorial technology illustration with realistic materials, crisp edges, sharp focus, clean depth of field, physically plausible shadows, and enough centered negative space for readable overlay text. The mood should feel calm, technical, and lightly skeptical: less sci-fi command center, more experienced engineers finally seeing what the agent actually did. No logos, no watermarks, no brand names, no clutter, no distorted hands, no malformed monitors, no tiny unreadable interface text, no random code walls, no meme styling, no exaggerated neon glow.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"Visibility First. Trust Later."
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

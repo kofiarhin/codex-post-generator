@@ -10,6 +10,7 @@
     "save:post": "node .agents/skills/linkedin-post-orchestrator/scripts/save_post.js",
     "save:asset": "node .agents/skills/linkedin-post-assets/scripts/save_asset.js",
     "generate:thumbnail": "node .agents/skills/linkedin-post-assets/scripts/generate_thumbnail.js",
+    "test": "node --test .agents/skills/linkedin-post-assets/tests",
     "ralph:record-stage": "node .agents/skills/linkedin-post-orchestrator/scripts/record_ralph_stage.js",
     "validate:ralph": "node .agents/skills/linkedin-post-orchestrator/scripts/validate_ralph_article.js",
     "generate:post": "node .agents/skills/linkedin-post-orchestrator/scripts/generate_post.js",

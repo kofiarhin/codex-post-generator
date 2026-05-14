@@ -1,0 +1,11 @@
+A senior software engineer pauses in a quiet office hallway, holding a smartphone that shows a clean AI coding agent approval screen while a laptop on a desk in the background continues running tests and displaying a large, readable diff summary. Compose the scene as a realistic premium editorial technology illustration: one clear focal subject, the phone and approval moment in sharp foreground detail, the workstation softly visible behind it, and the developer's posture suggesting useful caution rather than panic. Use cinematic but believable lighting, a muted charcoal, warm grey, and deep teal palette with one amber accent on the approval state, crisp edges, realistic materials, physically plausible shadows, and clean depth of field. The mood should be professionally literate, slightly witty, and grounded: convenience meeting engineering judgment. Make any visible interface panels broad and minimal with only short readable labels such as "Diff", "Tests", and "Approve"; avoid dense code, tiny text, logos, product branding, or distracting notification clutter.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped. No logos, no watermarks, no clutter, no distorted hands, no unreadable interface text, no meme styling, no generic stock photo look.
+
+Text overlay:
+
+"The Approval Problem"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

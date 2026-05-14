@@ -1,0 +1,25 @@
+OpenAI Codex mobile is a quiet reminder that AI coding agents are becoming less like autocomplete and more like production workflow.
+
+OpenAI says Codex is coming to the ChatGPT mobile app in preview on iOS and Android, which means developers can review active work, inspect diffs, see terminal output, check test results, approve commands, change models, and start new tasks from a phone.
+
+Convenient? Absolutely.
+
+Also slightly terrifying in the way all useful developer tools are terrifying.
+
+Because the hard part of AI coding agents was never just "can it write code?" It was always: can I trust this work enough to approve it while I'm between meetings, away from my laptop, and mentally holding three other systems in RAM?
+
+That is where the real shift is happening.
+
+The Codex coding assistant moving into the ChatGPT mobile app makes agentic software development feel less like a lab demo and more like an operational discipline. Review loops, permissions, credentials, machine boundaries, approvals, and accountability suddenly matter as much as prompt quality.
+
+OpenAI's architecture detail matters here too: files, credentials, permissions, and local setup stay on the machine where Codex is operating, with a secure relay keeping trusted machines reachable without exposing them directly.
+
+That is the right kind of boring.
+
+The future of AI developer tools may not be "AI writes all the code."
+
+It may be: engineers get better at supervising work they did not personally type.
+
+Which raises the useful question: what should a good approval workflow look like when the reviewer is holding a phone instead of a keyboard?
+
+#OpenAICodex #AICoding #SoftwareDevelopment #DeveloperTools #AgenticAI #ChatGPT

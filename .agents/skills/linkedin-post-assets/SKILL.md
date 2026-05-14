@@ -122,7 +122,10 @@ npm run finalize:post -- "<Post Title>" "<path/to/linkedin-post.txt>" "<path/to/
 That finalizer saves all text files, generates an SEO-named PNG thumbnail from the saved `prompt.txt`,
 and updates `log.txt` only after the package is complete.
 
-Thumbnail generation is local and does not require a remote image API key.
+Thumbnail generation uses the full saved `prompt.txt` as the image-generation prompt. Set
+`IMAGE_GENERATION_PROVIDER=huggingface`, `HF_TOKEN`, and optionally `HF_IMAGE_MODEL` to generate
+with Hugging Face text-to-image; the built-in local PNG renderer remains the fallback and records
+`fallbackUsed` in the workflow receipt.
 
 Print the saved output path when complete.
 

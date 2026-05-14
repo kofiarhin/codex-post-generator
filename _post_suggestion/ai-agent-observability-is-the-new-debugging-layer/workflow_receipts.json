@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "AI Agent Observability Is the New Debugging Layer",
+  "slug": "ai-agent-observability-is-the-new-debugging-layer",
+  "createdAt": "2026-05-14T17:16:30.075Z",
+  "updatedAt": "2026-05-14T17:16:30.271Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T17:16:30.075Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\x_post.txt",
+      "linkedinSha256": "b815c3ec86e33603cc488602583974c4bb5abc284145755934320760c2b33461",
+      "xSha256": "43d9d5f3d468a86624887939c00f1bb9a4f6ee3be834224e2f87d1fa091fe901"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T17:16:30.091Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\prompt.txt",
+      "promptSha256": "2c688c9029a435938102e5309fd0321d93448ca8399a9f19161aaf34dc7ebeda"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T17:16:30.254Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\ai-agent-observability-is-the-new-debugging-layer-production-and-operational-visibility-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "ai-agent-observability-is-the-new-debugging-layer-production-and-operational-visibility-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "bbbf855729e3c088262cfc46f7e21216ba7963544d46bc691cf2792727d448fd",
+      "thumbnailBufferSha256": "bbbf855729e3c088262cfc46f7e21216ba7963544d46bc691cf2792727d448fd",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\prompt.txt",
+      "promptSha256": "2c688c9029a435938102e5309fd0321d93448ca8399a9f19161aaf34dc7ebeda",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T17:16:30.271Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "ai-agent-observability-is-the-new-debugging-layer-production-and-operational-visibility-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "ai-agent-observability-is-the-new-debugging-layer-production-and-operational-visibility-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\linkedin_post.txt",
+          "sha256": "b815c3ec86e33603cc488602583974c4bb5abc284145755934320760c2b33461",
+          "mtimeIso": "2026-05-14T17:16:30.073Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\x_post.txt",
+          "sha256": "43d9d5f3d468a86624887939c00f1bb9a4f6ee3be834224e2f87d1fa091fe901",
+          "mtimeIso": "2026-05-14T17:16:30.074Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\prompt.txt",
+          "sha256": "2c688c9029a435938102e5309fd0321d93448ca8399a9f19161aaf34dc7ebeda",
+          "mtimeIso": "2026-05-14T17:16:30.091Z"
+        },
+        "ai-agent-observability-is-the-new-debugging-layer-production-and-operational-visibility-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\ai-agent-observability-is-the-new-debugging-layer\\ai-agent-observability-is-the-new-debugging-layer-production-and-operational-visibility-software-development-linkedin-thumbnail.png",
+          "sha256": "bbbf855729e3c088262cfc46f7e21216ba7963544d46bc691cf2792727d448fd",
+          "mtimeIso": "2026-05-14T17:16:30.251Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 62,
+      "logCountAfter": 63,
+      "logEntry": "2026-05-14 | AI Agent Observability Is the New Debugging Layer | AI agent observability | production AI agent debugging and operational visibility",
+      "logUpdatedAt": "2026-05-14T17:16:30.258Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

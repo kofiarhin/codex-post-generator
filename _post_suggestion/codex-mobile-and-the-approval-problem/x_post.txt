@@ -1,0 +1,13 @@
+OpenAI Codex mobile makes AI coding agents feel less like an IDE trick and more like an approval workflow.
+
+Review diffs from your phone. Check terminal output. See test results. Approve commands. Change models. Keep Codex moving across laptops, devboxes, and remote environments.
+
+Useful? Very.
+
+But the real skill is not tapping "approve" faster while half-reading a diff between meetings.
+
+The practical win is tighter supervision: clear machine boundaries, visible outputs, explicit approvals, and enough context to know when not to trust the agent.
+
+That is where agentic software development gets real.
+
+#OpenAICodex #AICoding #DevTools #AgenticAI

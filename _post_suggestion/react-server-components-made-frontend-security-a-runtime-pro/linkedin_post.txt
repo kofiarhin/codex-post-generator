@@ -1,0 +1,21 @@
+React Server Components security is no longer a theoretical architecture debate.
+
+The latest React and Next.js security patches are a useful reminder that "frontend" does not mean "harmless UI glue" anymore.
+
+When Server Components, middleware, cache layers, server actions, hosting adapters, and framework runtime behavior all sit in the request path, the old mental model starts to break.
+
+A bug is not just "a React bug" or "a Next.js bug." It can become a routing problem, a cache poisoning problem, an SSRF problem, an XSS problem, or a middleware bypass problem.
+
+That is the uncomfortable part.
+
+Modern frontend frameworks moved a lot of power closer to the developer experience. That power came with sharper edges.
+
+The practical lesson from these Next.js security vulnerabilities is not "never use React Server Components." It is also not "frameworks are bad." That is lazy.
+
+The lesson is that frontend security now includes runtime boundaries, deployment adapters, patch discipline, and knowing which parts of your app are actually enforcing trust.
+
+Your component tree may look clean.
+
+Your request path may be doing something far more interesting.
+
+#ReactJS #NextJS #FrontendSecurity #WebSecurity #SoftwareDevelopment #ReactServerComponents #AppSecurity

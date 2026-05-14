@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Codex Mobile and the Approval Problem",
+  "slug": "codex-mobile-and-the-approval-problem",
+  "createdAt": "2026-05-14T16:50:58.100Z",
+  "updatedAt": "2026-05-14T16:50:58.298Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T16:50:58.100Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\x_post.txt",
+      "linkedinSha256": "81558264a47dd23b1efec499b8e1e9b7c869ae129e8bd532d8fe736b59810351",
+      "xSha256": "af9c0d2405ea48ca3a4f4ec2e5d9d3c11366e6198b123cc3277fdad70d4a7624"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T16:50:58.127Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\prompt.txt",
+      "promptSha256": "746078479fcef60005daeb61b04c250cf4ae0f69afdd9ed7f3aa7e99ad9881c3"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T16:50:58.289Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\codex-mobile-and-the-approval-problem-openai-workflow-for-long-running-ai-coding-agents-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "codex-mobile-and-the-approval-problem-openai-workflow-for-long-running-ai-coding-agents-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "b4ec735c8049e0d69c7bc44bdba6fc0f84110cf5f1590977b819fa28b7ac3234",
+      "thumbnailBufferSha256": "b4ec735c8049e0d69c7bc44bdba6fc0f84110cf5f1590977b819fa28b7ac3234",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\prompt.txt",
+      "promptSha256": "746078479fcef60005daeb61b04c250cf4ae0f69afdd9ed7f3aa7e99ad9881c3",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "gemini-3.1-flash-image-preview",
+      "fallbackUsed": true,
+      "fallbackReason": "IMAGE_GENERATION_PROVIDER is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T16:50:58.298Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "codex-mobile-and-the-approval-problem-openai-workflow-for-long-running-ai-coding-agents-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "codex-mobile-and-the-approval-problem-openai-workflow-for-long-running-ai-coding-agents-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\linkedin_post.txt",
+          "sha256": "81558264a47dd23b1efec499b8e1e9b7c869ae129e8bd532d8fe736b59810351",
+          "mtimeIso": "2026-05-14T16:50:58.090Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\x_post.txt",
+          "sha256": "af9c0d2405ea48ca3a4f4ec2e5d9d3c11366e6198b123cc3277fdad70d4a7624",
+          "mtimeIso": "2026-05-14T16:50:58.091Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\prompt.txt",
+          "sha256": "746078479fcef60005daeb61b04c250cf4ae0f69afdd9ed7f3aa7e99ad9881c3",
+          "mtimeIso": "2026-05-14T16:50:58.118Z"
+        },
+        "codex-mobile-and-the-approval-problem-openai-workflow-for-long-running-ai-coding-agents-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\codex-mobile-and-the-approval-problem\\codex-mobile-and-the-approval-problem-openai-workflow-for-long-running-ai-coding-agents-software-development-linkedin-thumbnail.png",
+          "sha256": "b4ec735c8049e0d69c7bc44bdba6fc0f84110cf5f1590977b819fa28b7ac3234",
+          "mtimeIso": "2026-05-14T16:50:58.287Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 60,
+      "logCountAfter": 61,
+      "logEntry": "2026-05-14 | Codex Mobile and the Approval Problem | OpenAI Codex mobile | mobile approval workflow for long-running AI coding agents",
+      "logUpdatedAt": "2026-05-14T16:50:58.287Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}
