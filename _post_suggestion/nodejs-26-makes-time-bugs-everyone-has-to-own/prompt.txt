@@ -1,0 +1,11 @@
+An experienced backend developer studies a clean workstation where a large monitor shows a simplified timeline, timezone markers, and calendar blocks being reorganized from a tangled legacy date system into a clear structured flow. The setting is a quiet engineering office at night with warm desk lighting, a charcoal and deep navy palette, subtle teal accents, and one amber highlight on the corrected timeline path. Compose as a 16:9 LinkedIn thumbnail with a single strong focal subject, generous negative space in the center, and a polished editorial technology-magazine look rather than a stock photo. The developer should look thoughtful and slightly tired, with realistic posture and hands, but the face should not dominate the frame. UI panels should be large, minimal, and plausible, using only short readable labels like UTC, Local, Schedule, and Billing, with no walls of code or tiny pseudo-text. Use premium commercial illustration realism, sharp focus, crisp edges, physically plausible shadows, clean depth of field, and 2K-ready detail. Mood: grounded, witty, professionally literate, and quietly relieved that a better model exists. No logos, no brand marks, no watermarks, no clutter, no distorted hands, no unreadable interface text, no futuristic neon cliches, no meme styling.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"Own Your Time Bugs"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

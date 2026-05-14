@@ -63,3 +63,4 @@
 2026-05-14 | AI Agent Observability Is the New Debugging Layer | AI agent observability | production AI agent debugging and operational visibility
 2026-05-17 | When CI Labels Stop Being Boring | GitHub Actions image migrations | Hosted runner image migrations make mutable CI labels an operational reliability contract
 2026-05-14 | Bun’s Rust Rewrite Is Really a Trust Test | Bun Rust rewrite | AI-assisted migration inside a production JavaScript runtime as a maintainability and trust test
+2026-05-14 | Node.js 26 Makes Time Bugs Everyone Has to Own | Node.js 26 Temporal API | Temporal API makes JavaScript date and timezone bugs a runtime migration concern

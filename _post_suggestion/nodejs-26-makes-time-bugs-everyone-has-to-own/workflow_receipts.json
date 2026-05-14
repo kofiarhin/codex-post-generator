@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Node.js 26 Makes Time Bugs Everyone Has to Own",
+  "slug": "nodejs-26-makes-time-bugs-everyone-has-to-own",
+  "createdAt": "2026-05-14T19:05:31.401Z",
+  "updatedAt": "2026-05-14T19:05:31.629Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T19:05:31.401Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\x_post.txt",
+      "linkedinSha256": "bcf9f9133a7f325677c63aebbc7a48bbf7b91529a56cecb777ab69359773f19a",
+      "xSha256": "f8a9231423622531dc5b19c586bd7828cfb959581400e71b44a03107fd7088bf"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T19:05:31.413Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\prompt.txt",
+      "promptSha256": "0a263ba753f372b6f14d397837694c063ce38b94137f6fe92159f49daca32071"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T19:05:31.616Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\nodejs-26-makes-time-bugs-everyone-has-to-own-temporal-api-javascript-date-and-timezone-a-runti-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "nodejs-26-makes-time-bugs-everyone-has-to-own-temporal-api-javascript-date-and-timezone-a-runti-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "e1094871e648a063dd9c473369c7fedf215e266ea468d8758dd606231ab7fd81",
+      "thumbnailBufferSha256": "e1094871e648a063dd9c473369c7fedf215e266ea468d8758dd606231ab7fd81",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\prompt.txt",
+      "promptSha256": "0a263ba753f372b6f14d397837694c063ce38b94137f6fe92159f49daca32071",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T19:05:31.629Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "nodejs-26-makes-time-bugs-everyone-has-to-own-temporal-api-javascript-date-and-timezone-a-runti-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "nodejs-26-makes-time-bugs-everyone-has-to-own-temporal-api-javascript-date-and-timezone-a-runti-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\linkedin_post.txt",
+          "sha256": "bcf9f9133a7f325677c63aebbc7a48bbf7b91529a56cecb777ab69359773f19a",
+          "mtimeIso": "2026-05-14T19:05:31.394Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\x_post.txt",
+          "sha256": "f8a9231423622531dc5b19c586bd7828cfb959581400e71b44a03107fd7088bf",
+          "mtimeIso": "2026-05-14T19:05:31.395Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\prompt.txt",
+          "sha256": "0a263ba753f372b6f14d397837694c063ce38b94137f6fe92159f49daca32071",
+          "mtimeIso": "2026-05-14T19:05:31.412Z"
+        },
+        "nodejs-26-makes-time-bugs-everyone-has-to-own-temporal-api-javascript-date-and-timezone-a-runti-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-26-makes-time-bugs-everyone-has-to-own\\nodejs-26-makes-time-bugs-everyone-has-to-own-temporal-api-javascript-date-and-timezone-a-runti-software-development-linkedin-thumbnail.png",
+          "sha256": "e1094871e648a063dd9c473369c7fedf215e266ea468d8758dd606231ab7fd81",
+          "mtimeIso": "2026-05-14T19:05:31.615Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 65,
+      "logCountAfter": 66,
+      "logEntry": "2026-05-14 | Node.js 26 Makes Time Bugs Everyone Has to Own | Node.js 26 Temporal API | Temporal API makes JavaScript date and timezone bugs a runtime migration concern",
+      "logUpdatedAt": "2026-05-14T19:05:31.626Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}
