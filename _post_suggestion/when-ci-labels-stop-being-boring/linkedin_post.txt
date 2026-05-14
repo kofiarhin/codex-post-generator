@@ -1,0 +1,25 @@
+GitHub Actions image migrations are a reminder that CI can break even when your app code behaves perfectly.
+
+GitHub's hosted runner labels feel like stable furniture until `windows-latest`, `windows-2025`, or `macos-latest` quietly starts pointing at a different room.
+
+That is not a complaint. Maintained GitHub Actions runner images are useful. Nobody wants to hand-curate every build machine forever like it is a museum exhibit.
+
+But mutable labels are still operational contracts.
+
+A `windows-latest migration` can change Visual Studio defaults. A `macos-latest migration` can shift SDKs, toolchains, shells, signing behavior, caches, and all the tiny assumptions your CI pipeline reliability depends on.
+
+The painful part is that the failure looks like a mystery at first.
+
+No product change.
+No package bump.
+No obvious culprit.
+
+Just a red build caused by the floor moving under the pipeline.
+
+The practical lesson is boring, which usually means it is correct: pin critical runners where stability matters, test migrations before they become the default, and treat hosted image changes like dependency upgrades.
+
+CI is production infrastructure. It just has better YAML and worse error messages.
+
+Mutable runner labels are convenient. They are not neutral.
+
+#GitHubActions #DevOps #CICD #PlatformEngineering #SoftwareDevelopment #BuildAutomation #DeveloperProductivity

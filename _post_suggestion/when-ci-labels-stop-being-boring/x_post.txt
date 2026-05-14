@@ -1,0 +1,9 @@
+GitHub Actions image migrations are where CI reminds you it has a life of its own.
+
+Your app code does not change. Your lockfile does not change. Then `windows-latest` picks up a new Visual Studio default, or `macos-latest` drifts into a new SDK, and suddenly the build fails on something deeply unromantic.
+
+A hosted runner label is not just a convenience. It is an operational contract with an update schedule.
+
+Pin what must be stable. Test what will move.
+
+#GitHubActions #CICD #DevOps #PlatformEngineering

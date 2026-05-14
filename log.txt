@@ -61,3 +61,4 @@
 2026-05-14 | Codex Mobile and the Approval Problem | OpenAI Codex mobile | mobile approval workflow for long-running AI coding agents
 2026-05-14 | DuckDB Quack Makes Embedded Databases Less Lonely | DuckDB Quack | embedded analytics database evolves into collaborative client-server workflows
 2026-05-14 | AI Agent Observability Is the New Debugging Layer | AI agent observability | production AI agent debugging and operational visibility
+2026-05-17 | When CI Labels Stop Being Boring | GitHub Actions image migrations | Hosted runner image migrations make mutable CI labels an operational reliability contract

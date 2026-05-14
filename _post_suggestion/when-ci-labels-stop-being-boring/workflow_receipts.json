@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "When CI Labels Stop Being Boring",
+  "slug": "when-ci-labels-stop-being-boring",
+  "createdAt": "2026-05-14T17:35:08.709Z",
+  "updatedAt": "2026-05-14T17:35:08.924Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T17:35:08.709Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\x_post.txt",
+      "linkedinSha256": "384a140daddb98a9982ed7f831238d3a7a97c1ba540abf8e71a47b3dc1dda0fd",
+      "xSha256": "aafa3fa91304c0b05918f766b674f2b74a61f939c4bf98023a9722758619a249"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T17:35:08.718Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\prompt.txt",
+      "promptSha256": "f348ffd4c2ac77a15bc646255a856d941dc397a2d11f381a16b75f3d17585233"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T17:35:08.915Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\when-ci-labels-stop-being-boring-github-actions-image-migrations-hosted-runner-make-mutable-an-ope-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "when-ci-labels-stop-being-boring-github-actions-image-migrations-hosted-runner-make-mutable-an-ope-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "e44c375b748f18e38d93712372fc0bbe607399007ddd83ce3e1a5ff2fcbcd025",
+      "thumbnailBufferSha256": "e44c375b748f18e38d93712372fc0bbe607399007ddd83ce3e1a5ff2fcbcd025",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\prompt.txt",
+      "promptSha256": "f348ffd4c2ac77a15bc646255a856d941dc397a2d11f381a16b75f3d17585233",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T17:35:08.924Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "when-ci-labels-stop-being-boring-github-actions-image-migrations-hosted-runner-make-mutable-an-ope-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "when-ci-labels-stop-being-boring-github-actions-image-migrations-hosted-runner-make-mutable-an-ope-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\linkedin_post.txt",
+          "sha256": "384a140daddb98a9982ed7f831238d3a7a97c1ba540abf8e71a47b3dc1dda0fd",
+          "mtimeIso": "2026-05-14T17:35:08.703Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\x_post.txt",
+          "sha256": "aafa3fa91304c0b05918f766b674f2b74a61f939c4bf98023a9722758619a249",
+          "mtimeIso": "2026-05-14T17:35:08.707Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\prompt.txt",
+          "sha256": "f348ffd4c2ac77a15bc646255a856d941dc397a2d11f381a16b75f3d17585233",
+          "mtimeIso": "2026-05-14T17:35:08.717Z"
+        },
+        "when-ci-labels-stop-being-boring-github-actions-image-migrations-hosted-runner-make-mutable-an-ope-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\when-ci-labels-stop-being-boring\\when-ci-labels-stop-being-boring-github-actions-image-migrations-hosted-runner-make-mutable-an-ope-software-development-linkedin-thumbnail.png",
+          "sha256": "e44c375b748f18e38d93712372fc0bbe607399007ddd83ce3e1a5ff2fcbcd025",
+          "mtimeIso": "2026-05-14T17:35:08.911Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 63,
+      "logCountAfter": 64,
+      "logEntry": "2026-05-14 | When CI Labels Stop Being Boring | GitHub Actions image migrations | Hosted runner image migrations make mutable CI labels an operational reliability contract",
+      "logUpdatedAt": "2026-05-14T17:35:08.923Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

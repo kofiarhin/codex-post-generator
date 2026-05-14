@@ -1,0 +1,11 @@
+A late-night CI operations scene shows a developer standing in front of two large build-runner panels labeled only with clean, readable cues like "Windows runner" and "macOS runner", while the floor beneath the panels subtly shifts like modular platform tiles. The setting is a modern engineering workspace with a calm but tense atmosphere: one monitor shows a simple red build status, another shows pinned runner labels as sturdy anchor tags, and a soft amber warning light cuts through muted charcoal, deep teal, warm gray, and clean white tones. Compose the image as a premium editorial technology illustration with one clear focal subject, generous negative space in the center, cinematic but believable lighting, realistic workstation materials, crisp edges, and a dry, understated sense of operational pain. The mood should feel professional, practical, and slightly witty, emphasizing that CI infrastructure can move even when application code does not. Avoid logos, brand marks, watermarks, clutter, distorted hands, tiny code, unreadable interface text, busy dashboards, neon effects, and generic stock-photo aesthetics.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"CI Labels Stop Being Boring"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible
