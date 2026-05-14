@@ -3,6 +3,7 @@
 !.env.example
 
 node_modules/
+client/dist/
 
 .tmp_post_inputs/
 .tmp_research/

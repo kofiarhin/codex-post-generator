@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Bun’s Rust Rewrite Is Really a Trust Test",
+  "slug": "buns-rust-rewrite-is-really-a-trust-test",
+  "createdAt": "2026-05-14T18:56:39.294Z",
+  "updatedAt": "2026-05-14T18:56:39.525Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T18:56:39.294Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\x_post.txt",
+      "linkedinSha256": "5b903d4de3beed51079cdcc6c30ca93a22b753dc1c2ce199f950b64b3f895303",
+      "xSha256": "22cee5c1ef13f15340044799ebc7965f3455d69df646cc35a86411ebc1c076b3"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T18:56:39.304Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\prompt.txt",
+      "promptSha256": "c83ae02a0803e027280f1a1da5c70966a24c5da3f49c61ffbd4143abce0265ca"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T18:56:39.516Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\buns-rust-rewrite-is-really-a-trust-test-bun-ai-assisted-migration-inside-production-javascript-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "buns-rust-rewrite-is-really-a-trust-test-bun-ai-assisted-migration-inside-production-javascript-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "4ebccc0c25a0bc7da43aadb9334445693af605c3144491d356aef2b3e445b151",
+      "thumbnailBufferSha256": "4ebccc0c25a0bc7da43aadb9334445693af605c3144491d356aef2b3e445b151",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\prompt.txt",
+      "promptSha256": "c83ae02a0803e027280f1a1da5c70966a24c5da3f49c61ffbd4143abce0265ca",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T18:56:39.525Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "buns-rust-rewrite-is-really-a-trust-test-bun-ai-assisted-migration-inside-production-javascript-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "buns-rust-rewrite-is-really-a-trust-test-bun-ai-assisted-migration-inside-production-javascript-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\linkedin_post.txt",
+          "sha256": "5b903d4de3beed51079cdcc6c30ca93a22b753dc1c2ce199f950b64b3f895303",
+          "mtimeIso": "2026-05-14T18:56:39.288Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\x_post.txt",
+          "sha256": "22cee5c1ef13f15340044799ebc7965f3455d69df646cc35a86411ebc1c076b3",
+          "mtimeIso": "2026-05-14T18:56:39.289Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\prompt.txt",
+          "sha256": "c83ae02a0803e027280f1a1da5c70966a24c5da3f49c61ffbd4143abce0265ca",
+          "mtimeIso": "2026-05-14T18:56:39.303Z"
+        },
+        "buns-rust-rewrite-is-really-a-trust-test-bun-ai-assisted-migration-inside-production-javascript-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\buns-rust-rewrite-is-really-a-trust-test\\buns-rust-rewrite-is-really-a-trust-test-bun-ai-assisted-migration-inside-production-javascript-software-development-linkedin-thumbnail.png",
+          "sha256": "4ebccc0c25a0bc7da43aadb9334445693af605c3144491d356aef2b3e445b151",
+          "mtimeIso": "2026-05-14T18:56:39.515Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 64,
+      "logCountAfter": 65,
+      "logEntry": "2026-05-14 | Bun’s Rust Rewrite Is Really a Trust Test | Bun Rust rewrite | AI-assisted migration inside a production JavaScript runtime as a maintainability and trust test",
+      "logUpdatedAt": "2026-05-14T18:56:39.524Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

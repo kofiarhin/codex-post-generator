@@ -1,0 +1,11 @@
+A premium editorial technology thumbnail shows a large JavaScript runtime engine being carefully lifted from a Zig-labeled workbench into a Rust-orange reinforced frame, with a calm senior engineer inspecting the migration through a magnifying review lens while an AI-assisted commit stream flows quietly in the background. The setting is a clean modern engineering lab, not a sci-fi control room: one central mechanical-runtime object, two restrained language color cues, and a subtle pull-request timeline on a distant monitor with no readable code. Compose the scene in 16:9 with the engine centered slightly below the middle, generous negative space across the center for text, cinematic side lighting, charcoal and warm gray materials, muted teal shadows, and one warm amber/Rust accent. The mood should feel credible, tense, and dryly witty: impressive speed under human review, not magical automation. Use a realistic editorial illustration style with premium commercial polish, crisp edges, realistic metal and glass surfaces, shallow depth of field, and strong foreground-midground-background separation. Avoid logos, watermarks, brand marks, clutter, distorted hands, tiny unreadable interface text, fake code walls, meme styling, neon overload, and stock-photo poses.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"Speed Needs Trust"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

@@ -1,0 +1,11 @@
+The Bun Rust rewrite is where AI-assisted refactoring stops being cute and starts asking for trust.
+
+PR #30412 merged May 14 with 6,755 commits from `claude/phase-a-port`. Maintainers say it passes the existing tests, fixes leaks and flaky tests, shrinks the binary, keeps benchmarks neutral-to-faster, and preserves much of the architecture.
+
+That is impressive.
+
+It is also the hard part of software maintainability: not "can AI move code quickly?" but "can humans still review, debug, and own the result six months later?"
+
+Velocity gets the headline. Maintenance gets the bill.
+
+#BunJS #RustLang #JavaScript #AIcoding

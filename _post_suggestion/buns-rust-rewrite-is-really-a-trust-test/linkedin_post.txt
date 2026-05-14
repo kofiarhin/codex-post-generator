@@ -1,0 +1,29 @@
+The Bun Rust rewrite is not just a runtime migration story. It is a code review story with a very loud stopwatch next to it.
+
+Bun PR #30412, "Rewrite Bun in Rust," landed on May 14, 2026 with 6,755 commits from a branch named `claude/phase-a-port`.
+
+That detail is doing a lot of work.
+
+The maintainer notes are genuinely interesting: the rewrite passes the pre-existing test suite, fixes memory leaks and flaky tests, trims binary size by 3-8 MB, keeps benchmarks neutral-to-faster, and preserves largely the same architecture and data structures.
+
+That is not nothing.
+
+But this is also where AI-assisted refactoring stops being a toy demo and becomes a trust problem.
+
+A JavaScript runtime is not a weekend side project. It is infrastructure people build on, debug against, benchmark, deploy, and occasionally blame for crimes committed by their own dependency tree.
+
+A fast Zig to Rust migration is impressive. The harder question is whether maintainers, contributors, and users can build durable confidence in the result.
+
+Not "did AI help write code?"
+
+Of course it did.
+
+The better question is: can the review process, tests, architecture continuity, and long-term maintenance model absorb that much generated velocity without turning every future bug into an archaeology dig?
+
+Bun 1.3.14 may end up being remembered less as a Rust milestone and more as an early public test of AI-assisted migration at serious scale.
+
+Speed got the attention.
+
+Trust will decide whether it holds.
+
+#BunJS #RustLang #JavaScript #SoftwareEngineering #AIcoding #DeveloperTools #CodeReview

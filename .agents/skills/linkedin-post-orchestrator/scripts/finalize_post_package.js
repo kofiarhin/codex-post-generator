@@ -23,6 +23,14 @@ const { generateThumbnail } = require('../../linkedin-post-assets/scripts/genera
 
 const REQUIRED_TEXT_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
 
+function loadRootEnv(repoRoot) {
+  try {
+    require('dotenv').config({ path: path.join(repoRoot, '.env') });
+  } catch (error) {
+    // dotenv is optional for legacy script usage; DB persistence will warn if env is missing.
+  }
+}
+
 function buildRequiredOutputFiles(thumbnailFileName) {
   return [...REQUIRED_TEXT_OUTPUT_FILES, thumbnailFileName];
 }
@@ -141,6 +149,34 @@ async function finalizePostPackage({
       throw new Error('Invalid workflow order: log.txt was updated before the full package was saved.');
     }
 
+    let dbPersistence = {
+      attempted: false,
+      saved: false,
+      warning: ''
+    };
+
+    try {
+      loadRootEnv(repoRoot);
+      const { persistPostPackage } = require('../../../../server/utils/packagePersistence');
+      dbPersistence.attempted = true;
+      await persistPostPackage({
+        slug,
+        repoRoot,
+        title,
+        primaryKeyword,
+        topicAngle,
+        logEntry: loggedLine
+      });
+      dbPersistence.saved = true;
+    } catch (error) {
+      dbPersistence = {
+        attempted: true,
+        saved: false,
+        warning: `MongoDB persistence skipped: ${error.message}`
+      };
+      console.warn(dbPersistence.warning);
+    }
+
     return {
       slug,
       outputDir,
@@ -151,7 +187,8 @@ async function finalizePostPackage({
       thumbnailFileName: thumbnailResult.fileName || path.basename(thumbnailResult.outputPath),
       logPath,
       loggedLine,
-      receiptPath: finalizerReceipt.receiptPath
+      receiptPath: finalizerReceipt.receiptPath,
+      dbPersistence
     };
   } catch (error) {
     if (!outputDirExisted && fs.existsSync(outputDir)) {
@@ -195,6 +232,9 @@ async function main() {
     console.log(`Full X path: ${result.xOutputPath}`);
     console.log(`Full prompt path: ${result.promptOutputPath}`);
     console.log(`Full thumbnail path: ${result.thumbnailOutputPath}`);
+    if (result.dbPersistence?.saved) {
+      console.log('MongoDB record upserted.');
+    }
   } catch (error) {
     console.error(error.message);
     process.exit(1);
