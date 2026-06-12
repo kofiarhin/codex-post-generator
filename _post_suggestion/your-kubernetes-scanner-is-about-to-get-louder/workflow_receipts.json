@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Your Kubernetes Scanner Is About to Get Louder",
+  "slug": "your-kubernetes-scanner-is-about-to-get-louder",
+  "createdAt": "2026-05-30T05:21:45.450Z",
+  "updatedAt": "2026-05-30T05:27:51.169Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-30T05:21:45.450Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\x_post.txt",
+      "linkedinSha256": "ddb016a2033f8c98ce3a99b27beec729a81e9779f60d5544302945dd4ec86c9c",
+      "xSha256": "15a1626df0fc2fc7ab2374c14f544e87788acc24d8c209d7d77e65ed20863164"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-30T05:25:27.541Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\prompt.txt",
+      "promptSha256": "8bad647e449b427ddb0d71b224b887914d57c7ccf6da43922f17a349540f0c5d"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-30T05:27:50.967Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\your-kubernetes-scanner-is-about-to-get-louder-vulnerability-scanning-june-1-cve-record-corrections-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "your-kubernetes-scanner-is-about-to-get-louder-vulnerability-scanning-june-1-cve-record-corrections-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "bea322728349fac95eeac4cc1acefc7c2cda364d21e56c93e1ed5f33e110425e",
+      "thumbnailBufferSha256": "bea322728349fac95eeac4cc1acefc7c2cda364d21e56c93e1ed5f33e110425e",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\prompt.txt",
+      "promptSha256": "8bad647e449b427ddb0d71b224b887914d57c7ccf6da43922f17a349540f0c5d",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-30T05:21:45.758Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "your-kubernetes-scanner-is-about-to-get-louder-vulnerability-scanning-june-1-cve-record-corrections-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "your-kubernetes-scanner-is-about-to-get-louder-vulnerability-scanning-june-1-cve-record-corrections-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\linkedin_post.txt",
+          "sha256": "ddb016a2033f8c98ce3a99b27beec729a81e9779f60d5544302945dd4ec86c9c",
+          "mtimeIso": "2026-05-30T05:21:45.435Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\x_post.txt",
+          "sha256": "15a1626df0fc2fc7ab2374c14f544e87788acc24d8c209d7d77e65ed20863164",
+          "mtimeIso": "2026-05-30T05:21:45.435Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\prompt.txt",
+          "sha256": "8bad647e449b427ddb0d71b224b887914d57c7ccf6da43922f17a349540f0c5d",
+          "mtimeIso": "2026-05-30T05:25:27.542Z"
+        },
+        "your-kubernetes-scanner-is-about-to-get-louder-vulnerability-scanning-june-1-cve-record-corrections-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\your-kubernetes-scanner-is-about-to-get-louder\\your-kubernetes-scanner-is-about-to-get-louder-vulnerability-scanning-june-1-cve-record-corrections-software-development-linkedin-thumbnail.png",
+          "sha256": "bea322728349fac95eeac4cc1acefc7c2cda364d21e56c93e1ed5f33e110425e",
+          "mtimeIso": "2026-05-30T05:27:50.966Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 72,
+      "logCountAfter": 73,
+      "logEntry": "2026-05-30 | Your Kubernetes Scanner Is About to Get Louder | Kubernetes vulnerability scanning | June 1 CVE record corrections make scanners surface unfixed architectural risks and force configuration-based mitigations",
+      "logUpdatedAt": "2026-05-30T05:27:51.168Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

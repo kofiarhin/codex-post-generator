@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Expired Domains Are Now a Package Manager Problem",
+  "slug": "expired-domains-are-now-a-package-manager-problem",
+  "createdAt": "2026-05-15T13:48:39.149Z",
+  "updatedAt": "2026-05-15T13:48:39.492Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-15T13:48:39.149Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\x_post.txt",
+      "linkedinSha256": "2abd11227b88623e041973bcbbfc59b1a0bba7b00437b7debae1cf4e5d49d75d",
+      "xSha256": "c213cb58edff60ed7071ed0111ec6da716daf0b8b001049a1ece191a74cbbaa9"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-15T13:48:39.166Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\prompt.txt",
+      "promptSha256": "07c32a5d28088213ca73e52c0e668e653b0de9169435e545334867137e663ec0"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-15T13:48:39.472Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\expired-domains-are-now-a-package-manager-problem-node-ipc-supply-chain-attack-domain-takeover-turns-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "expired-domains-are-now-a-package-manager-problem-node-ipc-supply-chain-attack-domain-takeover-turns-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "2ecc8b5382cdae652fd2cfc9ef1c32f4edd58d8c22b8fd497f655d245cc31c51",
+      "thumbnailBufferSha256": "2ecc8b5382cdae652fd2cfc9ef1c32f4edd58d8c22b8fd497f655d245cc31c51",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\prompt.txt",
+      "promptSha256": "07c32a5d28088213ca73e52c0e668e653b0de9169435e545334867137e663ec0",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-15T13:48:39.492Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "expired-domains-are-now-a-package-manager-problem-node-ipc-supply-chain-attack-domain-takeover-turns-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "expired-domains-are-now-a-package-manager-problem-node-ipc-supply-chain-attack-domain-takeover-turns-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\linkedin_post.txt",
+          "sha256": "2abd11227b88623e041973bcbbfc59b1a0bba7b00437b7debae1cf4e5d49d75d",
+          "mtimeIso": "2026-05-15T13:48:39.139Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\x_post.txt",
+          "sha256": "c213cb58edff60ed7071ed0111ec6da716daf0b8b001049a1ece191a74cbbaa9",
+          "mtimeIso": "2026-05-15T13:48:39.142Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\prompt.txt",
+          "sha256": "07c32a5d28088213ca73e52c0e668e653b0de9169435e545334867137e663ec0",
+          "mtimeIso": "2026-05-15T13:48:39.165Z"
+        },
+        "expired-domains-are-now-a-package-manager-problem-node-ipc-supply-chain-attack-domain-takeover-turns-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\expired-domains-are-now-a-package-manager-problem\\expired-domains-are-now-a-package-manager-problem-node-ipc-supply-chain-attack-domain-takeover-turns-software-development-linkedin-thumbnail.png",
+          "sha256": "2ecc8b5382cdae652fd2cfc9ef1c32f4edd58d8c22b8fd497f655d245cc31c51",
+          "mtimeIso": "2026-05-15T13:48:39.470Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 67,
+      "logCountAfter": 68,
+      "logEntry": "2026-05-15 | Expired Domains Are Now a Package Manager Problem | node-ipc supply chain attack | expired domain takeover turns dormant npm maintainer identity into package publishing risk",
+      "logUpdatedAt": "2026-05-15T13:48:39.490Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

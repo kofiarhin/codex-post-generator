@@ -1,0 +1,21 @@
+The Next.js Adapter API is the kind of boring infrastructure news that quietly changes how teams think about deployment.
+
+With Next.js 16.2, framework portability is no longer just a hopeful promise from hosting platforms. It is now a typed, versioned contract that describes routes, prerenders, static assets, runtime targets, dependencies, caching rules, and routing decisions.
+
+That matters.
+
+For years, "supports Next.js" has meant wildly different things depending on the platform. Streaming works here. Caching behaves differently there. Edge support is almost right until the one production path that ruins your afternoon.
+
+Now the contract is public. Vercel's adapter uses it. OpenNext, Netlify, Cloudflare, AWS Amplify, and Google Cloud helped shape it. The test suite is available to adapter authors, including shared coverage for streaming behavior, caching interactions, client navigation, and the awkward real-world edge cases where marketing claims usually go to retire.
+
+This is frontend platform engineering growing up a little.
+
+Not because every Next.js deployment suddenly becomes effortless. The Netlify, Cloudflare, and AWS OpenNext adapters are still in active development.
+
+But because Next.js deployment portability is moving from folklore to something providers can actually prove.
+
+The interesting question now is not "does your platform support Next.js?"
+
+It is: "which parts of the contract do you pass?"
+
+#NextJS #ReactJS #FrontendDevelopment #WebDevelopment #PlatformEngineering #OpenSource

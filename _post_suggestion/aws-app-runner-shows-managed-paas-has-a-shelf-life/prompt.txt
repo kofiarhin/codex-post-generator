@@ -1,0 +1,11 @@
+A senior platform engineer stands in a quiet modern operations room facing a large clean cloud architecture board where one simple container service path is fading into a maintenance-lifecycle timeline. The scene shows a polished workstation in the foreground, a restrained AWS-style cloud diagram without logos in the midground, and a subtle migration route branching toward a more complex container platform in the background. Use realistic editorial technology photography mixed with premium commercial illustration, cinematic but believable side lighting, sharp focus, crisp edges, physically plausible shadows, and a muted charcoal, warm grey, and deep teal palette with one amber accent. The mood should feel thoughtful, dryly pragmatic, and professionally calm: the moment when a "simple" managed service becomes an architecture meeting. Keep the composition simple with one clear focal subject, generous centered negative space, and broad readable UI panels with only short generic labels such as "service lifecycle", "migration plan", and "platform risk". No AWS logos, no brand marks, no watermarks, no clutter, no distorted hands, no tiny code, no unreadable interface text, no stock-photo handshake, no neon cyber aesthetic.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"Managed Has A Shelf Life"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

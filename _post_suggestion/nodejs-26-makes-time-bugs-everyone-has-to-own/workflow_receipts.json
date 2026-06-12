@@ -78,7 +78,7 @@
       "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
       "logCountBefore": 65,
       "logCountAfter": 66,
-      "logEntry": "2026-05-14 | Node.js 26 Makes Time Bugs Everyone Has to Own | Node.js 26 Temporal API | Temporal API makes JavaScript date and timezone bugs a runtime migration concern",
+      "logEntry": "2026-05-17 | Node.js 26 Makes Time Bugs Everyone Has to Own | Node.js 26 Temporal API | Temporal API makes JavaScript date and timezone bugs a runtime migration concern",
       "logUpdatedAt": "2026-05-14T19:05:31.626Z",
       "logUpdatedAfterPackageSave": true
     }

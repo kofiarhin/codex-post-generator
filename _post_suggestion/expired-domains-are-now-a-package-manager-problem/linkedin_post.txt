@@ -1,0 +1,19 @@
+The node-ipc supply chain attack is a useful reminder that security debt can expire quietly before it detonates loudly.
+
+On May 14, 2026, malicious versions of `node-ipc` were published: 9.1.6, 9.2.3, and 12.0.1. Reporting from StepSecurity and CSO Online tied the compromise to an expired maintainer email domain and a dormant maintainer account takeover.
+
+That is the part worth sitting with.
+
+This was not just "npm bad" or "open source scary" or the usual ritual panic after an npm supply chain attack. The practical lesson is more boring, which usually means more important: identity lifecycle is now part of package security.
+
+An expired domain takeover should not be enough to revive trust in a dormant npm maintainer account. A maintainer email address is not just contact metadata. In the wrong recovery flow, it becomes a skeleton key.
+
+The payload reportedly targeted developer, cloud, and CI credentials. Exactly the places where modern software teams keep the keys to the next build, the next deploy, and occasionally the entire production kingdom.
+
+Open source maintainer security is not only about heroic maintainers doing more unpaid work. It is also about registries, organizations, and teams treating stale identities as active risk.
+
+Dependencies age. Domains lapse. People move on.
+
+The package manager still remembers.
+
+#NodeJS #npm #SoftwareSupplyChainSecurity #OpenSourceSecurity #DevSecOps #ApplicationSecurity #JavaScript

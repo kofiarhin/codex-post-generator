@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Node.js FFI Makes Memory Safety a JavaScript Problem",
+  "slug": "nodejs-ffi-makes-memory-safety-a-javascript-problem",
+  "createdAt": "2026-05-14T19:21:42.578Z",
+  "updatedAt": "2026-05-14T19:21:42.798Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-14T19:21:42.578Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\x_post.txt",
+      "linkedinSha256": "152ffcbc0c5ffd4d80df6acb9364c33ce6fbbe739e4ca16b013a04f67f7bc112",
+      "xSha256": "5749c746a1d93ce12326a476eb5a06f04bc50d6bf03773d0572afc85185cabed"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-14T19:21:42.594Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\prompt.txt",
+      "promptSha256": "47a34fdc6923c966519ff6f31c5378c7fa03372aeeb1f8fa16e53a7659574d32"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-14T19:21:42.791Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\nodejs-ffi-makes-memory-safety-a-javascript-problem-experimental-native-library-access-and-p-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "nodejs-ffi-makes-memory-safety-a-javascript-problem-experimental-native-library-access-and-p-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "e6325cf4c208935a02014e8e4e6d0bb2c5d21e51b254840a42d7aff2c370fcca",
+      "thumbnailBufferSha256": "e6325cf4c208935a02014e8e4e6d0bb2c5d21e51b254840a42d7aff2c370fcca",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\prompt.txt",
+      "promptSha256": "47a34fdc6923c966519ff6f31c5378c7fa03372aeeb1f8fa16e53a7659574d32",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-14T19:21:42.798Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "nodejs-ffi-makes-memory-safety-a-javascript-problem-experimental-native-library-access-and-p-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "nodejs-ffi-makes-memory-safety-a-javascript-problem-experimental-native-library-access-and-p-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\linkedin_post.txt",
+          "sha256": "152ffcbc0c5ffd4d80df6acb9364c33ce6fbbe739e4ca16b013a04f67f7bc112",
+          "mtimeIso": "2026-05-14T19:21:42.571Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\x_post.txt",
+          "sha256": "5749c746a1d93ce12326a476eb5a06f04bc50d6bf03773d0572afc85185cabed",
+          "mtimeIso": "2026-05-14T19:21:42.572Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\prompt.txt",
+          "sha256": "47a34fdc6923c966519ff6f31c5378c7fa03372aeeb1f8fa16e53a7659574d32",
+          "mtimeIso": "2026-05-14T19:21:42.595Z"
+        },
+        "nodejs-ffi-makes-memory-safety-a-javascript-problem-experimental-native-library-access-and-p-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nodejs-ffi-makes-memory-safety-a-javascript-problem\\nodejs-ffi-makes-memory-safety-a-javascript-problem-experimental-native-library-access-and-p-software-development-linkedin-thumbnail.png",
+          "sha256": "e6325cf4c208935a02014e8e4e6d0bb2c5d21e51b254840a42d7aff2c370fcca",
+          "mtimeIso": "2026-05-14T19:21:42.791Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 66,
+      "logCountAfter": 67,
+      "logEntry": "2026-05-14 | Node.js FFI Makes Memory Safety a JavaScript Problem | Node.js FFI | experimental native library access makes memory safety and permission boundaries part of JavaScript backend engineering",
+      "logUpdatedAt": "2026-05-14T19:21:42.792Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

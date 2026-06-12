@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Kubernetes ExternalIPs Finally Became Migration Work",
+  "slug": "kubernetes-externalips-finally-became-migration-work",
+  "createdAt": "2026-05-25T04:28:10.771Z",
+  "updatedAt": "2026-05-25T04:28:11.092Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-25T04:28:10.771Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\x_post.txt",
+      "linkedinSha256": "ae8bb5a0f6882957faab0a994383edb17a546bf30638672a5eb90d652e1346df",
+      "xSha256": "2bd81404e7dc0ac6d655e771961576cee7b67729891c72070fa96c560f04f217"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-25T04:28:10.779Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\prompt.txt",
+      "promptSha256": "9861b02f19d5558ac8e56bbe989d429b08379cce325f00a765ccfa6db4d7dd4c"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-25T04:28:11.082Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\kubernetes-externalips-finally-became-migration-work-deprecation-insecure-service-becoming-platform-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "kubernetes-externalips-finally-became-migration-work-deprecation-insecure-service-becoming-platform-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "d236c2869c25a69a49a8e5a1d1941e7fe37106bb9090b752199f52334a983e28",
+      "thumbnailBufferSha256": "d236c2869c25a69a49a8e5a1d1941e7fe37106bb9090b752199f52334a983e28",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\prompt.txt",
+      "promptSha256": "9861b02f19d5558ac8e56bbe989d429b08379cce325f00a765ccfa6db4d7dd4c",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-25T04:28:11.092Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "kubernetes-externalips-finally-became-migration-work-deprecation-insecure-service-becoming-platform-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "kubernetes-externalips-finally-became-migration-work-deprecation-insecure-service-becoming-platform-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\linkedin_post.txt",
+          "sha256": "ae8bb5a0f6882957faab0a994383edb17a546bf30638672a5eb90d652e1346df",
+          "mtimeIso": "2026-05-25T04:28:10.762Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\x_post.txt",
+          "sha256": "2bd81404e7dc0ac6d655e771961576cee7b67729891c72070fa96c560f04f217",
+          "mtimeIso": "2026-05-25T04:28:10.763Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\prompt.txt",
+          "sha256": "9861b02f19d5558ac8e56bbe989d429b08379cce325f00a765ccfa6db4d7dd4c",
+          "mtimeIso": "2026-05-25T04:28:10.779Z"
+        },
+        "kubernetes-externalips-finally-became-migration-work-deprecation-insecure-service-becoming-platform-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\kubernetes-externalips-finally-became-migration-work\\kubernetes-externalips-finally-became-migration-work-deprecation-insecure-service-becoming-platform-software-development-linkedin-thumbnail.png",
+          "sha256": "d236c2869c25a69a49a8e5a1d1941e7fe37106bb9090b752199f52334a983e28",
+          "mtimeIso": "2026-05-25T04:28:11.079Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 70,
+      "logCountAfter": 71,
+      "logEntry": "2026-05-25 | Kubernetes ExternalIPs Finally Became Migration Work | Kubernetes ExternalIPs deprecation | insecure Service externalIPs becoming platform migration work",
+      "logUpdatedAt": "2026-05-25T04:28:11.079Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+Ingress NGINX migration is no longer a backlog item disguised as infrastructure housekeeping.
+
+Ingress NGINX retirement means teams running it need to inspect a part of the cluster that often receives attention only when traffic stops flowing. That is usually where the pain starts: undocumented annotations, custom rewrites, TLS assumptions, and a Kubernetes ingress controller installed years ago by someone who has since changed jobs twice.
+
+The migration is not a search-and-replace exercise.
+
+Moving toward Kubernetes Gateway API or another maintained controller means understanding the behavior your applications already depend on. The YAML is the visible part. The accumulated operational knowledge is the expensive part.
+
+This is a Kubernetes security migration, but it is also a reminder: infrastructure debt rarely announces itself during a calm sprint. It waits until a critical dependency retires, then hands the team an archaeology project with production traffic attached.
+
+How much of your ingress configuration is documented well enough that another engineer could migrate it confidently?
+
+#Kubernetes #CloudNative #PlatformEngineering #GatewayAPI #DevOps #CyberSecurity

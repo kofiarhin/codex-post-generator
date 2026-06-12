@@ -1,0 +1,9 @@
+Node.js FFI is JavaScript getting handed the sharp drawer.
+
+The new experimental `node:ffi` module is genuinely useful: call native libraries, remove wrapper glue, and reach lower-level system capabilities without turning every integration into a small archaeology project.
+
+But the warning label matters. Wrong pointer. Bad signature. Freed memory. Suddenly your nice backend service is learning C failure modes the hard way.
+
+The feature is not just about convenience. It is about governance: flags, permissions, review discipline, and knowing exactly who gets to cross the native boundary.
+
+#NodeJS #JavaScript #MemorySafety #DevTools

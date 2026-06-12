@@ -370,8 +370,6 @@ function createLocalThumbnail({ title, prompt, primaryKeyword = '', topicAngle =
     drawCenteredText(canvas, line, width / 2, firstLineY + index * 68, 9, hexToRgb('#fff9ec'), 255);
   });
 
-  drawCenteredText(canvas, 'LINKEDIN SOCIAL THUMBNAIL', width / 2, bandY + bandHeight - 28, 3, hexToRgb('#a8cdd0'), 230);
-
   return encodePng(canvas);
 }
 

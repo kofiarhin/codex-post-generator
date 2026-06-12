@@ -1,0 +1,11 @@
+The node-ipc supply chain attack is a reminder that expired domains are now package manager infrastructure.
+
+On May 14, 2026, malicious `node-ipc` versions 9.1.6, 9.2.3, and 12.0.1 were published. Reporting tied it to an expired maintainer email domain / dormant account takeover.
+
+That is the uncomfortable bit.
+
+This was not exotic wizardry. It was identity lifecycle debt with a publish button.
+
+If an old email domain can help resurrect trust in a dormant maintainer account, your dependency graph has a time machine pointed at your CI secrets.
+
+#npm #NodeJS #SupplyChainSecurity #DevSecOps

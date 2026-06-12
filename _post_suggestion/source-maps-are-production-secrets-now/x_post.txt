@@ -1,0 +1,12 @@
+Source map security is finally getting treated like production work, not frontend housekeeping.
+
+Source maps are great when you need a readable stack trace from minified JavaScript. They are less great when anyone can fetch the same `.map` file and browse your original filenames, logic, and comments like a very patient bug bounty intern.
+
+Vercel putting protected source maps behind authentication is not flashy. That is why it matters.
+
+The best platform security changes do not ask every tired developer to remember one more deploy checklist item. They make the safer default boring.
+
+Debugging should stay easy.
+Accidental source disclosure should not.
+
+#SourceMapSecurity #FrontendSecurity #Vercel #WebSecurity

@@ -1,0 +1,7 @@
+Kubernetes vulnerability scanning may get louder on June 1. Your cluster did not suddenly become less secure. The data got more honest.
+
+Several old Kubernetes CVE records incorrectly implied fixed versions existed. The project is correcting them, so scanners may surface architectural risks that need configuration mitigations: an RBAC audit, control-plane DNS consistency, and webhook hardening.
+
+The annoying lesson: not every security alert ends with a version bump. Sometimes the patch is ownership.
+
+#Kubernetes #CloudNative #DevSecOps

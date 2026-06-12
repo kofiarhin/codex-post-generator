@@ -1,25 +1,29 @@
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+import { buildApiUrl, request } from '../lib/api.js';
 
-async function request(path, options) {
-  const response = await fetch(`${API_BASE_URL}${path}`, {
-    headers: {
-      Accept: 'application/json',
-      ...(options?.headers || {})
-    },
-    ...options
+export async function getPosts({ page = 1, limit = 12, q = '' } = {}) {
+  const params = new URLSearchParams({
+    page: String(page),
+    limit: String(limit)
   });
+  const query = String(q || '').trim();
 
-  if (!response.ok) {
-    const body = await response.json().catch(() => ({}));
-    throw new Error(body.error || `Request failed with status ${response.status}`);
+  if (query) {
+    params.set('q', query);
   }
 
-  return response.json();
-}
+  const data = await request(`/api/posts?${params.toString()}`);
 
-export async function getPosts() {
-  const data = await request('/api/posts');
-  return data.posts || [];
+  return {
+    posts: data.posts || [],
+    pagination: data.pagination || {
+      page,
+      limit,
+      total: 0,
+      totalPages: 0,
+      hasNextPage: false,
+      hasPrevPage: false
+    }
+  };
 }
 
 export async function getPost(slug) {
@@ -36,5 +40,5 @@ export function getAssetUrl(post) {
     return '';
   }
 
-  return `${API_BASE_URL}/post-assets/${encodeURIComponent(post.slug)}/${encodeURIComponent(post.thumbnailFileName)}`;
+  return buildApiUrl(`/post-assets/${encodeURIComponent(post.slug)}/${encodeURIComponent(post.thumbnailFileName)}`);
 }

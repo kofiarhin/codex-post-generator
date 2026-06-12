@@ -1,0 +1,11 @@
+Kubernetes ExternalIPs deprecation is a reminder that insecure defaults do not disappear.
+
+They become migration work.
+
+That old `.spec.externalIPs` shortcut may have felt harmless when the cluster was small and trusted. In a real multi-team platform, it is a routing and authorization footgun with a release timeline attached.
+
+The fix is not drama. Inventory it, block new usage with `DenyServiceExternalIPs`, and move the valid cases toward LoadBalancer, MetalLB, or Gateway API.
+
+Boring platform cleanup is still security work. It just has worse branding.
+
+#Kubernetes #PlatformEngineering #DevOps

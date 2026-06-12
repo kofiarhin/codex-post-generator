@@ -1,0 +1,19 @@
+Source map security is one of those frontend problems that sounds boring until your production bundle starts handing out directions.
+
+Vercel's new Protected Source Maps feature is useful because it treats `.map` files like what they actually are: debugging material with production consequences.
+
+Source maps make production JavaScript readable again. That is the whole point. They turn minified stack traces back into filenames, line numbers, and original source. Lovely when your team is chasing a broken checkout flow at 11:47 p.m.
+
+Less lovely when the same files are publicly available to anyone who knows how to add `.map` to a URL.
+
+The interesting part is not that Vercel put production source maps behind authentication. The interesting part is that new projects get that protection by default, and existing projects can opt in without a redeploy.
+
+That is the right shape for frontend security: keep the debugging workflow, remove the accidental public tour of your application internals.
+
+This is where modern web platforms are quietly moving. Not "developers should remember one more checklist item forever," but "the platform should make the safer path boring."
+
+Frontend build artifacts are not just build artifacts anymore. They are operational data. Sometimes they are also a map of your assumptions.
+
+And assumptions, as usual, are where the fun starts.
+
+#SourceMapSecurity #FrontendSecurity #Vercel #JavaScriptDebugging #WebSecurity #SoftwareDevelopment

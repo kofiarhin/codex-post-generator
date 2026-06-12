@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "WSL Containers Could Make Windows Development Boring",
+  "slug": "wsl-containers-could-make-windows-development-boring",
+  "createdAt": "2026-06-12T11:05:53.942Z",
+  "updatedAt": "2026-06-12T11:05:54.156Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-06-12T11:05:53.942Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\x_post.txt",
+      "linkedinSha256": "eb94ab95c6afc38198891afff1571b99153df7e130dc0a94be5737a174b02c8a",
+      "xSha256": "3e42396c7d613212c9d9e8814cbc0783aedcc046b756dc75028254493ca0746c"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-06-12T11:05:53.948Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\prompt.txt",
+      "promptSha256": "91080b3b030c6cddea17bb1b63fbd3232266fcc4ea96a3713355bf2da07dc98d"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-06-12T11:05:54.141Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\wsl-containers-could-make-windows-development-boring-native-container-tooling-as-developer-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "wsl-containers-could-make-windows-development-boring-native-container-tooling-as-developer-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "beb76ecf8254db8d260cd7fd1de74a1be2d3f0bffcf1132f5b516487673eef59",
+      "thumbnailBufferSha256": "beb76ecf8254db8d260cd7fd1de74a1be2d3f0bffcf1132f5b516487673eef59",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\prompt.txt",
+      "promptSha256": "91080b3b030c6cddea17bb1b63fbd3232266fcc4ea96a3713355bf2da07dc98d",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-06-12T11:05:54.156Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "wsl-containers-could-make-windows-development-boring-native-container-tooling-as-developer-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "wsl-containers-could-make-windows-development-boring-native-container-tooling-as-developer-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\linkedin_post.txt",
+          "sha256": "eb94ab95c6afc38198891afff1571b99153df7e130dc0a94be5737a174b02c8a",
+          "mtimeIso": "2026-06-12T11:05:53.941Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\x_post.txt",
+          "sha256": "3e42396c7d613212c9d9e8814cbc0783aedcc046b756dc75028254493ca0746c",
+          "mtimeIso": "2026-06-12T11:05:53.942Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\prompt.txt",
+          "sha256": "91080b3b030c6cddea17bb1b63fbd3232266fcc4ea96a3713355bf2da07dc98d",
+          "mtimeIso": "2026-06-12T11:05:53.948Z"
+        },
+        "wsl-containers-could-make-windows-development-boring-native-container-tooling-as-developer-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\wsl-containers-could-make-windows-development-boring\\wsl-containers-could-make-windows-development-boring-native-container-tooling-as-developer-software-development-linkedin-thumbnail.png",
+          "sha256": "beb76ecf8254db8d260cd7fd1de74a1be2d3f0bffcf1132f5b516487673eef59",
+          "mtimeIso": "2026-06-12T11:05:54.140Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 74,
+      "logCountAfter": 75,
+      "logEntry": "2026-06-12 | WSL Containers Could Make Windows Development Boring | WSL Containers | native Windows container tooling as developer experience simplification",
+      "logUpdatedAt": "2026-06-12T11:05:54.155Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

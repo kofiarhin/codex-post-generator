@@ -1,0 +1,11 @@
+A senior platform engineer stands in a calm, modern operations room looking at a large Kubernetes cluster routing map where one old external IP path is highlighted in warm amber and being carefully rerouted toward a cleaner Gateway API lane. The composition has one clear focal subject: the engineer in the foreground with a large wall display behind them showing simple, readable network paths, a deprecated shortcut marker, and a clean replacement route; the setting feels credible, quiet, and professional rather than futuristic. Use cinematic but believable lighting, muted charcoal and deep teal tones with a single warm amber accent, realistic materials, crisp monitor edges, subtle depth of field, and premium editorial technology illustration quality. The mood should be dryly practical: old infrastructure debt finally getting a calendar reminder. Keep the scene uncluttered, with strong foreground-midground-background separation and enough centered negative space for text. No logos, no watermarks, no meme style, no crowded code walls, no distorted hands, no unreadable interface text, no random glyphs, no exaggerated neon glow.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"Insecure Defaults Become Migration Work"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

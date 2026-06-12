@@ -1,0 +1,9 @@
+AWS App Runner maintenance mode is a reminder that "managed" is not the same thing as "forever."
+
+Existing customers can keep using it. New customers lose access after April 30, 2026. That is not a shutdown, but it is enough to make platform teams reopen the spreadsheet nobody wanted to reopen.
+
+The pain is not just migration. It is explaining why the "simple" managed container platform now needs an App Runner migration plan, ECS Express Mode research, and another round of architecture meetings.
+
+Managed services reduce work. They do not remove product lifecycle risk.
+
+#AWS #DevOps #CloudComputing #PlatformEngineering

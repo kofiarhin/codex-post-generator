@@ -1,0 +1,15 @@
+The Next.js Adapter API makes portability less of a vibes-based promise.
+
+For years, "we support Next.js" could mean:
+streaming mostly works,
+caching has opinions,
+edge runtime support depends on the weather,
+and one route will teach you humility at 11:47 p.m.
+
+Next.js 16.2 turns that into a public, typed contract: routes, assets, runtimes, dependencies, caching rules, routing decisions.
+
+The useful part is not hype. It is accountability.
+
+If platforms can target the same contract and pass the same tests, Next.js deployment gets a lot less mystical.
+
+#NextJS #ReactJS #WebDevelopment #OpenSource

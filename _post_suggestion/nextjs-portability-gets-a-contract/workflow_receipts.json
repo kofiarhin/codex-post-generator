@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Next.js Portability Gets a Contract",
+  "slug": "nextjs-portability-gets-a-contract",
+  "createdAt": "2026-05-19T07:49:45.491Z",
+  "updatedAt": "2026-05-19T07:49:45.728Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-19T07:49:45.491Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\x_post.txt",
+      "linkedinSha256": "0876baab22d2cfd49a92327c7080c2737babebeca2c2219100ef308cdc09e808",
+      "xSha256": "a2c8bfe6ea7035a7723af705daf5c60da2304a536cbbc2ba91cf285b2b105cd7"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-19T07:49:45.504Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\prompt.txt",
+      "promptSha256": "e6b9231759e434332ee7ed547c5fdf73258d805072a8bacf8adac0c243a00bb5"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-19T07:49:45.720Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\nextjs-portability-gets-a-contract-adapter-api-framework-and-deployment-contracts-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "nextjs-portability-gets-a-contract-adapter-api-framework-and-deployment-contracts-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "e31cfdf51c862edcbf87527cb353d6cb4e952b79b8b3711ae7d340f1c7f88b92",
+      "thumbnailBufferSha256": "e31cfdf51c862edcbf87527cb353d6cb4e952b79b8b3711ae7d340f1c7f88b92",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\prompt.txt",
+      "promptSha256": "e6b9231759e434332ee7ed547c5fdf73258d805072a8bacf8adac0c243a00bb5",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-19T07:49:45.728Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "nextjs-portability-gets-a-contract-adapter-api-framework-and-deployment-contracts-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "nextjs-portability-gets-a-contract-adapter-api-framework-and-deployment-contracts-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\linkedin_post.txt",
+          "sha256": "0876baab22d2cfd49a92327c7080c2737babebeca2c2219100ef308cdc09e808",
+          "mtimeIso": "2026-05-19T07:49:45.491Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\x_post.txt",
+          "sha256": "a2c8bfe6ea7035a7723af705daf5c60da2304a536cbbc2ba91cf285b2b105cd7",
+          "mtimeIso": "2026-05-19T07:49:45.491Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\prompt.txt",
+          "sha256": "e6b9231759e434332ee7ed547c5fdf73258d805072a8bacf8adac0c243a00bb5",
+          "mtimeIso": "2026-05-19T07:49:45.512Z"
+        },
+        "nextjs-portability-gets-a-contract-adapter-api-framework-and-deployment-contracts-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\nextjs-portability-gets-a-contract\\nextjs-portability-gets-a-contract-adapter-api-framework-and-deployment-contracts-software-development-linkedin-thumbnail.png",
+          "sha256": "e31cfdf51c862edcbf87527cb353d6cb4e952b79b8b3711ae7d340f1c7f88b92",
+          "mtimeIso": "2026-05-19T07:49:45.728Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 68,
+      "logCountAfter": 69,
+      "logEntry": "2026-05-19 | Next.js Portability Gets a Contract | Next.js Adapter API | framework portability and deployment adapter contracts",
+      "logUpdatedAt": "2026-05-19T07:49:45.731Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

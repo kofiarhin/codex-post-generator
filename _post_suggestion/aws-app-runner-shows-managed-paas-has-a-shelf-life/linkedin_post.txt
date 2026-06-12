@@ -1,0 +1,21 @@
+AWS App Runner maintenance mode is a useful reminder that "managed" does not mean "permanent."
+
+AWS posted its Service Availability Updates on March 31, 2026. Starting April 30, 2026, several services listed for maintenance mode will no longer be accessible to new customers. Existing customers can keep using them, and AWS says it will continue operating and supporting them.
+
+That is not a shutdown. But it is a signal.
+
+App Runner was attractive because it sat in that sweet spot many teams want: deploy a container without immediately building a small platform team around it. Less Kubernetes ceremony. Less ECS vocabulary. Fewer "why is this task definition looking at me like that?" moments.
+
+Now teams are talking about App Runner migration, ECS Express Mode, and what this says about choosing a managed container platform on a hyperscaler.
+
+The lesson is not "never use AWS PaaS." That would be lazy.
+
+The lesson is that platform choices have lifecycles. Simple services are still product bets. The abstraction can save you time until the business strategy behind it changes.
+
+So the practical question is not just "how fast can we ship on this?"
+
+It is also: "how painful will this be if the preferred path changes in two years?"
+
+That is not pessimism. That is architecture wearing reading glasses.
+
+#AWS #CloudComputing #DevOps #PlatformEngineering #CloudMigration #SaaS

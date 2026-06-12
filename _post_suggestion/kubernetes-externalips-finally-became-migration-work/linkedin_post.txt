@@ -1,0 +1,17 @@
+Kubernetes ExternalIPs deprecation is one of those changes that sounds boring until you realize how many old shortcuts are quietly load-bearing.
+
+In Kubernetes v1.36, `.spec.externalIPs` is formally deprecated because the field assumes a level of cluster trust that real organizations stopped having years ago.
+
+That is the uncomfortable part. A lot of platform risk does not look like a dramatic exploit chain. It looks like a convenient Service field that made sense when the cluster was smaller, friendlier, and mostly operated by people who knew each other's coffee orders.
+
+Now the project is saying the quiet bit out loud: insecure defaults eventually become migration work.
+
+If you use Service externalIPs, the path forward is not panic. It is inventory, ownership, and replacement. Enable `DenyServiceExternalIPs` where you can. Move the legitimate cases toward LoadBalancer services, MetalLB, or Gateway API. Treat this like Kubernetes security debt with a calendar attached, not a random breaking change from the sky.
+
+The lesson is bigger than one API field.
+
+Every platform has a few "temporary" escape hatches that survive because nobody wants to own the cleanup. Then one release note turns them into architecture.
+
+Which deprecated shortcut in your stack is quietly waiting to become a roadmap item?
+
+#Kubernetes #CloudNative #PlatformEngineering #KubernetesSecurity #DevOps #GatewayAPI

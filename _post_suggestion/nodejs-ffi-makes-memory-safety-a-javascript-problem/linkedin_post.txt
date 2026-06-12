@@ -1,0 +1,21 @@
+Node.js FFI is JavaScript getting access to the sharp drawer.
+
+That is useful. It is also exactly the kind of useful that makes senior engineers sit up a little straighter.
+
+Node.js 26.1.0 introduced an experimental `node:ffi` module for loading dynamic libraries and calling native symbols from JavaScript. On paper, this is a very practical bridge: less wrapper glue, easier access to native libraries, faster experiments around system-level integration.
+
+But the interesting part is not the convenience. It is the warning label.
+
+The API sits behind `--experimental-ffi`. If the Node.js permission model is enabled, it also needs `--allow-ffi`. The release notes are blunt about why: wrong pointers, bad signatures, or freed memory can crash or corrupt the process.
+
+That is not a footnote. That is the contract.
+
+JavaScript native modules have always been where the tidy abstraction meets the operating system and starts making uncomfortable eye contact. FFI just makes that boundary more direct.
+
+The real question for teams is not "can we call native code now?"
+
+It is: who is allowed to, how is it reviewed, how is it tested, and what blast radius are we accepting when memory safety leaves the cozy part of the stack?
+
+Useful features usually arrive with paperwork. This one arrives with pointers.
+
+#NodeJS #JavaScript #SoftwareEngineering #MemorySafety #BackendDevelopment #NativeModules

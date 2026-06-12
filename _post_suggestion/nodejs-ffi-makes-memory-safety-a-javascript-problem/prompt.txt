@@ -1,0 +1,11 @@
+A JavaScript developer stands at a clean workstation facing a large polished monitor that shows a simple bridge between a high-level JavaScript runtime panel and a low-level native library panel, with one bright amber warning pin marking the boundary where memory safety becomes risky. The setting is a modern engineering office at night, quiet and focused, with the developer shown from behind or in profile so the emphasis stays on the architecture boundary rather than a face. Composition: one dominant central scene, monitor and boundary line as the focal subject, generous negative space through the center for overlay text, subtle desk details only. Lighting: cinematic but believable monitor glow, soft charcoal shadows, controlled contrast, warm amber accent against deep navy, graphite, muted teal, and clean off-white. Mood: professional, dryly tense, technically literate, useful but dangerous in the way sharp tools are useful. Rendering style: realistic editorial technology illustration with premium commercial polish, crisp edges, realistic materials, physically plausible shadows, clean depth of field, 16:9 LinkedIn thumbnail, 2K-ready detail. No logos, no watermarks, no clutter, no meme aesthetic, no distorted hands, no unreadable interface text, no tiny code walls, no random glyphs, no exaggerated sci-fi effects.
+
+Quality requirements: create a 16:9 LinkedIn thumbnail with premium editorial production value, 2K-ready detail, sharp focus, cinematic but believable lighting, physically plausible shadows, realistic materials, clean depth of field, crisp edges, and no low-resolution artifacts. Compose it like a professional technology magazine cover: one dominant focal scene, large readable shapes, strong foreground-midground-background separation, and enough centered negative space for the overlay. If screens or UI panels appear, make them large, clean, and plausible with only short readable labels; avoid tiny text, malformed code, random glyphs, crowded dashboards, and decorative clutter. Use a subtle dark translucent center band behind the overlay only when needed for contrast, with bold white sans-serif text that is perfectly legible and not cropped.
+
+Text overlay:
+
+"JavaScript Owns the Sharp Edges"
+
+Placement: centered in the middle of the thumbnail
+
+Style: bold clean sans-serif, high contrast, one line if possible

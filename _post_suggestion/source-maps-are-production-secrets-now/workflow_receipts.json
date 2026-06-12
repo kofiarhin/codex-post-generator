@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "Source Maps Are Production Secrets Now",
+  "slug": "source-maps-are-production-secrets-now",
+  "createdAt": "2026-05-29T10:35:55.663Z",
+  "updatedAt": "2026-05-29T10:35:56.241Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-05-29T10:35:55.663Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\x_post.txt",
+      "linkedinSha256": "3e13c32956726487ce0800ae2612ddacaa6f9cd4cb4474ce6dd30203157c2d82",
+      "xSha256": "08789779041c85dab0c81755b2305538817625ed63287db3aa565355dfcfb49a"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-05-29T10:35:55.674Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\prompt.txt",
+      "promptSha256": "bb968749f6460f2b7ef071587ca79611cba8128da2f1a9c2e85fac003ec6a97f"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "local-thumbnail-generator",
+      "completedAt": "2026-05-29T10:35:56.184Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\source-maps-are-production-secrets-now-map-security-protected-as-frontend-defaul-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "source-maps-are-production-secrets-now-map-security-protected-as-frontend-defaul-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "6474bdd40dde379f4eab5c0d39fcee95dbba30c8fffe72e95d18d45850ed244d",
+      "thumbnailBufferSha256": "6474bdd40dde379f4eab5c0d39fcee95dbba30c8fffe72e95d18d45850ed244d",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\prompt.txt",
+      "promptSha256": "bb968749f6460f2b7ef071587ca79611cba8128da2f1a9c2e85fac003ec6a97f",
+      "provider": "local",
+      "configuredProvider": "",
+      "model": "local-node-png-renderer",
+      "requestedModel": "black-forest-labs/FLUX.1-schnell",
+      "fallbackUsed": true,
+      "fallbackReason": "HF_TOKEN is missing",
+      "providerError": "",
+      "width": 1200,
+      "height": 628
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-05-29T10:35:56.241Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "source-maps-are-production-secrets-now-map-security-protected-as-frontend-defaul-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "source-maps-are-production-secrets-now-map-security-protected-as-frontend-defaul-software-development-linkedin-thumbnail.png",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\linkedin_post.txt",
+          "sha256": "3e13c32956726487ce0800ae2612ddacaa6f9cd4cb4474ce6dd30203157c2d82",
+          "mtimeIso": "2026-05-29T10:35:55.657Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\x_post.txt",
+          "sha256": "08789779041c85dab0c81755b2305538817625ed63287db3aa565355dfcfb49a",
+          "mtimeIso": "2026-05-29T10:35:55.660Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\prompt.txt",
+          "sha256": "bb968749f6460f2b7ef071587ca79611cba8128da2f1a9c2e85fac003ec6a97f",
+          "mtimeIso": "2026-05-29T10:35:55.673Z"
+        },
+        "source-maps-are-production-secrets-now-map-security-protected-as-frontend-defaul-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\source-maps-are-production-secrets-now\\source-maps-are-production-secrets-now-map-security-protected-as-frontend-defaul-software-development-linkedin-thumbnail.png",
+          "sha256": "6474bdd40dde379f4eab5c0d39fcee95dbba30c8fffe72e95d18d45850ed244d",
+          "mtimeIso": "2026-05-29T10:35:56.173Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 71,
+      "logCountAfter": 72,
+      "logEntry": "2026-05-29 | Source Maps Are Production Secrets Now | source map security | protected production source maps as frontend security defaults",
+      "logUpdatedAt": "2026-05-29T10:35:56.238Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

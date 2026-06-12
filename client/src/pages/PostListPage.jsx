@@ -1,21 +1,45 @@
-import { MagnifyingGlass } from '@phosphor-icons/react';
-import { useEffect, useMemo, useState } from 'react';
+import { CaretLeft, CaretRight, MagnifyingGlass } from '@phosphor-icons/react';
+import { useEffect, useState } from 'react';
 import PostPreview from '../components/PostPreview.jsx';
 import { getPosts } from '../api/posts.js';
+
+const PAGE_LIMIT = 12;
 
 export default function PostListPage() {
   const [posts, setPosts] = useState([]);
   const [query, setQuery] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState('');
+  const [page, setPage] = useState(1);
+  const [pagination, setPagination] = useState({
+    page: 1,
+    limit: PAGE_LIMIT,
+    total: 0,
+    totalPages: 0,
+    hasNextPage: false,
+    hasPrevPage: false
+  });
   const [status, setStatus] = useState('loading');
   const [error, setError] = useState('');
 
   useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setDebouncedQuery(query.trim());
+    }, 300);
+
+    return () => window.clearTimeout(timer);
+  }, [query]);
+
+  useEffect(() => {
     let isMounted = true;
 
-    getPosts()
+    setStatus('loading');
+    setError('');
+
+    getPosts({ page, limit: PAGE_LIMIT, q: debouncedQuery })
       .then((data) => {
         if (!isMounted) return;
-        setPosts(data);
+        setPosts(data.posts);
+        setPagination(data.pagination);
         setStatus('ready');
       })
       .catch((requestError) => {
@@ -27,56 +51,47 @@ export default function PostListPage() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [debouncedQuery, page]);
 
-  const filteredPosts = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
+  function handleQueryChange(event) {
+    setQuery(event.target.value);
+    setPage(1);
+  }
 
-    if (!normalizedQuery) {
-      return posts;
-    }
-
-    return posts.filter((post) =>
-      [post.title, post.primaryKeyword, post.topicAngle]
-        .filter(Boolean)
-        .some((value) => value.toLowerCase().includes(normalizedQuery))
-    );
-  }, [posts, query]);
+  const isLoading = status === 'loading';
 
   return (
     <section className="grid gap-6">
       <div className="grid gap-4 rounded-md border border-zinc-200 bg-white p-4 shadow-[0_18px_45px_-34px_rgba(39,39,42,0.5)] md:grid-cols-[1fr_auto] md:items-center">
         <label className="grid gap-2">
-          <span className="text-sm font-medium text-zinc-700">Search by title, keyword, or topic angle</span>
+          <span className="text-sm font-medium text-zinc-700">Search posts</span>
           <span className="relative">
             <MagnifyingGlass className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" size={18} weight="bold" />
             <input
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={handleQueryChange}
               className="w-full rounded-md border border-zinc-300 bg-zinc-50 py-3 pl-10 pr-3 text-sm outline-none transition duration-200 focus:border-teal-700 focus:bg-white focus:ring-2 focus:ring-teal-700/15"
-              placeholder="Try AI observability or GitHub Actions"
+              placeholder="Search title, slug, keyword, angle, or post copy"
             />
           </span>
         </label>
         <div className="text-left md:text-right">
-          <p className="font-mono text-2xl font-semibold text-zinc-950">{filteredPosts.length}</p>
-          <p className="text-sm text-zinc-500">visible packages</p>
+          <p className="font-mono text-2xl font-semibold text-zinc-950">{pagination.total}</p>
+          <p className="text-sm text-zinc-500">matching packages</p>
         </div>
       </div>
 
-      {status === 'loading' ? <LoadingList /> : null}
+      {isLoading ? <LoadingList /> : null}
       {status === 'error' ? <ErrorState message={error} /> : null}
       {status === 'ready' && posts.length === 0 ? <EmptyState /> : null}
-      {status === 'ready' && posts.length > 0 && filteredPosts.length === 0 ? (
-        <EmptyState title="No matches" message="Adjust the search query to find a saved package." />
-      ) : null}
-      {status === 'ready' && filteredPosts.length > 0 ? (
+      {status === 'ready' && posts.length > 0 ? (
         <div className="divide-y-0">
-          {filteredPosts.map((post) => (
+          {posts.map((post) => (
             <PostPreview key={post.slug} post={post} />
           ))}
         </div>
       ) : null}
+      {status === 'ready' ? <PaginationControls pagination={pagination} onPageChange={setPage} /> : null}
     </section>
   );
 }
@@ -99,12 +114,45 @@ function LoadingList() {
   );
 }
 
-function EmptyState({ title = 'No packages yet', message = 'Run a finalization or backfill command to populate MongoDB.' }) {
+function EmptyState({ title = 'No packages found', message = 'Adjust the search query or run a finalization/backfill command to populate MongoDB.' }) {
   return (
     <div className="rounded-md border border-dashed border-zinc-300 bg-white px-5 py-10 text-center">
       <h2 className="text-lg font-semibold text-zinc-950">{title}</h2>
       <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-zinc-600">{message}</p>
     </div>
+  );
+}
+
+function PaginationControls({ pagination, onPageChange }) {
+  const totalPages = Math.max(pagination.totalPages, 0);
+
+  return (
+    <nav className="flex flex-col gap-3 border-t border-zinc-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
+      <p className="text-sm text-zinc-600">
+        Page <span className="font-mono font-semibold text-zinc-950">{pagination.page}</span> of{' '}
+        <span className="font-mono font-semibold text-zinc-950">{totalPages}</span>
+      </p>
+      <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => onPageChange((currentPage) => Math.max(1, currentPage - 1))}
+          disabled={!pagination.hasPrevPage}
+          className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-3 py-2 text-sm font-medium text-zinc-800 transition duration-200 hover:bg-zinc-100 active:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-transparent disabled:active:translate-y-0"
+        >
+          <CaretLeft size={16} weight="bold" />
+          Previous
+        </button>
+        <button
+          type="button"
+          onClick={() => onPageChange((currentPage) => currentPage + 1)}
+          disabled={!pagination.hasNextPage}
+          className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-3 py-2 text-sm font-medium text-zinc-800 transition duration-200 hover:bg-zinc-100 active:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-transparent disabled:active:translate-y-0"
+        >
+          Next
+          <CaretRight size={16} weight="bold" />
+        </button>
+      </div>
+    </nav>
   );
 }
 

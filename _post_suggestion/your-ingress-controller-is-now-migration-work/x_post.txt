@@ -1,0 +1,9 @@
+Ingress NGINX migration is not a YAML cleanup task.
+
+The controller may be retired, but your cluster still has years of annotations, rewrites, TLS assumptions, and routing behavior quietly holding production together.
+
+Moving to Kubernetes Gateway API or another maintained controller starts with inventory, testing, and admitting that "installed years ago" is not documentation.
+
+Infrastructure debt is patient. It waits until a critical dependency retires, then schedules the archaeology work for you.
+
+#Kubernetes #CloudNative #GatewayAPI
