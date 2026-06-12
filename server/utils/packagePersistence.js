@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { connectMongo } = require('../config/db');
 const PostPackage = require('../models/PostPackage');
+const { createSeoThumbnailFileName } = require('./seoThumbnailFileName');
 
 const REQUIRED_PACKAGE_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
 
@@ -113,6 +114,7 @@ function buildPackageDocument({
     prompt: readTextFile(path.join(packageDir, 'prompt.txt')),
     thumbnailPath: toRepoRelative(repoRoot, thumbnailPath),
     thumbnailFileName,
+    seoThumbnailFileName: createSeoThumbnailFileName(resolvedTitle),
     packageDir: toRepoRelative(repoRoot, packageDir),
     logEntry: logEntry || finalizer.logEntry || '',
     provider: thumbnail.provider || '',

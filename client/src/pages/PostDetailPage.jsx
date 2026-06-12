@@ -92,6 +92,7 @@ export default function PostDetailPage() {
           <dl className="grid gap-2 rounded-md border border-zinc-200 bg-white p-4">
             <Meta label="Primary keyword" value={post.primaryKeyword || 'Not recorded'} />
             <Meta label="Topic angle" value={post.topicAngle || 'Not recorded'} />
+            <Meta label="SEO thumbnail filename" value={post.seoThumbnailFileName || 'Not recorded'} />
             <Meta label="Provider" value={post.provider || 'Not recorded'} />
             <Meta label="Model" value={post.model || 'Not recorded'} />
             <Meta label="Package directory" value={post.packageDir || 'Not recorded'} />
@@ -107,6 +108,9 @@ export default function PostDetailPage() {
             <CopyButton value={post.linkedinPost} label="Copy LinkedIn" />
             <CopyButton value={post.xPost} label="Copy X" />
             <CopyButton value={post.prompt} label="Copy prompt" />
+            {post.seoThumbnailFileName ? (
+              <CopyButton value={post.seoThumbnailFileName} label="Copy filename" />
+            ) : null}
           </div>
           {post.fallbackUsed ? (
             <div className="rounded-md border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900">

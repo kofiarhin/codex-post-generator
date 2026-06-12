@@ -20,6 +20,7 @@ const {
 const { formatDuplicateError, savePostFiles } = require('./save_post');
 const { saveAssetPrompt } = require('../../linkedin-post-assets/scripts/save_asset');
 const { generateThumbnail } = require('../../linkedin-post-assets/scripts/generate_thumbnail');
+const { createSeoThumbnailFileName } = require('../../../../server/utils/seoThumbnailFileName');
 
 const REQUIRED_TEXT_OUTPUT_FILES = ['linkedin_post.txt', 'x_post.txt', 'prompt.txt'];
 
@@ -73,6 +74,7 @@ async function finalizePostPackage({
   }
 
   const slug = slugify(title);
+  const seoThumbnailFileName = createSeoThumbnailFileName(title);
   const outputDir = path.join(repoRoot, '_post_suggestion', slug);
   const outputDirExisted = fs.existsSync(outputDir);
 
@@ -135,6 +137,7 @@ async function finalizePostPackage({
         packageComplete: true,
         requiredFiles: requiredOutputFiles,
         thumbnailFileName: thumbnailResult.fileName || path.basename(thumbnailResult.outputPath),
+        seoThumbnailFileName,
         packageFileHashes,
         logPath,
         logCountBefore,
@@ -185,6 +188,7 @@ async function finalizePostPackage({
       promptOutputPath: assetResult.outputPath,
       thumbnailOutputPath: thumbnailResult.outputPath,
       thumbnailFileName: thumbnailResult.fileName || path.basename(thumbnailResult.outputPath),
+      seoThumbnailFileName,
       logPath,
       loggedLine,
       receiptPath: finalizerReceipt.receiptPath,
@@ -225,6 +229,7 @@ async function main() {
     console.log(`X post saved to: _post_suggestion/${result.slug}/x_post.txt`);
     console.log(`Prompt saved to: _post_suggestion/${result.slug}/prompt.txt`);
     console.log(`Thumbnail saved to: _post_suggestion/${result.slug}/${result.thumbnailFileName}`);
+    console.log(`SEO thumbnail filename: ${result.seoThumbnailFileName}`);
     console.log('Title logged in: log.txt');
     console.log(`Log entry: ${result.loggedLine}`);
     console.log(`Workflow receipt: _post_suggestion/${result.slug}/workflow_receipts.json`);

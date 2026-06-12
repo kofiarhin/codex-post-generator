@@ -13,6 +13,7 @@ const PostPackageSchema = new mongoose.Schema(
     prompt: { type: String, required: true },
     thumbnailPath: { type: String, default: '' },
     thumbnailFileName: { type: String, default: '' },
+    seoThumbnailFileName: { type: String, default: '' },
     packageDir: { type: String, required: true },
     logEntry: { type: String, default: '' },
     provider: { type: String, default: '' },

@@ -5,10 +5,12 @@ const request = require('supertest');
 
 const mockFind = jest.fn();
 const mockCountDocuments = jest.fn();
+const mockFindOne = jest.fn();
 
 jest.mock('../models/PostPackage', () => ({
   find: (...args) => mockFind(...args),
-  countDocuments: (...args) => mockCountDocuments(...args)
+  countDocuments: (...args) => mockCountDocuments(...args),
+  findOne: (...args) => mockFindOne(...args)
 }));
 
 const postsRouter = require('../routes/posts');
@@ -39,6 +41,7 @@ function mockPost(overrides = {}) {
     topicAngle: 'debugging long-running workflows',
     linkedinPost: 'LinkedIn copy',
     xPost: 'X copy',
+    seoThumbnailFileName: 'durable-ai-agents',
     ...overrides
   };
 }
@@ -135,6 +138,28 @@ describe('posts route', () => {
     expect(filter.$or[0].title.test('CCCC Build Systems')).toBe(false);
     expect(mockCountDocuments).toHaveBeenCalledWith(filter);
     expect(response.body.posts).toEqual(posts);
+  });
+
+  test('GET /api/posts returns the persisted SEO thumbnail filename', async () => {
+    const posts = [mockPost()];
+    mockFind.mockReturnValue(createFindQuery(posts));
+    mockCountDocuments.mockResolvedValue(1);
+
+    const response = await request(app).get('/api/posts').expect(200);
+
+    expect(response.body.posts[0].seoThumbnailFileName).toBe('durable-ai-agents');
+  });
+
+  test('GET /api/posts/:slug returns the persisted SEO thumbnail filename', async () => {
+    const post = mockPost();
+    const lean = jest.fn().mockResolvedValue(post);
+    mockFindOne.mockReturnValue({ lean });
+
+    const response = await request(app).get('/api/posts/durable-ai-agents').expect(200);
+
+    expect(mockFindOne).toHaveBeenCalledWith({ slug: 'durable-ai-agents' });
+    expect(response.body).toEqual({ post });
+    expect(response.body.post.seoThumbnailFileName).toBe('durable-ai-agents');
   });
 
   test('GET /api/posts returns empty result shape', async () => {

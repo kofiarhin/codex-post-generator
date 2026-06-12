@@ -61,6 +61,7 @@ describe('packagePersistence', () => {
       prompt: 'Prompt copy',
       thumbnailPath: '_post_suggestion/durable-ai-agents/thumbnail.png',
       thumbnailFileName: 'thumbnail.png',
+      seoThumbnailFileName: 'durable-ai-agents',
       packageDir: '_post_suggestion/durable-ai-agents',
       provider: 'local',
       model: 'local-node-png-renderer',
