@@ -1,0 +1,11 @@
+The Apple ImageCreator deprecation is an API trust lesson with a compile error attached.
+
+On iOS 27 and Apple's other new OS releases, beta and TestFlight builds using ImageCreator will hit a runtime error. Public releases will stop compiling.
+
+Apple's answer: show the system-managed Image Playground sheet or move to another service.
+
+That is not a rename. It changes control, privacy, cost, and product behavior.
+
+Platform AI can be useful. Just do not mistake "available in the SDK" for "stable infrastructure." Design the exit before the vendor designs it for you.
+
+#WWDC26 #iOSDevelopment #GenerativeAI

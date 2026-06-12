@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "title": "Apple's ImageCreator Deprecation Is an API Trust Lesson",
+  "slug": "apples-imagecreator-deprecation-is-an-api-trust-lesson",
+  "createdAt": "2026-06-12T11:42:28.834Z",
+  "updatedAt": "2026-06-12T11:42:28.873Z",
+  "stages": {
+    "orchestrator": {
+      "status": "completed",
+      "source": "save_post.js",
+      "completedAt": "2026-06-12T11:42:28.834Z",
+      "linkedinOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\linkedin_post.txt",
+      "xOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\x_post.txt",
+      "linkedinSha256": "b3506a97dd93c707006c697ef49dc32f26309edf02af218fa52918e35c183d6a",
+      "xSha256": "344e956e514b1afcf3a1ef6d8acc4b82408fe4c75e017b2b0615ca1db4112666"
+    },
+    "asset": {
+      "status": "completed",
+      "source": "save_asset.js",
+      "completedAt": "2026-06-12T11:42:28.843Z",
+      "promptOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\prompt.txt",
+      "promptSha256": "2909d7109aa7306b5bfaef636c517b902b7f6d314a9887d776b6640fc796c3e4"
+    },
+    "thumbnail": {
+      "status": "completed",
+      "source": "built-in-image-generation",
+      "completedAt": "2026-06-12T11:42:28.859Z",
+      "thumbnailOutputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\apples-imagecreator-deprecation-is-an-api-trust-lesson-apple-platform-ai-stability-and-migration-software-development-linkedin-thumbnail.png",
+      "thumbnailFileName": "apples-imagecreator-deprecation-is-an-api-trust-lesson-apple-platform-ai-stability-and-migration-software-development-linkedin-thumbnail.png",
+      "thumbnailSha256": "03d57ee64f6c1574fa79bd9cb063a3f8d852e1f88389429e7196aa2cd4551890",
+      "promptInputPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\prompt.txt",
+      "promptSha256": "2909d7109aa7306b5bfaef636c517b902b7f6d314a9887d776b6640fc796c3e4",
+      "provider": "built-in-image-generation",
+      "model": "image_gen",
+      "fallbackUsed": false,
+      "width": 1672,
+      "height": 941
+    },
+    "finalizer": {
+      "status": "completed",
+      "source": "finalize_post_package.js",
+      "completedAt": "2026-06-12T11:42:28.873Z",
+      "packageComplete": true,
+      "requiredFiles": [
+        "linkedin_post.txt",
+        "x_post.txt",
+        "prompt.txt",
+        "apples-imagecreator-deprecation-is-an-api-trust-lesson-apple-platform-ai-stability-and-migration-software-development-linkedin-thumbnail.png"
+      ],
+      "thumbnailFileName": "apples-imagecreator-deprecation-is-an-api-trust-lesson-apple-platform-ai-stability-and-migration-software-development-linkedin-thumbnail.png",
+      "seoThumbnailFileName": "apples-imagecreator-deprecation-is-an-api-trust-lesson",
+      "packageFileHashes": {
+        "linkedin_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\linkedin_post.txt",
+          "sha256": "b3506a97dd93c707006c697ef49dc32f26309edf02af218fa52918e35c183d6a",
+          "mtimeIso": "2026-06-12T11:42:28.831Z"
+        },
+        "x_post.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\x_post.txt",
+          "sha256": "344e956e514b1afcf3a1ef6d8acc4b82408fe4c75e017b2b0615ca1db4112666",
+          "mtimeIso": "2026-06-12T11:42:28.832Z"
+        },
+        "prompt.txt": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\prompt.txt",
+          "sha256": "2909d7109aa7306b5bfaef636c517b902b7f6d314a9887d776b6640fc796c3e4",
+          "mtimeIso": "2026-06-12T11:42:28.842Z"
+        },
+        "apples-imagecreator-deprecation-is-an-api-trust-lesson-apple-platform-ai-stability-and-migration-software-development-linkedin-thumbnail.png": {
+          "path": "C:\\Users\\laura.bolas\\projects\\post-generator\\_post_suggestion\\apples-imagecreator-deprecation-is-an-api-trust-lesson\\apples-imagecreator-deprecation-is-an-api-trust-lesson-apple-platform-ai-stability-and-migration-software-development-linkedin-thumbnail.png",
+          "sha256": "03d57ee64f6c1574fa79bd9cb063a3f8d852e1f88389429e7196aa2cd4551890",
+          "mtimeIso": "2026-06-12T11:40:02.721Z"
+        }
+      },
+      "logPath": "C:\\Users\\laura.bolas\\projects\\post-generator\\log.txt",
+      "logCountBefore": 75,
+      "logCountAfter": 76,
+      "logEntry": "2026-06-12 | Apple's ImageCreator Deprecation Is an API Trust Lesson | Apple ImageCreator deprecation | platform AI API stability and migration reversibility",
+      "logUpdatedAt": "2026-06-12T11:42:28.872Z",
+      "logUpdatedAfterPackageSave": true
+    }
+  }
+}

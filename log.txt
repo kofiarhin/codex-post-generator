@@ -73,3 +73,4 @@
 2026-05-30 | Your Kubernetes Scanner Is About to Get Louder | Kubernetes vulnerability scanning | June 1 CVE record corrections make scanners surface unfixed architectural risks and force configuration-based mitigations
 2026-06-01 | Your Ingress Controller Is Now Migration Work | Ingress NGINX migration | Ingress NGINX retirement turns a critical Kubernetes traffic boundary into documented migration work toward Gateway API or another maintained controller
 2026-06-12 | WSL Containers Could Make Windows Development Boring | WSL Containers | native Windows container tooling as developer experience simplification
+2026-06-12 | Apple's ImageCreator Deprecation Is an API Trust Lesson | Apple ImageCreator deprecation | platform AI API stability and migration reversibility

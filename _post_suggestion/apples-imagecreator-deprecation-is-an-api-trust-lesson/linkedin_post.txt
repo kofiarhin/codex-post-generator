@@ -1,0 +1,21 @@
+The Apple ImageCreator deprecation is a useful reminder: an API can be local, private, and still temporary.
+
+Apple is discontinuing programmatic access to its on-device image generation model. On iOS 27, iPadOS 27, macOS 27, and visionOS 27, beta and TestFlight builds using ImageCreator will hit a runtime error. With the public releases, they will stop compiling.
+
+That is not an abstract roadmap concern. That is an iOS 27 API migration with a deadline and a broken build waiting at the end.
+
+Apple's alternatives are clear: present the system-managed Image Playground framework sheet, or move generation to another service.
+
+Both options change the product.
+
+One gives Apple control over the experience. The other adds a vendor, network dependency, cost model, and probably a fresh privacy review. Neither is a drop-in replacement for programmatic on-device image generation.
+
+The broader lesson is not "never trust platform APIs." Software built without dependencies is usually called a notebook.
+
+The lesson is to price reversibility into the architecture. Especially with AI capabilities, where the demo arrives before any evidence of generative AI API stability.
+
+A platform feature is not infrastructure merely because it ships in an SDK.
+
+How much migration risk should teams accept in exchange for tighter platform integration?
+
+#AppleDevelopment #iOSDevelopment #GenerativeAI #AppleIntelligence #MobileDevelopment #APIDesign #WWDC26
