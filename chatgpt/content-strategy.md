@@ -37,3 +37,13 @@ The supplied October 2026 screenshots suggest that concrete agent verification a
 
 ## Links and CTA
 Include a verified relevant DevKofi article when available, otherwise a verified blog or homepage. Never invent URLs. Only include a newsletter link after its exact URL has been configured and verified. End with a specific engineering question when it naturally adds value; avoid engagement bait.
+
+## Topic Learning Loop
+
+Treat `chatgpt/data/post-history.json` as the generation history. Read it before topic selection. Compare the specific problem, mechanism, angle, and thesis, not only the title.
+
+Prefer topics and technical mechanisms not recently covered. Do not permanently ban a broad topic: a new failure mode or solution can justify revisiting it. Use generated entries for diversity checks; only verified published entries count as published history.
+
+After successful generation, record only metadata using the documented schema. Keep publication status separate. If history is unavailable, disclose that the comparison was incomplete. If logging fails, report that fact.
+
+Learning means better topic coverage and use of verified performance evidence when available. Do not claim the generator learned from metrics it has not received.
