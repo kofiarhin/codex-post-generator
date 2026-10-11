@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "2026-10-12-image-delivery-jpeg-xl",
+    "generated_at": "2026-10-11T23:46:00Z",
+    "topic": "JPEG XL and practical image delivery",
+    "category": "architecture",
+    "angle": "Image formats alone do not fix web performance; responsive sizing, lazy loading and fallbacks matter",
+    "problem": "Large or unnecessary image downloads slow frontend pages",
+    "mechanism": "srcset and sizes, loading lazy, picture fallbacks, and LCP measurement",
+    "status": "generated",
+    "source_refs": [
+      "https://developer.chrome.com/blog"
+    ]
+  }
+]
