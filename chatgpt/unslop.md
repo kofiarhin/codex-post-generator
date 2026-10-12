@@ -13,6 +13,15 @@ Before returning a LinkedIn post, remove:
 
 Review for: one thesis, a specific mechanism, evidence, limitations, natural paragraph rhythm, useful reader takeaway, and a defensible headline.
 
+For news-to-code posts, confirm:
+- The development is dated and technical claims have primary-source support.
+- The GitHub connection comes from inspected implementation files at a recorded ref.
+- The connection explains a specific mechanism and practical decision, not a shared keyword.
+- Observed implementation, proposed adoption, and verified outcomes are clearly separated.
+- The angle differs from recent history.
+- Public sources are usable, and private evidence is safely generalised.
+- Missing news or GitHub evidence is disclosed; no match is fabricated.
+
 Do not sacrifice technical accuracy just to make a post punchier. If a claim cannot be verified, qualify or remove it.
 
 Reject posts that only describe a problem without a mechanism or useful next step. Check recent posts for repeated openings, arguments, and conclusions.
