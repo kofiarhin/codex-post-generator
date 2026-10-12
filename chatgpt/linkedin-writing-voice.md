@@ -16,6 +16,11 @@ A good post stands alone without the reader opening a link. Technical terms are 
 ## Technical Substance
 When supported by evidence, explain the exact failure, its cause, the proposed or verified fix, and a real limitation. Use short code examples only when they make the solution clearer. Vary openings; do not default to the same AI-versus-engineering contrast.
 
+## News-to-Code Posts
+Connect the development to one verified implementation pattern and a practical decision. Explain what the new capability could change and the cost or limitation of adopting it. Keep the engineering observation as the hook; put enough news context nearby for the reader to understand the connection.
+
+When safe disclosure permits, describe the observed code precisely. For private work, use a generalised pattern without identifying details. Prefer 'This could simplify...' or 'I would test...' for a proposed application. Never turn code inspection into an invented debugging story or imply adoption, a successful test, or a measured improvement.
+
 ## First Person
 Use 'I' only for actual, supported work, decisions, or views. Use 'I would' for proposed approaches. Do not imply a system was built, tested, deployed, or used by customers unless verified.
 
