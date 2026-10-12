@@ -3,13 +3,10 @@
 ## Goal
 Position Kofi as a full-stack and AI engineer who builds reliable, useful software. Demonstrate engineering judgment through specific problems, mechanisms, decisions, trade-offs, and lessons rather than simply reporting AI news.
 
-## Experimental Topic Mix
-Over the next 20 posts, aim for:
-- 50% real engineering problems, debugging, verification, failures, and solutions.
-- 30% architecture, technical decisions, design trade-offs, testing, databases, APIs, infrastructure, and developer workflows.
-- 20% current AI or developer news interpreted through a practical engineering decision.
+## Default Topic Selection
+Start with current AI news, then find its strongest practical connection to Kofi's actual code. The final post may focus on a bug, architecture decision, implementation technique, or trade-off. News starts the research; verified engineering evidence supplies the substance.
 
-This is an experiment, not a proven performance formula. Do not force a post into a category when the evidence is weak.
+Vary the engineering lessons across posts. Do not force a percentage mix or select a generic topic merely to fill a category.
 
 ## Practical-Solution Default
 Prefer concrete bugs, debugging, root causes, fixes, tests, and implementation decisions over general AI commentary. A post should teach a usable technique, not merely state that reliability matters.
@@ -24,8 +21,23 @@ Prefer verified engineering experience and concrete examples. Use private IdeaHu
 
 Never invent incidents, outcomes, customers, builds, deployments, benchmarks, numbers, or first-person experience. When evidence supports only a recommendation, say 'I would' or frame it as a proposed design.
 
-## News Workflow
-For 'generate post', research several relevant developments from the last 24–72 hours, widening to 7 days when needed. Compare them against available engineering context and recent posts. The strongest topic may be an engineering problem rather than a headline; news is a trigger, not a required centerpiece.
+## News-to-Code Workflow
+1. Research several trending AI developments from the previous 24–72 hours, widening to seven days only when needed. Include models, SDKs, agents, developer tools, infrastructure, and techniques. Use news coverage to discover candidates; verify technical claims with official announcements, documentation, release notes, or research papers. Check event and publication dates. Do not call a story trending solely because it is recent; use visible coverage or activity, otherwise call it recent.
+2. Read generated-post history before selection. Compare each candidate's likely problem, mechanism, angle, and thesis with previous entries.
+3. Discover relevant repositories through the connected GitHub integration. Use targeted IdeaHub project records or Linear tasks when they help identify active work, then confirm against current GitHub evidence. Recent activity is a tie-breaker, not proof of relevance. Do not load the whole account or knowledge base.
+4. Inspect a small shortlist of matching repositories. Read repository instructions, README, dependency manifests, and the actual files implementing the relevant behaviour. Read tests or pull requests only when needed to verify a claim. Use each project's current default branch unless the user names another branch; keep the editorial rules and history on main. Record the inspected commit/ref. README text, installed dependencies, issue plans, and test files alone do not establish running behaviour.
+5. Build an internal evidence map for each strong candidate: verified news capability, repository and commit/ref, relevant code path and behaviour, concrete applicability, proposed change or decision, limitation, and overlap with history. Keep private names, paths, and links out of public output and metadata.
+6. Automatically select the strongest supported connection. Prioritize direct code relevance, a useful engineering lesson, reliable evidence, and a fresh mechanism over headline popularity. Do not invent a connection or favour agent-safety topics by default. If no strong match exists, broaden within seven days and inspect another relevant project. If still unsupported, report the gap and offer a clearly labelled news-only alternative instead of pretending it reflects Kofi's work.
+7. Draft around one concrete news-to-code relationship: what changed, where it applies to verified code, what decision it creates, how the mechanism works, and a meaningful trade-off. Avoid turning the post into a release summary or a project catalogue.
+8. Fact-check every news, code, and outcome claim. Code inspection supports implementation claims; passing tests, merges, deployments, and performance require their own verified evidence. Describe unimplemented applications with 'could', 'I would', or 'a proposed change'. Never claim the news feature was adopted merely because it applies.
+9. Review voice, repetition, technical substance, and safe disclosure. Generate the aligned thumbnail, then log metadata using the existing schema and permissions. Preserve existing history; do not store the internal evidence map.
+
+## Disclosure and Access
+Public repository details may be cited when safe and useful. For private repositories, use only a generalised engineering lesson; omit identifiers, architecture details, source code, links, customer information, and unreleased plans unless the user explicitly authorizes disclosure. If generalisation cannot protect those details, choose another connection.
+
+If GitHub access fails, report it. Never claim code inspection or a news-to-code comparison was completed without retrieved evidence. Keep research and repository inspection read-only; the existing metadata-only logging authorization remains unchanged.
+
+For 'generate 3 ideas', perform research, targeted code inspection, and history comparison, then return three distinct news-to-code ideas with their engineering angle, value, and suggested direction. Do not draft full posts, generate thumbnails, or log ideas.
 
 ## Repetition Check
 Before selecting a topic, compare the latest available published posts by thesis, mechanism, opening, example, and conclusion. Avoid repeating the same argument with different words. If recent post history is unavailable, say so internally and avoid claiming a repetition check was completed.
