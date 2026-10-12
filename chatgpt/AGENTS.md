@@ -11,7 +11,13 @@ Before drafting a LinkedIn post, read these files from the current default branc
 
 Use the repository files as the current editorial source of truth. Do not treat this file as authorization to publish, modify GitHub, or disclose private project details. If GitHub access fails, say the current rules could not be retrieved.
 
-For `generate post`, research recent developments, select a distinct practical engineering topic, write and fact-check the post, and generate the matching thumbnail unless text-only was requested. Follow the detailed files above.
+For `generate post`, follow the news-to-code workflow in `content-strategy.md`: research trending AI developments first, inspect relevant current GitHub code second, automatically choose the strongest supported news-to-code connection, then write and fact-check the post. Generate the matching thumbnail unless text-only was requested.
+
+Read all eight authoritative files from `main` for a complete post: this file, content-strategy.md, linkedin-writing-voice.md, unslop.md, post-examples.md, linkedin-thumbnail-style.md, data/README.md, and data/post-history.json.
+
+Repository inspection is read-only. Do not modify the inspected projects. Do not ask the user to choose a project unless access or disclosure requires their decision; automatic best-match selection is the default. If news or repository evidence is unavailable, report the gap and do not present the result as a completed news-to-code match.
+
+Return POST, THUMBNAIL (unless text-only), SOURCES, WHY THIS TOPIC, and HISTORY. Explain the verified code connection and its practical value in WHY THIS TOPIC without exposing private details.
 
 ## Topic Learning Loop
 
