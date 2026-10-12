@@ -11,5 +11,18 @@
     "source_refs": [
       "https://developer.chrome.com/blog"
     ]
+  },
+  {
+    "id": "2026-10-12-stable-search-pagination",
+    "generated_at": "2026-10-12T12:40:00Z",
+    "topic": "Stable search ranking and pagination",
+    "category": "real-problem",
+    "angle": "Search pagination correctness requires stable ranking and deterministic ordering",
+    "problem": "Duplicate or missing search results across consecutive pages",
+    "mechanism": "Replica scoring differences, stable relevance scoring, unique tie-breakers and cursor pagination",
+    "status": "generated",
+    "source_refs": [
+      "https://www.mongodb.com/company/blog/channel/engineering-blog"
+    ]
   }
 ]
