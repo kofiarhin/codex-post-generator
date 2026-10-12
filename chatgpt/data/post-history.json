@@ -24,5 +24,18 @@
     "source_refs": [
       "https://www.mongodb.com/company/blog/channel/engineering-blog"
     ]
+  },
+  {
+    "id": "2026-10-12-api-tracing-bottlenecks",
+    "generated_at": "2026-10-12T19:24:00Z",
+    "topic": "Tracing API performance bottlenecks",
+    "category": "real-problem",
+    "angle": "Measure full request latency before optimizing MongoDB queries",
+    "problem": "Slow API responses can originate outside database execution",
+    "mechanism": "Distributed tracing with request context, spans, database timing and OpenTelemetry",
+    "status": "generated",
+    "source_refs": [
+      "https://www.mongodb.com/products/updates/"
+    ]
   }
 ]
