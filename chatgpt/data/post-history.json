@@ -37,5 +37,16 @@
     "source_refs": [
       "https://www.mongodb.com/products/updates/"
     ]
+  },
+  {
+    "id": "2026-10-13-ai-prototype-ownership",
+    "generated_at": "2026-10-13T03:40:00Z",
+    "topic": "AI prototypes and engineering ownership",
+    "category": "architecture",
+    "angle": "Use AI-generated prototypes to learn system requirements, then deliberately simplify architecture and tests",
+    "problem": "AI-generated prototypes can become production systems without developers understanding the design",
+    "mechanism": "Exploratory prototype followed by architecture review, focused refactoring, risk-based testing and verification",
+    "status": "generated",
+    "source_refs": []
   }
 ]
