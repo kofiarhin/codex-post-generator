@@ -48,5 +48,18 @@
     "mechanism": "Exploratory prototype followed by architecture review, focused refactoring, risk-based testing and verification",
     "status": "generated",
     "source_refs": []
+  },
+  {
+    "id": "2026-10-14-model-upgrade-contract-tests",
+    "generated_at": "2026-10-14T09:50:00Z",
+    "topic": "Gemini 4 Argon and model upgrade contract tests",
+    "category": "ai-news",
+    "angle": "Evaluate new models against application schemas, latency, cost and failure cases rather than benchmarks",
+    "problem": "A model upgrade can degrade existing application behaviour despite stronger benchmarks",
+    "mechanism": "Representative test inputs, strict schema validation, cost and latency comparisons, staged rollout and rollback",
+    "status": "generated",
+    "source_refs": [
+      "https://www.reuters.com/business/google-launches-flagship-ai-model-gemini-4-argon-developers-businesses-2026-10-13/"
+    ]
   }
 ]
