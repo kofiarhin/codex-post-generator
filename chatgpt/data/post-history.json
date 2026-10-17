@@ -74,5 +74,18 @@
     "source_refs": [
       "https://developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem/"
     ]
+  },
+  {
+    "id": "2026-10-17-ai-code-review-evidence-package",
+    "generated_at": "2026-10-17T08:08:00Z",
+    "topic": "AI-generated pull requests and code review bottlenecks",
+    "category": "real-problem",
+    "angle": "Attach machine-derived review evidence to AI-generated pull requests instead of optimizing only code generation speed",
+    "problem": "Higher code output can increase reviewer workload without improving delivery throughput",
+    "mechanism": "Structured change summaries, real test receipts, risk mapping and focused human review",
+    "status": "generated",
+    "source_refs": [
+      "https://www.techradar.com/pro/ai-agents-are-great-at-writing-new-code-but-then-the-human-bottleneck-slows-everything-down"
+    ]
   }
 ]
