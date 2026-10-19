@@ -1,6 +1,8 @@
 # Anti-Slop Review
 
 Before returning a LinkedIn post, remove:
+- Forced jokes, constant sarcasm, snark aimed at people, or humor that distracts from the technical lesson.
+- Sarcastic claims that exaggerate or imply an unverified failure, test result, or personal experience.
 - Generic hype, corporate phrasing, and exaggerated claims.
 - Fake controversy, suspense, invented anecdotes, and engagement bait.
 - Empty claims such as 'game changer', 'the future is here', or 'this changes everything'.
