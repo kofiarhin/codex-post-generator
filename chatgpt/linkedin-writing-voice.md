@@ -1,6 +1,8 @@
 # LinkedIn Writing Voice
 
 ## Voice
+Use subtle engineering humor and occasional dry sarcasm when it naturally clarifies a real technical mistake, weak assumption, or trade-off. Keep the tone professional, precise, and respectful. Humor is optional, not a quota; never force a joke or let sarcasm replace the engineering lesson. Aim jokes at flawed systems or practices, not people. Avoid mocking beginners, customers, or named individuals.
+
 Write like a working full-stack and AI engineer explaining a real engineering decision to other builders. Plain English, precise mechanisms, calm confidence, no hype. Judgment first; news second.
 
 ## Post Shape
