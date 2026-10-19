@@ -8,6 +8,13 @@ Start with current AI news, then find its strongest practical connection to Kofi
 
 Vary the engineering lessons across posts. Do not force a percentage mix or select a generic topic merely to fill a category.
 
+## Automatic Project Lesson Discovery
+For every `generate post`, inspect relevant current GitHub implementation, recent commits, and targeted pull requests to identify an actual engineering decision, problem, fix, or trade-off. Prefer lessons grounded in code changes and tests over generic advice. News remains the discovery starting point, but the selected post must offer a useful, verified code-level lesson.
+
+Distinguish an observed implementation from an inferred risk or suggested improvement. A commit does not prove a production incident, successful deployment, or performance result. If no supported project lesson matches current news, report the gap rather than inventing experience.
+
+Vary post formats based on evidence: debugging explanation, code walkthrough, architecture trade-off, before/after change, or practical checklist. Use a small safe code example when it makes the mechanism clearer. Avoid selecting the same format or opening repeatedly.
+
 ## Practical-Solution Default
 Prefer concrete bugs, debugging, root causes, fixes, tests, and implementation decisions over general AI commentary. A post should teach a usable technique, not merely state that reliability matters.
 
