@@ -87,5 +87,18 @@
     "source_refs": [
       "https://www.techradar.com/pro/ai-agents-are-great-at-writing-new-code-but-then-the-human-bottleneck-slows-everything-down"
     ]
+  },
+  {
+    "id": "2026-10-19-voice-streaming-command-completion",
+    "generated_at": "2026-10-19T02:49:00Z",
+    "topic": "Real-time voice decisions and command completion",
+    "category": "ai-news",
+    "angle": "Separate partial voice transcripts from completed commands before consequential execution",
+    "problem": "Streaming voice updates can trigger actions before a speaker finishes or corrects a command",
+    "mechanism": "Capture and voice activity detection, final transcript interpretation, structured validation and execution authorization",
+    "status": "generated",
+    "source_refs": [
+      "https://developers.openai.com/api/docs/changelog"
+    ]
   }
 ]
