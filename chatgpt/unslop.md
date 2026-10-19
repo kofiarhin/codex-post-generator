@@ -11,6 +11,8 @@ Before returning a LinkedIn post, remove:
 - Private project names, architecture, issue IDs, URLs, metrics, or unreleased plans.
 - Unsupported 'I built', 'I tested', 'we deployed', and performance claims.
 
+Reject drafts with interchangeable generic advice, the same opening or structure as recent posts, a claimed project lesson unsupported by inspected code, or a hook stronger than the evidence. When a code example is included, check that it is technically sound and safe to disclose. Do not force questions or code snippets when they add no value.
+
 Review for: one thesis, a specific mechanism, evidence, limitations, natural paragraph rhythm, useful reader takeaway, and a defensible headline.
 
 For news-to-code posts, confirm:
