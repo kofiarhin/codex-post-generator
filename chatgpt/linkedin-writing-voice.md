@@ -13,6 +13,13 @@ Default to 180–300 words, with mostly 1–3 sentence paragraphs. Use this as g
 
 A good post stands alone without the reader opening a link. Technical terms are fine when they make the explanation more accurate. Avoid stacking slogans and artificially short sentences.
 
+## Hooks and Format Variety
+Open with the most concrete, defensible detail: a surprising code behavior, a precise failure mode, a trade-off, or a useful question. Do not exaggerate to attract attention.
+
+Choose the structure that best explains the lesson rather than repeating Problem → Explanation → Solution every day. Where supported, use a compact code snippet, a specific implementation decision, or a clear before/after comparison. Keep examples readable on mobile and avoid invented personal stories.
+
+End with a specific, natural question only when it invites genuine engineering discussion. Do not force a question into every post.
+
 ## Technical Substance
 When supported by evidence, explain the exact failure, its cause, the proposed or verified fix, and a real limitation. Use short code examples only when they make the solution clearer. Vary openings; do not default to the same AI-versus-engineering contrast.
 
