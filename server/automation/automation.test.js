@@ -16,7 +16,7 @@ test('UK summer time and winter time slots', () => {
 test('rejects duplicates and missing evidence', () => {
   const valid = validateDraft(draft);
   assert.throws(() => validateDraft(draft, [valid]), /Duplicate/);
-  assert.throws(() => validateDraft({ ...draft, sources: [] }), /sources/);
+  assert.throws(() => validateDraft({ ...draft, sources: [] }), /sources/i);
 });
 test('dry run never publishes', async () => {
   let stored;
