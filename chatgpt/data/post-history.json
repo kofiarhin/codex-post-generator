@@ -100,5 +100,18 @@
     "source_refs": [
       "https://developers.openai.com/api/docs/changelog"
     ]
+  },
+  {
+    "id": "2026-10-20-agent-stream-reconnection",
+    "generated_at": "2026-10-20T22:37:00Z",
+    "topic": "Claude Agent SDK stream suspension and durable execution",
+    "category": "ai-news",
+    "angle": "Separate browser event stream lifecycle from server-owned task execution and durable state",
+    "problem": "Browser disconnections can cause lost progress or duplicate state-changing work when stream and execution lifecycles are coupled",
+    "mechanism": "Suspend and resume SSE observation independently of persisted workflow state, with explicit action tracking and reconnect recovery",
+    "status": "generated",
+    "source_refs": [
+      "https://github.com/anthropics/claude-agent-sdk-typescript/releases"
+    ]
   }
 ]
