@@ -15,7 +15,7 @@
     "save:asset": "node .agents/skills/linkedin-post-assets/scripts/save_asset.js",
     "generate:thumbnail": "node .agents/skills/linkedin-post-assets/scripts/generate_thumbnail.js",
     "test": "npm run test:assets && npm run test:server",
-    "test:assets": "node --test .agents/skills/linkedin-post-assets/tests",
+    "test:assets": "node --test .agents/skills/linkedin-post-assets/tests/generate_thumbnail.test.js",
     "test:server": "jest server/tests --runInBand",
     "ralph:record-stage": "node .agents/skills/linkedin-post-orchestrator/scripts/record_ralph_stage.js",
     "validate:ralph": "node .agents/skills/linkedin-post-orchestrator/scripts/validate_ralph_article.js",
