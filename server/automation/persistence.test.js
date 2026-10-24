@@ -750,7 +750,7 @@ test('Codex generation and independent review adapters feed an end-to-end non-pu
     assert.equal(config.env.MONGO_URI, undefined);
     const schema = JSON.parse(fs.readFileSync(args[args.indexOf('--output-schema') + 1], 'utf8'));
     const isReview = Boolean(schema.properties.originalityPassed);
-    assert(config.input.includes(isReview ? 'Independently audit' : 'Research 4–5 candidates'));
+    assert(config.input.includes(isReview ? 'Independently audit' : 'Research 4–5 current candidate topics'));
     const value = isReview ? { approved: true, qualityPassed: true, originalityPassed: true,
       unsupportedClaims: [], sourceChecks: draft().sources.map(s => ({ url: s.url, supported: true })) } : draft();
     fs.writeFileSync(args[args.indexOf('--output-last-message') + 1], JSON.stringify(value));
