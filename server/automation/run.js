@@ -30,21 +30,27 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
     store = new MongoStore();
   }
   let locked = false;
+  let phase = 'database-initialize';
   try {
     await store.initialize();
+    phase = 'database-lock';
     await store.acquire();
     locked = true;
     let draft = await store.get(key);
     if (!draft) {
+      phase = 'history';
       const previous = [...await store.history(), ...await manualHistory()];
       // Engine choice never relaxes validation: fallback drafts face the same review and duplicate checks.
+      phase = 'generation-validation';
       const validated = validateDraft(await generate({ date, slot, previous, platform, engines }), previous, { platform });
+      phase = 'review-validation';
       const validation = validateReview(await review(validated, { previous, date, slot, platform, engines }), validated, clock());
       const generation = engines.record();
       const publications = Object.fromEntries(platforms.map(platform => [platform, {
         channelId: config.channels[platform] || '', idempotencyKey: digest(`${key}:${platform}`),
         state: dryRun ? 'not_published' : 'pending', attempts: 0
       }]));
+      phase = 'draft-save';
       draft = await store.save({ ...validated, validation, schemaVersion: 2, key, date, slot, dryRun,
         status: 'validated', publications, ...(generation.engine ? { generation } : {}) });
       if (!draft) throw new Error('Draft persistence failed');
@@ -53,11 +59,13 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
     if (dryRun) return summarize(draft, true);
     // Legacy and dry-run drafts are never implicitly upgraded or published.
     if (draft.schemaVersion !== 2 || draft.dryRun !== false) throw new Error('Existing draft is not eligible for publishing');
+    phase = 'stored-draft-validation';
     assertValidated(draft);
     for (const platform of platforms) {
       if (draft.publications[platform].channelId !== config.channels[platform]) throw new Error('Channel mapping changed');
     }
     buffer ||= new BufferClient(config);
+    phase = 'buffer-cooldown-check';
     const cooldown = await store.bufferCooldown();
     if (cooldown && cooldown > clock()) return { ...summarize(draft, false), retryAt: cooldown, requiresAttention: true };
     const eligible = platform => {
@@ -67,6 +75,7 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
     };
     // Finish preflight before sending: shared auth/API failures and cooldowns still stop all sends.
     for (const platform of platforms.filter(eligible)) {
+      phase = 'buffer-channel-preflight';
       try { await buffer.verifyChannel(platform); }
       catch (error) {
         // Preflight is read-only: no submission occurred. Keep its failure separate from an unknown send.
@@ -84,7 +93,8 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
     for (const platform of platforms) {
       let record = draft.publications[platform];
       if (record.state === 'publishing') {
-        draft = await store.record(key, platform, ['publishing'], { state: 'unknown', failureCode: 'INTERRUPTED_ATTEMPT' });
+        phase = 'publication-receipt';
+      draft = await store.record(key, platform, ['publishing'], { state: 'unknown', failureCode: 'INTERRUPTED_ATTEMPT' });
         record = draft.publications[platform];
       }
       if (record.state === 'accepted' && record.bufferId) {
@@ -98,10 +108,12 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
         const current = slotAt(attemptedAt);
         if (current.date !== date || current.slot !== slot) throw new Error('Publishing slot expired');
       }
+      phase = 'publication-claim';
       const claimed = await store.claim(key, platform, config.channels[platform], attemptedAt);
       if (!claimed) continue;
       let result;
       try {
+        phase = 'buffer-submission';
         result = await buffer.publish({ platform, channelId: config.channels[platform],
           text: platform === 'linkedin' ? draft.linkedinPost : draft.xPost });
       } catch (error) {
@@ -115,6 +127,9 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
       }
     }
     return summarize(draft, false);
+  } catch (error) {
+    if (error && typeof error === 'object') error.automationPhase = phase;
+    throw error;
   } finally {
     try { if (locked) await store.release(); }
     finally { if (ownsConnection) await disconnectMongo(); }
@@ -176,6 +191,19 @@ function summarize(draft, dryRun) {
     published: Object.values(channels).some(state => state === 'published') };
 }
 
+function safeFailureDiagnostic(error) {
+  // Never print exception messages, stack traces, URLs or credential-bearing upstream responses.
+  const allowedPhases = new Set(['database-initialize', 'database-lock', 'history',
+    'generation-validation', 'review-validation', 'draft-save', 'stored-draft-validation',
+    'buffer-cooldown-check', 'buffer-channel-preflight', 'publication-claim',
+    'buffer-submission', 'publication-receipt']);
+  const phase = allowedPhases.has(error?.automationPhase) ? error.automationPhase : 'startup-or-cleanup';
+  const name = ['Error', 'TypeError', 'RangeError', 'ValidationError', 'MongoServerError',
+    'MongoNetworkError', 'MongooseError', 'BufferFailure', 'CodexRateLimited'].includes(error?.name)
+    ? error.name : 'Error';
+  return `Automation failed at ${phase} (${name}). No automatic retry. Inspect the stored publication state before any new live attempt.`;
+}
+
 function parseRunArgs(args) {
   if (args.some(arg => !['--dry-run', '--publish', '--manual', '--platform=linkedin'].includes(arg)) ||
     args.filter(arg => arg.startsWith('--platform=')).length > 1 ||
@@ -200,10 +228,10 @@ if (require.main === module) {
     run(options).then(result => {
       console.log(JSON.stringify(result));
       if (result.requiresAttention) process.exitCode = 2;
-    }).catch(() => {
-      console.error('Automation failed; check configuration, validation, database state and recovery instructions. No automatic retry.');
+    }).catch(error => {
+      console.error(safeFailureDiagnostic(error));
       process.exitCode = 1;
     });
   }
 }
-module.exports = { run, reconcile, summarize, generateWithCodex, parseRunArgs };
+module.exports = { run, reconcile, summarize, generateWithCodex, parseRunArgs, safeFailureDiagnostic };
