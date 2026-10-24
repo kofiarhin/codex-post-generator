@@ -28,6 +28,16 @@ Audit saved social packages with:
 npm run audit:workflow
 ```
 
+## Text-only Automation (IDE-122)
+
+The separate Node automation researches with Codex (falling back to Claude Code CLI when Codex is rate limited), validates source evidence and originality,
+saves drafts through Mongoose using `MONGO_URI` (legacy `MONGODB_URI` supported), and integrates
+directly with two allowlisted Buffer channels. It defaults to draft-only mode; no scheduler is activated.
+See [configuration, safety gates, recovery, and verification](server/automation/README.md).
+
+Run `npm test` for the existing asset/server tests and the automation suite. Automation tests use a
+disposable local MongoDB and mocked external services, with no real posts or production DB writes.
+
 ## Thumbnail Generation
 
 The finalizer sends the full saved `prompt.txt` to Hugging Face text-to-image when configured:
