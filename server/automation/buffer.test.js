@@ -6,7 +6,9 @@ const channels = { linkedin: 'test-linkedin', x: 'test-x' };
 const response = (data, status = 200, headers = {}) => ({ ok: status >= 200 && status < 300, status,
   headers: new Headers(headers), json: async () => data });
 const client = fetchImpl => new BufferClient({ apiKey: 'test-only-key', channels, publishEnabled: true, dryRun: false, fetchImpl });
-const publish = c => c.publish({ platform: 'linkedin', channelId: channels.linkedin, text: 'A test post' });
+const hashtags = '#MongoDB #DatabaseTransactions #BackendEngineering #DistributedSystems #SoftwareEngineering';
+const postText = `A test post\n\nMongoDB’s explanation: https://www.mongodb.com/docs/manual/core/transactions/\n\n${hashtags}`;
+const publish = c => c.publish({ platform: 'linkedin', channelId: channels.linkedin, text: postText });
 
 test('direct Buffer GraphQL request follows the verified text-only shareNow contract', async () => {
   const c = client(async (url, options) => {
@@ -15,7 +17,7 @@ test('direct Buffer GraphQL request follows the verified text-only shareNow cont
     assert.equal(options.redirect, 'error');
     assert.equal(options.headers.Authorization, 'Bearer test-only-key');
     assert.deepEqual(JSON.parse(options.body), { query: CREATE_POST, variables: { input: {
-      channelId: channels.linkedin, text: 'A test post', schedulingType: 'automatic', mode: 'shareNow',
+      channelId: channels.linkedin, text: postText, schedulingType: 'automatic', mode: 'shareNow',
       assets: [], needsApproval: false, saveToDraft: false, aiAssisted: true
     } } });
     assert(!Object.keys(options.headers).some(k => /idempotency/i.test(k)));
@@ -103,10 +105,46 @@ test('partial GraphQL results and unfamiliar delivery status retain a safe Buffe
 });
 
 test('LinkedIn URLs use the same 24-unit accounting during validation and submission', async () => {
-  const text = 'a'.repeat(2960) + ' https://mongodb.com/' + 'b'.repeat(150);
+  const text = 'a'.repeat(2973 - hashtags.length) + ' https://mongodb.com/' + 'b'.repeat(150) + `\n\n${hashtags}`;
   const c = client(async () => response({ data: { createPost: { post: { id: 'url-post', status: 'sent' } } } }));
   assert.equal((await c.publish({ platform: 'linkedin', channelId: channels.linkedin, text })).state, 'published');
+  await assert.rejects(c.publish({ platform: 'linkedin', channelId: channels.linkedin, text: `a${text}` }), /TEXT_INVALID/);
   await assert.rejects(c.publish({ platform: 'linkedin', channelId: channels.linkedin, text: 'a'.repeat(3001) }), /TEXT_INVALID/);
+});
+
+test('LinkedIn Markdown and invalid closing hashtags are rejected before any Buffer HTTP request', async () => {
+  let requests = 0;
+  const c = client(async () => { requests++; assert.fail('Invalid text must never reach Buffer'); });
+  for (const text of [
+    `A post with [MongoDB’s explanation](https://www.mongodb.com/docs/manual/)\n\n${hashtags}`,
+    `A post with [MongoDB’s explanation][docs]\n\n[docs]: https://www.mongodb.com/docs/manual/\n\n${hashtags}`,
+    `A post with <HTTPS://www.mongodb.com/docs/manual/>\n\n${hashtags}`,
+    `A post with __Markdown bold__ and _italics_\n\n${hashtags}`,
+    'A post without hashtags',
+    `A post\n\n${hashtags}\nSource: https://www.mongodb.com/docs/manual/`,
+    `A post\n\n${hashtags} #DatabaseDesign #Reliability #MongoDBTransactions`,
+    `A post\n\n${hashtags.replace(' #SoftwareEngineering', '')}`,
+    `A post\n\n${hashtags.replace('#SoftwareEngineering', '#mongodb')}`
+  ]) {
+    await assert.rejects(c.publish({ platform: 'linkedin', channelId: channels.linkedin, text }), error => {
+      assert.equal(error.code, 'BUFFER_TEXT_INVALID');
+      assert.equal(error.state, 'rejected');
+      return true;
+    });
+  }
+  assert.equal(requests, 0);
+});
+
+test('LinkedIn plain URLs containing Markdown punctuation reach Buffer unchanged', async () => {
+  const text = `Reference: https://www.mongodb.com/docs/manual/__transactions__/?filter=[value](literal)**\n\n${hashtags}`;
+  let requests = 0;
+  const c = client(async (_url, options) => {
+    requests++;
+    assert.equal(JSON.parse(options.body).variables.input.text, text);
+    return response({ data: { createPost: { post: { id: 'plain-url', status: 'sent' } } } });
+  });
+  assert.equal((await c.publish({ platform: 'linkedin', channelId: channels.linkedin, text })).state, 'published');
+  assert.equal(requests, 1);
 });
 
 test('missing or invalid Retry-After headers use a conservative cooldown', async () => {

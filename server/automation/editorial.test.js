@@ -2,7 +2,22 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { generationRequest } = require('./codex');
+const { generationRequest, reviewRequest } = require('./codex');
+const { linkedinDraft } = require('./testing/fixtures');
+
+test('generation and independent review require LinkedIn plain text and relevant closing hashtags', () => {
+  for (const platform of ['linkedin', undefined]) {
+    const [generation] = generationRequest({ date: '2026-10-24', slot: 'morning', platform });
+    const [review] = reviewRequest(linkedinDraft(), { platform });
+    for (const prompt of [generation, review]) {
+      assert.match(prompt, /LinkedIn.*plain text/);
+      assert.match(prompt, /plain HTTPS URLs/);
+      assert.match(prompt, /Markdown links/);
+      assert.match(prompt, /bold, italics or backticks/);
+      assert.match(prompt, /5–7 distinct, topic-relevant hashtags.*closing block/);
+    }
+  }
+});
 
 test('AI engineering editorial brief ranks researched topics without changing output schema', () => {
   const [prompt, schema] = generationRequest({

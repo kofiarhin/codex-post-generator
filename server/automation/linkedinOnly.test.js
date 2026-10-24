@@ -189,6 +189,33 @@ test('LinkedIn-only run preserves source review, log duplicate and persistence g
   assert.equal(bufferAccesses, 0);
 });
 
+test('LinkedIn-only malformed generated and previously reviewed posts cannot reach Buffer', async () => {
+  const buffer = new Proxy({}, { get() { assert.fail('Malformed posts cannot access Buffer'); } });
+  const malformed = [
+    linkedinDraft().linkedinPost.replace('MongoDB documents', '[MongoDB](https://www.mongodb.com/) documents'),
+    linkedinDraft().linkedinPost.replace(' #SoftwareEngineering', '')
+  ];
+  for (const linkedinPost of malformed) {
+    await assert.rejects(run(options({ buffer, generate: async () => ({ ...linkedinDraft(), linkedinPost }),
+      review: async () => assert.fail('Malformed posts cannot reach review') })), /plain text|Invalid hashtags/);
+    assert.equal(await Model.countDocuments(), 0);
+  }
+  // Simulate a draft approved by the previous validator. Even a matching review hash
+  // must not let old formatting bypass current validation when a scheduled run resumes.
+  const result = await run(options({ manual: false, dryRun: true }));
+  const saved = await store.get(result.key);
+  for (const linkedinPost of malformed) {
+    const changed = { ...saved, linkedinPost };
+    await Model.collection.updateOne({ key: result.key }, { $set: {
+      linkedinPost, dryRun: false, contentHash: contentHash(changed),
+      'validation.contentHash': contentHash(changed), 'publications.linkedin.state': 'pending'
+    } });
+    await assert.rejects(run(options({ manual: false, buffer,
+      generate: async () => assert.fail('Existing drafts must be revalidated') })), /plain text|Invalid hashtags/);
+    assert.equal((await store.get(result.key)).publications.linkedin.attempts, 0);
+  }
+});
+
 test('duplicate history is shared between LinkedIn-only and two-platform runs in both directions', async () => {
   await run(options({ dryRun: true }));
   await assert.rejects(run(options({ platform: undefined, dryRun: true, generate: async () => draft() })), /Duplicate/);

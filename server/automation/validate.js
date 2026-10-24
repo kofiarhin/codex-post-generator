@@ -11,6 +11,24 @@ const contentHash = draft => createHash('sha256').update(JSON.stringify([
 ])).digest('hex');
 const linkedInLength = text => text.replace(/https?:\/\/\S+/g, 'x'.repeat(24)).length;
 
+function validateLinkedInFormatting(text) {
+  // Reject rather than rewrite: reviewed, hashed and submitted text must stay identical.
+  // Ignore bare URLs when inspecting prose; URL paths can contain Markdown punctuation.
+  // Keep URLs inside Markdown delimiters visible so links/autolinks are still rejected.
+  const prose = text.replace(/(^|\s)https?:\/\/\S+/gi, '$1URL');
+  // Cover inline/reference links, reference definitions, autolinks and Markdown styling.
+  if (/\[[^\]]*\]\s*(?:\(|\[)|^\s*\[[^\]]+\]:|<https?:\/\/[^>\s]+>|`|\*\*|^\s*#{1,6}\s/im.test(prose) ||
+    /(?<![\p{L}\p{N}_])(_{1,2}|\*)\S(?:[^\n]*?\S)?\1(?![\p{L}\p{N}_])/u.test(prose)) {
+    throw new Error('LinkedIn must use plain text and plain URLs, not Markdown');
+  }
+  const closing = text.match(/(?:^|\n)\s*(#[\p{L}\p{N}_]+(?:\s+#[\p{L}\p{N}_]+)*)\s*$/u);
+  const tags = closing ? closing[1].match(/#[\p{L}\p{N}_]+/gu) : [];
+  // A URL fragment is not a hashtag. All actual hashtags belong in the closing block.
+  const allTags = prose.match(/#[\p{L}\p{N}_]+/gu) || [];
+  if (tags.length < 5 || tags.length > 7 || allTags.length !== tags.length ||
+    new Set(tags.map(tag => tag.toLowerCase())).size !== tags.length) throw new Error('Invalid hashtags');
+}
+
 function publicSource(value) {
   try {
     const u = new URL(value);
@@ -44,10 +62,14 @@ function validateDraft(draft, previous = [], { platform } = {}) {
   if (words < 150 || words > 300 || linkedLength > 3000) throw new Error('LinkedIn length invalid');
   if (xPost !== undefined && (xPost.length > 1500 || xPost.length < 80)) throw new Error('X post length invalid');
   for (const [text, min, max] of [[linkedinPost, 5, 7], ...(xPost === undefined ? [] : [[xPost, 2, 4]])]) {
-    const tags = text.match(/#[\p{L}\p{N}_]+/gu) || [];
-    if (tags.length < min || tags.length > max || new Set(tags.map(t => t.toLowerCase())).size !== tags.length ||
-      !/(?:#[\p{L}\p{N}_]+\s*)+$/u.test(text)) throw new Error('Invalid hashtags');
-    if (text.split(/\n\s*\n/).length < 2 || /```|\*\*|^\s*\d+\/\d+/m.test(text)) throw new Error('Invalid platform formatting');
+    if (text === linkedinPost) validateLinkedInFormatting(text);
+    else {
+      const tags = text.match(/#[\p{L}\p{N}_]+/gu) || [];
+      if (tags.length < min || tags.length > max || new Set(tags.map(t => t.toLowerCase())).size !== tags.length ||
+        !/(?:#[\p{L}\p{N}_]+\s*)+$/u.test(text)) throw new Error('Invalid hashtags');
+    }
+    if (text.split(/\n\s*\n/).length < 2 || /^\s*\d+\/\d+/m.test(text) ||
+      (text !== linkedinPost && /```|\*\*/.test(text))) throw new Error('Invalid platform formatting');
     if (!normalize(text.split('\n')[0]).includes(normalize(primaryKeyword))) throw new Error('Primary keyword missing from hook');
     if (/\b(?:hot take|unpopular opinion|game[ -]changer|as an ai)\b|\b(?:I|we)\s+(?:built|shipped|launched|deployed|saved|increased)\b/i.test(text)) {
       throw new Error('Unsupported personal claim or low-quality copy');
@@ -76,4 +98,4 @@ function validateReview(review, draft, now = new Date()) {
   return { passed: true, originalityPassed: true, version: 2, reviewedAt: now, contentHash: draft.contentHash,
     sourceChecks: draft.sources.map(s => ({ url: s.url, supported: true })) };
 }
-module.exports = { validateDraft, validateReview, digest, contentHash, publicSource, linkedInLength };
+module.exports = { validateDraft, validateReview, digest, contentHash, publicSource, linkedInLength, validateLinkedInFormatting };

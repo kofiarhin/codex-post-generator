@@ -100,6 +100,8 @@ Write in a sharp, experienced, lightly sarcastic engineering voice: specific tec
 For ${date} ${slot}: ${slot === 'morning' ? 'favor current AI/software engineering developments' : 'favor practical engineering insights'}.
 ${instructions}
 Every post: primary keyword in the first line, clean short paragraphs, hashtags last. LinkedIn must contain 2–4 secondaryKeywords.
+LinkedIn must use readable plain text and plain HTTPS URLs (for example, Source name: https://domain/path). Never use Markdown links, reference links, angle-bracket autolinks, headings, bold, italics or backticks in the post.
+End LinkedIn with 5–7 distinct, topic-relevant hashtags in a separate closing block. Put any source labels and URLs before that block; no hashtags in the body or text after the closing block.
 Include at least two distinct public HTTPS sources, each with a specific claim and short exact supporting excerpt.
 Every sources entry must use a different URL; never repeat a URL. If one page supports several claims, cite it once.
 Use clean canonical source URLs with no query, credentials or fragment. Verify every factual claim and statistic.
@@ -115,6 +117,8 @@ function reviewRequest(draft, { previous = [], date, slot, platform = draft.plat
 Return the review JSON. Set approved and qualityPassed true only if every source is accessible, its excerpt is accurate,
 its claim is supported, and ALL factual statements in ${platform === 'linkedin' ? 'the LinkedIn post' : 'BOTH posts'} are supported by those sources. Reject invented numbers,
 unsupported generalizations, false personal experience, misleading currency, promotional filler or keyword stuffing.
+Require LinkedIn plain text and plain HTTPS URLs; reject Markdown links, reference links, angle-bracket autolinks, headings, bold, italics or backticks.
+Require LinkedIn to end with 5–7 distinct, topic-relevant hashtags in a separate closing block, with any source labels and URLs before it. Reject unrelated or generic filler tags, body hashtags and any text after the closing block.
 Check that sourceChecks contains exactly one result per cited URL. List every unsupported assertion in unsupportedClaims.
 Set originalityPassed true only if the draft's core argument is meaningfully different from every prior topic and angle,
 including semantic paraphrases with different wording. Check currency against the requested slot: ${date || 'today'} ${slot || ''}.

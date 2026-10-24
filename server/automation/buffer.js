@@ -1,6 +1,6 @@
 'use strict';
 
-const { linkedInLength } = require('./validate');
+const { linkedInLength, validateLinkedInFormatting } = require('./validate');
 const { platformsFor } = require('./platforms');
 
 const ENDPOINT = 'https://api.buffer.com';
@@ -79,6 +79,10 @@ class BufferClient {
     if (typeof text !== 'string' || !text.trim() ||
       (platform === 'x' ? text.length > 1500 : linkedInLength(text) > 3000)) {
       throw new BufferFailure('BUFFER_TEXT_INVALID', 'rejected');
+    }
+    if (platform === 'linkedin') {
+      try { validateLinkedInFormatting(text); }
+      catch { throw new BufferFailure('BUFFER_TEXT_INVALID', 'rejected'); }
     }
     const data = await this.request(CREATE_POST, { input: {
       channelId, text, schedulingType: 'automatic', mode: 'shareNow',
