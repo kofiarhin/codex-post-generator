@@ -113,5 +113,19 @@
     "source_refs": [
       "https://github.com/anthropics/claude-agent-sdk-typescript/releases"
     ]
+  },
+  {
+    "id": "2026-10-23-php-ai-security-patch-speed",
+    "generated_at": "2026-10-23T00:15:00Z",
+    "topic": "AI-assisted PHP vulnerability discovery and patch readiness",
+    "category": "ai-news",
+    "angle": "AI shortens vulnerability discovery time while patch deployment remains a human operational bottleneck",
+    "problem": "Critical runtime vulnerabilities may become actionable before operators can safely deploy fixes",
+    "mechanism": "Runtime inventory, supported version upgrades, CI compatibility testing, and temporary exposure reduction",
+    "status": "generated",
+    "source_refs": [
+      "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+      "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/"
+    ]
   }
 ]
