@@ -3,6 +3,7 @@
 const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
+const { AutomationError, failure, processFailure } = require('./errors');
 const repoRoot = path.resolve(__dirname, '../..');
 const RESEARCH_TOOLS = ['WebSearch', 'WebFetch'];
 
@@ -17,6 +18,7 @@ function invokeClaude(prompt, schema, { execute = spawnSync, env = process.env }
   const root = path.join(repoRoot, '_post_suggestion');
   fs.mkdirSync(root, { recursive: true });
   const work = fs.mkdtempSync(path.join(root, '.automation-claude-'));
+  let failureCode = 'CLAUDE_FAILED';
   try {
     const result = execute('claude', ['-p', '--restricted', '--strict-mcp-config', '--setting-sources', '',
       '--disable-slash-commands', '--no-session-persistence', '--permission-mode', 'dontAsk',
@@ -25,24 +27,25 @@ function invokeClaude(prompt, schema, { execute = spawnSync, env = process.env }
       cwd: work, env: claudeEnvironment(env), input: prompt, encoding: 'utf8', timeout: 300000,
       maxBuffer: 16 * 1024 * 1024, killSignal: 'SIGKILL'
     });
-    if (result.error || result.status !== 0) throw new Error('Claude research failed');
+    if (result.error || result.status !== 0) throw processFailure('CLAUDE', result);
+    failureCode = 'CLAUDE_EVENTS_INVALID';
     const events = result.stdout.trim().split('\n').filter(line => line.trim()).map(line => JSON.parse(line));
     const tools = events.filter(e => e.type === 'assistant').flatMap(e => e.message?.content || [])
       .filter(c => c.type === 'tool_use').map(c => c.name);
     if (tools.some(name => ![...RESEARCH_TOOLS, 'StructuredOutput'].includes(name))) {
-      throw new Error('Unexpected Claude tool activity');
+      throw failure('CLAUDE_UNEXPECTED_TOOL');
     }
     // Opening sources with WebFetch is live research too (the review stage mostly fetches cited URLs).
-    if (!tools.some(name => RESEARCH_TOOLS.includes(name))) throw new Error('Claude did not perform web research');
+    if (!tools.some(name => RESEARCH_TOOLS.includes(name))) throw failure('CLAUDE_RESEARCH_MISSING');
     const final = events.filter(e => e.type === 'result').at(-1);
-    if (!final || final.subtype !== 'success' || final.is_error !== false ||
-      !final.structured_output || typeof final.structured_output !== 'object') {
-      throw new Error('Claude structured output missing');
-    }
+    if (!final) throw failure('CLAUDE_OUTPUT_MISSING');
+    if (final.subtype !== 'success' || final.is_error !== false) throw failure('CLAUDE_TURN_FAILED');
+    if (!final.structured_output || typeof final.structured_output !== 'object') throw failure('CLAUDE_OUTPUT_INVALID');
     return final.structured_output;
-  } catch {
+  } catch (error) {
+    if (error instanceof AutomationError) throw error;
     // CLI output and malformed generated content are never included in logs/errors.
-    throw new Error('Claude research or structured output failed');
+    throw failure(failureCode);
   } finally { fs.rmSync(work, { recursive: true, force: true }); }
 }
 module.exports = { invokeClaude, claudeEnvironment };

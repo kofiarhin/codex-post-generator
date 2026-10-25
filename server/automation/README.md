@@ -3,6 +3,15 @@
 Implements the [merged Post Generator specification](https://github.com/kofiarhin/ideahub/blob/cbdd707935bc4408bb4ff8e15cfd6973c4ce260f/projects/post-generator.md)
 and [IDE-122](https://linear.app/ideahub-devkofi/issue/IDE-122).
 The Node orchestrator owns Codex research (with Claude Code fallback on Codex rate limits), validation, Mongoose persistence, and direct Buffer publishing.
+
+Failure diagnostics distinguish `generation`, `draft-validation`, `review`, and `review-validation`.
+They include allowlisted codes such as `CODEX_TIMEOUT`, `CODEX_RESEARCH_MISSING`,
+`LINKEDIN_MARKDOWN`, and `DUPLICATE_CONTENT`, without printing generated content, stderr,
+exception messages, or credentials. A failed Claude fallback retains its own code and
+`CODEX_RATE_LIMITED` context. Failures still stop without automatic retries or publishing.
+Manual dry runs and live runs generate separate drafts; dry-run drafts remain in duplicate history.
+Before these diagnostics were added, `generation-validation (Error)` did not identify the
+underlying cause, and discarded generation output cannot be reconstructed from that message.
 The manual four-file/thumbnail workflow stays separate. This path creates text-only MongoDB drafts;
 it does not generate thumbnails, append to the manual `log.txt`, or call IdeaHub API.
 IdeaHub's approval-gated publishing is unchanged.

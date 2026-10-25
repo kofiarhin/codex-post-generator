@@ -1,0 +1,51 @@
+{
+  "provenance": "Exact generated post fields read from automatedpostdrafts on 2026-10-25. Vector Quantization was marked published; Prompt Caching was not_published. No credentials, IDs or publication receipts included.",
+  "drafts": [
+    {
+      "title": "Vector Quantization Needs a Recall Budget",
+      "topicAngle": "Treat vector compression as a retrieval-quality change: measure memory savings alongside recall, rescoring costs, and application latency before deploying it.",
+      "primaryKeyword": "Vector quantization",
+      "secondaryKeywords": [
+        "MongoDB Vector Search",
+        "retrieval quality",
+        "RAG evaluation"
+      ],
+      "linkedinPost": "Vector quantization can shrink your RAM bill while quietly changing which documents your AI sees.\n\nThe infrastructure dashboard gets greener. Whether the answers deserve the same celebration requires another test.\n\nMongoDB Vector Search documents the trade-off: compressed vectors use less memory, but reduced precision can lower recall. Its binary quantization workflow uses full-precision vectors from disk to rescore candidates. [MongoDB’s explanation](https://learn.mongodb.com/learn/course/vector-search-performance/vector-search-performance/understanding-quantization)\n\nThat recovery has its own tuning problem. Elastic documents that stronger compression generally needs more oversampling to recover recall, with no universal setting across models and datasets. [Elastic’s guidance](https://www.elastic.co/docs/solutions/search/vector/knn/optimize-performance-accuracy)\n\nFor a Node backend feeding retrieved chunks into an LLM, treat compression as a retrieval quality change worthy of a release gate.\n\nKeep a fixed set of representative queries and expected supporting documents. Compare the existing index with the compressed version, holding the embedding model, filters, and returned chunk count constant.\n\nMeasure memory, tail latency, and whether the supporting documents still appear. Tune candidate retrieval and rescoring before declaring the saving a win.\n\nThen run RAG evaluation on the resulting answers. Nearest-neighbor agreement is useful, but your customer needs the correct cancellation policy.\n\nSet the acceptable quality loss before looking at the cheaper configuration. Otherwise, the acceptance criteria may develop a suspicious interest in the billing dashboard.\n\nWhich retrieval failures would block a cost-saving index change in your app?\n\n#AIEngineering #VectorSearch #MongoDB #RAG #PerformanceEngineering #LLMEvaluation",
+      "sources": [
+        {
+          "url": "https://learn.mongodb.com/learn/course/vector-search-performance/vector-search-performance/understanding-quantization",
+          "claim": "MongoDB explains that vector quantization reduces memory requirements at a potential recall cost, and binary quantization uses full-precision vectors from disk for rescoring.",
+          "excerpt": "mongot holds the quantized vectors and the HNSW graph in search index memory"
+        },
+        {
+          "url": "https://www.elastic.co/docs/solutions/search/vector/knn/optimize-performance-accuracy",
+          "claim": "More aggressive compression generally requires more oversampling to recover recall; settings should be evaluated against the actual model and dataset.",
+          "excerpt": "Higher compression generally needs more oversampling to recover recall."
+        }
+      ]
+    },
+    {
+      "title": "Prompt Caching Can Lose to One Timestamp",
+      "topicAngle": "Treat prompt construction as a performance contract: separate stable prefixes from request-specific context, then test cache reuse alongside answer quality.",
+      "primaryKeyword": "Prompt caching",
+      "secondaryKeywords": [
+        "cache invalidation",
+        "LLM cost",
+        "AI agents"
+      ],
+      "linkedinPost": "Prompt caching can lose to one timestamp at the top of your system prompt.\n\nThat helpful `Current time: ...` line? Put it inside the cached prefix and every request changes the content you wanted to reuse. Excellent: distributed cache invalidation has joined the chatbot project.\n\nAnthropic’s September guidance makes the constraint explicit: Claude cache reads require a byte-exact prefix, and caches are model-specific. Similar meaning does not qualify. [Source](https://claude.com/resources/articles/reducing-cost-and-improving-performance-with-claude-platform)\n\nFor a Node/Express backend, make prompt assembly deliberate. Keep stable instructions and tool definitions first. Put request-specific timestamps, retrieved context and the user’s question afterward. With explicit Claude cache control, place the breakpoint on the last unchanged block. [Documentation](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)\n\nThen test the behavior. Replay a representative conversation, change only the request-specific suffix, and inspect `cache_read_input_tokens` and `cache_creation_input_tokens`. Keep model settings consistent and account for the cache lifetime and minimum prompt length.\n\nTreat this as a performance regression test alongside your answer-quality evals. A harmless prompt refactor deserves scrutiny if it makes AI agents repeatedly process the same instructions.\n\nThe trade-off: reusable prefixes constrain where dynamic context belongs. Keep that context fresh; structure the request so freshness does not unnecessarily erase reuse.\n\nBefore switching models to reduce LLM cost, check whether your application is throwing away the cache it already has.\n\nWould your tests catch a prompt change that preserves answer quality but breaks cache reuse?\n\n#AIEngineering #PromptCaching #LLMOps #NodeJS #SoftwareTesting",
+      "sources": [
+        {
+          "url": "https://claude.com/resources/articles/reducing-cost-and-improving-performance-with-claude-platform",
+          "claim": "Anthropic’s September 2026 guidance describes model-specific caches and byte-exact prefix matching.",
+          "excerpt": "First, the prompt cache is pinned to a specific model. Second, prompt cache reads must be byte-exact across the full span of the prompt."
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+          "claim": "Claude documentation recommends placing explicit breakpoints on stable blocks and exposes separate cache-read and cache-creation usage fields for verification.",
+          "excerpt": "Place the breakpoint on the last block that stays identical across requests."
+        }
+      ]
+    }
+  ]
+}

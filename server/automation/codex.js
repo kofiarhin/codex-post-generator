@@ -4,12 +4,14 @@ const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
 const { platformsFor } = require('./platforms');
+const { AutomationError, failure, processFailure } = require('./errors');
 const repoRoot = path.resolve(__dirname, '../..');
 const string = { type: 'string' };
 const object = properties => ({ type: 'object', additionalProperties: false, required: Object.keys(properties), properties });
 const array = items => ({ type: 'array', items });
+const linkedinText = { type: 'string', description: 'LinkedIn-ready plain text. After JSON decoding, use real paragraph line breaks, readable URLs and literal #Hashtags. No Markdown, backslashes, double-encoded escapes or hashtagName display labels.' };
 const draftSchema = object({ title: string, topicAngle: string, primaryKeyword: string,
-  secondaryKeywords: array(string), linkedinPost: string, xPost: string,
+  secondaryKeywords: array(string), linkedinPost: linkedinText, xPost: string,
   sources: array(object({ url: string, claim: string, excerpt: string })) });
 const linkedinSchema = object(Object.fromEntries(Object.entries(draftSchema.properties).filter(([key]) => key !== 'xPost')));
 const reviewSchema = object({ approved: { type: 'boolean' }, qualityPassed: { type: 'boolean' }, originalityPassed: { type: 'boolean' },
@@ -46,6 +48,7 @@ function invokeCodex(prompt, schema, { execute = spawnSync, env = process.env } 
   const work = fs.mkdtempSync(path.join(root, '.automation-'));
   const schemaPath = path.join(work, 'schema.json');
   const resultPath = path.join(work, 'result.json');
+  let failureCode = 'CODEX_FAILED';
   try {
     fs.writeFileSync(schemaPath, JSON.stringify(schema));
     const result = execute('codex', ['exec', '--ignore-user-config', '--ephemeral', '--skip-git-repo-check',
@@ -59,25 +62,29 @@ function invokeCodex(prompt, schema, { execute = spawnSync, env = process.env } 
     });
     if (result.error || result.status !== 0) {
       if (!result.error && codexRateLimited(result)) throw new CodexRateLimited();
-      throw new Error('Codex research failed');
+      throw processFailure('CODEX', result);
     }
+    failureCode = 'CODEX_EVENTS_INVALID';
     const events = result.stdout.trim().split('\n').filter(line => line.trim()).map(line => JSON.parse(line));
     // Transient reconnect errors can precede a successful turn; only a failed turn ends this engine.
     if (events.some(e => e.type === 'turn.failed')) {
       if (codexRateLimited(result)) throw new CodexRateLimited();
-      throw new Error('Codex turn failed');
+      throw failure('CODEX_TURN_FAILED');
     }
     if (events.some(e => ['command_execution', 'mcp_tool_call', 'file_change'].includes(e.item?.type))) {
-      throw new Error('Unexpected Codex tool activity');
+      throw failure('CODEX_UNEXPECTED_TOOL');
     }
     if (!events.some(e => e.type === 'item.completed' && e.item?.type === 'web_search')) {
-      throw new Error('Codex did not perform web research');
+      throw failure('CODEX_RESEARCH_MISSING');
     }
-    return JSON.parse(fs.readFileSync(resultPath, 'utf8'));
+    failureCode = 'CODEX_OUTPUT_MISSING';
+    const output = fs.readFileSync(resultPath, 'utf8');
+    failureCode = 'CODEX_OUTPUT_INVALID';
+    return JSON.parse(output);
   } catch (error) {
-    if (error instanceof CodexRateLimited) throw error;
+    if (error instanceof CodexRateLimited || error instanceof AutomationError) throw error;
     // CLI output and malformed generated content are never included in logs/errors.
-    throw new Error('Codex research or structured output failed');
+    throw failure(failureCode);
   } finally { fs.rmSync(work, { recursive: true, force: true }); }
 }
 
@@ -85,6 +92,8 @@ function styleGuide(platform) {
   return ['assets/post-style-guide.md', ...(platform === 'linkedin' ? [] : ['x-post-style-guide.md'])].map(file =>
     fs.readFileSync(path.join(repoRoot, '.agents/skills/linkedin-post-orchestrator', file), 'utf8')).join('\n');
 }
+
+const linkedinEncodingRules = 'LinkedIn text must decode once from JSON to real paragraph line breaks. Do not double-encode the post, use literal escaped newline sequences, or pre-escape punctuation for Markdown or LinkedIn. No backslashes or control characters. Use literal #AIEngineering-style hashtags, never hashtagAIEngineering display labels. Do not use Markdown lists, blockquotes, strikethrough or horizontal rules.';
 
 // Both engines receive identical prompts and output schemas.
 function generationRequest({ date, slot, previous = [], platform }) {
@@ -101,6 +110,7 @@ For ${date} ${slot}: ${slot === 'morning' ? 'favor current AI/software engineeri
 ${instructions}
 Every post: primary keyword in the first line, clean short paragraphs, hashtags last. LinkedIn must contain 2–4 secondaryKeywords.
 LinkedIn must use readable plain text and plain HTTPS URLs (for example, Source name: https://domain/path). Never use Markdown links, reference links, angle-bracket autolinks, headings, bold, italics or backticks in the post.
+${linkedinEncodingRules}
 End LinkedIn with 5–7 distinct, topic-relevant hashtags in a separate closing block. Put any source labels and URLs before that block; no hashtags in the body or text after the closing block.
 Include at least two distinct public HTTPS sources, each with a specific claim and short exact supporting excerpt.
 Every sources entry must use a different URL; never repeat a URL. If one page supports several claims, cite it once.
@@ -118,6 +128,7 @@ Return the review JSON. Set approved and qualityPassed true only if every source
 its claim is supported, and ALL factual statements in ${platform === 'linkedin' ? 'the LinkedIn post' : 'BOTH posts'} are supported by those sources. Reject invented numbers,
 unsupported generalizations, false personal experience, misleading currency, promotional filler or keyword stuffing.
 Require LinkedIn plain text and plain HTTPS URLs; reject Markdown links, reference links, angle-bracket autolinks, headings, bold, italics or backticks.
+${linkedinEncodingRules}
 Require LinkedIn to end with 5–7 distinct, topic-relevant hashtags in a separate closing block, with any source labels and URLs before it. Reject unrelated or generic filler tags, body hashtags and any text after the closing block.
 Check that sourceChecks contains exactly one result per cited URL. List every unsupported assertion in unsupportedClaims.
 Set originalityPassed true only if the draft's core argument is meaningfully different from every prior topic and angle,

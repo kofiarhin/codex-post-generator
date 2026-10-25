@@ -54,6 +54,7 @@ for (const count of [5, 6, 7]) {
 }
 
 for (const [name, change] of [
+  ['no tags', text => text.replace(/\n\n#MongoDB[^]*$/, '')],
   ['four tags', text => text.replace(' #SoftwareEngineering', '')],
   ['eight tags', text => `${text} #DatabaseDesign #Reliability #MongoDBTransactions`],
   ['duplicate tags', text => text.replace('#SoftwareEngineering', '#mongodb')],
@@ -61,11 +62,14 @@ for (const [name, change] of [
     .replace('#MongoDB #DatabaseTransactions #BackendEngineering #DistributedSystems #SoftwareEngineering', '#SoftwareEngineering')],
   ['prose after tags', text => `${text}\nFurther reading: https://www.mongodb.com/docs/manual/`],
   ['punctuated body hashtag', text => text.replace('A request', 'A request (#MongoDB)')],
-  ['joined tags', text => text.replace('#MongoDB #DatabaseTransactions', '#MongoDB#DatabaseTransactions')]
+  ['joined tags', text => text.replace('#MongoDB #DatabaseTransactions', '#MongoDB#DatabaseTransactions')],
+  ['label before closing block', text => text.replace('\n\n#MongoDB', '\n\nHashtags: #MongoDB')],
+  ['comma-separated tags', text => text.replace('#MongoDB #DatabaseTransactions', '#MongoDB, #DatabaseTransactions')],
+  ['punctuation after tags', text => `${text}.`]
 ]) {
   test(`LinkedIn rejects invalid closing hashtags: ${name}`, () => {
     const value = linkedinDraft();
     value.linkedinPost = change(value.linkedinPost);
-    assert.throws(() => validate(value), /Invalid hashtags/);
+    assert.throws(() => validate(value), { code: 'HASHTAGS_INVALID', message: 'Invalid hashtags' });
   });
 }

@@ -40,4 +40,6 @@ Better: 'A coding agent can report success without running a single test. The us
 Do not reuse the better example verbatim as a published post.
 
 ## Ending
-Prefer engineering conclusion, optional verified Further reading link, optional configured newsletter link, one specific engineering question, and 4–6 relevant hashtags. Omit sections without a real purpose or verified link.
+Prefer engineering conclusion, optional verified Further reading link, optional configured newsletter link, and one specific engineering question. Omit sections without a real purpose or verified link.
+
+Always end with 5–7 distinct, topic-relevant hashtags in a separate closing block. This matches the repository's strict LinkedIn validation; hashtags are required even when optional ending sections are omitted. Separate tags with spaces or line breaks, without a label, commas or trailing punctuation. Tags must be unique ignoring case. Put all questions, source labels and URLs before this block; no hashtags in the body or text after the block.

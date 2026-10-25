@@ -12,6 +12,7 @@ const { BufferClient, BufferFailure, publicationResult } = require('./buffer');
 const { connectMongo, disconnectMongo, getMongoStatus } = require('../config/db');
 const { readLogEntries } = require('../../.agents/skills/linkedin-post-orchestrator/scripts/title_log_utils');
 const { platformsFor } = require('./platforms');
+const { safeFailureCode } = require('./errors');
 
 async function run({ now = new Date(), dryRun = true, manual = false, platform: requested, env = process.env,
   generate = generateWithFallback, review = reviewWithFallback, engines = createEngineSession(), store,
@@ -41,10 +42,14 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
       phase = 'history';
       const previous = [...await store.history(), ...await manualHistory()];
       // Engine choice never relaxes validation: fallback drafts face the same review and duplicate checks.
-      phase = 'generation-validation';
-      const validated = validateDraft(await generate({ date, slot, previous, platform, engines }), previous, { platform });
+      phase = 'generation';
+      const generated = await generate({ date, slot, previous, platform, engines });
+      phase = 'draft-validation';
+      const validated = validateDraft(generated, previous, { platform });
+      phase = 'review';
+      const reviewed = await review(validated, { previous, date, slot, platform, engines });
       phase = 'review-validation';
-      const validation = validateReview(await review(validated, { previous, date, slot, platform, engines }), validated, clock());
+      const validation = validateReview(reviewed, validated, clock());
       const generation = engines.record();
       const publications = Object.fromEntries(platforms.map(platform => [platform, {
         channelId: config.channels[platform] || '', idempotencyKey: digest(`${key}:${platform}`),
@@ -194,14 +199,16 @@ function summarize(draft, dryRun) {
 function safeFailureDiagnostic(error) {
   // Never print exception messages, stack traces, URLs or credential-bearing upstream responses.
   const allowedPhases = new Set(['database-initialize', 'database-lock', 'history',
-    'generation-validation', 'review-validation', 'draft-save', 'stored-draft-validation',
+    'generation-validation', 'generation', 'draft-validation', 'review', 'review-validation', 'draft-save', 'stored-draft-validation',
     'buffer-cooldown-check', 'buffer-channel-preflight', 'publication-claim',
     'buffer-submission', 'publication-receipt']);
   const phase = allowedPhases.has(error?.automationPhase) ? error.automationPhase : 'startup-or-cleanup';
   const name = ['Error', 'TypeError', 'RangeError', 'ValidationError', 'MongoServerError',
     'MongoNetworkError', 'MongooseError', 'BufferFailure', 'CodexRateLimited'].includes(error?.name)
     ? error.name : 'Error';
-  return `Automation failed at ${phase} (${name}). No automatic retry. Inspect the stored publication state before any new live attempt.`;
+  const code = safeFailureCode(error);
+  const detail = code ? ` [${code}${error.codexRateLimited === true ? '; CODEX_RATE_LIMITED' : ''}]` : '';
+  return `Automation failed at ${phase} (${name})${detail}. No automatic retry. Inspect the stored publication state before any new live attempt.`;
 }
 
 function parseRunArgs(args) {
