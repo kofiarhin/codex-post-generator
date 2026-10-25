@@ -124,7 +124,9 @@ for (const dryRun of [true, false]) {
         assert.match(safeFailureDiagnostic(error), new RegExp(error.code));
         return true;
       });
-      assert.deepEqual(calls, kind.startsWith('review') ? ['generate', 'review', 'release'] : ['generate', 'release']);
+      // A persistent rejection gets exactly one revision and fresh review before failing closed.
+      assert.deepEqual(calls, kind === 'review-validation' ? ['generate', 'review', 'generate', 'review', 'release']
+        : kind === 'review' ? ['generate', 'review', 'release'] : ['generate', 'release']);
     });
   }
 }
