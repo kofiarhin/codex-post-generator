@@ -819,9 +819,24 @@ test('legacy history remains available without modifying old records', async () 
     topicHash: 'legacy-topic', contentHash: 'legacy-content',
     publications: { linkedin: { state: 'not_published', idempotencyKey: 'legacy' } } };
   await LegacyModel.create(legacy);
+  const before = await LegacyModel.collection.findOne({ key: legacy.key });
   assert((await store.history()).some(item => item.title === legacy.title));
   assert((await store.get(legacy.key)).key === legacy.key);
   assert.equal(await Model.countDocuments(), 0);
+  assert.deepEqual(await LegacyModel.collection.findOne({ key: legacy.key }), before);
+});
+
+test('publishing a new post writes only blogposts and leaves every legacy record byte-identical', async () => {
+  const old = { ...withoutX(alternativeDraft()), schemaVersion: 2, platform: 'linkedin',
+    key: 'post-generator:2026-10-19:evening', date: '2026-10-19', slot: 'evening', dryRun: false,
+    status: 'validated', validation: { passed: true }, topicHash: 'legacy-topic-2', contentHash: 'legacy-content-2',
+    publications: { linkedin: { state: 'published', idempotencyKey: 'legacy', attempts: 1, bufferId: 'old-id' } } };
+  await LegacyModel.collection.insertOne(old);
+  const before = await LegacyModel.collection.find({}).toArray();
+  const result = await run(options({ manual: true, dryRun: false, platform: 'linkedin' }));
+  assert.equal((await Model.findOne({ key: result.key }).lean()).status, 'published');
+  assert.equal(await Model.countDocuments(), 1);
+  assert.deepEqual(await LegacyModel.collection.find({}).toArray(), before);
 });
 
 test('blog-only source titles never leak into the legacy schema or the reviewed content hash', async () => {

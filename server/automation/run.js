@@ -7,7 +7,7 @@ const { validateDraft, validateReview, contentHash, digest } = require('./valida
 const { readConfig } = require('./config');
 const { generateWithCodex } = require('./codex');
 const { createEngineSession, generateWithFallback, reviewWithFallback } = require('./engines');
-const { MongoStore } = require('./store');
+const { MongoStore, assertWritable } = require('./store');
 const { BufferClient, BufferFailure, publicationResult } = require('./buffer');
 const { connectMongo, disconnectMongo, getMongoStatus } = require('../config/db');
 const { readLogEntries } = require('../../.agents/skills/linkedin-post-orchestrator/scripts/title_log_utils');
@@ -76,6 +76,8 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
     }
     if (draft.platform !== platform) throw new Error('Persisted platform selection changed');
     if (dryRun) return summarize(draft, true);
+    // Historical records stay inspectable, but nothing past this point may touch Buffer or the record.
+    assertWritable(draft);
     // Legacy and dry-run drafts are never implicitly upgraded or published.
     if (draft.schemaVersion !== 2 || draft.dryRun !== false) throw new Error('Existing draft is not eligible for publishing');
     phase = 'stored-draft-validation';
@@ -179,6 +181,7 @@ function assertValidated(draft) {
 }
 
 async function reconcile({ store, buffer, draft, platform, bufferId, now = new Date() }) {
+  assertWritable(draft);
   if (!platformsFor(draft.platform).includes(platform) || draft.dryRun !== false || draft.schemaVersion !== 2) throw new Error('Invalid reconciliation');
   const record = draft.publications[platform];
   if (!['unknown', 'publishing', 'accepted'].includes(record.state)) throw new Error('Reconciliation is not applicable');

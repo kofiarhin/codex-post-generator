@@ -15,6 +15,12 @@ const lockSchema = new mongoose.Schema({ _id: String, owner: String, acquiredAt:
   { collection: 'postgeneratorlocks', autoIndex: false, autoCreate: false });
 const Lock = mongoose.models.PostGeneratorLock || mongoose.model('PostGeneratorLock', lockSchema);
 
+// Marks records read from automatedpostdrafts. Not persisted; publishing and reconciliation refuse them.
+const LEGACY_RECORD = Symbol('legacyRecord');
+const assertWritable = draft => {
+  if (draft?.[LEGACY_RECORD]) throw new Error('Legacy automatedpostdrafts records are read-only');
+};
+
 class MongoStore {
   constructor({ model = BlogPost, legacyModel = AutomatedPostDraft, lockModel = Lock } = {}) {
     this.model = model;
@@ -45,7 +51,10 @@ class MongoStore {
   }
   async get(key) {
     // Historical records remain readable, but new writes never go to the legacy collection.
-    return await this.model.findOne({ key }).lean() || await this.legacyModel.findOne({ key }).lean();
+    const current = await this.model.findOne({ key }).lean();
+    if (current) return current;
+    const legacy = await this.legacyModel.findOne({ key }).lean();
+    return legacy && { ...legacy, [LEGACY_RECORD]: true };
   }
   async history() {
     const projection = { title: 1, topicAngle: 1, topicHash: 1, linkedinPost: 1, xPost: 1 };
@@ -101,4 +110,4 @@ class MongoStore {
     return doc;
   }
 }
-module.exports = { MongoStore, Lock };
+module.exports = { MongoStore, Lock, assertWritable };
