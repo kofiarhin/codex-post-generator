@@ -73,16 +73,12 @@ class MongoStore {
     };
     return (await this.model.create(blog)).toObject();
   }
-  // Publication state stays with the record that owns the key, so legacy in-flight
-  // publications still reconcile in place. Legacy records never gain blog fields.
-  async modelFor(key) {
-    if (await this.model.exists({ key })) return this.model;
-    return await this.legacyModel.exists({ key }) ? this.legacyModel : this.model;
-  }
+  // Historical records can be inspected for duplicate prevention, but never mutated.
+  // No publishing, reconciliation, or recovery operation writes to automatedpostdrafts.
   async claim(key, platform, channelId, now) {
     if (!['linkedin', 'x'].includes(platform)) throw new Error('Invalid platform');
     const path = `publications.${platform}`;
-    return (await this.modelFor(key)).findOneAndUpdate({ key, schemaVersion: 2, dryRun: false,
+    return this.model.findOneAndUpdate({ key, schemaVersion: 2, dryRun: false,
       ...(platform === 'x' ? { platform: { $ne: 'linkedin' } } : {}),
       [`${path}.channelId`]: channelId, [`${path}.attempts`]: { $lt: 3 },
       $or: [{ [`${path}.state`]: 'pending' },
@@ -94,13 +90,12 @@ class MongoStore {
     if (!['linkedin', 'x'].includes(platform)) throw new Error('Invalid platform');
     const prefix = `publications.${platform}`;
     const update = Object.fromEntries(Object.entries(result).map(([k, v]) => [`${prefix}.${k}`, v]));
-    const model = await this.modelFor(key);
     // Public visibility follows confirmed LinkedIn delivery only; pending, accepted and unknown stay draft.
-    if (model === this.model && platform === 'linkedin' && result.state === 'published') {
+    if (platform === 'linkedin' && result.state === 'published') {
       update.status = 'published';
       update.publishedAt = result.completedAt || result.reconciledAt || new Date();
     }
-    const doc = await model.findOneAndUpdate({ key, [`${prefix}.state`]: { $in: expectedStates } },
+    const doc = await this.model.findOneAndUpdate({ key, [`${prefix}.state`]: { $in: expectedStates } },
       { $set: update }, { new: true, runValidators: true }).lean();
     if (!doc) throw new Error('Publication state changed; reconciliation required');
     return doc;

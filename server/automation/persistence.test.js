@@ -844,20 +844,47 @@ test('slug collisions with existing blog posts are disambiguated instead of fail
   assert(!(await store.history()).some(item => item.title === 'IdeaHub post'));
 });
 
-test('legacy in-flight publications reconcile in place without gaining blog fields', async () => {
+test('legacy in-flight publications cannot be claimed, recorded or reconciled', async () => {
   const value = validateDraft(linkedinDraft(), [], { platform: 'linkedin' });
   const key = 'post-generator:2026-10-20:evening';
-  await LegacyModel.collection.insertOne({ ...value, schemaVersion: 2, key, date: '2026-10-20', slot: 'evening',
+  const legacy = { ...value, schemaVersion: 2, key, date: '2026-10-20', slot: 'evening',
     dryRun: false, status: 'validated', validation: { passed: true, originalityPassed: true, version: 2,
       contentHash: value.contentHash },
     publications: { linkedin: { channelId: env.BUFFER_LINKEDIN_CHANNEL_ID, idempotencyKey: 'legacy',
-      state: 'accepted', attempts: 1, bufferId: 'legacy-id' } } });
-  await store.record(key, 'linkedin', ['accepted'], { state: 'published', reconciledAt: now });
-  const legacy = await LegacyModel.findOne({ key }).lean();
-  assert.equal(legacy.publications.linkedin.state, 'published');
-  assert.equal(legacy.status, 'validated');
-  assert.equal(legacy.publishedAt, undefined);
-  assert.equal(await Model.countDocuments(), 0);
+      state: 'accepted', attempts: 1, bufferId: 'legacy-id' } } };
+  await LegacyModel.collection.insertOne(legacy);
+  const before = await LegacyModel.collection.findOne({ key });
+  let bufferCalls = 0;
+  const forbiddenBuffer = { assertChannel: () => { bufferCalls++; },
+    getPost: async () => { bufferCalls++; throw new Error('Legacy Buffer call forbidden'); } };
+  assert.equal(await store.claim(key, 'linkedin', env.BUFFER_LINKEDIN_CHANNEL_ID, now), null);
+  await assert.rejects(store.record(key, 'linkedin', ['accepted'],
+    { state: 'published', reconciledAt: now }), /Publication state changed/);
+  await assert.rejects(recover({ key, platform: 'linkedin', bufferId: 'legacy-id', env,
+    store, buffer: forbiddenBuffer }), /Legacy.*read-only|historical.*read-only/i);
+  assert.equal(bufferCalls, 0);
+  assert.deepEqual(await LegacyModel.collection.findOne({ key }), before);
+  assert.equal(await Model.countDocuments({ key }), 0);
+});
+
+test('legacy scheduled runs remain inspectable but cannot publish or update', async () => {
+  const value = validateDraft(linkedinDraft(), [], { platform: 'linkedin' });
+  const key = 'post-generator:2026-10-21:morning';
+  const legacy = { ...value, schemaVersion: 2, key, date: '2026-10-21', slot: 'morning',
+    dryRun: false, status: 'validated', validation: { passed: true, originalityPassed: true, version: 2,
+      contentHash: value.contentHash },
+    publications: { linkedin: { channelId: env.BUFFER_LINKEDIN_CHANNEL_ID, idempotencyKey: 'legacy',
+      state: 'pending', attempts: 0 } } };
+  await LegacyModel.collection.insertOne(legacy);
+  const before = await LegacyModel.collection.findOne({ key });
+  let bufferCalls = 0;
+  const forbiddenBuffer = new Proxy({}, { get() { bufferCalls++; throw new Error('Buffer forbidden'); } });
+  const inspected = await recover({ key, env, store, buffer: forbiddenBuffer });
+  assert.equal(inspected.key, key);
+  await assert.rejects(run(options({ dryRun: false, buffer: forbiddenBuffer })),
+    /Legacy.*read-only|historical.*read-only/i);
+  assert.equal(bufferCalls, 0);
+  assert.deepEqual(await LegacyModel.collection.findOne({ key }), before);
 });
 
 test('blogposts indexes are partial for automation keys and reuse the shared slug index name', async () => {
