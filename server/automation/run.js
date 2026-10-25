@@ -13,6 +13,7 @@ const { connectMongo, disconnectMongo, getMongoStatus } = require('../config/db'
 const { readLogEntries } = require('../../.agents/skills/linkedin-post-orchestrator/scripts/title_log_utils');
 const { platformsFor } = require('./platforms');
 const { safeFailureCode } = require('./errors');
+const MAX_REVISIONS = 1;
 
 async function run({ now = new Date(), dryRun = true, manual = false, platform: requested, env = process.env,
   generate = generateWithFallback, review = reviewWithFallback, engines = createEngineSession(), store,
@@ -43,13 +44,26 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
       const previous = [...await store.history(), ...await manualHistory()];
       // Engine choice never relaxes validation: fallback drafts face the same review and duplicate checks.
       phase = 'generation';
-      const generated = await generate({ date, slot, previous, platform, engines });
-      phase = 'draft-validation';
-      const validated = validateDraft(generated, previous, { platform });
-      phase = 'review';
-      const reviewed = await review(validated, { previous, date, slot, platform, engines });
-      phase = 'review-validation';
-      const validation = validateReview(reviewed, validated, clock());
+      let generated = await generate({ date, slot, previous, platform, engines });
+      let validated, validation;
+      // One revision pass: a rejected draft is corrected from the reviewer's findings, then must pass
+      // full draft validation and a fresh independent review. A second rejection still fails closed.
+      for (let attempt = 0; ; attempt++) {
+        phase = 'draft-validation';
+        validated = validateDraft(generated, previous, { platform });
+        phase = 'review';
+        const reviewed = await review(validated, { previous, date, slot, platform, engines });
+        phase = 'review-validation';
+        try {
+          validation = validateReview(reviewed, validated, clock());
+          break;
+        } catch (error) {
+          if (error?.code !== 'REVIEW_REJECTED' || attempt >= MAX_REVISIONS) throw error;
+          phase = 'revision';
+          generated = await generate({ date, slot, previous, platform, engines,
+            revision: { draft: validated, review: reviewed } });
+        }
+      }
       const generation = engines.record();
       const publications = Object.fromEntries(platforms.map(platform => [platform, {
         channelId: config.channels[platform] || '', idempotencyKey: digest(`${key}:${platform}`),
@@ -199,7 +213,7 @@ function summarize(draft, dryRun) {
 function safeFailureDiagnostic(error) {
   // Never print exception messages, stack traces, URLs or credential-bearing upstream responses.
   const allowedPhases = new Set(['database-initialize', 'database-lock', 'history',
-    'generation-validation', 'generation', 'draft-validation', 'review', 'review-validation', 'draft-save', 'stored-draft-validation',
+    'generation-validation', 'generation', 'draft-validation', 'review', 'review-validation', 'revision', 'draft-save', 'stored-draft-validation',
     'buffer-cooldown-check', 'buffer-channel-preflight', 'publication-claim',
     'buffer-submission', 'publication-receipt']);
   const phase = allowedPhases.has(error?.automationPhase) ? error.automationPhase : 'startup-or-cleanup';
