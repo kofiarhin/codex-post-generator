@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const { connectMongo, disconnectMongo } = require('../config/db');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const { MongoStore, Lock } = require('./store');
-const Model = require('../models/AutomatedPostDraft');
+const Model = require('../models/AutomatedBlogPost');
+const LegacyModel = require('../models/AutomatedPostDraft');
 const { run, reconcile } = require('./run');
 const { recover } = require('./recover');
 const { generateWithCodex, reviewWithCodex } = require('./codex');
@@ -27,6 +28,7 @@ before(async () => {
 after(async () => { await disconnectMongo(); if (mongo) await mongo.stop(); });
 beforeEach(async () => {
   await Model.deleteMany({});
+  await LegacyModel.deleteMany({});
   await Lock.deleteMany({});
   store = new MongoStore();
   calls = [];
@@ -783,4 +785,39 @@ test('persisted uncertain outcomes retain known Buffer IDs for operator reconcil
   assert.equal(saved.publications.linkedin.state, 'unknown');
   assert.equal(saved.publications.linkedin.bufferId, 'candidate-id');
   assert.equal(saved.publications.linkedin.failureCode, 'BUFFER_GRAPHQL_UNKNOWN');
+});
+
+test('one record powers both automation and the public blog, without a legacy draft copy', async () => {
+  const result = await run(options({ manual: true, dryRun: false, platform: 'linkedin' }));
+  const saved = await Model.findOne({ key: result.key }).lean();
+  assert.equal(await Model.countDocuments({ key: result.key }), 1);
+  assert.equal(await LegacyModel.countDocuments({ key: result.key }), 0);
+  assert.equal(saved.status, 'published');
+  assert(saved.publishedAt instanceof Date);
+  assert.equal(saved.content, saved.linkedinPost);
+  assert.equal(saved.slug, 'database-transactions-need-explicit-failure-boundaries');
+  assert(saved.sources.every(source => typeof source.title === 'string' && source.url));
+  assert.equal((await store.get(result.key)).publications.linkedin.state, 'published');
+});
+
+test('draft and uncertain LinkedIn states are never visible in the public blog', async () => {
+  const draftRun = await run(options({ manual: true, platform: 'linkedin' }));
+  assert.equal((await Model.findOne({ key: draftRun.key }).lean()).status, 'draft');
+  buffer.publish = async () => { throw new Error('response lost'); };
+  const uncertain = await run(options({ manual: true, platform: 'linkedin', dryRun: false,
+    generate: async () => alternativeDraft() }));
+  assert.equal((await Model.findOne({ key: uncertain.key }).lean()).status, 'draft');
+  assert.equal(await Model.countDocuments({ status: 'published' }), 0);
+});
+
+test('legacy history remains available without modifying old records', async () => {
+  const legacy = { ...draft(), schemaVersion: 2, platform: 'linkedin',
+    key: 'post-generator:2026-10-20:morning', date: '2026-10-20', slot: 'morning',
+    xPost: undefined, validation: { passed: true }, dryRun: true,
+    topicHash: 'legacy-topic', contentHash: 'legacy-content',
+    publications: { linkedin: { state: 'not_published', idempotencyKey: 'legacy' } } };
+  await LegacyModel.create(legacy);
+  assert((await store.history()).some(item => item.title === legacy.title));
+  assert((await store.get(legacy.key)).key === legacy.key);
+  assert.equal(await Model.countDocuments(), 0);
 });
