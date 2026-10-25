@@ -1,7 +1,7 @@
 {
   "name": "post-generator",
   "version": "1.0.0",
-  "description": "Codex-powered social content workflow — trending software topics to LinkedIn and X posts with Nano Banana-ready visual prompts.",
+  "description": "Codex-powered social content workflow \u2014 trending software topics to LinkedIn and X posts with Nano Banana-ready visual prompts.",
   "private": true,
   "scripts": {
     "audit:workflow": "node .agents/skills/linkedin-post-orchestrator/scripts/audit_workflow.js",
@@ -14,14 +14,19 @@
     "save:post": "node .agents/skills/linkedin-post-orchestrator/scripts/save_post.js",
     "save:asset": "node .agents/skills/linkedin-post-assets/scripts/save_asset.js",
     "generate:thumbnail": "node .agents/skills/linkedin-post-assets/scripts/generate_thumbnail.js",
-    "test": "npm run test:assets && npm run test:server",
+    "test": "npm run test:assets && npm run test:server && npm run test:automation",
     "test:assets": "node --test .agents/skills/linkedin-post-assets/tests/generate_thumbnail.test.js",
     "test:server": "jest server/tests --runInBand",
     "ralph:record-stage": "node .agents/skills/linkedin-post-orchestrator/scripts/record_ralph_stage.js",
     "validate:ralph": "node .agents/skills/linkedin-post-orchestrator/scripts/validate_ralph_article.js",
     "generate:post": "node .agents/skills/linkedin-post-orchestrator/scripts/generate_post.js",
     "generate-post": "npm run generate:post --",
-    "post:generate": "npm run generate:post --"
+    "post:generate": "npm run generate:post --",
+    "test:automation": "node --test server/automation/*.test.js",
+    "automation:run": "node server/automation/run.js",
+    "automation:dry-run": "node server/automation/run.js --dry-run --manual",
+    "automation:publish-manual": "node server/automation/run.js --publish --manual",
+    "automation:recover": "node server/automation/recover.js"
   },
   "dependencies": {
     "@phosphor-icons/react": "2.1.10",
@@ -38,6 +43,7 @@
     "autoprefixer": "10.4.20",
     "concurrently": "9.1.2",
     "jest": "29.7.0",
+    "mongodb-memory-server": "^10.2.3",
     "postcss": "^8.5.14",
     "supertest": "^7.2.2",
     "tailwindcss": "3.4.17",

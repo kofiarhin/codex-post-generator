@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { connectMongo } = require('../config/db');
+const { connectMongo, mongoUriFromEnv } = require('../config/db');
 const PostPackage = require('../models/PostPackage');
 const { createSeoThumbnailFileName } = require('./seoThumbnailFileName');
 
@@ -142,7 +142,7 @@ async function persistPostPackage({
   topicAngle = '',
   logEntry = '',
   packageDir = path.join(repoRoot, '_post_suggestion', slug),
-  mongoUri = process.env.MONGODB_URI,
+  mongoUri = mongoUriFromEnv(),
   model = PostPackage
 }) {
   if (!slug) {
@@ -166,7 +166,7 @@ async function persistPostPackage({
 async function syncAllPostPackages({
   repoRoot = path.resolve(__dirname, '../..'),
   packagesRoot = path.join(repoRoot, '_post_suggestion'),
-  mongoUri = process.env.MONGODB_URI,
+  mongoUri = mongoUriFromEnv(),
   model = PostPackage
 } = {}) {
   await connectMongo({ mongoUri });

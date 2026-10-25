@@ -166,6 +166,8 @@ Hashtags are required for both platforms in this workflow.
 ### LinkedIn
 
 - Use 5 to 7 hashtags.
+- Put all hashtags in a separate closing block after the conclusion, question and any source labels or URLs. No hashtags in the body or text after this block.
+- Separate tags with spaces or line breaks, without a label, commas or trailing punctuation. Tags must be unique ignoring case.
 - Prefer a mix of broad and niche search-friendly tags.
 - Keep them tightly aligned to the actual topic.
 
