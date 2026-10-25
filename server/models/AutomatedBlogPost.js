@@ -18,6 +18,6 @@ schema.add({
   publishedAt: Date
 });
 schema.path('status').default('draft');
-schema.path('status').enum(['draft', 'published']);
+schema.path('status').enum('draft', 'published');
 
 module.exports = mongoose.models.AutomatedBlogPost || mongoose.model('AutomatedBlogPost', schema);
