@@ -1,15 +1,30 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const { randomUUID } = require('node:crypto');
+const { randomUUID, createHash } = require('node:crypto');
 const AutomatedPostDraft = require('../models/AutomatedPostDraft');
+const BlogPost = require('../models/AutomatedBlogPost');
+const slugify = title => title.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  .replace(/[^a-z0-9]+/g, '-').slice(0, 90).replace(/^-+|-+$/g, '');
+// Plain-text summary for the blog list and meta tags: no closing hashtag block, cut on a word boundary.
+const summary = (text, max) => {
+  const plain = text.replace(/(?:\s+#[\p{L}\p{N}_]+)+\s*$/u, '').replace(/\s+/g, ' ').trim();
+  return plain.length <= max ? plain : `${plain.slice(0, max - 1).replace(/\s+\S*$/, '')}…`;
+};
 const lockSchema = new mongoose.Schema({ _id: String, owner: String, acquiredAt: Date, retryAt: Date },
   { collection: 'postgeneratorlocks', autoIndex: false, autoCreate: false });
 const Lock = mongoose.models.PostGeneratorLock || mongoose.model('PostGeneratorLock', lockSchema);
 
+// Marks records read from automatedpostdrafts. Not persisted; publishing and reconciliation refuse them.
+const LEGACY_RECORD = Symbol('legacyRecord');
+const assertWritable = draft => {
+  if (draft?.[LEGACY_RECORD]) throw new Error('Legacy automatedpostdrafts records are read-only');
+};
+
 class MongoStore {
-  constructor({ model = AutomatedPostDraft, lockModel = Lock } = {}) {
+  constructor({ model = BlogPost, legacyModel = AutomatedPostDraft, lockModel = Lock } = {}) {
     this.model = model;
+    this.legacyModel = legacyModel;
     this.lockModel = lockModel;
     this.owner = randomUUID();
   }
@@ -34,11 +49,41 @@ class MongoStore {
   async deferBuffer(retryAt) {
     await this.lockModel.updateOne({ _id: 'buffer-cooldown' }, { $max: { retryAt } }, { upsert: true });
   }
-  get(key) { return this.model.findOne({ key }).lean(); }
-  history() {
-    return this.model.find({}, { title: 1, topicAngle: 1, topicHash: 1, linkedinPost: 1, xPost: 1 }).lean();
+  async get(key) {
+    // Historical records remain readable, but new writes never go to the legacy collection.
+    const current = await this.model.findOne({ key }).lean();
+    if (current) return current;
+    const legacy = await this.legacyModel.findOne({ key }).lean();
+    return legacy && { ...legacy, [LEGACY_RECORD]: true };
   }
-  async save(doc) { return (await this.model.create(doc)).toObject(); }
+  async history() {
+    const projection = { title: 1, topicAngle: 1, topicHash: 1, linkedinPost: 1, xPost: 1 };
+    // blogposts is shared with IdeaHub posts; only automation records carry duplicate-check fields.
+    const [current, legacy] = await Promise.all([
+      this.model.find({ key: { $type: 'string' } }, projection).lean(), this.legacyModel.find({}, projection).lean()
+    ]);
+    return [...current, ...legacy];
+  }
+  async save(doc) {
+    // A single document contains both automation state and the public blog fields.
+    let slug = slugify(doc.title);
+    if (!slug) throw new Error('Invalid blog title');
+    // Slugs are shared with IdeaHub posts; disambiguate deterministically from the run key.
+    if (await this.model.exists({ slug })) {
+      slug = `${slug}-${createHash('sha256').update(doc.key).digest('hex').slice(0, 8)}`;
+    }
+    const blog = {
+      ...doc, slug, content: doc.linkedinPost, excerpt: summary(doc.linkedinPost, 240),
+      tags: [...new Set([doc.primaryKeyword, ...(doc.secondaryKeywords || [])])].filter(Boolean),
+      sources: doc.sources.map(source => ({ ...source, title: source.claim })),
+      seoTitle: doc.title, seoDescription: summary(doc.linkedinPost, 160),
+      origin: { generator: 'post-generator-automation', sourceType: 'generated' },
+      status: 'draft'
+    };
+    return (await this.model.create(blog)).toObject();
+  }
+  // Historical records can be inspected for duplicate prevention, but never mutated.
+  // No publishing, reconciliation, or recovery operation writes to automatedpostdrafts.
   async claim(key, platform, channelId, now) {
     if (!['linkedin', 'x'].includes(platform)) throw new Error('Invalid platform');
     const path = `publications.${platform}`;
@@ -54,10 +99,15 @@ class MongoStore {
     if (!['linkedin', 'x'].includes(platform)) throw new Error('Invalid platform');
     const prefix = `publications.${platform}`;
     const update = Object.fromEntries(Object.entries(result).map(([k, v]) => [`${prefix}.${k}`, v]));
+    // Public visibility follows confirmed LinkedIn delivery only; pending, accepted and unknown stay draft.
+    if (platform === 'linkedin' && result.state === 'published') {
+      update.status = 'published';
+      update.publishedAt = result.completedAt || result.reconciledAt || new Date();
+    }
     const doc = await this.model.findOneAndUpdate({ key, [`${prefix}.state`]: { $in: expectedStates } },
       { $set: update }, { new: true, runValidators: true }).lean();
     if (!doc) throw new Error('Publication state changed; reconciliation required');
     return doc;
   }
 }
-module.exports = { MongoStore, Lock };
+module.exports = { MongoStore, Lock, assertWritable };

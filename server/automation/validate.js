@@ -6,8 +6,11 @@ const { platformsFor } = require('./platforms');
 const { failure } = require('./errors');
 const normalize = value => value.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
 const digest = value => createHash('sha256').update(normalize(value)).digest('hex');
+// Only the reviewed source fields are hashed, so storage-only fields (the public blog's
+// source title) never invalidate a review. Stored legacy hashes are unchanged.
 const contentHash = draft => createHash('sha256').update(JSON.stringify([
-  draft.title, draft.topicAngle, draft.primaryKeyword, draft.secondaryKeywords, draft.linkedinPost, draft.xPost, draft.sources,
+  draft.title, draft.topicAngle, draft.primaryKeyword, draft.secondaryKeywords, draft.linkedinPost, draft.xPost,
+  Array.isArray(draft.sources) ? draft.sources.map(({ url, claim, excerpt }) => ({ url, claim, excerpt })) : draft.sources,
   ...(draft.platform === undefined ? [] : [draft.platform])
 ])).digest('hex');
 const linkedInLength = text => text.replace(/https?:\/\/\S+/g, 'x'.repeat(24)).length;

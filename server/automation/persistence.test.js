@@ -5,13 +5,15 @@ const mongoose = require('mongoose');
 const { connectMongo, disconnectMongo } = require('../config/db');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const { MongoStore, Lock } = require('./store');
-const Model = require('../models/AutomatedPostDraft');
+const Model = require('../models/AutomatedBlogPost');
+const LegacyModel = require('../models/AutomatedPostDraft');
 const { run, reconcile } = require('./run');
 const { recover } = require('./recover');
 const { generateWithCodex, reviewWithCodex } = require('./codex');
 const fs = require('node:fs');
 const { BufferClient, BufferFailure } = require('./buffer');
 const { draft, draftFor, linkedinDraft, review, env, now } = require('./testing/fixtures');
+const { validateDraft, contentHash } = require('./validate');
 const withoutX = ({ xPost, ...value }) => value;
 let mongo;
 let store;
@@ -27,6 +29,7 @@ before(async () => {
 after(async () => { await disconnectMongo(); if (mongo) await mongo.stop(); });
 beforeEach(async () => {
   await Model.deleteMany({});
+  await LegacyModel.deleteMany({});
   await Lock.deleteMany({});
   store = new MongoStore();
   calls = [];
@@ -783,4 +786,129 @@ test('persisted uncertain outcomes retain known Buffer IDs for operator reconcil
   assert.equal(saved.publications.linkedin.state, 'unknown');
   assert.equal(saved.publications.linkedin.bufferId, 'candidate-id');
   assert.equal(saved.publications.linkedin.failureCode, 'BUFFER_GRAPHQL_UNKNOWN');
+});
+
+test('one record powers both automation and the public blog, without a legacy draft copy', async () => {
+  const result = await run(options({ manual: true, dryRun: false, platform: 'linkedin' }));
+  const saved = await Model.findOne({ key: result.key }).lean();
+  assert.equal(await Model.countDocuments({ key: result.key }), 1);
+  assert.equal(await LegacyModel.countDocuments({ key: result.key }), 0);
+  assert.equal(saved.status, 'published');
+  assert(saved.publishedAt instanceof Date);
+  assert.equal(saved.content, saved.linkedinPost);
+  assert.equal(saved.slug, 'database-transactions-need-failure-boundaries');
+  assert(saved.sources.every(source => typeof source.title === 'string' && source.url));
+  assert.equal((await store.get(result.key)).publications.linkedin.state, 'published');
+});
+
+test('draft and uncertain LinkedIn states are never visible in the public blog', async () => {
+  const draftRun = await run(options({ manual: true, platform: 'linkedin' }));
+  assert.equal((await Model.findOne({ key: draftRun.key }).lean()).status, 'draft');
+  buffer.publish = async () => { throw new Error('response lost'); };
+  const uncertain = await run(options({ manual: true, platform: 'linkedin', dryRun: false,
+    generate: async () => { const { xPost, ...value } = alternativeDraft(); return value; } }));
+  assert.equal((await Model.findOne({ key: uncertain.key }).lean()).status, 'draft');
+  assert.equal((await Model.findOne({ key: uncertain.key }).lean()).publishedAt, undefined);
+  assert.equal(await Model.countDocuments({ status: 'published' }), 0);
+});
+
+test('legacy history remains available without modifying old records', async () => {
+  const legacy = { ...draft(), schemaVersion: 2, platform: 'linkedin',
+    key: 'post-generator:2026-10-20:morning', date: '2026-10-20', slot: 'morning',
+    xPost: undefined, validation: { passed: true }, dryRun: true,
+    topicHash: 'legacy-topic', contentHash: 'legacy-content',
+    publications: { linkedin: { state: 'not_published', idempotencyKey: 'legacy' } } };
+  await LegacyModel.create(legacy);
+  const before = await LegacyModel.collection.findOne({ key: legacy.key });
+  assert((await store.history()).some(item => item.title === legacy.title));
+  assert((await store.get(legacy.key)).key === legacy.key);
+  assert.equal(await Model.countDocuments(), 0);
+  assert.deepEqual(await LegacyModel.collection.findOne({ key: legacy.key }), before);
+});
+
+test('publishing a new post writes only blogposts and leaves every legacy record byte-identical', async () => {
+  const old = { ...withoutX(alternativeDraft()), schemaVersion: 2, platform: 'linkedin',
+    key: 'post-generator:2026-10-19:evening', date: '2026-10-19', slot: 'evening', dryRun: false,
+    status: 'validated', validation: { passed: true }, topicHash: 'legacy-topic-2', contentHash: 'legacy-content-2',
+    publications: { linkedin: { state: 'published', idempotencyKey: 'legacy', attempts: 1, bufferId: 'old-id' } } };
+  await LegacyModel.collection.insertOne(old);
+  const before = await LegacyModel.collection.find({}).toArray();
+  const result = await run(options({ manual: true, dryRun: false, platform: 'linkedin' }));
+  assert.equal((await Model.findOne({ key: result.key }).lean()).status, 'published');
+  assert.equal(await Model.countDocuments(), 1);
+  assert.deepEqual(await LegacyModel.collection.find({}).toArray(), before);
+});
+
+test('blog-only source titles never leak into the legacy schema or the reviewed content hash', async () => {
+  assert.equal(LegacyModel.schema.path('sources').schema.path('title'), undefined);
+  const result = await run(options({ manual: true, platform: 'linkedin' }));
+  const saved = await Model.findOne({ key: result.key }).lean();
+  assert(saved.sources.every(source => source.title === source.claim));
+  assert.equal(saved.validation.contentHash, contentHash(saved));
+  assert.equal(saved.origin.generator, 'post-generator-automation');
+  assert(!/#\w+\s*$/.test(saved.excerpt) && saved.seoDescription.length <= 160);
+});
+
+test('slug collisions with existing blog posts are disambiguated instead of failing the run', async () => {
+  await Model.collection.insertOne({ title: 'IdeaHub post', slug: 'database-transactions-need-failure-boundaries',
+    status: 'published', publishedAt: new Date() });
+  const result = await run(options({ manual: true, platform: 'linkedin' }));
+  const saved = await Model.findOne({ key: result.key }).lean();
+  assert.match(saved.slug, /^database-transactions-need-failure-boundaries-[0-9a-f]{8}$/);
+  // IdeaHub posts without automation fields never enter duplicate-check history.
+  assert(!(await store.history()).some(item => item.title === 'IdeaHub post'));
+});
+
+test('legacy in-flight publications cannot be claimed, recorded or reconciled', async () => {
+  const value = validateDraft(linkedinDraft(), [], { platform: 'linkedin' });
+  const key = 'post-generator:2026-10-20:evening';
+  const legacy = { ...value, schemaVersion: 2, key, date: '2026-10-20', slot: 'evening',
+    dryRun: false, status: 'validated', validation: { passed: true, originalityPassed: true, version: 2,
+      contentHash: value.contentHash },
+    publications: { linkedin: { channelId: env.BUFFER_LINKEDIN_CHANNEL_ID, idempotencyKey: 'legacy',
+      state: 'accepted', attempts: 1, bufferId: 'legacy-id' } } };
+  await LegacyModel.collection.insertOne(legacy);
+  const before = await LegacyModel.collection.findOne({ key });
+  let bufferCalls = 0;
+  const forbiddenBuffer = { assertChannel: () => { bufferCalls++; },
+    getPost: async () => { bufferCalls++; throw new Error('Legacy Buffer call forbidden'); } };
+  assert.equal(await store.claim(key, 'linkedin', env.BUFFER_LINKEDIN_CHANNEL_ID, now), null);
+  await assert.rejects(store.record(key, 'linkedin', ['accepted'],
+    { state: 'published', reconciledAt: now }), /Publication state changed/);
+  await assert.rejects(recover({ key, platform: 'linkedin', bufferId: 'legacy-id', env,
+    store, buffer: forbiddenBuffer }), /Legacy.*read-only|historical.*read-only/i);
+  assert.equal(bufferCalls, 0);
+  assert.deepEqual(await LegacyModel.collection.findOne({ key }), before);
+  assert.equal(await Model.countDocuments({ key }), 0);
+});
+
+test('legacy scheduled runs remain inspectable but cannot publish or update', async () => {
+  const value = validateDraft(linkedinDraft(), [], { platform: 'linkedin' });
+  const key = 'post-generator:2026-10-21:morning';
+  const legacy = { ...value, schemaVersion: 2, key, date: '2026-10-21', slot: 'morning',
+    dryRun: false, status: 'validated', validation: { passed: true, originalityPassed: true, version: 2,
+      contentHash: value.contentHash },
+    publications: { linkedin: { channelId: env.BUFFER_LINKEDIN_CHANNEL_ID, idempotencyKey: 'legacy',
+      state: 'pending', attempts: 0 } } };
+  await LegacyModel.collection.insertOne(legacy);
+  const before = await LegacyModel.collection.findOne({ key });
+  let bufferCalls = 0;
+  const forbiddenBuffer = new Proxy({}, { get() { bufferCalls++; throw new Error('Buffer forbidden'); } });
+  const inspected = await recover({ key, env, store, buffer: forbiddenBuffer });
+  assert.equal(inspected.key, key);
+  await assert.rejects(run(options({ dryRun: false, buffer: forbiddenBuffer })),
+    /Legacy.*read-only|historical.*read-only/i);
+  assert.equal(bufferCalls, 0);
+  assert.deepEqual(await LegacyModel.collection.findOne({ key }), before);
+});
+
+test('blogposts indexes are partial for automation keys and reuse the shared slug index name', async () => {
+  await store.initialize();
+  const indexes = await Model.collection.indexes();
+  const byName = Object.fromEntries(indexes.map(index => [index.name, index]));
+  assert.deepEqual(byName.blog_slug_unique.key, { slug: 1 });
+  assert(byName.automation_key_unique.partialFilterExpression);
+  assert(byName.automation_topic_hash_unique.partialFilterExpression);
+  // Pre-existing IdeaHub posts without automation keys do not collide on the unique indexes.
+  await Model.collection.insertMany([{ slug: 'a', status: 'published' }, { slug: 'b', status: 'published' }]);
 });

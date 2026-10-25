@@ -6,7 +6,8 @@ const fs = require('node:fs');
 const { createHash } = require('node:crypto');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const { connectMongo, disconnectMongo } = require('../config/db');
-const Model = require('../models/AutomatedPostDraft');
+const Model = require('../models/AutomatedBlogPost');
+const LegacyModel = require('../models/AutomatedPostDraft');
 const { MongoStore, Lock } = require('./store');
 const { run, parseRunArgs } = require('./run');
 const { recover } = require('./recover');
@@ -32,6 +33,7 @@ before(async () => {
 after(async () => { await disconnectMongo(); if (mongo) await mongo.stop(); });
 beforeEach(async () => {
   await Model.deleteMany({});
+  await LegacyModel.deleteMany({});
   await Lock.deleteMany({});
   store = new MongoStore();
 });
