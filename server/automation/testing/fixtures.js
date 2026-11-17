@@ -39,6 +39,8 @@ const draftFor = ({ platform } = {}) => (platform === 'linkedin' ? linkedinDraft
 const review = async value => ({ approved: true, qualityPassed: true, originalityPassed: true, unsupportedClaims: [],
   sourceChecks: value.sources.map(s => ({ url: s.url, supported: true })) });
 const env = { MONGO_URI: 'mongodb://127.0.0.1:27017/test', BUFFER_API_KEY: 'test-only-key',
-  BUFFER_LINKEDIN_CHANNEL_ID: 'test-linkedin', BUFFER_X_CHANNEL_ID: 'test-x', AUTONOMOUS_PUBLISH_ENABLED: 'true' };
+  BUFFER_LINKEDIN_CHANNEL_ID: 'test-linkedin', BUFFER_X_CHANNEL_ID: 'test-x', AUTONOMOUS_PUBLISH_ENABLED: 'true',
+  // Existing slot tests cover both slots on any day; schedule defaults are tested separately.
+  POST_SLOTS: 'morning,evening', POST_DAYS: 'mon,tue,wed,thu,fri,sat,sun' };
 const now = new Date('2026-10-21T05:00:00Z');
 module.exports = { draft, linkedinDraft, draftFor, review, env, now };

@@ -82,6 +82,8 @@ It should do at least one of these:
 
 First-person openings are allowed if they are strong and specific.
 
+Open on a concrete failure an engineer can picture and what it costs. Never open with a reminder or lecture such as "X deserves a test...", "X needs a [something] test" or "gets interesting when"; the automation rejects these hooks because they were the lowest-reach posts in the November 2026 analytics review. Keep the hook to one or two short lines, then a blank line.
+
 ### Body
 
 - Use short paragraphs of 1 to 3 lines.
@@ -92,7 +94,7 @@ First-person openings are allowed if they are strong and specific.
 
 ### Ending
 
-- End on a comment-worthy observation or question.
+- End the body with one genuine question a reader can answer from their own work (a failure, a check, a decision). It is required: 21 of 30 recent posts drew no response.
 - Invite discussion without sounding needy.
 - Do not use generic calls to action.
 

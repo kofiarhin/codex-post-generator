@@ -41,7 +41,7 @@ test('plain URLs, punctuation and technical brackets survive validation and hash
 
 test('Markdown-like characters in plain URLs and technical identifiers remain plain text', () => {
   const value = withSource('Reference: https://www.mongodb.com/docs/manual/__transactions__/?filter=[value](literal)**\n' +
-    'Use retry_count and operation_id fields; reading notes [optional].');
+    'Do you log retry_count and operation_id fields, or only reading notes [optional]?');
   assert.equal(validate(value).linkedinPost, value.linkedinPost);
 });
 
