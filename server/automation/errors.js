@@ -18,6 +18,8 @@ const messages = {
   FORMATTING_INVALID: 'Invalid platform formatting',
   PRIMARY_KEYWORD_MISSING: 'Primary keyword missing from hook',
   COPY_QUALITY_INVALID: 'Unsupported personal claim or low-quality copy',
+  HOOK_WEAK: 'LinkedIn hook must open on a concrete failure, not a reminder-style line',
+  CLOSING_QUESTION_MISSING: 'LinkedIn must end its body with a genuine question for readers',
   SECONDARY_KEYWORDS_MISSING: 'Secondary keywords missing',
   DUPLICATE_CONTENT: 'Duplicate topic, angle or content',
   REVIEW_REJECTED: 'Independent source and quality review failed',

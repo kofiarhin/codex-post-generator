@@ -42,6 +42,31 @@ function validateLinkedInFormatting(text) {
     new Set(tags.map(tag => tag.toLowerCase())).size !== tags.length) throw failure('HASHTAGS_INVALID');
 }
 
+// Grounded in the Nov 2026 LinkedIn analytics review: reminder-style openers ("X deserves a test...")
+// were the lowest-reach posts, and posts without a closing question drew almost no comments.
+const weakHooks = [
+  /\bdeserves?\s+(?:a|an|its|their|more|better|some|one)\b/i,
+  /\bneeds?\s+(?:a|an)\s+[\p{L}\p{N}-]+(?:\s+[\p{L}\p{N}-]+)?\s+test\b/iu,
+  /\bis\s+worth\s+(?:a\s+)?test(?:ing)?\b/i,
+  /\bgets\s+interesting\s+when\b/i,
+  /^\s*(?:reminder|psa|friendly reminder)\b/i
+];
+const editorialCodes = new Set(['HOOK_WEAK', 'CLOSING_QUESTION_MISSING']);
+
+function validateLinkedInEditorial(text) {
+  const [hook] = text.trim().split(/\n\s*\n/);
+  // The hook is the only text most readers see: one or two short lines, then a blank line.
+  if (!hook || hook.split('\n').length > 2 || hook.length > 220 || weakHooks.some(pattern => pattern.test(hook))) {
+    throw failure('HOOK_WEAK');
+  }
+  // Ignore the closing hashtag block, source/URL lines and bare source labels; the last prose line must ask.
+  const body = text.replace(/(?:^|\n)\s*#[\p{L}\p{N}_]+(?:\s+#[\p{L}\p{N}_]+)*\s*$/u, '')
+    .split('\n').map(line => line.trim())
+    .filter(line => line && !/https?:\/\//i.test(line) && !/^(?:sources?|references?|read more)\s*:?$/i.test(line));
+  const last = body[body.length - 1] || '';
+  if (body.length < 3 || !/\?["'’”)]?$/u.test(last)) throw failure('CLOSING_QUESTION_MISSING');
+}
+
 function publicSource(value) {
   try {
     const u = new URL(value);
@@ -75,7 +100,10 @@ function validateDraft(draft, previous = [], { platform } = {}) {
   if (words < 150 || words > 300 || linkedLength > 3000) throw failure('LINKEDIN_LENGTH');
   if (xPost !== undefined && (xPost.length > 1500 || xPost.length < 80)) throw failure('X_LENGTH');
   for (const [text, min, max] of [[linkedinPost, 5, 7], ...(xPost === undefined ? [] : [[xPost, 2, 4]])]) {
-    if (text === linkedinPost) validateLinkedInFormatting(text);
+    if (text === linkedinPost) {
+      validateLinkedInFormatting(text);
+      validateLinkedInEditorial(text);
+    }
     else {
       const tags = text.match(/#[\p{L}\p{N}_]+/gu) || [];
       if (tags.length < min || tags.length > max || new Set(tags.map(t => t.toLowerCase())).size !== tags.length ||
@@ -111,4 +139,5 @@ function validateReview(review, draft, now = new Date()) {
   return { passed: true, originalityPassed: true, version: 2, reviewedAt: now, contentHash: draft.contentHash,
     sourceChecks: draft.sources.map(s => ({ url: s.url, supported: true })) };
 }
-module.exports = { validateDraft, validateReview, digest, contentHash, publicSource, linkedInLength, validateLinkedInFormatting };
+module.exports = { validateDraft, validateReview, digest, contentHash, publicSource, linkedInLength, validateLinkedInFormatting,
+  validateLinkedInEditorial, editorialCodes };

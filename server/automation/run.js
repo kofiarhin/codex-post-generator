@@ -2,8 +2,8 @@
 
 const { resolve } = require('node:path');
 const { randomUUID } = require('node:crypto');
-const { slotAt, londonDate } = require('./slot');
-const { validateDraft, validateReview, contentHash, digest } = require('./validate');
+const { slotAt, londonDate, slotScheduled } = require('./slot');
+const { validateDraft, validateReview, contentHash, digest, editorialCodes } = require('./validate');
 const { readConfig } = require('./config');
 const { generateWithCodex } = require('./codex');
 const { createEngineSession, generateWithFallback, reviewWithFallback } = require('./engines');
@@ -26,6 +26,11 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
   const config = readConfig(env, { dryRun, platform });
   const { date, slot } = manual ? { date: londonDate(now), slot: 'manual' } : slotAt(now);
   const key = manual ? `post-generator:manual:${date}:${randomUUID()}` : `post-generator:${date}:${slot}`;
+  // Unscheduled slots exit before any database, engine or Buffer access.
+  if (!manual && !slotScheduled(now, slot, config.schedule)) {
+    return { key, dryRun, skipped: true, reason: 'slot-not-scheduled', stored: false, channels: {},
+      complete: true, requiresAttention: false, published: false };
+  }
   const ownsConnection = !store && getMongoStatus().readyState === 0;
   if (!store) {
     await connectMongo({ mongoUri: config.mongoUri });
@@ -50,7 +55,16 @@ async function run({ now = new Date(), dryRun = true, manual = false, platform: 
       // full draft validation and a fresh independent review. A second rejection still fails closed.
       for (let attempt = 0; ; attempt++) {
         phase = 'draft-validation';
-        validated = validateDraft(generated, previous, { platform });
+        try {
+          validated = validateDraft(generated, previous, { platform });
+        } catch (error) {
+          // A weak hook or missing closing question gets the same single revision pass as a review rejection.
+          if (!editorialCodes.has(error?.code) || attempt >= MAX_REVISIONS) throw error;
+          phase = 'revision';
+          generated = await generate({ date, slot, previous, platform, engines,
+            revision: { draft: generated, editorial: [error.code] } });
+          continue;
+        }
         phase = 'review';
         const reviewed = await review(validated, { previous, date, slot, platform, engines });
         phase = 'review-validation';

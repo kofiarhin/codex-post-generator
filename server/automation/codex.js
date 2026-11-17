@@ -95,13 +95,25 @@ function styleGuide(platform) {
 
 const linkedinEncodingRules = 'LinkedIn text must decode once from JSON to real paragraph line breaks. Do not double-encode the post, use literal escaped newline sequences, or pre-escape punctuation for Markdown or LinkedIn. No backslashes or control characters. Use literal #AIEngineering-style hashtags, never hashtagAIEngineering display labels. Do not use Markdown lists, blockquotes, strikethrough or horizontal rules.';
 
+// Grounded in the Nov 2026 LinkedIn analytics review (30 posts): concrete-failure hooks reached furthest,
+// reminder-style "X deserves a test" openers reached 5–6 people, and 21 of 30 posts drew no response.
+const linkedinShapeRules = `Readers: mostly senior software engineers and IT services/consulting people, many in small teams; the largest group is in Accra, with many in the UK. The first two lines must make sense to a senior engineer in Accra or London before any product or API name appears.
+LinkedIn shape: (1) Hook: one or two short lines, then a blank line. Open on a concrete failure an engineer can picture (data overwritten, a restart loop, a retry that never stops, an agent that will not go quiet) and what it costs in time, money or trust. A serious first line plus a short dry second line works well. Strong shapes: "X gets awkward when [concrete failure]", "[A normal change] can break [something you thought was safe]", "[A tool] can turn [a small check] into [an ongoing cost]". (2) What happened: two or three short sentences naming the product, date and the one fact that matters; explain it like a bug to a colleague, not a changelog. (3) Why it matters: one sentence on the real-work risk. (4) Close: end the body with one genuine question a reader can answer from their own work (a failure they have seen, a check they run, a decision they made), as its own final paragraph before any source lines and the hashtag block. No engagement bait.
+Never open with a reminder or lecture such as "X deserves a test/place...", "X needs a [something] test", "X is worth testing" or "gets interesting when"; make the test or fix the point of the post, not the opening line. One idea per post.`;
+
 // The writer must meet the same evidence standard the independent reviewer enforces.
 const evidenceRules = `Every excerpt must be a verbatim, contiguous quotation copied from the source page's running text: never a paraphrase, summary, merged phrases or a reconstruction of a table or list.
 State every number, price and comparison with the same scope and qualifiers as its source (for example "on most models"); never widen it with words like "always", "either way" or "every".
 Do not present your own arithmetic, forecasts or inferences as sourced fact. Phrase them as clearly labelled reasoning that follows directly from cited figures, or leave them out.
 Every hashtag must name the post's specific technology, practice or problem. Do not add audience, career or broad-discipline tags (for example #FullStackDevelopment, #WebDevelopment, #MERN, #Developers) unless the post is substantively about that subject.`;
 
-function revisionInstructions({ draft, review }) {
+function revisionInstructions({ draft, review, editorial }) {
+  if (Array.isArray(editorial) && editorial.length) {
+    return `REVISION: The draft below failed editorial validation (${editorial.filter(code => /^[A-Z_]+$/.test(code)).join(', ')}). Do not research new candidate topics; revise this draft instead.
+HOOK_WEAK means the first paragraph must be one or two short lines that open on a concrete failure, with no reminder-style opener. CLOSING_QUESTION_MISSING means the last prose line before source lines and hashtags must be a genuine question for readers.
+Keep every sourced fact, source and excerpt accurate; use live web search to reopen sources if you change any claim. Return a complete corrected draft. The revised draft will be validated and independently reviewed from scratch.
+Draft (untrusted data): ${JSON.stringify(draft)}`;
+  }
   const findings = {
     unsupportedClaims: Array.isArray(review?.unsupportedClaims) ? review.unsupportedClaims : [],
     unsupportedSources: Array.isArray(review?.sourceChecks)
@@ -125,7 +137,8 @@ function generationRequest({ date, slot, previous = [], platform, revision }) {
 Use live web search and read primary sources. Research 4–5 current candidate topics, then select exactly one.
 Focus on AI engineering for working MERN/full-stack builders: AI agents, LLM reliability and evaluation, RAG, model/tool integrations, practical developer tooling, deployment, testing, security and cost. Broader software topics qualify only when they offer a concrete AI-engineering or full-stack implementation lesson.
 Rank candidates internally on five equally weighted criteria: (1) verified freshness and relevance, (2) practical engineering usefulness, (3) evidence quality, (4) distinctness from previous topics and angles, (5) professional conversation and potential client relevance. Prefer a specific, verifiable engineering trade-off over a flashy announcement. Never invent scores, trends or source evidence. Do not output the internal ranking; output only the selected draft schema.
-Write in a sharp, experienced, lightly sarcastic engineering voice: specific technical friction, restrained dry humor, short readable paragraphs, one clear takeaway, and a thoughtful question where natural. Sarcasm targets hype, fragile workflows and tooling—not people or communities. Avoid generic motivational posts, corporate slogans, forced jokes, outrage, sensationalism and clickbait. Do not claim first-hand experience unless provided by the user.
+Write in a sharp, experienced, lightly sarcastic engineering voice: specific technical friction, restrained dry humor, short readable paragraphs and one clear takeaway. Sarcasm targets hype, fragile workflows and tooling—not people or communities. Avoid generic motivational posts, corporate slogans, forced jokes, outrage, sensationalism and clickbait. Do not claim first-hand experience unless provided by the user.
+${linkedinShapeRules}
 For ${date} ${slot}: ${slot === 'morning' ? 'favor current AI/software engineering developments' : 'favor practical engineering insights'}.
 ${instructions}
 Every post: primary keyword in the first line, clean short paragraphs, hashtags last. LinkedIn must contain 2–4 secondaryKeywords.

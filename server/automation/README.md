@@ -36,6 +36,8 @@ Private `.env` keys (do not print their values):
 | `BUFFER_LINKEDIN_CHANNEL_ID` | Explicit LinkedIn allowlist entry |
 | `BUFFER_X_CHANNEL_ID` | Explicit, different X allowlist entry |
 | `AUTONOMOUS_PUBLISH_ENABLED` | Defaults to disabled; only the exact string `true` enables the environment gate |
+| `POST_SLOTS` | Scheduled slots that generate/publish: `morning`, `evening` (comma-separated). Default `morning` |
+| `POST_DAYS` | London weekdays that generate/publish: `mon`…`sun` (comma-separated). Default `mon,tue,wed,thu,fri` |
 
 `.env.example` contains placeholders. An earlier committed version contained a MongoDB credential:
 rotate/revoke that credential with the database owner before any live verification or activation.
@@ -120,6 +122,10 @@ node --test --test-name-pattern="LinkedIn-only safe dry run" server/automation/l
 
 ## Scheduling contract (not installed)
 
+The timer may fire at both 06:00 and 18:00 London. A scheduled run whose slot or weekday is not in
+`POST_SLOTS`/`POST_DAYS` prints a `skipped` summary and exits 0 before any database, engine or Buffer
+access. The default is one weekday-morning post (five a week), down from fourteen.
+
 Scheduled runs (`automation:run`, with or without `--publish`) are **always LinkedIn-only**. They
 generate, review, store and submit one LinkedIn post per slot. X is never generated, stored,
 preflighted, published or reconciled for a slot, even when `BUFFER_X_CHANNEL_ID` is set; the X
@@ -180,6 +186,11 @@ X requests. Before relying on fallback live, confirm `claude -p` is logged in fo
    X uses a conservative 1,500 UTF-16-unit editorial cap (target 400–900).
 5. A separate Codex invocation opens the sources and checks all claims, quality, currency, and
    semantic originality against history. Any failed/missing check blocks saving and publishing.
+   LinkedIn editorial rules (from the November 2026 analytics review of 30 posts, where 21 drew no
+   response and reminder-style "X deserves a test" openers reached 5–6 people): the hook must be one
+   or two short lines with no reminder-style opener (`HOOK_WEAK`), and the last prose line before
+   source lines and hashtags must be a reader question (`CLOSING_QUESTION_MISSING`). Either failure
+   gets the same single revision pass as a review rejection, then fails closed.
 6. Save both validated posts, evidence, content hash, slot key, channel mapping, local idempotency
    keys, and per-channel states **before any Buffer request**.
 
